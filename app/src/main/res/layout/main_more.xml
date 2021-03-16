@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white">
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/rice_white"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/more" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="100dp"
+            android:background="@color/rice_white"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageButton
+            android:id="@+id/imageButton10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="50dp"
+            android:background="@color/rice_white"
+            android:foregroundTint="@color/mocha_brown"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings" />
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:background="@color/rice_white"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/users" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="364dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/asparagus_green"
+        android:fontFamily="@font/goyang"
+        android:gravity="center|start|center_vertical"
+        android:text="나는 어떤 취미와 잘 어울릴까?"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout1" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:text="전체 카테고리"
+            android:textColor="@color/mocha_brown"
+            android:textSize="23sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:columnCount="3"
+            android:rowCount="4">
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테1"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테2"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테3"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테4"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테5"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테6"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테7"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테8"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테9"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테10"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테11"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="카테12"
+                android:textSize="20sp" />
+
+        </GridLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:text="지역 선택"
+            android:textColor="@color/mocha_brown"
+            android:textSize="23sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역1"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역3"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center_horizontal|left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역4"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역5"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역6"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역7"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역8"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:text="지역9"
+                android:textSize="20sp" />
+        </GridLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
