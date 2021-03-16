@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white">
+
+    <FrameLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/oat_yellow">
+        <!--back 버튼 textview로 구현-->
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="20dp"
+            android:text="&lt;"
+            android:textColor="@color/mocha_brown"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="60dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:text="반납하기"
+            android:textColor="@color/mocha_brown"
+            android:textSize="30sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/goyang"
+        android:gravity="center"
+        android:text="반납을 위해 QR코드를\n인증해주세요."
+        android:textColor="@color/mocha_brown"
+        android:textSize="40sp" />
+    <!-- testSize 25sp > 40sp로 변경 -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_below="@id/textView5"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</RelativeLayout>

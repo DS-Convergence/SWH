@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white"
+    tools:context=".LogInActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--height 50->70dp으로 변경-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/oat_yellow">
+            <!--back 버튼 textview로 구현-->
+            <TextView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:paddingLeft="20dp"
+                android:fontFamily="@font/goyang"
+                android:textColor="@color/mocha_brown"
+                android:text="&lt;" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:paddingLeft="60dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
+                android:textColor="@color/mocha_brown"
+                android:text="로그인"/>
+
+
+        </FrameLayout>
+        <!--빈 부분에 앱아이콘 넣기-->
+        <EditText
+            android:id="@+id/id_login"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:padding="10dp"
+            android:fontFamily="@font/jsdongkang_regular"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/mocha_brown"
+            android:hint="아이디(이메일 주소)"/>
+        <EditText
+            android:id="@+id/pw_login"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="330dp"
+            android:padding="10dp"
+            android:fontFamily="@font/jsdongkang_regular"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/mocha_brown"
+            android:hint="비밀번호"/>
+        <Button
+            android:id="@+id/log_in_btn"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="400dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="로그인"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyang"
+            android:backgroundTint="@color/peanut_brown"/>
+        <Button
+            android:id="@+id/go_sign_up_btn"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="500dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyang"
+            android:backgroundTint="@color/asparagus_green"/>
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="580dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="구글 로그인"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyang"
+            android:backgroundTint="@color/avocado_green"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

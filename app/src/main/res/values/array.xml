@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="report_arrsy">
+        <item>욕설 및 비방</item>
+        <item>앱과 관계없는 게시글 업로드</item>
+        <item>사기</item>
+        <item>기타 사유 선택</item>
+    </string-array>
+</resources>

@@ -1,0 +1,2 @@
+com/example/squirrelwarehouse/BuildConfig.java
+ com.example.squirrelwarehouse.BuildConfig
