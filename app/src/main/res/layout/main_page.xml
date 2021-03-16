@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!--라운드버튼: 기본버튼 -> cornerradius=100dp, backgroundTint 설정-->
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rice_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/oat_yellow"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@color/oat_yellow"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/more" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@color/oat_yellow"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@color/oat_yellow"
+                android:foregroundTint="@color/mocha_brown"
+                android:scaleType="fitCenter"
+                android:tint="@color/mocha_brown"
+                app:srcCompat="@drawable/notice" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/grey" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|right"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/rice_white"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/around_loc" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="150dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/goyang"
+                        android:text="최근 업데이트"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="25sp"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:fontFamily="@font/goyang"
+                        android:gravity="right"
+                        android:text="더보기"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품1"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품2"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품3"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/goyang"
+                        android:text="카테고리"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="25sp"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:fontFamily="@font/goyang"
+                        android:gravity="right"
+                        android:text="더보기"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품1"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품2"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품3"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/goyang"
+                        android:text="추천"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="25sp"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:fontFamily="@font/goyang"
+                        android:gravity="right"
+                        android:text="더보기"
+                        android:textColor="@color/mocha_brown"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품1"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품2"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/jsdongkang_regular"
+                            android:text="물품3"
+                            android:textColor="@color/mocha_brown"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/peanut_brown"
+            android:fontFamily="@font/goyang"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="10dp"
+            android:text="글쓰기"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:cornerRadius="100dp" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
