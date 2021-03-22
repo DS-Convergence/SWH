@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp">
+
+    <TextView
+        android:id="@+id/textView_to_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/colorback1round"
+        android:maxWidth="240dp"
+        android:padding="16dp"
+        android:fontFamily="@font/jsdongkang_regular"
+        android:text="This is my Message"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview_chat_to_row"
+        app:layout_constraintStart_toEndOf="@+id/imageview_chat_to_row"
+        app:layout_constraintTop_toTopOf="@+id/imageview_chat_to_row" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_chat_to_row"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:civ_border_color="#BC9F83"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rounded_button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/jsdongkang_regular"
+        android:text="시간"
+        android:textColor="#5A3E29"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_to_row"
+        app:layout_constraintStart_toEndOf="@+id/textView_to_row" />
+</androidx.constraintlayout.widget.ConstraintLayout>
