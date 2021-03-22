@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1ECE2"
+    tools:context=".ChatLogActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/oat_yellow"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--back 버튼 textview로 구현-->
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="20dp"
+            android:text="&lt;"
+            android:textColor="@color/mocha_brown"
+            android:textSize="50sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="60dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:text="유저이름"
+            android:textColor="@color/mocha_brown"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="180dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="15dp"
+            android:text="물건이름"
+            android:textColor="@color/tawny_brown"
+            android:textSize="25sp" />
+
+    </FrameLayout>
+    <EditText
+        android:id="@+id/editText_chat_log"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Enter Message"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
+        app:layout_constraintStart_toEndOf="@+id/qr_button_chat_log"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_chat_log" />
+
+    <Button
+        android:id="@+id/send_button_chat_log"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/goyang"
+        android:text="전송"
+        android:textColor="@color/mocha_brown"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:backgroundTint="#BC9F83"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_log" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_chat_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F6F2F1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/editText_chat_log"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/qr_button_chat_log"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        app:backgroundTint="#BC9F83"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_log" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
