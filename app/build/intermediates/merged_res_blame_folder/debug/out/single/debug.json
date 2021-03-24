@@ -48,28 +48,28 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_rental_qr.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_latest_message.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_latest_message.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\users.png"
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_goyang.TTF.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\users.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_row_new_message.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_row_new_message.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more_qr.xml.flat",
@@ -94,6 +94,10 @@
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_button.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\rounded_button.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
@@ -158,6 +162,10 @@
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback1round.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\colorback1round.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_evaluation.xml.flat",
@@ -242,5 +250,9 @@
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_setting.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_user_setting.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback2round.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\colorback2round.xml"
     }
 ]
