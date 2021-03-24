@@ -74,7 +74,7 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/btn_report"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
