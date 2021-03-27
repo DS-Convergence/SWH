@@ -8,20 +8,31 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class ProductDetailActivity : AppCompatActivity() {
+
+    private lateinit var tvProdName : TextView
+    private lateinit var tvProdCategory : TextView
+    private lateinit var tvTime : TextView
+    private lateinit var tvStatus : TextView
+    private lateinit var tvUser : TextView
+    private lateinit var tvUserLocation : TextView
+    private lateinit var tvProdDetail : TextView
+    private lateinit var tvMoney : TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
 
-        var tvProdName : TextView = findViewById(R.id.tv_prodName)
-        var tvProdCategory : TextView = findViewById(R.id.tv_prodCategory)
-        var tvTime : TextView = findViewById(R.id.tv_time)
-        var tvStatus : TextView = findViewById(R.id.tv_time)
-        var tvUser : TextView = findViewById(R.id.tv_user)
-        var tvUserLocation : TextView = findViewById(R.id.tv_uesrLocation)
+        tvProdName = findViewById(R.id.tv_prodName)
+        tvProdCategory = findViewById(R.id.tv_prodCategory)
+        tvTime = findViewById(R.id.tv_time)
+        tvStatus = findViewById(R.id.tv_time)
+        tvUser = findViewById(R.id.tv_user)
+        tvUserLocation = findViewById(R.id.tv_uesrLocation)
 
-        var tvProdDetail : TextView = findViewById(R.id.tv_prodDetail)
+        tvProdDetail = findViewById(R.id.tv_prodDetail)
 
-        var tvMoney : TextView = findViewById(R.id.tv_money)
+        tvMoney = findViewById(R.id.tv_money)
         val btnHeart : ImageButton = findViewById(R.id.btn_heart)
         val btnChat : Button = findViewById(R.id.btn_chat)
 
@@ -29,7 +40,9 @@ class ProductDetailActivity : AppCompatActivity() {
 
         val btnSubmenu : TextView = findViewById(R.id.btn_submenu)
         btnSubmenu.setOnClickListener {
+            // ProductDetailSubmenu로 이동
             startActivity(Intent(this, ProductDetailSubmenuActivity::class.java))
         }
+
     }
 }

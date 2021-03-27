@@ -73,7 +73,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/et_prodName"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -102,7 +102,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName5"
+                    android:id="@+id/et_category"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -115,7 +115,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/editTextTextMultiLine2"
+                android:id="@+id/et_prodDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -134,7 +134,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox4"
+                    android:id="@+id/cb_rentalFee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -144,7 +144,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName6"
+                    android:id="@+id/et_rentalFee"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -171,7 +171,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox5"
+                    android:id="@+id/cb_deposit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -181,7 +181,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName7"
+                    android:id="@+id/et_deposit"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -203,7 +203,7 @@
             </LinearLayout>
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/cb_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/goyang"
@@ -218,7 +218,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_upload"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"

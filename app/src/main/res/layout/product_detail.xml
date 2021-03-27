@@ -52,6 +52,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/info_bar"
         android:layout_below="@id/bar">
 
         <LinearLayout
@@ -187,6 +188,7 @@
     </ScrollView>
 
     <RelativeLayout
+        android:id="@+id/info_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
