@@ -44,7 +44,7 @@
             android:paddingHorizontal="50dp">
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/img_acorn1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -52,7 +52,7 @@
                 tools:srcCompat="@drawable/acorn" />
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/img_acorn2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -60,7 +60,7 @@
                 tools:srcCompat="@drawable/acorn" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/img_acorn3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -68,7 +68,7 @@
                 tools:srcCompat="@drawable/acorn" />
 
             <ImageView
-                android:id="@+id/imageView14"
+                android:id="@+id/img_acorn4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -76,7 +76,7 @@
                 tools:srcCompat="@drawable/acorn_empty" />
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/img_acorn5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
