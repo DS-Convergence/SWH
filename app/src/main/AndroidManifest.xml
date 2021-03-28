@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SquirrelWarehouse">
-        <activity android:name=".UserSettingActivity"></activity>
+        <activity android:name=".UserInfoActivity"></activity>
+        <activity android:name=".UserSettingActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".SplashActivity" />
