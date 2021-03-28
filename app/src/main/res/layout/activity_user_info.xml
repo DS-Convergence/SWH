@@ -30,7 +30,7 @@
             android:paddingBottom="15dp"
             android:textSize="30sp"
             android:textColor="@color/mocha_brown"
-            android:text="회원정보 설정"/>
+            android:text="유저 프로필"/>
 
 
     </FrameLayout>
