@@ -56,12 +56,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_goyang.TTF.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\users.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_goyang.TTF.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_row_new_message.xml.flat",
@@ -120,8 +120,16 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\notice.png"
     },
     {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_info.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\info.png"
+    },
+    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_info.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_user_info.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
@@ -134,6 +142,10 @@
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_page.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_my_page.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",

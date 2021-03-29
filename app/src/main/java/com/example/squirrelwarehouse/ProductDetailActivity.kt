@@ -41,7 +41,8 @@ class ProductDetailActivity : AppCompatActivity() {
         val btnSubmenu : TextView = findViewById(R.id.btn_submenu)
         btnSubmenu.setOnClickListener {
             // ProductDetailSubmenu로 이동
-            startActivity(Intent(this, ProductDetailSubmenuActivity::class.java))
+            val intent = Intent(this, ProductDetailSubmenuActivity::class.java)
+            startActivity(intent)
         }
 
     }
