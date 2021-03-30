@@ -17,7 +17,7 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var tvUserLocation : TextView
     private lateinit var tvProdDetail : TextView
     private lateinit var tvMoney : TextView
-
+    private var state = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +33,31 @@ class ProductDetailActivity : AppCompatActivity() {
         tvProdDetail = findViewById(R.id.tv_prodDetail)
 
         tvMoney = findViewById(R.id.tv_money)
-        val btnHeart : ImageButton = findViewById(R.id.btn_heart)
+
+        var btnHeart : ImageButton = findViewById(R.id.btn_heart)
+        val btnReport : ImageButton = findViewById(R.id.btn_report)
+        val btnSubmenu : TextView = findViewById(R.id.btn_submenu)
+
+
+        btnHeart.setOnClickListener() {
+            // 디폴트는 하얀 하트, 관심상품 등록했으면 초록 하트, 데이터베이스와 연동필요
+            if(!state) {
+                btnHeart.setImageResource(R.drawable.heart_green)
+                state = true;
+            }
+            else {
+                btnHeart.setImageResource(R.drawable.heart_white)
+                state = false;
+            }
+        }
         val btnChat : Button = findViewById(R.id.btn_chat)
 
-        val btnReport : ImageButton = findViewById(R.id.btn_report)
+        btnReport.setOnClickListener() {
+            // 신고 페이지로 이동
+            val intent = Intent(this, ReportActivity::class.java)
+            startActivity(intent)
+        }
 
-        val btnSubmenu : TextView = findViewById(R.id.btn_submenu)
         btnSubmenu.setOnClickListener {
             // ProductDetailSubmenu로 이동
             val intent = Intent(this, ProductDetailSubmenuActivity::class.java)

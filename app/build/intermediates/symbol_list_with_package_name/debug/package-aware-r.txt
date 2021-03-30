@@ -1723,6 +1723,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable heart_green
 drawable heart_white
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp

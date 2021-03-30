@@ -30,7 +30,7 @@
             android:paddingLeft="60dp"
             android:paddingTop="13dp"
             android:paddingBottom="15dp"
-            android:text="대여하기"
+            android:text="게시글 작성"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
 
@@ -81,8 +81,7 @@
                     android:ems="10"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:inputType="textPersonName"
-                    android:paddingLeft="5dp"
-                    android:text="Name" />
+                    android:paddingLeft="5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -110,8 +109,7 @@
                     android:ems="10"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:inputType="textPersonName"
-                    android:paddingLeft="5dp"
-                    android:text="Name" />
+                    android:paddingLeft="5dp" />
             </LinearLayout>
 
             <EditText
@@ -151,11 +149,11 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/grey"
                     android:ems="10"
+                    android:enabled="false"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:gravity="center|right"
-                    android:inputType="textPersonName"
-                    android:paddingRight="5dp"
-                    android:text="Name" />
+                    android:inputType="number"
+                    android:paddingRight="5dp" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -188,11 +186,11 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/grey"
                     android:ems="10"
+                    android:enabled="false"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:gravity="center|right"
-                    android:inputType="textPersonName"
-                    android:paddingRight="5dp"
-                    android:text="Name" />
+                    android:inputType="number"
+                    android:paddingRight="5dp" />
 
                 <TextView
                     android:id="@+id/textView10"

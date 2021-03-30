@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="28"
         android:targetSdkVersion="30" />
 
     <!-- Include required permissions for Google Maps API to run. -->
@@ -37,6 +37,7 @@
         <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
         <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" />
         <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,13 +47,7 @@
         </activity>
         <activity
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
-            android:theme="@style/Transparent" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Transparent" />
         <activity android:name="com.example.squirrelwarehouse.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
