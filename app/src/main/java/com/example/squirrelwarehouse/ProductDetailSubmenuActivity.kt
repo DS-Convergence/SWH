@@ -17,6 +17,8 @@ class ProductDetailSubmenuActivity : AppCompatActivity() {
 
         modify.setOnClickListener {
             // 글쓰기 화면으로. 칸은 정보로 채워져있는 상태
+            val intent = Intent(this, ProductFormActivity::class.java)
+            startActivity(intent)
         }
 
         remove.setOnClickListener {

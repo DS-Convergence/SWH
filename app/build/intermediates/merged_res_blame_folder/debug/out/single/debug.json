@@ -180,6 +180,10 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\colorback1round.xml"
     },
     {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_green.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\heart_green.png"
+    },
+    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_evaluation.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_evaluation.xml"
     },

@@ -19,21 +19,9 @@
         <activity android:name=".TermsAndConditionsActivity" />
         <activity android:name=".DeleteAccountActivity" />
         <activity android:name=".SetLocationInformationActivity" />
-        <activity android:name=".ProductDetailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ProductDetailSubmenuActivity"
-            android:theme="@style/Transparent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ProductFormActivity" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".ProductDetailSubmenuActivity" android:theme="@style/Transparent" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

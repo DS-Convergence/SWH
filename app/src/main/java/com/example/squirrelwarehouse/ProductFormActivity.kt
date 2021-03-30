@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.TextView
 
 class ProductFormActivity : AppCompatActivity() {
 
@@ -33,6 +34,21 @@ class ProductFormActivity : AppCompatActivity() {
         cbLocation = findViewById(R.id.cb_location)
 
         val btnUpload : Button = findViewById(R.id.btn_upload)
+        val backButton : TextView = findViewById(R.id.back_btn)
+
+        cbRentalFee.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked) etRentalFee.isEnabled = true
+            else etRentalFee.isEnabled = false
+        }
+
+        cbDeposit.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked) etDeposit.isEnabled = true
+            else etDeposit.isEnabled = false
+        }
+
+        backButton.setOnClickListener() {
+            finish()
+        }
 
     }
 }
