@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SquirrelWarehouse">
-        <activity android:name=".list_form"></activity>
+        <activity android:name=".listView_form"></activity>
         <activity android:name=".mapActivity" />
         <activity android:name=".MyPageActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".UserSettingActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SplashActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".TermsAndConditionsActivity" />
@@ -27,11 +33,13 @@
             android:name=".ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".MainActivity">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
     </application>
 

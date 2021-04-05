@@ -4,20 +4,20 @@
         "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\drawable\\switch_track_selector.xml"
     },
     {
-        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_qr.xml.flat",
-        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\layout\\product_rental_qr.xml"
-    },
-    {
-        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_qr.xml.flat",
+        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\layout\\product_rental_qr.xml"
     },
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -110,6 +110,10 @@
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_button.xml.flat",
         "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\drawable\\rounded_button.xml"
+    },
+    {
+        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map.xml.flat",
+        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_siren.png.flat",
@@ -258,6 +262,10 @@
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_around_loc.png.flat",
         "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\drawable\\around_loc.png"
+    },
+    {
+        "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
+        "source": "D:\\HSW\\SWH\\app\\src\\main\\res\\layout\\listview_form.xml"
     },
     {
         "merged": "D:\\HSW\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat.png.flat",

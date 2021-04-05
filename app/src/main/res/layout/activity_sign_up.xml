@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="280dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
@@ -58,7 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="330dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
@@ -71,12 +69,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="380dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
             android:textSize="20sp"
             android:textColor="@color/mocha_brown"
+            android:inputType="textPassword"
             android:hint="비밀번호(6자리 이상)"/>
         <EditText
             android:id="@+id/pw_sign_up_check"
@@ -84,13 +82,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="430dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
             android:textSize="20sp"
             android:textColor="@color/mocha_brown"
-            android:hint="비밀번호(6자리 이상)"/>
+            android:inputType="textPassword"
+            android:hint="비밀번호 재입력"/>
 
         <Button
             android:id="@+id/sign_up_btn"

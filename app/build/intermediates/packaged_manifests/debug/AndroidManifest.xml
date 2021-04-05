@@ -27,11 +27,19 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse" >
+        <activity android:name="com.example.squirrelwarehouse.listView_form" />
+        <activity android:name="com.example.squirrelwarehouse.mapActivity" />
         <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
         <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-        <activity android:name="com.example.squirrelwarehouse.LogInActivity" />
+        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
         <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
         <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
@@ -43,11 +51,14 @@
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
         <activity android:name="com.example.squirrelwarehouse.MainActivity" >
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
 
         <service
@@ -61,6 +72,9 @@
                 android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -68,6 +82,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
