@@ -18,20 +18,10 @@
             <!--back 버튼 textview로 구현-->
 
             <TextView
-                android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="50sp"
-                android:paddingLeft="20dp"
-                android:fontFamily="@font/goyang"
-                android:textColor="@color/mocha_brown"
-                android:text="&lt;" />
-            <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/goyang"
-                android:paddingLeft="60dp"
+                android:layout_gravity="center"
                 android:paddingTop="13dp"
                 android:paddingBottom="15dp"
                 android:textSize="30sp"
@@ -53,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="280dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
@@ -66,11 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="330dp"
             android:padding="10dp"
-            android:fontFamily="@font/jsdongkang_regular"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
             android:textSize="20sp"
+            android:inputType="textPassword"
             android:textColor="@color/mocha_brown"
             android:hint="비밀번호"/>
         <Button
