@@ -1944,6 +1944,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail
 id dialog_button
 id dimensions
 id direct
@@ -2060,6 +2061,7 @@ id line1
 id line3
 id linear
 id listMode
+id listView
 id list_item
 id location_accept_switch
 id log_in_btn
@@ -2133,11 +2135,7 @@ id off
 id on
 id outline
 id outward
-id overView01
-id overView02
-id overView03
-id overView04
-id overView05
+id overView
 id packed
 id parallax
 id parent
@@ -2411,6 +2409,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout listview
 layout listview_form
 layout main_more
 layout main_page
