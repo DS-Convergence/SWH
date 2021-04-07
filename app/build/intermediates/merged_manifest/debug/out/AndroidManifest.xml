@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="28"
+        android:minSdkVersion="24"
         android:targetSdkVersion="30" />
 
     <!-- Include required permissions for Google Maps API to run. -->
@@ -27,6 +27,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
+
         <activity android:name="com.example.squirrelwarehouse.mapActivity" />
         <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
@@ -47,17 +51,25 @@
         <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
         <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" />
-        <activity
-            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
-            android:theme="@style/Transparent" />
-        <activity android:name="com.example.squirrelwarehouse.ListViewActivity" >
+        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" />
+        <activity
+            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
+            android:theme="@style/Transparent" />
+        <activity android:name="com.example.squirrelwarehouse.ListViewActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.MainActivity" >
 

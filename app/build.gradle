@@ -51,6 +51,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
+    // 지도 API
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+
 
     // Declare the dependency for the Cloud Storage library
     // When using the BoM, you don't specify versions in Firebase library dependencies
