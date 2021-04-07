@@ -2031,7 +2031,6 @@ id imageButton5
 id imageButton6
 id imageView
 id imageView2
-id imageView3
 id imageView4
 id imageView5
 id imageView_new_message
@@ -2054,6 +2053,7 @@ id labelGroup
 id labeled
 id largeLabel
 id layout
+id layout_map
 id left
 id leftToRight
 id light
@@ -2066,6 +2066,7 @@ id list_item
 id location_accept_switch
 id log_in_btn
 id main
+id map
 id masked
 id material_clock_display
 id material_clock_face

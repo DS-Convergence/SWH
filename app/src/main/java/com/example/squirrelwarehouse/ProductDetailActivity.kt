@@ -41,6 +41,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         btnHeart.setOnClickListener() {
             // 디폴트는 하얀 하트, 관심상품 등록했으면 초록 하트, 데이터베이스와 연동필요
+            // Firebase로 안드로이드 sns 앱 만들기 195-197쪽 참고
             if(!state) {
                 btnHeart.setImageResource(R.drawable.heart_green)
                 state = true;
