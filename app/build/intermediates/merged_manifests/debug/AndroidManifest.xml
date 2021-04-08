@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="28"
         android:targetSdkVersion="30" />
 
     <!-- Include required permissions for Google Maps API to run. -->
@@ -46,18 +46,21 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
-        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
+        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
+        </activity>
+        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
+        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
+        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
+        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" />
         <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" />
         <activity
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"

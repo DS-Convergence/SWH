@@ -2160,8 +2160,8 @@ int id radio 0x7f0a0175
 int id rating_txt 0x7f0a0176
 int id ratio 0x7f0a0177
 int id rectangles 0x7f0a0178
-int id recyclerVIew_newmessage 0x7f0a0179
-int id recyclerView_chat_log 0x7f0a017a
+int id recyclerView_chat_log 0x7f0a0179
+int id recyclerView_newmessage 0x7f0a017a
 int id report_btn 0x7f0a017b
 int id reverseSawtooth 0x7f0a017c
 int id right 0x7f0a017d
