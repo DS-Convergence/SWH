@@ -31,6 +31,7 @@
             android:paddingTop="13dp"
             android:paddingBottom="15dp"
             android:text="유저이름"
+            android:id="@+id/chat_log_textview_username"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
 

@@ -26,6 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
+        <activity android:name=".ChatLogActivity">
+        </activity>
+        <activity android:name=".LatestMessageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SplashActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".TermsAndConditionsActivity" />

@@ -2161,8 +2161,8 @@ id radio
 id rating_txt
 id ratio
 id rectangles
-id recyclerVIew_newmessage
 id recyclerView_chat_log
+id recyclerView_newmessage
 id report_btn
 id reverseSawtooth
 id right
