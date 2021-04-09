@@ -1,7 +1,10 @@
 package com.example.squirrelwarehouse
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.widget.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -51,16 +54,28 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
+        // 지도안에서 터치가 일어나면 스크롤뷰는 움직이지 않도록 설정함.
+        val sv = findViewById<ScrollView>(R.id.sv)
+        val containerMap = findViewById<TouchFrameLayout>(R.id.layout_map)
+        containerMap.setTouchListener(object : TouchFrameLayout.OnTouchListener {
+            override fun onTouch() {
+                sv.requestDisallowInterceptTouchEvent(true)
+            }
+        })
+
+        // 대여료 체크박스가 체크되어야 금액 작성 가능.
         cbRentalFee.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) etRentalFee.isEnabled = true
             else etRentalFee.isEnabled = false
         }
 
+        // 보증금 체크박스가 체크되어야 금액 작성 가능
         cbDeposit.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) etDeposit.isEnabled = true
             else etDeposit.isEnabled = false
         }
 
+        // 위치 체크박스가 체크되어야 지도 보임.
         cbLocation.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) map.visibility = View.VISIBLE
             else map.visibility = View.GONE
@@ -89,5 +104,24 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 10f))
+    }
+}
+
+class TouchFrameLayout(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
+    var listener: OnTouchListener? = null
+
+    interface OnTouchListener {
+        fun onTouch()
+    }
+
+    fun setTouchListener(listener: OnTouchListener) {
+        this.listener = listener
+    }
+
+    override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
+        when (event?.action) {
+            MotionEvent.ACTION_DOWN, MotionEvent.ACTION_UP -> listener?.onTouch()
+        }
+        return super.dispatchTouchEvent(event)
     }
 }
