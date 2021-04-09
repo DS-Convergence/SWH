@@ -37,6 +37,7 @@
     </FrameLayout>
 
     <ScrollView
+        android:id="@+id/sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/bar">
@@ -207,7 +208,7 @@
                 android:textColor="@color/mocha_brown"
                 android:textSize="18sp" />
 
-            <FrameLayout
+            <com.example.squirrelwarehouse.TouchFrameLayout
                 android:id="@+id/layout_map"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -219,7 +220,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     tools:context=".MapsActivity" />
-            </FrameLayout>
+            </com.example.squirrelwarehouse.TouchFrameLayout>
 
             <Button
                 android:id="@+id/btn_upload"

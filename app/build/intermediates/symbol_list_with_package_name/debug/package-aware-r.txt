@@ -1904,6 +1904,7 @@ id center_horizontal
 id center_vertical
 id chain
 id chains
+id chat_log_textview_username
 id chattime_textview_new_message
 id checkbox
 id checked
@@ -2229,6 +2230,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id sv
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
