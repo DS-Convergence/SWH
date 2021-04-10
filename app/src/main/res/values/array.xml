@@ -6,4 +6,18 @@
         <item>사기</item>
         <item>기타 사유 선택</item>
     </string-array>
+    <string-array name="category">
+        <item>카테고리1</item>
+        <item>카테고리2</item>
+        <item>카테고리3</item>
+        <item>카테고리4</item>
+        <item>카테고리5</item>
+    </string-array>
+    <string-array name="location">
+        <item>지역1</item>
+        <item>지역2</item>
+        <item>지역3</item>
+        <item>지역4</item>
+        <item>지역5</item>
+    </string-array>
 </resources>
