@@ -50,6 +50,8 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array category
+array location
 array report_arrsy
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1883,15 +1885,6 @@ id btn_report
 id btn_submenu
 id btn_upload
 id button1
-id button13
-id button14
-id button15
-id button16
-id button17
-id button18
-id button19
-id button20
-id button21
 id button3
 id buttonPanel
 id cache_measures
@@ -1945,7 +1938,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id detail
+id detailTV
 id dialog_button
 id dimensions
 id direct
@@ -2137,7 +2130,6 @@ id off
 id on
 id outline
 id outward
-id overView
 id packed
 id parallax
 id parent
@@ -2152,6 +2144,7 @@ id percent
 id pin
 id position
 id postLayout
+id prevImg
 id progress_circular
 id progress_horizontal
 id pw_login
@@ -2213,6 +2206,8 @@ id snapMargins
 id spacer
 id spline
 id split_action_bar
+id spnCate
+id spnLoc
 id spread
 id spread_inside
 id square
@@ -2276,8 +2271,10 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeTV
 id title
 id titleDividerNoCustom
+id titleTV
 id title_template
 id toggle
 id top
@@ -2382,6 +2379,7 @@ layout activity_chat_log
 layout activity_chat_log_more
 layout activity_chat_log_more_qr
 layout activity_delete_account
+layout activity_item_loc
 layout activity_latest_message
 layout activity_log_in
 layout activity_main

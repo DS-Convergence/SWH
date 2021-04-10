@@ -20,8 +20,8 @@
                 android:orientation="horizontal"
                 android:padding="20dp">
 
-                <ImageButton
-                    android:id="@+id/overView"
+                <ImageView
+                    android:id="@+id/prevImg"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -29,7 +29,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -39,40 +39,43 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/title"
+                            android:id="@+id/titleTV"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:fontFamily="@font/jsdongkang_regular"
-                            android:text="title"
                             android:textColor="@color/mocha_brown"
                             android:textSize="20sp"></TextView>
 
                         <TextView
-                            android:id="@+id/time"
+                            android:id="@+id/timeTV"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="@font/jsdongkang_regular"
                             android:gravity="right|center_vertical"
-                            android:text="time"
                             android:textColor="@color/mocha_brown"
                             android:textSize="15sp"></TextView>
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/detail"
+                        android:id="@+id/detailTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/jsdongkang_regular"
                         android:gravity="center_vertical"
-                        android:text="detail"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp"></TextView>
                 </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/mocha_brown"
+                android:layout_marginHorizontal="10dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
