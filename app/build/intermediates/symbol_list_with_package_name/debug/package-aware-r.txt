@@ -2061,6 +2061,7 @@ id location_accept_switch
 id log_in_btn
 id main
 id map
+id mapView
 id masked
 id material_clock_display
 id material_clock_face
