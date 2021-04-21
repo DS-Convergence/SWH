@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ac095bc27153d1bf34614b11ea4b371\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:2:1-21:12
@@ -67,9 +67,9 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\ADMIN\.gradle\cache
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\d1991d3b6bbf1d981bd5904c8dac7049\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e100a95c05d84d114a846d9a71459157\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\36d143d4231c83e760f708dc998e96e2\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
-INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-222:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
+INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:2:1-220:12
 	package
 		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml
@@ -263,7 +263,7 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\ADMIN\.g
 	android:required
 		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:17:9-32
 application
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:19:5-220:19
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:19:5-218:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:11:5-19:19
@@ -363,75 +363,75 @@ ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:38
 	android:name
 		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:38:19-78
 activity#com.example.squirrelwarehouse.LogInActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:39:9-47:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:39:9-46:20
 	android:name
 		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:39:19-77
 activity#com.example.squirrelwarehouse.ChatLogActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:48:9-49:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:47:9-48:20
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:48:19-79
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:47:19-79
 activity#com.example.squirrelwarehouse.LatestMessageActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:50:9-58:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:49:9-56:20
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:50:19-85
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:49:19-85
 activity#com.example.squirrelwarehouse.SplashActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:59:9-81
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:57:9-81
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:59:19-78
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:57:19-78
 activity#com.example.squirrelwarehouse.ReportActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:60:9-81
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:58:9-81
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:60:19-78
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:58:19-78
 activity#com.example.squirrelwarehouse.TermsAndConditionsActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:61:9-93
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:59:9-93
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:61:19-90
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:59:19-90
 activity#com.example.squirrelwarehouse.DeleteAccountActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:62:9-88
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:60:9-88
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:62:19-85
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:60:19-85
 activity#com.example.squirrelwarehouse.SetLocationInformationActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:63:9-97
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:61:9-97
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:63:19-94
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:61:19-94
 activity#com.example.squirrelwarehouse.ProductFormActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:64:9-70:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:62:9-69:20
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:64:19-83
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:62:19-83
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:65:13-69:29
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:64:13-67:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:17-69
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:25-66
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:68:17-77
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:17-77
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:68:27-74
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:27-74
 activity#com.example.squirrelwarehouse.ProductDetailActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:71:9-88
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:70:9-88
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:71:19-85
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:70:19-85
 activity#com.example.squirrelwarehouse.ProductDetailSubmenuActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:72:9-74:50
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:71:9-73:50
 	android:theme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:74:13-47
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:73:13-47
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:73:13-86
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:72:13-86
 activity#com.example.squirrelwarehouse.ListViewActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:75:9-82:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:74:9-81:20
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:75:19-80
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:74:19-80
 activity#com.example.squirrelwarehouse.MainMore
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:9-55
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:82:9-55
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:19-43
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:82:19-43
 activity#com.example.squirrelwarehouse.MainActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:84:9-92:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:9-90:20
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:84:19-76
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:19-76
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:94:9-132:19
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:92:9-130:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
@@ -453,232 +453,232 @@ MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ADMIN\.gradl
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:97:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:95:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:37:13-32
 	android:directBootAware
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:96:13-43
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:94:13-43
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:95:13-84
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:93:13-84
 meta-data#com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:98:13-100:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:96:13-98:85
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:100:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:98:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:99:17-122
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:97:17-122
 meta-data#com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:101:13-103:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:99:13-101:85
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:103:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:101:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:102:17-124
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:100:17-124
 meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:104:13-106:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:102:13-104:85
 MERGED from [com.google.firebase:firebase-firestore-ktx:22.1.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\81461a89661eabfaf22381d6aa539168\jetified-firebase-firestore-ktx-22.1.1\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-firestore-ktx:22.1.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\81461a89661eabfaf22381d6aa539168\jetified-firebase-firestore-ktx-22.1.1\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:106:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:104:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:105:17-126
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:103:17-126
 meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:107:13-109:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:105:13-107:85
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5a10703dd14304c718430301e1889383\jetified-firebase-auth-ktx-20.0.3\AndroidManifest.xml:11:13-13:85
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\5a10703dd14304c718430301e1889383\jetified-firebase-auth-ktx-20.0.3\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:109:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:107:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:108:17-116
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:106:17-116
 meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:110:13-112:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:108:13-110:85
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ce888931d247ec920165f8a6a12cfa5c\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ce888931d247ec920165f8a6a12cfa5c\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:112:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:110:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:111:17-113
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:109:17-113
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:113:13-115:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:111:13-113:85
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:115:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:113:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:114:17-109
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:112:17-109
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:116:13-118:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:114:13-116:85
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\90edf88e273712c4c84862ce5d5f14fe\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\90edf88e273712c4c84862ce5d5f14fe\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:118:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:116:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:117:17-111
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:115:17-111
 meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:119:13-121:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:117:13-119:85
 MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\31daf8d401b40fad4c78277bdd2dce3c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\31daf8d401b40fad4c78277bdd2dce3c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:121:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:119:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:120:17-107
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:118:17-107
 meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:122:13-124:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:120:13-122:85
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\13d0b9c4688124b7e64f8eed605b7aaf\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\13d0b9c4688124b7e64f8eed605b7aaf\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:124:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:122:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:123:17-109
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:121:17-109
 meta-data#com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:129:13-131:85
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:127:13-129:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:131:17-82
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:129:17-82
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:130:17-121
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:128:17-121
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:133:9-135:40
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:131:9-133:40
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\46569f595e4576bc17dbbdb47aed5368\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\46569f595e4576bc17dbbdb47aed5368\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 	android:required
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:135:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:133:13-37
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:134:13-50
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:132:13-50
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:137:9-141:75
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:135:9-139:75
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:139:13-46
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:137:13-46
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:140:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:138:13-37
 	android:theme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:141:13-72
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:139:13-72
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:138:13-93
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:136:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:146:9-150:51
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:144:9-148:51
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:148:13-36
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:146:13-36
 	android:visibleToInstantApps
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:150:13-48
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:148:13-48
 	android:permission
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:149:13-107
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:147:13-107
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:147:13-89
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:145:13-89
 provider#com.squareup.picasso.PicassoProvider
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:152:9-155:40
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:150:9-153:40
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e244398533445d58b521ca4eebe5bcd1\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e244398533445d58b521ca4eebe5bcd1\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:154:13-85
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:152:13-85
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:155:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:153:13-37
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:153:13-64
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:151:13-64
 activity#com.google.firebase.auth.internal.GenericIdpActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:157:9-174:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:155:9-172:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
 	android:excludeFromRecents
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:159:13-46
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:157:13-46
 	android:launchMode
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:161:13-44
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:159:13-44
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:160:13-36
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:158:13-36
 	android:theme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:162:13-72
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:160:13-72
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:158:13-80
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:156:13-80
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:163:13-173:29
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:161:13-171:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:164:17-69
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:162:17-69
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:164:25-66
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:162:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:166:17-76
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:164:17-76
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:166:27-73
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:164:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:167:17-78
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:165:17-78
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:167:27-75
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:165:27-75
 data
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:169:17-172:51
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:167:17-170:51
 	android:path
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:171:21-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:169:21-37
 	android:host
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:170:21-49
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:168:21-49
 	android:scheme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:172:21-48
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:170:21-48
 activity#com.google.firebase.auth.internal.RecaptchaActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:175:9-192:20
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:173:9-190:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
 	android:excludeFromRecents
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:177:13-46
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:175:13-46
 	android:launchMode
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:179:13-44
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:177:13-44
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:178:13-36
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:176:13-36
 	android:theme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:180:13-72
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:178:13-72
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:176:13-79
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:174:13-79
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:181:13-191:29
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:179:13-189:29
 service#com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:194:9-203:19
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:192:9-201:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
 	android:enabled
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:196:13-35
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:194:13-35
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:197:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:195:13-37
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:195:13-101
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:193:13-101
 intent-filter#action:name:com.google.firebase.auth.api.gms.service.START+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:198:13-202:29
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:196:13-200:29
 action#com.google.firebase.auth.api.gms.service.START
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:199:17-89
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:197:17-89
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:199:25-86
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:197:25-86
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:9-210:39
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:203:9-208:39
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 	android:authorities
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:13-85
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:13-85
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:209:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:13-37
 	android:directBootAware
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:13-43
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:206:13-43
 	android:initOrder
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:210:13-36
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:13-36
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:206:13-77
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:204:13-77
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:212:9-215:75
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:210:9-213:75
 MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\83a2b513ad1ea0501f85c2b220895c31\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\83a2b513ad1ea0501f85c2b220895c31\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:214:13-37
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:212:13-37
 	android:theme
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:215:13-72
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:213:13-72
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:213:13-79
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:211:13-79
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:217:9-219:69
+ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:215:9-217:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\c7f14acf436a5ef303781d2cf847eb74\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\c7f14acf436a5ef303781d2cf847eb74\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:219:13-66
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:217:13-66
 	android:name
-		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:218:13-58
+		ADDED from C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:216:13-58
