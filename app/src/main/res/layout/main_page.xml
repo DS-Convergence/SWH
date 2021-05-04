@@ -51,7 +51,7 @@
                 android:foregroundTint="@color/mocha_brown"
                 android:scaleType="fitCenter"
                 android:tint="@color/mocha_brown"
-                app:srcCompat="@drawable/notice" />
+                app:srcCompat="@drawable/chat" />
         </FrameLayout>
 
         <FrameLayout
