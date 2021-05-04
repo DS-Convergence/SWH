@@ -30,7 +30,7 @@
             android:layout_marginRight="100dp"
             android:background="@color/rice_white"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/chat" />
+            app:srcCompat="@drawable/notice" />
 
         <ImageButton
             android:id="@+id/imageButton10"
