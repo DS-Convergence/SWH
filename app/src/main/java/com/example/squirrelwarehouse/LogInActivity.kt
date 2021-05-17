@@ -31,7 +31,7 @@ class LogInActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
 
                             //임시로 메인 엑티비티 넘어가게 코드짬
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, LatestMessageActivity::class.java)
                             startActivityForResult(intent, 0)
 
                             /*아래는 이메일 인증 부분 주석처리 해둔 것*/

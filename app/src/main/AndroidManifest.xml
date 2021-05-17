@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.squirrelwarehouse"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -26,7 +27,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.SquirrelWarehouse" >
+        android:theme="@style/Theme.SquirrelWarehouse"
+        tools:ignore="HardcodedDebugMode">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
@@ -37,22 +39,23 @@
         <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
         <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
         <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
+
+                       <intent-filter>
+                           <action android:name="android.intent.action.MAIN" />
+                           <category android:name="android.intent.category.LAUNCHER" />
+                       </intent-filter>
+
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LatestMessageActivity" />
         </activity>
         <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
         <activity android:name="com.example.squirrelwarehouse.ReportActivity" />

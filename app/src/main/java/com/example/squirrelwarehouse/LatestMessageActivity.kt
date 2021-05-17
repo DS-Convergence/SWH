@@ -27,7 +27,6 @@ class LatestMessageActivity : AppCompatActivity() {
         recyclerView_newmessage.adapter = adapter
 
         fetchUsers() //파이어베이스의 user들과 fetch하기
-
     }
 
     companion object{

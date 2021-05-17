@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/oat_yellow"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-10dp">
         <!--back 버튼 textview로 구현-->
         <TextView
             android:id="@+id/back_btn"
@@ -23,7 +24,9 @@
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
             android:textSize="50sp" />
+
         <TextView
+            android:id="@+id/chat_log_textview_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
@@ -31,7 +34,6 @@
             android:paddingTop="13dp"
             android:paddingBottom="15dp"
             android:text="유저이름"
-            android:id="@+id/chat_log_textview_username"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
 
@@ -47,6 +49,7 @@
             android:textSize="25sp" />
 
     </FrameLayout>
+
     <EditText
         android:id="@+id/editText_chat_log"
         android:layout_width="0dp"
