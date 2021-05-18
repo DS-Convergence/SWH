@@ -1882,6 +1882,7 @@ id bottom
 id bounce
 id btn_chat
 id btn_heart
+id btn_img
 id btn_report
 id btn_submenu
 id btn_upload
@@ -2026,11 +2027,11 @@ id imageButton5
 id imageButton6
 id imageView
 id imageView2
-id imageView4
 id imageView5
 id imageView_new_message
 id imageview_chat_from_row
 id imageview_chat_to_row
+id img
 id img_acorn1
 id img_acorn2
 id img_acorn3
