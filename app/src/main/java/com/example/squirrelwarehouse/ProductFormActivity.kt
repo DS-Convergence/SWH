@@ -1,12 +1,16 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.*
+import com.bumptech.glide.Glide
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -27,6 +31,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var cbLocation : CheckBox
 
     private lateinit var map : FrameLayout
+    private lateinit var img : ImageView
 
     private var mMap: GoogleMap? = null
 
@@ -45,9 +50,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         cbLocation = findViewById(R.id.cb_location)
 
         map = findViewById(R.id.layout_map)
+        img = findViewById(R.id.img)
 
         val btnUpload : Button = findViewById(R.id.btn_upload)
-        val backButton : TextView = findViewById(R.id.back_btn)
+        val btnBack : TextView = findViewById(R.id.back_btn)
+        val btnImg : Button = findViewById(R.id.btn_img)
 
         // 지도
         val mapFragment = supportFragmentManager
@@ -82,10 +89,41 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
 
-        backButton.setOnClickListener() {
+        // 뒤로가기 버튼
+        btnBack.setOnClickListener() {
             finish()
         }
 
+        // 사진을 가져오는 버튼
+        btnImg.setOnClickListener {
+            //이미지 불러오기기(갤러리 접근)
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = MediaStore.Images.Media.CONTENT_TYPE
+            startActivityForResult(intent, 0) //PICK_IMAGE에는 본인이 원하는 상수넣으면된다.
+        }
+
+
+    }
+
+    //갤러리에서 이미지 불러온 후 행동
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 0) {
+            // Make sure the request was successful
+            if (resultCode == Activity.RESULT_OK) {
+                try {
+                    // 선택한 이미지를 가져옴.
+                    // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
+                    val uri = data!!.data
+                    Glide.with(this).load(uri).into(img)
+                    img.visibility = View.VISIBLE
+
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
