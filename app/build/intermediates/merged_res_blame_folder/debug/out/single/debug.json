@@ -12,12 +12,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\listview_form.xml"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.jpg.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\splash.jpg"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\listview_form.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_terms_and_conditions.xml.flat",
@@ -210,6 +210,10 @@
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_camera.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_rental_camera.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_info_listview.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_info_listview.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map.xml.flat",
