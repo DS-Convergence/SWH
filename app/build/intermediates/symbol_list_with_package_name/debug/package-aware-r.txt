@@ -2061,6 +2061,7 @@ id listView
 id list_item
 id location_accept_switch
 id log_in_btn
+id logout_btn
 id main
 id map
 id mapView
@@ -2195,6 +2196,7 @@ id selected
 id selection_type
 id selectphoto_button
 id send_button_chat_log
+id set_location_btn
 id shortcut
 id showCustom
 id showHome
@@ -2308,6 +2310,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_listview
+id user_setting_btn
 id user_writing_list
 id username_textview_new_message
 id view
@@ -2315,6 +2319,7 @@ id view_offset_helper
 id visible
 id wide
 id withText
+id withdrawal_btn
 id withinBounds
 id wrap
 id wrap_content
@@ -2494,6 +2499,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout user_evaluation
+layout user_info_listview
 layout user_row_new_message
 mipmap ic_launcher
 mipmap ic_launcher_round

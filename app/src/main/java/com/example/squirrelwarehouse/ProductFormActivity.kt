@@ -11,12 +11,15 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.*
 import com.bumptech.glide.Glide
+import com.example.squirrelwarehouse.models.Product
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.FirebaseFirestore
+import java.time.LocalDateTime
 
 class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -35,10 +38,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var mMap: GoogleMap? = null
 
+    private var firestore : FirebaseFirestore? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_form)
 
+        // 변수 초기화
         etProdName = findViewById(R.id.et_prodName)
         etCategory = findViewById(R.id.et_category)
         etProdDetail = findViewById(R.id.et_prodDetail)
@@ -52,14 +58,18 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         map = findViewById(R.id.layout_map)
         img = findViewById(R.id.img)
 
+        firestore = FirebaseFirestore.getInstance()
+
         val btnUpload : Button = findViewById(R.id.btn_upload)
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
+
 
         // 지도
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
+
 
         // 지도안에서 터치가 일어나면 스크롤뷰는 움직이지 않도록 설정함.
         val sv = findViewById<ScrollView>(R.id.sv)
@@ -69,6 +79,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 sv.requestDisallowInterceptTouchEvent(true)
             }
         })
+
 
         // 대여료 체크박스가 체크되어야 금액 작성 가능.
         cbRentalFee.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -100,6 +111,25 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = MediaStore.Images.Media.CONTENT_TYPE
             startActivityForResult(intent, 0) //PICK_IMAGE에는 본인이 원하는 상수넣으면된다.
+        }
+
+        // 글 업로드 버튼
+        btnUpload.setOnClickListener {
+            var pName = etProdName.text.toString()
+            var pCate = etCategory.text.toString()
+            var pDetail = etProdDetail.text.toString()
+            var pDeposit = etDeposit.text.toString()
+            var pRental = etRentalFee.text.toString()
+
+
+            var product = Product("userid","userName",pName, pCate, pDetail, null, pDeposit, pRental, null,null)
+            firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
+                task ->
+                if(task.isSuccessful) {
+                    // 프로세스가 성공했을 경우 코드 입력
+                }
+            }
+
         }
 
 
@@ -145,6 +175,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 }
 
+
+// 지도를 확대하는데 스크롤이 움직이는 현상을 막기 위함.
 class TouchFrameLayout(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
     var listener: OnTouchListener? = null
 
