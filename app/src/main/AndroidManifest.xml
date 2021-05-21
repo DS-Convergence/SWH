@@ -51,6 +51,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LatestMessageActivity" />
         </activity>
+        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreActivity" />
+        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity"></activity>
         <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

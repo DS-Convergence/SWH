@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.activity_sign_up.back_btn
 import java.util.*
 
+
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var firestore :FirebaseFirestore = FirebaseFirestore.getInstance()

@@ -1,19 +1,19 @@
 [
     {
-        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_camera.xml.flat",
-        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\product_rental_camera.xml"
-    },
-    {
-        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.jpg.flat",
-        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable\\splash.jpg"
+        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
+        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\main_page.xml"
     },
     {
         "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
-        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\main_page.xml"
+        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.jpg.flat",
+        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable\\splash.jpg"
+    },
+    {
+        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_camera.xml.flat",
+        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\product_rental_camera.xml"
     },
     {
         "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
@@ -224,6 +224,10 @@
         "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable\\colorback2round.xml"
     },
     {
+        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_more_dots.png.flat",
+        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable-v24\\more_dots.png"
+    },
+    {
         "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_to_row.xml.flat",
         "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\chat_to_row.xml"
     },
@@ -258,6 +262,10 @@
     {
         "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat.png.flat",
         "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\drawable\\chat.png"
+    },
+    {
+        "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_new_message.xml.flat",
+        "source": "D:\\GradProject\\SWH\\app\\src\\main\\res\\layout\\activity_new_message.xml"
     },
     {
         "merged": "D:\\GradProject\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_thumb.xml.flat",
