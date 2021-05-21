@@ -1,298 +1,298 @@
 [
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_acorn.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\acorn.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_item_loc.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_item_loc.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_jsdongkang_regular.OTF.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\font\\jsdongkang_regular.OTF"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.jpg.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\splash.jpg"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notice.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\notice.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\listview_form.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_terms_and_conditions.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_terms_and_conditions.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_thumb.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\switch_thumb.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_rounded_select_photo_button.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable-v24\\rounded_select_photo_button.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_acorn_empty.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\acorn_empty.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_evaluation.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\user_evaluation.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_form.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_form.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_on.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\switch_track_on.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_selector.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\switch_track_selector.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.jpg.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\splash.jpg"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_set_location_information.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_set_location_information.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\chat.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_qr.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_rental_qr.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_around_loc.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\around_loc.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_latest_message.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_latest_message.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_info.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_user_info.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\users.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_goyang.TTF.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_info.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\info.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_row_new_message.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_row_new_message.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_log_in.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more_qr.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more_qr.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\listview_form.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_form.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_form.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_off.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\switch_track_off.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_selector.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\switch_track_selector.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_detail_submenu.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_detail_submenu.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\listview.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_button.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\rounded_button.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_terms_and_conditions.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_terms_and_conditions.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_page.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_return_qr.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_return_qr.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_info_listview.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\user_info_listview.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blank_profile_picture.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\blank_profile_picture.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_from_row.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\chat_from_row.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_to_row.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\chat_to_row.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notice.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\notice.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\listview.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_info.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\info.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_latest_message.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_latest_message.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_info.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_user_info.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_from_row.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\chat_from_row.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_log_in.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback1round.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\colorback1round.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_jsdongkang_regular.OTF.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\jsdongkang_regular.OTF"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\font\\font.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_green.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\heart_green.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_page.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_my_page.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback2round.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\colorback2round.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\font\\font.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_qr.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_rental_qr.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\chat.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_settings.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\settings.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_to_row.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\chat_to_row.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_return_camera.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_return_camera.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_detail_submenu.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_detail_submenu.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_siren.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\siren.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more_qr.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more_qr.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_white.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\heart_white.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_green.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\heart_green.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_report.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_report.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback1round.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\colorback1round.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_return_qr.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_return_qr.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_evaluation.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_evaluation.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\main_page.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_report.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_report.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_detail.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_detail.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_off.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\switch_track_off.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_setting.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_user_setting.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_camera.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_rental_camera.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blank_profile_picture.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\blank_profile_picture.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_info_listview.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\user_info_listview.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_map.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_siren.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\siren.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_delete_account.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_delete_account.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_detail.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_detail.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_page.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_my_page.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_set_location_information.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_set_location_information.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_around_loc.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\around_loc.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\more.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_settings.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\settings.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_on.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\switch_track_on.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_settings.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_settings.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_acorn.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\acorn.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_delete_account.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_delete_account.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_rental_camera.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_rental_camera.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_thumb.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\switch_thumb.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_item_loc.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_item_loc.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_goyang.TTF.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_white.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\heart_white.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_row_new_message.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\user_row_new_message.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_return_camera.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\product_return_camera.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_button.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\rounded_button.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_rounded_select_photo_button.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable-v24\\rounded_select_photo_button.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\users.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\more.png"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_setting.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_user_setting.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_acorn_empty.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\acorn_empty.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colorback2round.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\colorback2round.xml"
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_settings.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\main_settings.xml"
     }
 ]

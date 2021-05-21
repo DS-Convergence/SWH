@@ -37,13 +37,11 @@
         <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
         <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
         <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <!--
-                       <intent-filter>
-                           <action android:name="android.intent.action.MAIN" />
-                           <category android:name="android.intent.category.LAUNCHER" />
-                       </intent-filter>
-            -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
             <meta-data
@@ -65,11 +63,13 @@
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
         <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
         <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" />
         <activity

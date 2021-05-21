@@ -169,7 +169,7 @@ class SignUpActivity : AppCompatActivity() {
                     Log.d("RegisterActivity","Finally we saved the user to Firebase DAtabase")
 
                     //어디로 넘어갈 지 세원이 한테 확인하고 코드 추가하기**
-                    val intent = Intent(this, LatestMessageActivity::class.java)
+                    val intent = Intent(this, LogInActivity::class.java) // **
                     //back버튼 눌렀을 때 다시 register activity 안돌아가기 위해서 flag를 둠.
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent) //LatestActivity시작
