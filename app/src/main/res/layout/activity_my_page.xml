@@ -123,61 +123,64 @@
             android:layout_height="2dp"
             android:background="@color/cinnamon_brown"
             android:layout_marginTop="85dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="85dp"
-            android:text="   회원정보 설정"
-            android:id="@+id/user_setting_btn"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/goyang"
-            android:textColor="@color/mocha_brown"
-            android:textSize="20sp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/cinnamon_brown"
-            android:layout_marginTop="145dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="145dp"
-            android:text="   위치정보 설정"
-            android:id="@+id/set_location_btn"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/goyang"
-            android:textColor="@color/mocha_brown"
-            android:textSize="20sp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/cinnamon_brown"
-            android:layout_marginTop="205dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="205dp"
-            android:text="   로그아웃"
-            android:id="@+id/logout_btn"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/goyang"
-            android:textColor="@color/mocha_brown"
-            android:textSize="20sp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/cinnamon_brown"
-            android:layout_marginTop="265dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="265dp"
-            android:text="   회원탈퇴"
-            android:id="@+id/withdrawal_btn"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/goyang"
-            android:textColor="@color/mocha_brown"
-            android:textSize="20sp"/>
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="85dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="   회원정보 설정"
+                    android:id="@+id/user_setting_btn"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/goyang"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="20sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/cinnamon_brown" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="   위치정보 설정"
+                    android:id="@+id/set_location_btn"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/goyang"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="20sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/cinnamon_brown" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="   로그아웃"
+                    android:id="@+id/logout_btn"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/goyang"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="20sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/cinnamon_brown" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="   회원탈퇴"
+                    android:id="@+id/withdrawal_btn"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/goyang"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </ScrollView>
     </FrameLayout>
 
 
