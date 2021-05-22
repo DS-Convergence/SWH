@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import com.example.squirrelwarehouse.models.User
+import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,16 +23,16 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var firestore :FirebaseFirestore = FirebaseFirestore.getInstance()
     private val TAG : String = "CreateAccount"
+    var UserModelFS = UserModelFS()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         auth = FirebaseAuth.getInstance()
-
+        //원래 email 있던 곳
         val email = findViewById<EditText>(R.id.id_sign_up)
         val password = findViewById<EditText>(R.id.pw_sign_up)
         val passwordCheck = findViewById<EditText>(R.id.pw_sign_up_check)
         val nickname = findViewById<EditText>(R.id.nick_sign_up)
-
         //이메일 혈식 체크
         val email_pattern = android.util.Patterns.EMAIL_ADDRESS
         sign_up_btn.setOnClickListener {
@@ -70,6 +71,12 @@ class SignUpActivity : AppCompatActivity() {
 
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success")
+                                //유저모델(파이어스토어)업로드 작업
+                                UserModelFS.uid = auth?.currentUser?.uid
+                                UserModelFS.email = email.text.toString()
+                                UserModelFS.nickname = nickname.text.toString()
+                                firestore?.collection("Users")?.document("user_${auth?.currentUser?.uid}")?.set(UserModelFS)
+
                                 uploadImageToFirebaseStorage() //은배가 추가
                                 val user = auth.currentUser
                                 //updateUI(user)
@@ -180,4 +187,6 @@ class SignUpActivity : AppCompatActivity() {
                 }
     }
     //EB가 추가한 코드 끝>>>>>>>>>>>>>>>>>>>>>>>//
+
+
 }
