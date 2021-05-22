@@ -3,13 +3,16 @@ package com.example.squirrelwarehouse
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -18,8 +21,15 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.io.File
+import java.sql.Timestamp
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
+import java.util.*
 
 class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -39,6 +49,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mMap: GoogleMap? = null
 
     private var firestore : FirebaseFirestore? = null
+    private var storage : FirebaseStorage? = null
+
+    private var uri : Uri? = null
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +74,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         img = findViewById(R.id.img)
 
         firestore = FirebaseFirestore.getInstance()
+        storage = FirebaseStorage.getInstance()
+        auth = FirebaseAuth.getInstance()
 
         val btnUpload : Button = findViewById(R.id.btn_upload)
         val btnBack : TextView = findViewById(R.id.back_btn)
@@ -67,7 +84,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 지도
         val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment?
+            .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
 
@@ -121,12 +138,26 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var pDeposit = etDeposit.text.toString()
             var pRental = etRentalFee.text.toString()
 
+            var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+            var imgFileName = "IMAGE_" + timeStamp + "_.jpg"
+            var storageRef = storage?.reference?.child("product")?.child(imgFileName)
 
-            var product = Product("userid","userName",pName, pCate, pDetail, null, pDeposit, pRental, null,null)
+
+            // 작성한 정보들을 데이터베이스로
+            // 유저 id > auth.currentUser.toString() 써보기 나중에 >> 성공
+            // User 데이터베이스 제대로 만들어지면 userid, username 둘다 바꾸기
+            // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
+            // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
+            var product = Product(auth.currentUser.toString(),"userName",pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null)
             firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
-                task ->
+                    task ->
                 if(task.isSuccessful) {
-                    // 프로세스가 성공했을 경우 코드 입력
+                    // 사진을 데이터베이스로 넘겨야함.
+                    // https://riapapa-collection.tistory.com/42
+                    // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
+                    storageRef?.putFile(uri!!)?.addOnSuccessListener {
+                        Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
 
@@ -145,9 +176,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 try {
                     // 선택한 이미지를 가져옴.
                     // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
-                    val uri = data!!.data
+                    uri = data!!.data
                     Glide.with(this).load(uri).into(img)
                     img.visibility = View.VISIBLE
+
+                    //imgUri = absolutelyPath(uri)
 
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -173,6 +206,22 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 10f))
     }
+
+    // 사진을 절대경로로 저장 >>>>> 사용 x 삭제바람
+    fun absolutelyPath(path: Uri): String? {
+
+        var proj: Array<String> = arrayOf(MediaStore.Images.Media.DATA)
+        var c: Cursor? = contentResolver.query(path, proj, null, null, null)
+        var index = c?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        if (c != null) {
+            c.moveToFirst()
+        }
+
+        var result = index?.let { c?.getString(it) }
+
+        return result
+    }
+
 }
 
 
