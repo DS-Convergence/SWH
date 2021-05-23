@@ -94,7 +94,8 @@
                 android:id="@+id/spnCate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"/>
 
         </LinearLayout>
 
@@ -119,7 +120,8 @@
                 android:id="@+id/spnLoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"/>
 
         </LinearLayout>
     </LinearLayout>

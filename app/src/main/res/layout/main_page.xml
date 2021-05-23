@@ -126,75 +126,10 @@
                     android:layout_height="150dp"
                     android:orientation="horizontal">
 
-                    <FrameLayout
-                        android:layout_width="110dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품1"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="110dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품2"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="110dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품3"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/updateView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
                 </LinearLayout>
 
@@ -230,74 +165,11 @@
                     android:layout_height="150dp"
                     android:orientation="horizontal">
 
-                    <FrameLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/cateView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_height="match_parent"/>
 
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품1"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품2"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품3"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
                 </LinearLayout>
 
                 <FrameLayout
@@ -332,77 +204,11 @@
                     android:layout_height="150dp"
                     android:orientation="horizontal">
 
-                    <FrameLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcmdView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="start"
-                        android:layout_weight="1">
+                        android:layout_height="match_parent"/>
 
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품1"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="start"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품2"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="start"
-                        android:layout_weight="1">
-
-                        <ImageButton
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            tools:srcCompat="@tools:sample/avatars" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center"
-                            android:layout_marginBottom="7dp"
-                            android:fontFamily="@font/jsdongkang_regular"
-                            android:text="물품3"
-                            android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
-                    </FrameLayout>
                 </LinearLayout>
 
             </LinearLayout>
