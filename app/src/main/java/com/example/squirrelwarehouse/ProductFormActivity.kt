@@ -15,6 +15,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
+import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -143,26 +144,41 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var storageRef = storage?.reference?.child("product")?.child(imgFileName)
 
 
-            // 작성한 정보들을 데이터베이스로
-            // 유저 id > auth.currentUser.toString() 써보기 나중에 >> 성공
-            // User 데이터베이스 제대로 만들어지면 userid, username 둘다 바꾸기
-            // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
-            // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
-            var product = Product(auth.currentUser.toString(),"userName",pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null)
-            firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
-                    task ->
-                if(task.isSuccessful) {
-                    // 사진을 데이터베이스로 넘겨야함.
-                    // https://riapapa-collection.tistory.com/42
-                    // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
-                    storageRef?.putFile(uri!!)?.addOnSuccessListener {
-                        Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
+            // 데이터베이스에 데이터 삽입
+            // 현재 사용자 userId를 통해 Users에 있는 데이터를 가져옴.
+            // 가져온 데이터에서 nickname을 가져온다.
+            // 작성된 데이터를 Product 컬렉션에 넣어 데이터베이스에 삽입.
+            var userId = FirebaseAuth.getInstance().currentUser!!.uid
+            var document = "user_" + userId
+            firestore?.collection("Users")?.document(document)?.get()?.addOnCompleteListener {  // Users에서 현재 userId를 가진 데이터를 가져옴
+                task ->
+                if(task.isSuccessful) { // 데이터 가져오기를 성공하면
+                    var user = task.result.toObject(UserModelFS::class.java)
+                    var userName = user?.nickname.toString()
+
+                    if (userName != null) { // 닉네임이 null이 아닐 경우 Product 컬렉션을 만들어 firestore에 삽입.
+                        //Log.v("UserName",userName)
+
+                        // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
+                        // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
+                        // 책 210쪽 보고 수정하기
+                        var product = Product(userId,userName,pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null)
+                        firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
+                            task ->
+                            if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
+                                // 사진을 데이터베이스로 넘겨야함.
+                                // https://riapapa-collection.tistory.com/42
+                                // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
+                                storageRef?.putFile(uri!!)?.addOnSuccessListener {
+                                    Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show() // 잘 들어갔나 확인 하려고 적어 놓음.
+                                    // 메인페이지로 넘어가야함.
+                                }
+                            }
+                        }
                     }
                 }
             }
-
         }
-
 
     }
 
