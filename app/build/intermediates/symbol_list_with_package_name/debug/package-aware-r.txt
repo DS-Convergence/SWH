@@ -1891,6 +1891,7 @@ id button3
 id buttonPanel
 id cache_measures
 id cancel_button
+id cateView
 id cb_deposit
 id cb_location
 id cb_rentalFee
@@ -2042,6 +2043,7 @@ id info_bar
 id invisible
 id inward
 id italic
+id itemName
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -2158,6 +2160,7 @@ id qr_button_chat_log
 id radio
 id rating_txt
 id ratio
+id rcmdView
 id rectangles
 id recyclerView_chat_log
 id recyclerView_newmessage
@@ -2277,6 +2280,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thumb
 id time
 id timeTV
 id title
@@ -2309,6 +2313,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateView
 id useLogo
 id user_listview
 id user_setting_btn
@@ -2422,6 +2427,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout listview
 layout listview_form
+layout main_itemview
 layout main_more
 layout main_page
 layout main_settings

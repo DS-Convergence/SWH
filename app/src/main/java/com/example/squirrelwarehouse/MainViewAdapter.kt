@@ -26,6 +26,7 @@ class MainViewAdapter(var items:ArrayList<MainItem>) : RecyclerView.Adapter<Main
         fun setItem(item:MainItem) {
             if(item.thumb!="") {
                 // 이미지 데이터 가져와서 넣는부분 - activity에서 uri 넣으면 여기서 item에 적용.
+                //Glide.with(itemView).load(item.thumb).into(itemView.thumb)
             }
             else {
                 // 이미지 데이터가 비어있을 때 기본이미지로 도토리 넣기
