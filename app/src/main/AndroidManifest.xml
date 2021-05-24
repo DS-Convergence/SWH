@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.squirrelwarehouse"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="24"
         android:targetSdkVersion="30" />
-
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -29,16 +28,19 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
+        <activity android:name=".MainMore"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
 
-        <activity android:name="com.example.squirrelwarehouse.mapActivity" />
-        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
-        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
-        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
-        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
+        <activity android:name=".mapActivity" />
+        <activity android:name=".MyPageActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".UserSettingActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LogInActivity">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,12 +48,13 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
+        <activity android:name=".ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LatestMessageActivity" />
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
+        <activity android:name=".LatestMessageActivity">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,12 +62,13 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
-        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".ReportActivity" />
+        <activity android:name=".TermsAndConditionsActivity" />
+        <activity android:name=".DeleteAccountActivity" />
+        <activity android:name=".SetLocationInformationActivity" />
+        <activity android:name=".ProductFormActivity">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,20 +76,13 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" />
+        <activity android:name=".ProductDetailActivity" />
         <activity
-            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
+            android:name=".ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
-        <activity android:name="com.example.squirrelwarehouse.ListViewActivity" >
+        <activity android:name=".ListViewActivity">
+
             <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".MainMore">
-            <!-- 메인더보기
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -95,10 +92,12 @@
         <activity android:name=".MainPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
+        <activity android:name=".MainActivity">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -110,7 +109,7 @@
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
@@ -175,7 +174,7 @@
             android:excludeFromRecents="true"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -193,7 +192,7 @@
             android:excludeFromRecents="true"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -210,7 +209,7 @@
         <service
             android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.auth.api.gms.service.START" />
 
