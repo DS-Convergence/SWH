@@ -9,7 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 
 class MainMore : AppCompatActivity() {
-    lateinit var sCategory : Spinner; lateinit var sLocation : Spinner
+    lateinit var sCategory:Spinner; lateinit var sLocation:Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +37,10 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
             }
@@ -52,15 +52,13 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
             }
         }
     }
-
-
 }
