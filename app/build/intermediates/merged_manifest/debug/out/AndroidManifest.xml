@@ -39,10 +39,10 @@
         <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
 
             <!--
-                       <intent-filter>
-                           <action android:name="android.intent.action.MAIN" />
-                           <category android:name="android.intent.category.LAUNCHER" />
-                       </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
@@ -88,7 +88,15 @@
         </activity>
         <activity android:name="com.example.squirrelwarehouse.MainMore" >
 
-            <!-- 메인 더보기 -->
+            <!--
+            메인더보기
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

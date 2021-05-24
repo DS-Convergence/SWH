@@ -8,12 +8,12 @@
         "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\drawable\\blank_profile_picture.png"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
         "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\drawable\\more.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_acorn.png.flat",
@@ -166,6 +166,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_report.xml.flat",
         "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\layout\\activity_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_itemview.xml.flat",
+        "source": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\src\\main\\res\\layout\\main_itemview.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
