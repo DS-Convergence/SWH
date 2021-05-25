@@ -2037,6 +2037,7 @@ id img_acorn2
 id img_acorn3
 id img_acorn4
 id img_acorn5
+id img_prod
 id info
 id info_bar
 id invisible
