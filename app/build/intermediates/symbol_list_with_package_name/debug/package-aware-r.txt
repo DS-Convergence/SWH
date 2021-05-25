@@ -50,7 +50,19 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array cate_hobby
 array category
+array loc_ccbd
+array loc_ccnd
+array loc_ggd
+array loc_gsbd
+array loc_gsnd
+array loc_gwd
+array loc_gycity
+array loc_jjd
+array loc_jlbd
+array loc_jlnd
+array loc_special
 array location
 array report_arrsy
 attr actionBarDivider
@@ -2038,6 +2050,7 @@ id img_acorn2
 id img_acorn3
 id img_acorn4
 id img_acorn5
+id img_prod
 id info
 id info_bar
 id invisible
@@ -2217,7 +2230,9 @@ id spacer
 id spline
 id split_action_bar
 id spnCate
+id spnHobby
 id spnLoc
+id spnLocDetail
 id spread
 id spread_inside
 id square

@@ -7,7 +7,6 @@
     <uses-sdk
         android:minSdkVersion="28"
         android:targetSdkVersion="30" />
-
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -86,17 +85,17 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.MainMore" >
+        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
 
             <!--
-            메인더보기
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
+        <activity android:name="com.example.squirrelwarehouse.MainMore" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -239,6 +238,10 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>
