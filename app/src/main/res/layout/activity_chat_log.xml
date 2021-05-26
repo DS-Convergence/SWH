@@ -54,7 +54,7 @@
         android:id="@+id/editText_chat_log"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
@@ -94,15 +94,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintVertical_bias="0.0" />
-
-    <Button
+    <ImageButton
         android:id="@+id/qr_button_chat_log"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="5dp"
         app:backgroundTint="#BC9F83"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText_chat_log" />
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_log"
+        app:srcCompat="@drawable/more_dots" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

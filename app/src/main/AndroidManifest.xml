@@ -40,18 +40,19 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity">
 
-            <!--
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
+
         </activity>
         <activity android:name=".ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LatestMessageActivity" />
         </activity>
+        <activity android:name=".NewMessageActivity"></activity>
         <activity android:name=".LatestMessageActivity">
 
             <!--

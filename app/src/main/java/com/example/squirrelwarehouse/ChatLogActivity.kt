@@ -1,8 +1,11 @@
 package com.example.squirrelwarehouse
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.squirrelwarehouse.LatestMessageActivity.Companion.currentUser
 import com.example.squirrelwarehouse.models.ChatMessage
 import com.example.squirrelwarehouse.models.User
 import com.google.firebase.auth.FirebaseAuth
@@ -14,10 +17,12 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatLogActivity : AppCompatActivity() {
     companion object {
-        var currentUser: User? = null
+        //var currentUser: User? = null
         val TAG = "chatLog"
     }
     val adapter = GroupAdapter<ViewHolder>()//새로운 어뎁터
@@ -28,7 +33,6 @@ class ChatLogActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat_log)
 
         back_btn.setOnClickListener {
-
         }
 
         recyclerView_chat_log.adapter = adapter //새로운 object를 add할 수 있게 해주고 그럴 때마다 새롭게 refresh해줌.
@@ -36,29 +40,24 @@ class ChatLogActivity : AppCompatActivity() {
         //상단 바이름 설정
         //NewMessageActivity에서 받아온 키 값으로 username 받아오기
         //username 뿐만아니라 전체 user받아올 수 있음
-        toUser = intent.getParcelableExtra<User>(LatestMessageActivity.USER_KEY)
+        toUser = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         chat_log_textview_username.text = toUser?.username //optional이니까 ?써줘야함.
         //supportActionBar?.title = toUser?.username //optional이니까 ?써줘야함.
 
         listenForMessages() //지금까지 대화 한 내열 나열, 내가 보낸 마지막 쪽으로 커서 있게 만듦.
-        fetchCurrentUser() //지금 currentUser setting하는 메소드인데 이부분 다시 찾아보기.
+        //fetchCurrentUser() //지금 currentUser setting하는 메소드인데 이부분 다시 찾아보기.
         //보내기 버튼 누리면 보내지게
         send_button_chat_log.setOnClickListener {
             Log.d(TAG, " Attempt to send message.....")
             performSendMessage() // 새로운 메소드. 어떻게 firebase의 메세지를 보낼지
         }
-    }
 
-    private fun fetchCurrentUser(){
-        val uid1 = FirebaseAuth.getInstance().uid
-        val ref1 = FirebaseDatabase.getInstance().getReference("/users/$uid1")
-        ref1.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                currentUser = snapshot.getValue(User::class.java)
-            }
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
+        qr_button_chat_log.setOnClickListener {
+            //투명배경으로 뜨는거 어떻게 구현하지? 액티비티 필요하려나?
+            val intent = Intent(this, ChatLogMoreActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
     }
 
     private fun listenForMessages() { //지금까지 보낸 메세지 나열하기
@@ -75,9 +74,9 @@ class ChatLogActivity : AppCompatActivity() {
                     if (chatMessage.fromId == FirebaseAuth.getInstance().uid) { //chatMessage가 보낸 사람일 경우
                         val currentUser = currentUser ?: return
                         //지금 로그인한 user의 아이디 : FirebaseAuth.getInstance().uid
-                        adapter.add(ChatFromItem(chatMessage.text, currentUser))
+                        adapter.add(ChatFromItem(chatMessage, currentUser))
                     } else {//chatMessage가 받은 사람일 경우
-                        adapter.add(ChatToItem(chatMessage.text, toUser!!))
+                        adapter.add(ChatToItem(chatMessage, toUser!!))
                     }
                 }
                 recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1)
@@ -101,7 +100,7 @@ class ChatLogActivity : AppCompatActivity() {
         val text = editText_chat_log.text.toString() //우리가 쓴 메세지를 text로 얻어와
 
         val fromId = FirebaseAuth.getInstance().uid //나는 보내는 사람이니까 from
-        val user = intent.getParcelableExtra<User>(LatestMessageActivity.USER_KEY)
+        val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         val toId = user!!.uid
 
         //firebase에 user-message만듦.
@@ -112,51 +111,67 @@ class ChatLogActivity : AppCompatActivity() {
         val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
-        val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, System.currentTimeMillis() / 1000) //class변수 만들기
+        val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+        //val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
 
         reference.setValue(chatMessage)
-                .addOnSuccessListener {
-                    Log.d(TAG, "Saved our chat message: ${reference.key}")
-                    editText_chat_log.text.clear() //보내면 내용 지우기
-                    recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-                }
+            .addOnSuccessListener {
+                Log.d(TAG, "Saved our chat message: ${reference.key}")
+                editText_chat_log.text.clear() //보내면 내용 지우기
+                recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+            }
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
-        //val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
-        //latestMessageRef.setValue(chatMessage)
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        latestMessageRef.setValue(chatMessage)
 
-        //val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
-        //latestMessageToRef.setValue(chatMessage)
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        latestMessageToRef.setValue(chatMessage)
     }
 
 
-    class ChatFromItem(val text: String, val user: User) : Item<ViewHolder>() {
+
+    class ChatFromItem(val chatmessage: ChatMessage?, val user: User) : Item<ViewHolder>() {
         override fun bind(viewHolder: ViewHolder, position: Int) {
             //text받아와서 뛰우기
             //access to view holder
-            viewHolder.itemView.textView_from_row.text = text
-
+            viewHolder.itemView.textView_from_row.text = chatmessage!!.text
+            setTimeText(viewHolder)
             //이미지를 로드하기. load our user image into the User image icon
             val uri = user.profileImageUrl
             val targetImageView = viewHolder.itemView.imageview_chat_from_row
             Picasso.get().load(uri).into(targetImageView) //imageview_chat_from_row  내쪽 프로필 설정
         }
+
+        private fun setTimeText(viewHolder: ViewHolder){
+            val dateFormat = SimpleDateFormat
+                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+            viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatmessage!!.time)
+        }
+
         override fun getLayout(): Int {
             return R.layout.chat_from_row
         }
     }
 
-    class ChatToItem(val text: String, val user: User) : Item<ViewHolder>() {
+    class ChatToItem(val chatmessage: ChatMessage?, val user: User) : Item<ViewHolder>() {
         //text받아와서 뛰우기
         //access to view holder
         override fun bind(viewHolder: ViewHolder, position: Int) {
-            viewHolder.itemView.textView_to_row.text = text
+            viewHolder.itemView.textView_to_row.text = chatmessage!!.text
+            setTimeText(viewHolder)
 
             //이미지를 로드하기. load our user image into the User image icon
             val uri = user.profileImageUrl
             val targetImageView = viewHolder.itemView.imageview_chat_to_row
             Picasso.get().load(uri).into(targetImageView) //imageview_chat_to_row  tkdeoqkd 프로필 설정
+        }
+
+        private fun setTimeText(viewHolder: ViewHolder){
+            val dateFormat = SimpleDateFormat
+                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatmessage!!.time)
         }
 
         override fun getLayout(): Int {
