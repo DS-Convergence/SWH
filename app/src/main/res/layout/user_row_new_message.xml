@@ -36,16 +36,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rounded_button" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:background="#7D3C02"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/divider_horizontal_textfield" />
-
     <TextView
         android:id="@+id/chattime_textview_new_message"
         android:layout_width="wrap_content"

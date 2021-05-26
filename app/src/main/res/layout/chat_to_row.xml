@@ -39,14 +39,14 @@
         app:srcCompat="@drawable/rounded_button" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/chat_to_row_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/jsdongkang_regular"
         android:text="시간"
         android:textColor="#5A3E29"
-        android:textSize="14sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView_to_row"
         app:layout_constraintStart_toEndOf="@+id/textView_to_row" />
 </androidx.constraintlayout.widget.ConstraintLayout>
