@@ -3,11 +3,10 @@ package com.example.squirrelwarehouse
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.GlideDrawable
-import com.bumptech.glide.request.target.Target
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -53,22 +52,22 @@ class ProductDetailActivity : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        firestore?.collection("Product")?.document("K4cXhtjOFzbfQ2KtXGSg")?.get()?.addOnCompleteListener {
+        firestore?.collection("Product")?.document("MRuzCCm8BRc7hT42DJAQ")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                 task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                 var product = task.result.toObject(Product::class.java)
-                tvProdName.text = product?.ProductName
-                tvProdCategory.text = product?.Category
-                tvTime.text = product?.UploadTime
+                tvProdName.text = product?.productName
+                tvProdCategory.text = product?.category
+                tvTime.text = product?.uploadTime
                 //tvStatus.text = product?
-                tvUser.text = product?.UserName
-                tvUserLocation.text = product?.Region.toString()
-                tvProdDetail.text = product?.ProductDetail
+                tvUser.text = product?.userName
+                tvUserLocation.text = product?.region.toString()
+                tvProdDetail.text = product?.productDetail
                 // 보증금
                 // 대여료
 
                 // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.ImageURI.toString())
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                 storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                     Glide.with(applicationContext)
                         .load(uri)
@@ -81,6 +80,12 @@ class ProductDetailActivity : AppCompatActivity() {
 
 
                 // 현재 사용자가 글쓴이면 더보기 보이고 아니면 안보이도록
+                if(product?.userId.equals(auth.currentUser!!.uid)) { //
+                    btnSubmenu.visibility = View.VISIBLE
+                }
+                else {
+                    btnSubmenu.visibility = View.GONE
+                }
 
 
             }
@@ -111,7 +116,8 @@ class ProductDetailActivity : AppCompatActivity() {
         btnSubmenu.setOnClickListener {
             // ProductDetailSubmenu로 이동
             val intent = Intent(this, ProductDetailSubmenuActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("ProductID", "MRuzCCm8BRc7hT42DJAQ")
+            startActivityForResult(intent, 0)
         }
 
     }
