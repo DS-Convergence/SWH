@@ -42,26 +42,33 @@
         </FrameLayout>
 
         <!--EB가 추가한 부분 시작-->
-        <Button
-            android:id="@+id/selectphoto_button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/rounded_select_photo_button"
-            android:text="SELECTPHOTO"
-            android:textColor="@color/mocha_brown"
-            app:backgroundTint="@color/lace_white"/>
+
         <!--EB가 추가한 drawable 파일 : rounded_select_photo_button -->
+
+            <Button
+                android:id="@+id/selectphoto_button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_select_photo_button"
+                android:text="SELECTPHOTO"
+                android:textColor="@color/mocha_brown"
+                app:backgroundTint="@color/lace_white"/>
+
+
+        <!--EB가 추가한 부분 끝-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/select_photo_register"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/selectphoto_button"
             app:layout_constraintEnd_toEndOf="@+id/selectphoto_button" />
-        <!--EB가 추가한 부분 끝-->
+
         <EditText
             android:id="@+id/id_sign_up"
             android:layout_width="350dp"

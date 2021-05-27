@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="28"
+        android:minSdkVersion="21"
         android:targetSdkVersion="30" />
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -37,13 +37,11 @@
         <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
         <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
         <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
             <meta-data

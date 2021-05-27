@@ -132,7 +132,7 @@ class SignUpActivity : AppCompatActivity() {
             //bitmap으로 우리가 선택한 이미지에 access하기.
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
 
-            if(bitmap == null){
+            if(bitmap != null){
                 select_photo_register.setImageBitmap(bitmap)
                 selectphoto_button.alpha = 0f
             }else{
