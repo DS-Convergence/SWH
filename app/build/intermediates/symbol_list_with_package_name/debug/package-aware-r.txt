@@ -1981,6 +1981,7 @@ id easeOut
 id editText_chat_log
 id edit_query
 id elastic
+id email_edit_tv
 id end
 id endToStart
 id enterAlways
@@ -2139,6 +2140,9 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id navigation_header_container
 id never
+id new_pw_check_tv
+id new_pw_tv
+id nick_edit_tv
 id nick_sign_up
 id nick_sign_up_txt
 id noScroll
@@ -2264,6 +2268,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id terms_btn
 id terrain
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -2336,7 +2341,7 @@ id updateView
 id useLogo
 id user_listview
 id user_setting_btn
-id user_writing_list
+id user_writing_list_tv
 id username_textview_new_message
 id view
 id view_offset_helper
