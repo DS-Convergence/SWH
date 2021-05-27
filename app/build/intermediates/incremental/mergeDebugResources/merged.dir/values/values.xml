@@ -719,6 +719,7 @@
     <color name="mtrl_textinput_hovered_box_stroke_color">#DE000000</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="oat_yellow">#DFD8AE</color>
     <color name="peanut_brown">#BC9F83</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
@@ -1128,6 +1129,10 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="subtitle_corner_radius">2dp</dimen>
+    <dimen name="subtitle_outline_width">2dp</dimen>
+    <dimen name="subtitle_shadow_offset">2dp</dimen>
+    <dimen name="subtitle_shadow_radius">2dp</dimen>
     <dimen name="test_mtrl_calendar_day_cornerSize">52dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
@@ -1318,6 +1323,7 @@
     <string name="google_app_id" translatable="false">1:592480380552:android:ec0c05b3f040cef6e1213d</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJ3f41KNbAvWf0yYuh4vFjIJBCMuI3adg</string>
     <string name="google_storage_bucket" translatable="false">ds-swh.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
@@ -3735,12 +3741,17 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
     <style name="TextAppearance.Design.CollapsingToolbar.Expanded" parent="TextAppearance.AppCompat.Display1">
     <item name="android:textColor">?android:attr/textColorPrimary</item>
   </style>
