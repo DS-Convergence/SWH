@@ -26,7 +26,7 @@
 16-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:17:9-32
 17
 18    <application
-18-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:5-254:19
+18-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:5-256:19
 19        android:allowBackup="true"
 19-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:20:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -35,12 +35,12 @@
 21-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:22:9-34
 22        android:extractNativeLibs="false"
 22-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:23:9-42
-23        android:icon="@mipmap/ic_launcher"
-23-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:24:9-43
+23        android:icon="@mipmap/swh_icon"
+23-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:24:9-40
 24        android:label="@string/app_name"
 24-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:25:9-41
-25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:26:9-54
+25        android:roundIcon="@mipmap/swh_icon_round"
+25-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:26:9-51
 26        android:supportsRtl="true"
 26-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:27:9-35
 27        android:testOnly="true"
@@ -174,271 +174,269 @@
 103            -->
 104        </activity>
 105        <activity android:name="com.example.squirrelwarehouse.MainMore" >
-105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:108:9-114:20
+105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:108:9-116:20
 105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:108:19-43
-106            <intent-filter>
-106-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:44:13-47:29
-107                <action android:name="android.intent.action.MAIN" />
-107-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:17-69
-107-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:25-66
-108
-109                <category android:name="android.intent.category.LAUNCHER" />
-109-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:17-77
-109-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:27-74
-110            </intent-filter>
-111        </activity>
-112        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
-112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:9-123:20
-112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:19-47
-113
-114            <!--
-115            <intent-filter>
-116                <action android:name="android.intent.action.MAIN" />
-117                <category android:name="android.intent.category.LAUNCHER" />
-118            </intent-filter>
-119            -->
-120        </activity>
-121
-122        <service
-122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:125:9-163:19
-123            android:name="com.google.firebase.components.ComponentDiscoveryService"
-123-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:126:13-84
-124            android:directBootAware="true"
-124-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:127:13-43
-125            android:exported="false" >
-125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:128:13-37
-126            <meta-data
-126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:129:13-131:85
-127                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-127-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:130:17-122
-128                android:value="com.google.firebase.components.ComponentRegistrar" />
-128-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:131:17-82
+106
+107            <!--
+108            <intent-filter>
+109                <action android:name="android.intent.action.MAIN" />
+110
+111                <category android:name="android.intent.category.LAUNCHER" />
+112            </intent-filter>
+113            -->
+114        </activity>
+115        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
+115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:117:9-125:20
+115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:117:19-47
+116
+117            <!--
+118            <intent-filter>
+119                <action android:name="android.intent.action.MAIN" />
+120                <category android:name="android.intent.category.LAUNCHER" />
+121            </intent-filter>
+122            -->
+123        </activity>
+124
+125        <service
+125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:127:9-165:19
+126            android:name="com.google.firebase.components.ComponentDiscoveryService"
+126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:128:13-84
+127            android:directBootAware="true"
+127-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:129:13-43
+128            android:exported="false" >
+128-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:130:13-37
 129            <meta-data
-129-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:132:13-134:85
-130                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-130-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:133:17-124
+129-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:131:13-133:85
+130                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+130-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:132:17-122
 131                android:value="com.google.firebase.components.ComponentRegistrar" />
-131-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:134:17-82
+131-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:133:17-82
 132            <meta-data
-132-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:135:13-137:85
-133                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-133-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:136:17-126
+132-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:134:13-136:85
+133                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+133-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:135:17-124
 134                android:value="com.google.firebase.components.ComponentRegistrar" />
-134-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:137:17-82
+134-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:136:17-82
 135            <meta-data
-135-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:138:13-140:85
-136                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-136-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:139:17-116
+135-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:137:13-139:85
+136                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+136-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:138:17-126
 137                android:value="com.google.firebase.components.ComponentRegistrar" />
-137-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:140:17-82
+137-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:139:17-82
 138            <meta-data
-138-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:141:13-143:85
-139                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-139-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:17-113
+138-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:140:13-142:85
+139                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+139-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:141:17-116
 140                android:value="com.google.firebase.components.ComponentRegistrar" />
-140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:17-82
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:17-82
 141            <meta-data
-141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:144:13-146:85
-142                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-142-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:145:17-109
+141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:13-145:85
+142                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+142-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:144:17-113
 143                android:value="com.google.firebase.components.ComponentRegistrar" />
-143-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:146:17-82
+143-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:145:17-82
 144            <meta-data
-144-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:147:13-149:85
-145                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-145-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:148:17-111
+144-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:146:13-148:85
+145                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+145-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:147:17-109
 146                android:value="com.google.firebase.components.ComponentRegistrar" />
-146-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:149:17-82
+146-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:148:17-82
 147            <meta-data
-147-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:150:13-152:85
-148                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-148-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:151:17-107
+147-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:149:13-151:85
+148                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+148-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:150:17-111
 149                android:value="com.google.firebase.components.ComponentRegistrar" />
-149-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:152:17-82
+149-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:151:17-82
 150            <meta-data
-150-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:153:13-155:85
-151                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:154:17-109
+150-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:152:13-154:85
+151                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:153:17-107
 152                android:value="com.google.firebase.components.ComponentRegistrar" />
-152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:155:17-82
-153            <!--
-154                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-155                clients to use it as well, by defining this registrar in their own core/common library.
-156            -->
-157            <meta-data
-157-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:160:13-162:85
-158                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-158-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:161:17-121
-159                android:value="com.google.firebase.components.ComponentRegistrar" />
-159-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:162:17-82
-160        </service> <!-- Needs to be explicitly declared on P+ -->
-161        <uses-library
-161-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
-162            android:name="org.apache.http.legacy"
-162-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:13-50
-163            android:required="false" />
-163-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:13-37
-164
-165        <activity
-165-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:9-172:75
-166            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-166-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:169:13-93
-167            android:excludeFromRecents="true"
-167-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:170:13-46
-168            android:exported="false"
-168-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:171:13-37
-169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-169-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:172:13-72
-170        <!--
-171            Service handling Google Sign-In user revocation. For apps that do not integrate with
-172            Google Sign-In, this service will never be started.
-173        -->
-174        <service
-174-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:177:9-181:51
-175            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-175-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:178:13-89
-176            android:exported="true"
-176-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:179:13-36
-177            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-177-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:180:13-107
-178            android:visibleToInstantApps="true" />
-178-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:181:13-48
-179
-180        <provider
-180-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:183:9-186:40
-181            android:name="com.squareup.picasso.PicassoProvider"
-181-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:184:13-64
-182            android:authorities="com.example.squirrelwarehouse.com.squareup.picasso"
-182-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:185:13-85
-183            android:exported="false" />
-183-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:186:13-37
-184
-185        <activity
-185-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:188:9-205:20
-186            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-186-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:189:13-80
-187            android:excludeFromRecents="true"
-187-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:190:13-46
-188            android:exported="true"
-188-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:191:13-36
-189            android:launchMode="singleTask"
-189-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:192:13-44
-190            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-190-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:193:13-72
-191            <intent-filter>
-191-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:194:13-204:29
-192                <action android:name="android.intent.action.VIEW" />
-192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:17-69
-192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:25-66
-193
-194                <category android:name="android.intent.category.DEFAULT" />
-194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
-194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
-195                <category android:name="android.intent.category.BROWSABLE" />
-195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:17-78
-195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:27-75
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:154:17-82
+153            <meta-data
+153-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:155:13-157:85
+154                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+154-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:156:17-109
+155                android:value="com.google.firebase.components.ComponentRegistrar" />
+155-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:157:17-82
+156            <!--
+157                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+158                clients to use it as well, by defining this registrar in their own core/common library.
+159            -->
+160            <meta-data
+160-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:162:13-164:85
+161                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+161-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:163:17-121
+162                android:value="com.google.firebase.components.ComponentRegistrar" />
+162-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:17-82
+163        </service> <!-- Needs to be explicitly declared on P+ -->
+164        <uses-library
+164-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:9-168:40
+165            android:name="org.apache.http.legacy"
+165-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:167:13-50
+166            android:required="false" />
+166-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:13-37
+167
+168        <activity
+168-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:170:9-174:75
+169            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+169-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:171:13-93
+170            android:excludeFromRecents="true"
+170-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:172:13-46
+171            android:exported="false"
+171-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:173:13-37
+172            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+172-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:174:13-72
+173        <!--
+174            Service handling Google Sign-In user revocation. For apps that do not integrate with
+175            Google Sign-In, this service will never be started.
+176        -->
+177        <service
+177-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:179:9-183:51
+178            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+178-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:180:13-89
+179            android:exported="true"
+179-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:181:13-36
+180            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+180-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:182:13-107
+181            android:visibleToInstantApps="true" />
+181-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:183:13-48
+182
+183        <provider
+183-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:185:9-188:40
+184            android:name="com.squareup.picasso.PicassoProvider"
+184-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:186:13-64
+185            android:authorities="com.example.squirrelwarehouse.com.squareup.picasso"
+185-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:187:13-85
+186            android:exported="false" />
+186-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:188:13-37
+187
+188        <activity
+188-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:190:9-207:20
+189            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+189-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:191:13-80
+190            android:excludeFromRecents="true"
+190-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:192:13-46
+191            android:exported="true"
+191-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:193:13-36
+192            android:launchMode="singleTask"
+192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:194:13-44
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+193-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:13-72
+194            <intent-filter>
+194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:196:13-206:29
+195                <action android:name="android.intent.action.VIEW" />
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-69
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:25-66
 196
-197                <data
-197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
-198                    android:host="firebase.auth"
-198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:21-49
-199                    android:path="/"
-199-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:21-37
-200                    android:scheme="genericidp" />
-200-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-48
-201            </intent-filter>
-202        </activity>
-203        <activity
-203-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:206:9-223:20
-204            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-204-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:13-79
-205            android:excludeFromRecents="true"
-205-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:13-46
-206            android:exported="true"
-206-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:209:13-36
-207            android:launchMode="singleTask"
-207-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:13-44
-208            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-208-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:211:13-72
-209            <intent-filter>
-209-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:13-222:29
-210                <action android:name="android.intent.action.VIEW" />
-210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:17-69
-210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:25-66
-211
-212                <category android:name="android.intent.category.DEFAULT" />
-212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
-212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
-213                <category android:name="android.intent.category.BROWSABLE" />
-213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:17-78
-213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:27-75
+197                <category android:name="android.intent.category.DEFAULT" />
+197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:17-76
+197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:27-73
+198                <category android:name="android.intent.category.BROWSABLE" />
+198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-78
+198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:27-75
+199
+200                <data
+200-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:17-205:51
+201                    android:host="firebase.auth"
+201-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-49
+202                    android:path="/"
+202-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:204:21-37
+203                    android:scheme="genericidp" />
+203-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:21-48
+204            </intent-filter>
+205        </activity>
+206        <activity
+206-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:9-225:20
+207            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+207-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:209:13-79
+208            android:excludeFromRecents="true"
+208-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:13-46
+209            android:exported="true"
+209-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:211:13-36
+210            android:launchMode="singleTask"
+210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:13-44
+211            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+211-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:213:13-72
+212            <intent-filter>
+212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:214:13-224:29
+213                <action android:name="android.intent.action.VIEW" />
+213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-69
+213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:25-66
 214
-215                <data
-215-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
-216                    android:host="firebase.auth"
-216-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:21-49
-217                    android:path="/"
-217-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:21-37
-218                    android:scheme="recaptcha" />
-218-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-48
-219            </intent-filter>
-220        </activity>
-221
-222        <service
-222-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:225:9-234:19
-223            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-223-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:226:13-101
-224            android:enabled="true"
-224-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:227:13-35
-225            android:exported="false" >
-225-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:228:13-37
-226            <intent-filter>
-226-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:229:13-233:29
-227                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-227-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:17-89
-227-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:25-86
-228
-229                <category android:name="android.intent.category.DEFAULT" />
-229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
-229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
-230            </intent-filter>
-231        </service>
-232
-233        <provider
-233-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:236:9-241:39
-234            android:name="com.google.firebase.provider.FirebaseInitProvider"
-234-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:237:13-77
-235            android:authorities="com.example.squirrelwarehouse.firebaseinitprovider"
-235-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:238:13-85
-236            android:directBootAware="true"
-236-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:239:13-43
-237            android:exported="false"
-237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:240:13-37
-238            android:initOrder="100" />
-238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:241:13-36
-239
-240        <activity
-240-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:243:9-246:75
-241            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-241-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:244:13-79
-242            android:exported="false"
-242-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:245:13-37
-243            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-243-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:246:13-72
-244
-245        <meta-data
-245-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:248:9-250:69
-246            android:name="com.google.android.gms.version"
-246-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:249:13-58
-247            android:value="@integer/google_play_services_version" />
-247-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:250:13-66
-248
-249        <uses-library
-249-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
-250            android:name="org.apache.http.legacy"
-250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:13-50
-251            android:required="false" />
-251-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:13-37
-252    </application>
-253
-254</manifest>
+215                <category android:name="android.intent.category.DEFAULT" />
+215-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:17-76
+215-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:27-73
+216                <category android:name="android.intent.category.BROWSABLE" />
+216-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-78
+216-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:27-75
+217
+218                <data
+218-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:17-205:51
+219                    android:host="firebase.auth"
+219-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-49
+220                    android:path="/"
+220-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:204:21-37
+221                    android:scheme="recaptcha" />
+221-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:21-48
+222            </intent-filter>
+223        </activity>
+224
+225        <service
+225-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:227:9-236:19
+226            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+226-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:228:13-101
+227            android:enabled="true"
+227-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:229:13-35
+228            android:exported="false" >
+228-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:13-37
+229            <intent-filter>
+229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:231:13-235:29
+230                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+230-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:232:17-89
+230-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:232:25-86
+231
+232                <category android:name="android.intent.category.DEFAULT" />
+232-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:17-76
+232-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:27-73
+233            </intent-filter>
+234        </service>
+235
+236        <provider
+236-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:238:9-243:39
+237            android:name="com.google.firebase.provider.FirebaseInitProvider"
+237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:239:13-77
+238            android:authorities="com.example.squirrelwarehouse.firebaseinitprovider"
+238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:240:13-85
+239            android:directBootAware="true"
+239-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:241:13-43
+240            android:exported="false"
+240-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:242:13-37
+241            android:initOrder="100" />
+241-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:243:13-36
+242
+243        <activity
+243-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:245:9-248:75
+244            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+244-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:246:13-79
+245            android:exported="false"
+245-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:247:13-37
+246            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+246-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:248:13-72
+247
+248        <meta-data
+248-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:250:9-252:69
+249            android:name="com.google.android.gms.version"
+249-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:251:13-58
+250            android:value="@integer/google_play_services_version" />
+250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:252:13-66
+251
+252        <uses-library
+252-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:9-168:40
+253            android:name="org.apache.http.legacy"
+253-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:167:13-50
+254            android:required="false" />
+254-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:13-37
+255    </application>
+256
+257</manifest>
