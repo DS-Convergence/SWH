@@ -5,100 +5,100 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-7-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
+7-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
 8        android:minSdkVersion="28"
-8-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:9:9-35
+8-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:9:9-35
 9        android:targetSdkVersion="30" />
-9-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:10:9-38
+9-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:10:9-38
 10    <!-- Include required permissions for Google Maps API to run. -->
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:12:5-79
-11-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:12:22-76
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:5-79
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:13:5-67
-12-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:13:22-64
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:13:5-67
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:13:22-64
 13
 14    <uses-feature
-14-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:15:5-17:35
+14-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:15:5-17:35
 15        android:glEsVersion="0x00020000"
-15-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:16:9-41
+15-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:16:9-41
 16        android:required="true" />
-16-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:17:9-32
+16-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:17:9-32
 17
 18    <application
-18-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:19:5-254:19
+18-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:5-254:19
 19        android:allowBackup="true"
-19-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:20:9-35
+19-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:20:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:21:9-77
+20-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:21:9-77
 21        android:debuggable="true"
-21-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:22:9-34
+21-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:22:9-34
 22        android:extractNativeLibs="false"
-22-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:23:9-42
+22-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:23:9-42
 23        android:icon="@mipmap/ic_launcher"
-23-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:24:9-43
+23-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:24:9-43
 24        android:label="@string/app_name"
-24-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:25:9-41
+24-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:25:9-41
 25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:26:9-54
+25-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:26:9-54
 26        android:supportsRtl="true"
-26-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:27:9-35
+26-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:27:9-35
 27        android:testOnly="true"
-27-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:28:9-32
+27-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:28:9-32
 28        android:theme="@style/Theme.SquirrelWarehouse" >
-28-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:29:9-55
+28-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:29:9-55
 29        <meta-data
-29-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:32:9-34:71
+29-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-34:71
 30            android:name="com.google.android.geo.API_KEY"
-30-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:33:13-58
+30-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:13-58
 31            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
-31-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:34:13-68
+31-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:13-68
 32
 33        <activity android:name="com.example.squirrelwarehouse.mapActivity" />
-33-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:36:9-49
-33-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:36:19-46
+33-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:9-49
+33-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:19-46
 34        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
-34-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:37:9-52
-34-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:37:19-49
+34-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:9-52
+34-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:19-49
 35        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
-35-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:38:9-54
-35-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:38:19-51
+35-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:38:9-54
+35-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:38:19-51
 36        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
-36-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:39:9-57
-36-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:39:19-54
+36-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:9-57
+36-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:19-54
 37        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-37-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:40:9-52
-37-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:40:19-49
+37-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:9-52
+37-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:19-49
 38        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-38-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:41:9-49:20
-38-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:41:19-48
+38-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:41:9-49:20
+38-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:41:19-48
 39            <intent-filter>
-39-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:44:13-47:29
+39-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:44:13-47:29
 40                <action android:name="android.intent.action.MAIN" />
-40-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:45:17-69
-40-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:45:25-66
+40-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:17-69
+40-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:25-66
 41
 42                <category android:name="android.intent.category.LAUNCHER" />
-42-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:46:17-77
-42-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:46:27-74
+42-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:17-77
+42-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:27-74
 43            </intent-filter>
 44        </activity>
 45        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
-45-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:50:9-54:20
-45-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:50:19-50
+45-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-54:20
+45-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-50
 46            <meta-data
-46-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:51:13-53:58
+46-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:13-53:58
 47                android:name="android.support.PARENT_ACTIVITY"
-47-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:52:17-63
+47-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:17-63
 48                android:value=".LatestMessageActivity" />
-48-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:53:17-55
+48-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:17-55
 49        </activity>
 50        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity" />
-50-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:55:9-65
-50-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:55:19-53
+50-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:55:9-65
+50-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:55:19-53
 51        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
-51-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:56:9-64:20
-51-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:56:19-56
+51-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:56:9-64:20
+51-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:56:19-56
 52
 53            <!--
 54            <intent-filter>
@@ -108,23 +108,23 @@
 58            -->
 59        </activity>
 60        <activity android:name="com.example.squirrelwarehouse.SplashActivity" />
-60-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:65:9-52
-60-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:65:19-49
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:9-52
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:19-49
 61        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-61-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:66:9-52
-61-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:66:19-49
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:9-52
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:19-49
 62        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
-62-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:9-64
-62-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:19-61
+62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-64
+62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-61
 63        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-63-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:9-59
-63-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:19-56
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-59
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-56
 64        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-64-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:69:9-68
-64-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:69:19-65
+64-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-68
+64-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-65
 65        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
-65-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:70:9-78:20
-65-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:70:19-54
+65-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:9-78:20
+65-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:19-54
 66
 67            <!--
 68            <intent-filter>
@@ -134,8 +134,8 @@
 72            -->
 73        </activity>
 74        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" >
-74-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:79:9-86:20
-74-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:79:19-56
+74-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:79:9-86:20
+74-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:79:19-56
 75
 76            <!--
 77            <intent-filter>
@@ -145,14 +145,14 @@
 81            -->
 82        </activity>
 83        <activity
-83-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:87:9-89:50
+83-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:9-89:50
 84            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
-84-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:88:13-57
+84-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:13-57
 85            android:theme="@style/Transparent" />
-85-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:89:13-47
+85-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:89:13-47
 86        <activity android:name="com.example.squirrelwarehouse.ListViewActivity" >
-86-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:90:9-98:20
-86-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:90:19-51
+86-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:90:9-98:20
+86-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:90:19-51
 87
 88            <!--
 89            <intent-filter>
@@ -162,8 +162,8 @@
 93            -->
 94        </activity>
 95        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
-95-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:99:9-107:20
-95-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:99:19-51
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:99:9-107:20
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:99:19-51
 96
 97            <!--
 98            <intent-filter>
@@ -174,22 +174,22 @@
 103            -->
 104        </activity>
 105        <activity android:name="com.example.squirrelwarehouse.MainMore" >
-105-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:108:9-114:20
-105-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:108:19-43
+105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:108:9-114:20
+105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:108:19-43
 106            <intent-filter>
-106-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:44:13-47:29
+106-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:44:13-47:29
 107                <action android:name="android.intent.action.MAIN" />
-107-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:45:17-69
-107-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:45:25-66
+107-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:17-69
+107-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:45:25-66
 108
 109                <category android:name="android.intent.category.LAUNCHER" />
-109-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:46:17-77
-109-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:46:27-74
+109-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:17-77
+109-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:46:27-74
 110            </intent-filter>
 111        </activity>
 112        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
-112-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:115:9-123:20
-112-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:115:19-47
+112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:9-123:20
+112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:19-47
 113
 114            <!--
 115            <intent-filter>
@@ -200,245 +200,245 @@
 120        </activity>
 121
 122        <service
-122-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:125:9-163:19
+122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:125:9-163:19
 123            android:name="com.google.firebase.components.ComponentDiscoveryService"
-123-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:126:13-84
+123-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:126:13-84
 124            android:directBootAware="true"
-124-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:127:13-43
+124-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:127:13-43
 125            android:exported="false" >
-125-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:128:13-37
+125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:128:13-37
 126            <meta-data
-126-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:129:13-131:85
+126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:129:13-131:85
 127                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-127-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:130:17-122
+127-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:130:17-122
 128                android:value="com.google.firebase.components.ComponentRegistrar" />
-128-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:131:17-82
+128-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:131:17-82
 129            <meta-data
-129-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:132:13-134:85
+129-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:132:13-134:85
 130                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-130-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:133:17-124
+130-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:133:17-124
 131                android:value="com.google.firebase.components.ComponentRegistrar" />
-131-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:134:17-82
+131-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:134:17-82
 132            <meta-data
-132-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:135:13-137:85
+132-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:135:13-137:85
 133                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-133-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:136:17-126
+133-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:136:17-126
 134                android:value="com.google.firebase.components.ComponentRegistrar" />
-134-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:137:17-82
+134-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:137:17-82
 135            <meta-data
-135-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:138:13-140:85
+135-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:138:13-140:85
 136                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-136-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:139:17-116
+136-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:139:17-116
 137                android:value="com.google.firebase.components.ComponentRegistrar" />
-137-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:140:17-82
+137-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:140:17-82
 138            <meta-data
-138-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:141:13-143:85
+138-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:141:13-143:85
 139                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-139-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:142:17-113
+139-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:17-113
 140                android:value="com.google.firebase.components.ComponentRegistrar" />
-140-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:143:17-82
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:17-82
 141            <meta-data
-141-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:144:13-146:85
+141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:144:13-146:85
 142                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-142-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:145:17-109
+142-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:145:17-109
 143                android:value="com.google.firebase.components.ComponentRegistrar" />
-143-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:146:17-82
+143-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:146:17-82
 144            <meta-data
-144-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:147:13-149:85
+144-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:147:13-149:85
 145                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-145-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:148:17-111
+145-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:148:17-111
 146                android:value="com.google.firebase.components.ComponentRegistrar" />
-146-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:149:17-82
+146-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:149:17-82
 147            <meta-data
-147-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:150:13-152:85
+147-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:150:13-152:85
 148                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-148-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:151:17-107
+148-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:151:17-107
 149                android:value="com.google.firebase.components.ComponentRegistrar" />
-149-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:152:17-82
+149-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:152:17-82
 150            <meta-data
-150-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:153:13-155:85
+150-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:153:13-155:85
 151                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-151-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:154:17-109
+151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:154:17-109
 152                android:value="com.google.firebase.components.ComponentRegistrar" />
-152-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:155:17-82
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:155:17-82
 153            <!--
 154                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
 155                clients to use it as well, by defining this registrar in their own core/common library.
 156            -->
 157            <meta-data
-157-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:160:13-162:85
+157-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:160:13-162:85
 158                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-158-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:161:17-121
+158-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:161:17-121
 159                android:value="com.google.firebase.components.ComponentRegistrar" />
-159-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:162:17-82
+159-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:162:17-82
 160        </service> <!-- Needs to be explicitly declared on P+ -->
 161        <uses-library
-161-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
+161-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
 162            android:name="org.apache.http.legacy"
-162-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:165:13-50
+162-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:13-50
 163            android:required="false" />
-163-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:166:13-37
+163-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:13-37
 164
 165        <activity
-165-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:168:9-172:75
+165-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:9-172:75
 166            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-166-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:169:13-93
+166-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:169:13-93
 167            android:excludeFromRecents="true"
-167-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:170:13-46
+167-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:170:13-46
 168            android:exported="false"
-168-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:171:13-37
+168-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:171:13-37
 169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-169-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:172:13-72
+169-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:172:13-72
 170        <!--
 171            Service handling Google Sign-In user revocation. For apps that do not integrate with
 172            Google Sign-In, this service will never be started.
 173        -->
 174        <service
-174-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:177:9-181:51
+174-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:177:9-181:51
 175            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-175-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:178:13-89
+175-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:178:13-89
 176            android:exported="true"
-176-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:179:13-36
+176-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:179:13-36
 177            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-177-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:180:13-107
+177-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:180:13-107
 178            android:visibleToInstantApps="true" />
-178-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:181:13-48
+178-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:181:13-48
 179
 180        <provider
-180-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:183:9-186:40
+180-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:183:9-186:40
 181            android:name="com.squareup.picasso.PicassoProvider"
-181-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:184:13-64
+181-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:184:13-64
 182            android:authorities="com.example.squirrelwarehouse.com.squareup.picasso"
-182-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:185:13-85
+182-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:185:13-85
 183            android:exported="false" />
-183-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:186:13-37
+183-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:186:13-37
 184
 185        <activity
-185-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:188:9-205:20
+185-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:188:9-205:20
 186            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-186-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:189:13-80
+186-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:189:13-80
 187            android:excludeFromRecents="true"
-187-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:190:13-46
+187-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:190:13-46
 188            android:exported="true"
-188-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:191:13-36
+188-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:191:13-36
 189            android:launchMode="singleTask"
-189-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:192:13-44
+189-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:192:13-44
 190            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-190-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:193:13-72
+190-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:193:13-72
 191            <intent-filter>
-191-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:194:13-204:29
+191-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:194:13-204:29
 192                <action android:name="android.intent.action.VIEW" />
-192-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:195:17-69
-192-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:195:25-66
+192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:17-69
+192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:25-66
 193
 194                <category android:name="android.intent.category.DEFAULT" />
-194-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:17-76
-194-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:27-73
+194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
+194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
 195                <category android:name="android.intent.category.BROWSABLE" />
-195-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:198:17-78
-195-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:198:27-75
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:17-78
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:27-75
 196
 197                <data
-197-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
+197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
 198                    android:host="firebase.auth"
-198-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:201:21-49
+198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:21-49
 199                    android:path="/"
-199-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:202:21-37
+199-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:21-37
 200                    android:scheme="genericidp" />
-200-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:203:21-48
+200-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-48
 201            </intent-filter>
 202        </activity>
 203        <activity
-203-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:206:9-223:20
+203-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:206:9-223:20
 204            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-204-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:207:13-79
+204-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:13-79
 205            android:excludeFromRecents="true"
-205-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:208:13-46
+205-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:13-46
 206            android:exported="true"
-206-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:209:13-36
+206-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:209:13-36
 207            android:launchMode="singleTask"
-207-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:210:13-44
+207-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:13-44
 208            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-208-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:211:13-72
+208-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:211:13-72
 209            <intent-filter>
-209-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:212:13-222:29
+209-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:13-222:29
 210                <action android:name="android.intent.action.VIEW" />
-210-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:195:17-69
-210-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:195:25-66
+210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:17-69
+210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:25-66
 211
 212                <category android:name="android.intent.category.DEFAULT" />
-212-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:17-76
-212-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:27-73
+212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
+212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
 213                <category android:name="android.intent.category.BROWSABLE" />
-213-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:198:17-78
-213-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:198:27-75
+213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:17-78
+213-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:27-75
 214
 215                <data
-215-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
+215-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:17-203:51
 216                    android:host="firebase.auth"
-216-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:201:21-49
+216-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:21-49
 217                    android:path="/"
-217-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:202:21-37
+217-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:21-37
 218                    android:scheme="recaptcha" />
-218-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:203:21-48
+218-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:21-48
 219            </intent-filter>
 220        </activity>
 221
 222        <service
-222-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:225:9-234:19
+222-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:225:9-234:19
 223            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-223-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:226:13-101
+223-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:226:13-101
 224            android:enabled="true"
-224-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:227:13-35
+224-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:227:13-35
 225            android:exported="false" >
-225-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:228:13-37
+225-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:228:13-37
 226            <intent-filter>
-226-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:229:13-233:29
+226-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:229:13-233:29
 227                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-227-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:230:17-89
-227-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:230:25-86
+227-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:17-89
+227-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:25-86
 228
 229                <category android:name="android.intent.category.DEFAULT" />
-229-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:17-76
-229-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:197:27-73
+229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:17-76
+229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:197:27-73
 230            </intent-filter>
 231        </service>
 232
 233        <provider
-233-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:236:9-241:39
+233-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:236:9-241:39
 234            android:name="com.google.firebase.provider.FirebaseInitProvider"
-234-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:237:13-77
+234-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:237:13-77
 235            android:authorities="com.example.squirrelwarehouse.firebaseinitprovider"
-235-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:238:13-85
+235-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:238:13-85
 236            android:directBootAware="true"
-236-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:239:13-43
+236-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:239:13-43
 237            android:exported="false"
-237-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:240:13-37
+237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:240:13-37
 238            android:initOrder="100" />
-238-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:241:13-36
+238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:241:13-36
 239
 240        <activity
-240-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:243:9-246:75
+240-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:243:9-246:75
 241            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-241-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:244:13-79
+241-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:244:13-79
 242            android:exported="false"
-242-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:245:13-37
+242-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:245:13-37
 243            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-243-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:246:13-72
+243-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:246:13-72
 244
 245        <meta-data
-245-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:248:9-250:69
+245-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:248:9-250:69
 246            android:name="com.google.android.gms.version"
-246-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:249:13-58
+246-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:249:13-58
 247            android:value="@integer/google_play_services_version" />
-247-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:250:13-66
+247-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:250:13-66
 248
 249        <uses-library
-249-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
+249-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:9-166:40
 250            android:name="org.apache.http.legacy"
-250-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:165:13-50
+250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:13-50
 251            android:required="false" />
-251-->D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:166:13-37
+251-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:13-37
 252    </application>
 253
 254</manifest>
