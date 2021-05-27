@@ -46,8 +46,9 @@
             android:layout_marginTop="100dp"
             android:src="@drawable/blank_profile_picture" />
 
-        <EditText
-            android:id="@+id/id_sign_up"
+        <!-- 이메일 수정 불가로 -->
+        <TextView
+            android:id="@+id/email_edit_tv"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="350dp"
@@ -58,9 +59,9 @@
             android:background="@color/grey"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:text="닉네임"/>
+            android:text="이메일"/>
         <EditText
-            android:id="@+id/nick_sign_up"
+            android:id="@+id/nick_edit_tv"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="400dp"
@@ -71,7 +72,35 @@
             android:background="@color/grey"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:text="위치"/>
+            android:text="닉네임"/>
+
+        <!-- 비밀 번호 변경과 닉네임 변경을 분리하기 -->
+        <EditText
+            android:id="@+id/new_pw_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="새 비밀번호"/>
+        <EditText
+            android:id="@+id/new_pw_check_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="새 비밀번호 확인"/>
 
 
         <Button

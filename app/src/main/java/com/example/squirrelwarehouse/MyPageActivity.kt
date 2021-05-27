@@ -5,16 +5,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_my_page.*
+import android.util.Log
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
+    private var firestore : FirebaseFirestore? = null
+    var uid : String? = null
+    var nickname : String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
+        firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
-        id_sign_up_txt.text = auth.currentUser.toString()//이후에 사용자 닉네임 넣는 걸로 바꾸기
+
+        uid = auth?.currentUser?.uid
+        firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
+            nickname = doc?.data?.get("nickname").toString()
+            id_sign_up_txt.text = nickname
+            Log.d("로그-1-success-record받기-","nickname ${nickname}")
+        }
+
         user_setting_btn.setOnClickListener {
             val intent = Intent(this, UserSettingActivity::class.java)
             startActivity(intent)
@@ -32,7 +47,6 @@ class MyPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
         withdrawal_btn.setOnClickListener {
-            //TODO 회원탈퇴 구현하기
             val mAlertDialog = AlertDialog.Builder(this)
             mAlertDialog.setTitle("회원탈퇴")
             mAlertDialog.setMessage("삭제된 계정은 복구할 수 없으며 해당 계정의 게시물과 정보는 완전히 삭제됩니다. " +
