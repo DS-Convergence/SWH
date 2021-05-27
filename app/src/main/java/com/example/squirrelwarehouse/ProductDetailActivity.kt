@@ -52,7 +52,13 @@ class ProductDetailActivity : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        firestore?.collection("Product")?.document("MRuzCCm8BRc7hT42DJAQ")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+
+        // intent로 물건 id 정보 넘겨 받아야함!
+
+        var prod = "yM2hV5FB4RgMhmrxn2IG"
+
+
+        firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                 task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                 var product = task.result.toObject(Product::class.java)
@@ -116,9 +122,23 @@ class ProductDetailActivity : AppCompatActivity() {
         btnSubmenu.setOnClickListener {
             // ProductDetailSubmenu로 이동
             val intent = Intent(this, ProductDetailSubmenuActivity::class.java)
-            intent.putExtra("ProductID", "MRuzCCm8BRc7hT42DJAQ")
+            intent.putExtra("ProductID", prod)
             startActivityForResult(intent, 0)
         }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        //finish()
+        // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
+        var intent = Intent(this, ProductDetailActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+
+
+    }
+
 }

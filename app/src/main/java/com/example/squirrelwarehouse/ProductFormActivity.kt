@@ -59,6 +59,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private var text : String? = null
 
     private var beforeURI : Uri? = null     // 이전 사진
+    private var imageChange = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,8 +113,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             .load(uri)
                             .into(img)
                         img.visibility = View.VISIBLE
-                        beforeURI = uri
-                        Log.v("IMAGE","Success")
+                        //beforeURI = uri
+                        //Log.v("IMAGE",uri.toString())
                     }?.addOnFailureListener { //이미지 로드 실패시
                         Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                         Log.v("IMAGE","failed")
@@ -224,6 +225,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                         }
                     }
                 }
+
             }
 
             // 수정인 경우
@@ -232,13 +234,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 map["productName"] = pName
                 map["category"] = pCate
                 map["productDetail"] = pDetail
-/*
-                if(beforeURI!=null) {
-                    if(!uri?.equals(beforeURI)!!) {
-                        map["imageURI"] = imgFileName
-                    }
+
+                if(imageChange) {
+                    // 사진첩에 들어갔을 경우. 사진을 바꿀 경우 imageChange가 true가 됨
+                    // true일 때만 imageURI를 업데이트
+                    map["imageURI"] = imgFileName
                 }
-*/
+
                 // 대여료
                 // 보증금
                 if(text!=null) {
@@ -246,16 +248,27 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                         task ->
                         if(task.isSuccessful) {
                             Log.v("Update","Success")
-/*
-                            storageRef?.putFile(uri!!)?.addOnSuccessListener {
-                                Log.v("Update","SuccessIMAGE") // 잘 들어갔나 확인 하려고 적어 놓음.
-                                // 메인페이지로 넘어가야함.
+
+                            if(imageChange) {
+                                storageRef?.putFile(uri!!)?.addOnSuccessListener {
+                                    // imageChange가 true일 때만 사진 추가
+                                    // 성공적으로 추가했으면 imageChange 다시 false로
+                                    Log.v("Update", "SuccessIMAGE") // 잘 들어갔나 확인 하려고 적어 놓음.
+                                    imageChange = false
+
+                                    // 물건 상세 페이지로 넘어가야함.
+
+                                }
                             }
-*/
+
                         }
                     }
                 }
+
+                finish()
             }
+
+
 
         }
 
@@ -276,6 +289,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     img.visibility = View.VISIBLE
 
                     //imgUri = absolutelyPath(uri)
+                    imageChange = true;
 
                 } catch (e: Exception) {
                     e.printStackTrace()
