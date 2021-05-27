@@ -1204,6 +1204,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color swh_icon_background
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1980,6 +1981,7 @@ id easeInOut
 id easeOut
 id editText_chat_log
 id edit_query
+id edit_setting_btn
 id elastic
 id email_edit_tv
 id end
@@ -2534,6 +2536,9 @@ layout user_info_listview
 layout user_row_new_message
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap swh_icon
+mipmap swh_icon_foreground
+mipmap swh_icon_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description

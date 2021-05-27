@@ -87,7 +87,7 @@
             android:background="@color/grey"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:hint="새 비밀번호"/>
+            android:hint="새 비밀번호(6자리이상)"/>
         <EditText
             android:id="@+id/new_pw_check_tv"
             android:layout_width="350dp"
@@ -104,7 +104,7 @@
 
 
         <Button
-            android:id="@+id/sign_up_btn"
+            android:id="@+id/edit_setting_btn"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_marginBottom="50dp"

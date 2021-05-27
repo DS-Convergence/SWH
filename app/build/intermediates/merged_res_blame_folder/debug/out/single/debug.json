@@ -12,6 +12,10 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\font\\jsdongkang_regular.OTF"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon_round.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notice.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\notice.png"
     },
@@ -32,6 +36,10 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\user_evaluation.xml"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_form.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_form.xml"
     },
@@ -48,12 +56,20 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\chat.png"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_swh_icon.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\swh_icon.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_around_loc.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\around_loc.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_swh_icon.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\swh_icon.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_info.xml.flat",
@@ -68,12 +84,20 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\info.png"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_swh_icon_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\swh_icon_round.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_log_in.xml"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_swh_icon_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\swh_icon_round.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_form.xml.flat",
@@ -100,8 +124,16 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_swh_icon_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon_round.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_swh_icon.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\swh_icon.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_terms_and_conditions.xml.flat",
@@ -132,6 +164,10 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_swh_icon_round.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\swh_icon_round.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_latest_message.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_latest_message.xml"
     },
@@ -156,6 +192,10 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\colorback2round.xml"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_swh_icon_foreground.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxxhdpi\\swh_icon_foreground.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
@@ -168,6 +208,14 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\settings.png"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_swh_icon_foreground.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon_foreground.png"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_swh_icon.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\swh_icon.xml"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_return_camera.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\product_return_camera.xml"
     },
@@ -176,12 +224,20 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\siren.png"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_swh_icon_foreground.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\swh_icon_foreground.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_white.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\heart_white.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_more_qr.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more_qr.xml"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_swh_icon_foreground.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\swh_icon_foreground.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_itemview.xml.flat",
@@ -228,6 +284,10 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_delete_account.xml"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_swh_icon.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon.png"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_page.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_my_page.xml"
     },
@@ -272,16 +332,20 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\font\\goyang.TTF"
     },
     {
-        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
-        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
-    },
-    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_row_new_message.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\user_row_new_message.xml"
     },
     {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_button.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\rounded_button.xml"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon_foreground.png.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon_foreground.png"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_users.png.flat",
@@ -306,5 +370,9 @@
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_settings.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\main_settings.xml"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_swh_icon_round.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\swh_icon_round.xml"
     }
 ]
