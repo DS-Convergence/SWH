@@ -1,10 +1,10 @@
 package com.example.squirrelwarehouse
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.listview_form.*
 import kotlinx.android.synthetic.main.main_page.*
 
 class MainPageActivity : AppCompatActivity() {
@@ -13,6 +13,55 @@ class MainPageActivity : AppCompatActivity() {
         setContentView(R.layout.main_page)
 
         // 버튼 기능 구현
+        var gotoMore = gotomore
+        gotoMore.setOnClickListener {
+            val intent = Intent(this, MainMore::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var gotoChat = gotochat
+        gotoChat.setOnClickListener {
+            val intent = Intent(this, LatestMessageActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+        var gotoMap = gotomap
+        gotoMap.setOnClickListener {
+            val intent = Intent(this, MainMapActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var searchBar = searchBar
+        searchBar.setOnClickListener {
+
+        }
+
+        var moreUpdate = moreUpdate
+        moreUpdate.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // listView로 연결하기
+            }
+        })
+
+        var moreCate = moreCate
+        moreCate.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // listView로 연결
+            }
+        })
+
+        var moreRcmd = moreRcmd
+        moreRcmd.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // listView로 연결
+            }
+        })
+
+        var writeBtn = writeBtn
+        writeBtn.setOnClickListener {
+            val intent = Intent(this, ProductFormActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
 
         // 메인페이지 물품 보기
         updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)

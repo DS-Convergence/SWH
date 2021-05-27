@@ -1185,6 +1185,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color notification_material_background_media_default_color
 color oat_yellow
 color peanut_brown
 color primary_dark_material_dark
@@ -1599,6 +1600,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen test_mtrl_calendar_day_cornerSize
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1851,6 +1856,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action0
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1894,16 +1900,17 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnApply
 id btn_chat
 id btn_heart
 id btn_img
 id btn_report
 id btn_submenu
 id btn_upload
-id button1
 id button3
 id buttonPanel
 id cache_measures
+id cancel_action
 id cancel_button
 id cateView
 id cb_deposit
@@ -1986,6 +1993,7 @@ id elastic
 id email_edit_tv
 id end
 id endToStart
+id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id et_category
@@ -2014,6 +2022,9 @@ id ghost_view
 id ghost_view_holder
 id go_sign_up_btn
 id gone
+id gotochat
+id gotomap
+id gotomore
 id graph
 id graph_wrap
 id group_divider
@@ -2040,10 +2051,6 @@ id imageButton1
 id imageButton10
 id imageButton11
 id imageButton2
-id imageButton3
-id imageButton4
-id imageButton5
-id imageButton6
 id imageView2
 id imageView5
 id imageView_new_message
@@ -2084,6 +2091,7 @@ id location_accept_switch
 id log_in_btn
 id logout_btn
 id main
+id main_map
 id map
 id mapView
 id masked
@@ -2106,6 +2114,7 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id media_actions
 id message
 id middle
 id mini
@@ -2115,6 +2124,9 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id moreCate
+id moreRcmd
+id moreUpdate
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -2206,6 +2218,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchBar
 id search_badge
 id search_bar
 id search_button
@@ -2256,6 +2269,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id status_bar_latest_event_content
 id stop
 id stretch
 id submenuarrow
@@ -2354,6 +2368,7 @@ id withdrawal_btn
 id withinBounds
 id wrap
 id wrap_content
+id writeBtn
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2424,7 +2439,6 @@ layout activity_item_loc
 layout activity_latest_message
 layout activity_log_in
 layout activity_main
-layout activity_map
 layout activity_my_page
 layout activity_new_message
 layout activity_report
@@ -2455,6 +2469,7 @@ layout design_text_input_start_icon
 layout listview
 layout listview_form
 layout main_itemview
+layout main_map
 layout main_more
 layout main_page
 layout main_settings
@@ -2502,8 +2517,17 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout notification_action
 layout notification_action_tombstone
+layout notification_media_action
+layout notification_media_cancel_action
+layout notification_template_big_media
+layout notification_template_big_media_custom
+layout notification_template_big_media_narrow
+layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
+layout notification_template_lines_media
+layout notification_template_media
+layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout product_detail
@@ -2604,6 +2628,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -3018,9 +3043,14 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Line2_Media
+style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Design_CollapsingToolbar_Expanded
 style TextAppearance_Design_Counter
 style TextAppearance_Design_Counter_Overflow

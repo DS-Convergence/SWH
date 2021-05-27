@@ -69,15 +69,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="5">
 
         <LinearLayout
             android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_marginTop="20dp"
             android:paddingHorizontal="20dp">
 
@@ -89,21 +89,38 @@
                 android:textColor="@color/mocha_brown"
                 android:textSize="23sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/goyang"
+                android:text="일반 카테고리"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp"/>
+
             <Spinner
                 android:id="@+id/spnCate"
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/category"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:spinnerMode="dropdown"/>
+                android:fontFamily="@font/goyang"
+                android:text="취미 카테고리"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp"/>
 
             <Spinner
                 android:id="@+id/spnHobby"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:layout_weight="1"
-                android:spinnerMode="dropdown"/>
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/cate_hobby"/>
 
         </LinearLayout>
 
@@ -112,7 +129,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_marginVertical="20dp"
             android:paddingHorizontal="20dp">
 
@@ -127,20 +143,35 @@
             <Spinner
                 android:id="@+id/spnLoc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown"
+                android:entries="@array/location"/>
 
             <Spinner
                 android:id="@+id/spnLocDetail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginVertical="10dp"
-                android:layout_weight="1"
                 android:spinnerMode="dropdown"/>
 
         </LinearLayout>
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/peanut_brown"
+        android:fontFamily="@font/goyang"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"
+        android:text="적용"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:cornerRadius="100dp" />
 
 </LinearLayout>
