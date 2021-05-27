@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_my_page.*
 import android.util.Log
 
@@ -23,11 +21,16 @@ class MyPageActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        uid = auth?.currentUser?.uid
+        uid = auth.currentUser?.uid
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
             nickname = doc?.data?.get("nickname").toString()
             id_sign_up_txt.text = nickname
             Log.d("로그-1-success-record받기-","nickname ${nickname}")
+        }
+
+        terms_btn.setOnClickListener {
+            val intent = Intent(this, TermsAndConditionsActivity::class.java)
+            startActivity(intent)
         }
 
         user_setting_btn.setOnClickListener {
