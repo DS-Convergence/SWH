@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -61,7 +62,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
 
-        var prod = "93rEd9K64U6qLghEq0A8"
+        var prod = "6GEOflMDzMmONVrtRdjP"
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
@@ -102,25 +103,68 @@ class ProductDetailActivity : AppCompatActivity() {
                         .load(uri)
                         .into(img)
                     Log.v("IMAGE","Success")
+
+                    // 좋아요 리스트에 있는지 데이터 가져옴
+                    firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
+                            task ->
+                        if(task.isSuccessful){
+                            var favorite = task.result.toObject(Favorite::class.java)
+                            var array = favorite?.products
+                            if (array != null) { // array가 null이 아니면
+                                for(product in array) { // array에 현재 보고 있는 물건이 있는지 판단한다.
+                                    if(product.equals(prod)) {
+                                        state = true;
+                                        btnHeart.setImageResource(R.drawable.heart_green) // array에 있으면 초록하트로.
+                                    }
+                                    Log.v("PRODUCTS",product)
+                                }
+
+                            }
+                            Log.v("HEART","Success"+ state.toString())
+                        }else {
+                            Log.v("HEART","Failed")
+                        }
+                    }
+
                 }?.addOnFailureListener { //이미지 로드 실패시
                     Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                     Log.v("IMAGE","failed")
                 }
+/*
+                // 좋아요
+                firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
+                    task ->
+                    if(task.isSuccessful){
+                        var favorite = task.result.toObject(Favorite::class.java)
+                        var array = favorite?.products
+                        if (array != null) {
+                            for(product in array) {
+                                if(product.equals(prod)) {
+                                    state = true;
+                                }
+                            }
+
+                        }
+                    }
+                }
+*/
 
 
                 // 현재 사용자가 글쓴이면 더보기 보이고 아니면 안보이도록
                 if(product?.userId.equals(auth.currentUser!!.uid)) { //
                     btnSubmenu.visibility = View.VISIBLE
-                    btnHeart.visibility = View.VISIBLE
-                    btnChat.visibility = View.VISIBLE
-                }
-                else {
-                    btnSubmenu.visibility = View.GONE
                     btnHeart.visibility = View.GONE
                     btnChat.visibility = View.GONE
                 }
-
-
+                else {
+                    btnSubmenu.visibility = View.GONE
+                    btnHeart.visibility = View.VISIBLE
+                    btnChat.visibility = View.VISIBLE
+                }
+/*
+                if(state) btnHeart.setImageResource(R.drawable.heart_green)
+                else btnHeart.setImageResource(R.drawable.heart_white)
+*/
             }
         }
 
@@ -129,6 +173,7 @@ class ProductDetailActivity : AppCompatActivity() {
         btnHeart.setOnClickListener() {
             // 디폴트는 하얀 하트, 관심상품 등록했으면 초록 하트, 데이터베이스와 연동필요
             // Firebase로 안드로이드 sns 앱 만들기 195-197쪽 참고
+            // 맨처음에 계정을 만들 때 Favorite 데이터도 함께 생성시켜야할 것 같음.
             if(!state) {
                 btnHeart.setImageResource(R.drawable.heart_green)
                 state = true;
