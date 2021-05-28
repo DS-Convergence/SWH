@@ -106,6 +106,16 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     // 보증금 체크박스랑 다 고려해주어야함. null이 아니면 체크박스 체크하고, 금액 표시
                     // 대여료
 
+                    if(!product?.deposit.equals("")){
+                        cbDeposit.isChecked = true;
+                        etDeposit.setText(product?.deposit)
+                    }
+
+                    if(!product?.rentalFee.equals("")){
+                        cbRentalFee.isChecked = true;
+                        etRentalFee.setText(product?.rentalFee)
+                    }
+
                     // 사진 불러오기
                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
@@ -183,6 +193,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var pDeposit = etDeposit.text.toString()
             var pRental = etRentalFee.text.toString()
 
+            /*
+            if(pDeposit.equals("")) pDeposit = "0"
+            if(pRental.equals("")) pRental = "0"
+            */
+
             var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
             var imgFileName = "IMAGE_" + timeStamp + "_.jpg"
             var storageRef = storage?.reference?.child("product")?.child(imgFileName)
@@ -234,6 +249,12 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 map["productName"] = pName
                 map["category"] = pCate
                 map["productDetail"] = pDetail
+
+                if(!cbDeposit.isChecked) pDeposit = ""
+                if(!cbRentalFee.isChecked) pRental = ""
+
+                map["deposit"] = pDeposit
+                map["rentalFee"] = pRental
 
                 if(imageChange) {
                     // 사진첩에 들어갔을 경우. 사진을 바꿀 경우 imageChange가 true가 됨

@@ -143,6 +143,43 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/cb_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/goyang"
+                    android:text="보증금"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/grey"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:gravity="center|right"
+                    android:inputType="number"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/goyang"
+                    android:text="원" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
                     android:id="@+id/cb_rentalFee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,42 +211,6 @@
                     android:text="원" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb_deposit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:fontFamily="@font/goyang"
-                    android:text="보증금"
-                    android:textColor="@color/mocha_brown"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/et_deposit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:background="@color/grey"
-                    android:ems="10"
-                    android:enabled="false"
-                    android:fontFamily="@font/jsdongkang_regular"
-                    android:gravity="center|right"
-                    android:inputType="number"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/goyang"
-                    android:text="원" />
-            </LinearLayout>
 
             <CheckBox
                 android:id="@+id/cb_location"
