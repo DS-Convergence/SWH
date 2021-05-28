@@ -67,7 +67,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 변수 초기화
         etProdName = findViewById(R.id.et_prodName)
-        etCategory = findViewById(R.id.et_category)
+        //etCategory = findViewById(R.id.et_category)
         etProdDetail = findViewById(R.id.et_prodDetail)
         etRentalFee = findViewById(R.id.et_rentalFee)
         etDeposit = findViewById(R.id.et_deposit)
@@ -87,6 +87,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
 
+        // 스패너
+        var spCategory : Spinner = findViewById(R.id.sp_category)
+        val category = resources.getStringArray(R.array.category)
+        var adapterCate : ArrayAdapter<String>
+        adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
+        spCategory.adapter = adapterCate
+
 
         // 수정할 경우
         val intent = intent
@@ -101,7 +108,10 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
                     etProdName.setText(product?.productName)
-                    etCategory.setText(product?.category)
+                    //etCategory.setText(product?.category)
+                    spCategory.setSelection(getCateNum(product?.category))
+
+
                     etProdDetail.setText(product?.productDetail)
                     // 보증금 체크박스랑 다 고려해주어야함. null이 아니면 체크박스 체크하고, 금액 표시
                     // 대여료
@@ -134,6 +144,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
+
 
 
         // 지도
@@ -188,7 +199,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         btnUpload.setOnClickListener {
 
             var pName = etProdName.text.toString()
-            var pCate = etCategory.text.toString()
+            //var pCate = etCategory.text.toString()
+            var pCate = spCategory.selectedItem.toString()
             var pDetail = etProdDetail.text.toString()
             var pDeposit = etDeposit.text.toString()
             var pRental = etRentalFee.text.toString()
@@ -350,6 +362,21 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         var result = index?.let { c?.getString(it) }
 
         return result
+    }
+
+    fun getCateNum(cate: String?) : Int {
+
+        when(cate) {
+            "디지털/가전" -> return 0
+            "생활/인테리어" -> return 1
+            "스포츠/레저" -> return 2
+            "패션/뷰티/미용" -> return 3
+            "문구/완구" -> return 4
+            "도서" -> return 5
+            "음악" -> return 6
+            "기타" -> return 7
+            else -> return 7
+        }
     }
 
 }
