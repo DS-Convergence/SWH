@@ -1885,6 +1885,7 @@ id all
 id always
 id animateToEnd
 id animateToStart
+id applyBtn
 id asConfigured
 id async
 id auto
@@ -1900,18 +1901,17 @@ id beginning
 id blocking
 id bottom
 id bounce
-id btnApply
 id btn_chat
 id btn_heart
 id btn_img
 id btn_report
 id btn_submenu
 id btn_upload
-id button3
 id buttonPanel
 id cache_measures
 id cancel_action
 id cancel_button
+id cateTextView
 id cateView
 id cb_deposit
 id cb_location
@@ -1996,7 +1996,6 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_category
 id et_deposit
 id et_prodDetail
 id et_prodName
@@ -2033,6 +2032,7 @@ id groups
 id guideline
 id header_title
 id hideable
+id hobbytestBtn
 id home
 id homeAsUp
 id honorRequest
@@ -2047,10 +2047,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton1
-id imageButton10
-id imageButton11
-id imageButton2
 id imageView2
 id imageView5
 id imageView_new_message
@@ -2124,6 +2120,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id moreBtn
 id moreCate
 id moreRcmd
 id moreUpdate
@@ -2152,6 +2149,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id mypageBtn
 id navigation_header_container
 id never
 id new_pw_check_tv
@@ -2162,6 +2160,7 @@ id nick_sign_up_txt
 id noScroll
 id none
 id normal
+id noticeBtn
 id notice_set
 id notification_background
 id notification_main_column
@@ -2236,6 +2235,7 @@ id selection_type
 id selectphoto_button
 id send_button_chat_log
 id set_location_btn
+id settingBtn
 id shortcut
 id showCustom
 id showHome
@@ -2249,6 +2249,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sp_category
 id spacer
 id spline
 id split_action_bar
@@ -2304,7 +2305,6 @@ id textView2
 id textView3
 id textView4
 id textView5
-id textView8
 id textView9
 id textView_camera_chat_log_more
 id textView_chat_log_more_qr

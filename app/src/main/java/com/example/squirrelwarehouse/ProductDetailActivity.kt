@@ -61,7 +61,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
 
-        var prod = "LciNSbXgkv7TQq3gDrj4"
+        var prod = "93rEd9K64U6qLghEq0A8"
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
@@ -111,9 +111,13 @@ class ProductDetailActivity : AppCompatActivity() {
                 // 현재 사용자가 글쓴이면 더보기 보이고 아니면 안보이도록
                 if(product?.userId.equals(auth.currentUser!!.uid)) { //
                     btnSubmenu.visibility = View.VISIBLE
+                    btnHeart.visibility = View.VISIBLE
+                    btnChat.visibility = View.VISIBLE
                 }
                 else {
                     btnSubmenu.visibility = View.GONE
+                    btnHeart.visibility = View.GONE
+                    btnChat.visibility = View.GONE
                 }
 
 
