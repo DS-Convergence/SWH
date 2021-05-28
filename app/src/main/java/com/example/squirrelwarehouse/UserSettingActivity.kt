@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -38,13 +39,16 @@ class UserSettingActivity : AppCompatActivity() {
             //닉네임 무조건 업데이트
             firestore?.collection("Users")?.document("user_${uid}")
                 ?.update("nickname",nick_edit_tv.text.toString())
+                ?.addOnSuccessListener {
+                    Log.d("로그-1-success-record받기-","nickname ${nickname}")
+                }
             //비밀번호 변경 코드
             if(new_pw_tv.text != null && new_pw_check_tv.text != null){//비밀번호 칸이 입력되어있다면
                 if(new_pw_tv.text.toString()==new_pw_check_tv.text.toString()){//비밀번호 확인이 되면
-                    if(new_pw_tv.text.toString().length<6){
+                    if(new_pw_tv.text.toString().length in 1..5){
                         Toast.makeText(this, "비밀번호는 6자리 이상이어야 합니다.",Toast.LENGTH_SHORT).show()
                     }
-                    else{
+                    else if(new_pw_tv.text.toString() != ""){
                         user.updatePassword(new_pw_tv.text.toString())//비밀번호 업데이트 코드
                         finish()
                     }
@@ -55,11 +59,13 @@ class UserSettingActivity : AppCompatActivity() {
                     Toast.makeText(this, "입력한 새 비밀번호를 확인해주세요.",Toast.LENGTH_SHORT).show()
                 }
             }
-            else{
+/*            else{
                 new_pw_tv.setText("")
                 new_pw_check_tv.setText("")
 
-            }
+            }*/
+
+            finish()
         }
     }
 }

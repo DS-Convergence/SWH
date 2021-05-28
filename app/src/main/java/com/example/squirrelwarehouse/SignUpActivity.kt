@@ -188,7 +188,10 @@ class SignUpActivity : AppCompatActivity() {
         //파이어 베이스에 유저 등록 : realtime database에 users밑에 profileImageURl, uid,username저장.
         val uid = FirebaseAuth.getInstance().uid?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid") //uid로 하위 클래스 나누기
-        val user = User(uid, nick_sign_up.text.toString(),profileImageUrl ) //내가 만든 모델. models아래에 User
+        val user = User(uid, nick_sign_up.text.toString(),profileImageUrl )
+        firestore.collection("Users").document("user_${uid}")
+            .update("userProPic",profileImageUrl)
+        //내가 만든 모델. models아래에 User
         ref.setValue(user)
             .addOnSuccessListener {
                 //어디로 넘어갈 지 세원이 한테 확인하고 코드 추가하기**
