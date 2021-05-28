@@ -43,7 +43,6 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity">
 
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
