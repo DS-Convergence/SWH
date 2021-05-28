@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.activity_sign_up.back_btn
+import java.text.SimpleDateFormat
 import java.util.*
 class SignUpActivity : AppCompatActivity() {
 
@@ -25,11 +26,15 @@ class SignUpActivity : AppCompatActivity() {
     var firestore :FirebaseFirestore = FirebaseFirestore.getInstance()
     private val TAG : String = "CreateAccount"
     var UserModelFS = UserModelFS()
+    private var storage : FirebaseStorage? = null
+    var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+    var imgFileName = "PROPIC_" + timeStamp + "_.jpg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         auth = FirebaseAuth.getInstance()
+        storage = FirebaseStorage.getInstance()
         //원래 email 있던 곳
         val email = findViewById<EditText>(R.id.id_sign_up)
         val password = findViewById<EditText>(R.id.pw_sign_up)
@@ -149,11 +154,11 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun uploadImageToFirebaseStorage() { //이미지 파일을 Storage에 저장하고 saveUserToFirebaseDatabase호출해서 유저를 (profileImageURl, uid,username) 파이어 realtime에 저장.
         //if(selectedPhotoUri == null) return //고른 포토의 uri없으면 그냥 return.
-        val filename = UUID.randomUUID().toString() //파일 name은 random String을 만듦. 이걸로 reference 만듦
+        //val filename = UUID.randomUUID().toString() //파일 name은 random String을 만듦. 이걸로 reference 만듦
 
         //getInctance()를 이용해서 FirebaseStorage에 접근.
         //ref는 파이어베이스 upload area에 대한 정보.
-        val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
+        val ref = FirebaseStorage.getInstance().getReference("/images/$imgFileName")
 
         if(selectedPhotoUri == null){
             val uri = Uri.parse("android.resource://com.example.squirrelwarehouse/drawable/logo")
@@ -189,8 +194,15 @@ class SignUpActivity : AppCompatActivity() {
         val uid = FirebaseAuth.getInstance().uid?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid") //uid로 하위 클래스 나누기
         val user = User(uid, nick_sign_up.text.toString(),profileImageUrl )
-        firestore.collection("Users").document("user_${uid}")
-            .update("userProPic",profileImageUrl)
+        /*firestore.collection("Users").document("user_${uid}")
+            .update("userProPic",profileImageUrl)*/
+
+        var storageRef = storage?.reference?.child("images")?.child(imgFileName)
+        var userId = FirebaseAuth.getInstance().currentUser!!.uid
+        var document = "user_" + userId
+        firestore.collection("Users").document(document)
+            .update("userProPic", imgFileName)
+
         //내가 만든 모델. models아래에 User
         ref.setValue(user)
             .addOnSuccessListener {

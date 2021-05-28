@@ -29,6 +29,7 @@ class UserSettingActivity : AppCompatActivity() {
             email = doc?.data?.get("email").toString()
             nick_edit_tv.setText(nickname)
             email_edit_tv.text = email
+
             Log.d("로그-1-success-record받기-","nickname ${nickname}")
             Log.d("로그-1-success-record받기-","email ${email}")
         }
