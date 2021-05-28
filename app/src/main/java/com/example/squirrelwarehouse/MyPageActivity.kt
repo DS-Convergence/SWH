@@ -9,22 +9,45 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_my_page.*
 import android.util.Log
+import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     private var firestore : FirebaseFirestore? = null
     var uid : String? = null
     var nickname : String?= null
+    var storage : FirebaseStorage?=null
+    var uri : String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
         firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
+        storage = FirebaseStorage.getInstance()
+
+        var storageReference : StorageReference? = null
+        var pathReference : StorageReference? = null
+
 
         uid = auth.currentUser?.uid
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
             nickname = doc?.data?.get("nickname").toString()
+            uri = doc?.data?.get("userProPic").toString()
             id_sign_up_txt.text = nickname
+            var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
+            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                Glide.with(applicationContext)
+                    .load(uri)
+                    .into(user_propic_img)
+                Log.v("IMAGE","Success")
+            }?.addOnFailureListener { //이미지 로드 실패시
+                Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                Log.v("IMAGE","failed")
+
+            }
+
             Log.d("로그-1-success-record받기-","nickname ${nickname}")
         }
 
@@ -68,18 +91,7 @@ class MyPageActivity : AppCompatActivity() {
             mAlertDialog.show()
         }
     }
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        //finish()
-        // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
-        var intent = Intent(this, MyPageActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-        finish()
-
-
-    }*/
     // 회원탈퇴 함수
     fun deleteId() {
         auth?.currentUser?.delete()
