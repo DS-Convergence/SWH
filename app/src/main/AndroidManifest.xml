@@ -36,7 +36,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
-        
+
         <activity android:name=".MyPageActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".UserSettingActivity" />
@@ -112,7 +112,6 @@
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->

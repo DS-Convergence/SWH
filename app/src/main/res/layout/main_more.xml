@@ -14,7 +14,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/moreBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/more" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/noticeBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|right"
@@ -33,7 +33,7 @@
             app:srcCompat="@drawable/notice" />
 
         <ImageButton
-            android:id="@+id/imageButton10"
+            android:id="@+id/settingBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|right"
@@ -44,7 +44,7 @@
             app:srcCompat="@drawable/settings" />
 
         <ImageButton
-            android:id="@+id/imageButton11"
+            android:id="@+id/mypageBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|right"
@@ -56,7 +56,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/hobbytestBtn"
         android:layout_width="364dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
@@ -160,7 +160,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnApply"
+        android:id="@+id/applyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"

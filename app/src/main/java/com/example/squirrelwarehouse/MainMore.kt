@@ -1,19 +1,48 @@
 package com.example.squirrelwarehouse
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.protobuf.LazyStringArrayList
 import kotlinx.android.synthetic.main.main_more.*
 
 class MainMore : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_more)
+
+        var gotomain = moreBtn
+        gotomain.setOnClickListener {
+            val intent = Intent(this, MainPageActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var noticebtn = noticeBtn
+        noticebtn.setOnClickListener {
+            // TODO: notice -> listview 로 보여주기
+            //startActivityForResult(intent, 0)
+        }
+
+        var settingbtn = settingBtn
+        settingbtn.setOnClickListener {
+            val intent = Intent(this, MainSettingsActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var mypagebtn = mypageBtn
+        mypagebtn.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var applybtn = applyBtn
+        applybtn.setOnClickListener {
+            // TODO: spinner 값 적용해서 listview로 보여주기
+            //startActivityForResult(intent, 0)
+        }
+
+
 
         // spinner 변수 선언, 아이디 연결
         var sCategory:Spinner = spnCate
@@ -29,16 +58,16 @@ class MainMore : AppCompatActivity() {
         val location = resources.getStringArray(R.array.location)
 
         // adapter 연결
-        var adapterCate: ArrayAdapter<String>
-        adapterCate = ArrayAdapter(this, R.layout.main_more, category)
+        var adapterCate : ArrayAdapter<String>
+        adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
         sCategory.adapter = adapterCate
 
-        var adapterHob:ArrayAdapter<String>
-        adapterHob = ArrayAdapter(this, R.layout.main_more, catehobby)
+        var adapterHob : ArrayAdapter<String>
+        adapterHob = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, catehobby)
         sCateHob.adapter = adapterHob
 
         var adapterLoc : ArrayAdapter<String>
-        adapterLoc = ArrayAdapter(this, R.layout.main_more, location)
+        adapterLoc = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, location)
         sLocation.adapter = adapterLoc
 
         // Listener 연결
@@ -73,8 +102,8 @@ class MainMore : AppCompatActivity() {
             }
         }
 
-        var adapterLocDe: ArrayAdapter<String>
-        lateinit var locdetail : Array<String>
+        var adapterLocDe : ArrayAdapter<String>
+        var locdetail : Array<String> = resources.getStringArray(R.array.loc_special)
         sLocation.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(applicationContext, "지역을 선택해주세요.", Toast.LENGTH_LONG).show()
@@ -87,8 +116,8 @@ class MainMore : AppCompatActivity() {
                     id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
-                val text: String = sLocation.getSelectedItem().toString()
-                when(text) {
+                val loc : String = sLocation.getSelectedItem().toString()
+                when(loc) {
                     "특별시" -> { locdetail = resources.getStringArray(R.array.loc_special) }
                     "광역시" -> { locdetail = resources.getStringArray(R.array.loc_gycity) }
                     "강원도" -> { locdetail = resources.getStringArray(R.array.loc_gwd) }
@@ -104,7 +133,7 @@ class MainMore : AppCompatActivity() {
             }
         }
 
-        adapterLocDe = ArrayAdapter(this, R.layout.main_more, locdetail)
+        adapterLocDe = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, locdetail)
         sLocDet.adapter = adapterLocDe
     }
 }
