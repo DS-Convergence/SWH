@@ -11,6 +11,7 @@ import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.product_form.*
 
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -22,7 +23,8 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var tvUser : TextView
     private lateinit var tvUserLocation : TextView
     private lateinit var tvProdDetail : TextView
-    private lateinit var tvMoney : TextView
+    private lateinit var tvDeposit : TextView
+    private lateinit var tvRentalfee : TextView
     private var state = false;
     private lateinit var img : ImageView
 
@@ -43,7 +45,8 @@ class ProductDetailActivity : AppCompatActivity() {
         tvUser = findViewById(R.id.tv_user)
         tvUserLocation = findViewById(R.id.tv_uesrLocation)
         tvProdDetail = findViewById(R.id.tv_prodDetail)
-        tvMoney = findViewById(R.id.tv_money)
+        tvDeposit = findViewById(R.id.tv_deposit)
+        tvRentalfee = findViewById(R.id.tv_rentalfee)
         img = findViewById(R.id.img_prod)
 
         var btnHeart : ImageButton = findViewById(R.id.btn_heart)
@@ -72,8 +75,23 @@ class ProductDetailActivity : AppCompatActivity() {
                 tvUser.text = product?.userName
                 tvUserLocation.text = product?.region.toString()
                 tvProdDetail.text = product?.productDetail
+
                 // 보증금
+                if(product?.deposit.equals("")) { // 체크가 안되어 있거나
+                    tvDeposit.text = "보증금: 0원"
+                }
+                else {
+                    tvDeposit.text = "보증금: " + product?.deposit + "원"
+                }
+
                 // 대여료
+                if(product?.rentalFee.equals("")) {
+                    tvRentalfee.text = "대여료: 0원"
+                }
+                else {
+                    tvRentalfee.text = "대여료: " + product?.rentalFee + "원"
+                }
+
 
                 userid = product?.userId.toString()
 

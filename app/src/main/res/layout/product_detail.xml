@@ -193,7 +193,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/lace_white"
-        android:padding="10dp">
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp">
 
         <ImageButton
             android:id="@+id/btn_heart"
@@ -212,6 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:backgroundTint="@color/tawny_brown"
             android:fontFamily="@font/jsdongkang_regular"
             android:paddingTop="10dp"
@@ -221,13 +225,21 @@
         <!-- textsize 30sp > 20sp 변경 -->
 
         <TextView
-            android:id="@+id/tv_money"
+            android:id="@+id/tv_deposit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="false"
-            android:layout_centerVertical="true"
             android:fontFamily="@font/goyang"
             android:text="보증금 : 0000원"
+            android:textColor="@color/mocha_brown"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_rentalfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_deposit"
+            android:fontFamily="@font/goyang"
+            android:text="대여료 : 0000원"
             android:textColor="@color/mocha_brown"
             android:textSize="25sp" />
         <!-- textsize 20sp > 25sp 변경 -->
