@@ -64,7 +64,8 @@ class UserSettingActivity : AppCompatActivity() {
                 new_pw_check_tv.setText("")
 
             }*/
-
+            var intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
