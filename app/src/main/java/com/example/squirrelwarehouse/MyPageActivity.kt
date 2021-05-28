@@ -36,6 +36,7 @@ class MyPageActivity : AppCompatActivity() {
         user_setting_btn.setOnClickListener {
             val intent = Intent(this, UserSettingActivity::class.java)
             startActivity(intent)
+            finish()
         }
         back_btn.setOnClickListener {
             finish()
@@ -67,7 +68,7 @@ class MyPageActivity : AppCompatActivity() {
             mAlertDialog.show()
         }
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         //finish()
@@ -78,7 +79,7 @@ class MyPageActivity : AppCompatActivity() {
         finish()
 
 
-    }
+    }*/
     // 회원탈퇴 함수
     fun deleteId() {
         auth?.currentUser?.delete()
