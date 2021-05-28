@@ -30,6 +30,8 @@ class ProductDetailActivity : AppCompatActivity() {
     private var storage : FirebaseStorage? = null
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var userid : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
@@ -47,6 +49,7 @@ class ProductDetailActivity : AppCompatActivity() {
         var btnHeart : ImageButton = findViewById(R.id.btn_heart)
         val btnReport : ImageButton = findViewById(R.id.btn_report)
         val btnSubmenu : TextView = findViewById(R.id.btn_submenu)
+        val btnChat : Button = findViewById(R.id.btn_chat)
 
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
@@ -55,7 +58,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
 
-        var prod = "yM2hV5FB4RgMhmrxn2IG"
+        var prod = "LciNSbXgkv7TQq3gDrj4"
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
@@ -71,6 +74,8 @@ class ProductDetailActivity : AppCompatActivity() {
                 tvProdDetail.text = product?.productDetail
                 // 보증금
                 // 대여료
+
+                userid = product?.userId.toString()
 
                 // 사진 불러오기
                 var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
@@ -111,7 +116,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 state = false;
             }
         }
-        val btnChat : Button = findViewById(R.id.btn_chat)
+
 
         btnReport.setOnClickListener() {
             // 신고 페이지로 이동
@@ -124,6 +129,13 @@ class ProductDetailActivity : AppCompatActivity() {
             val intent = Intent(this, ProductDetailSubmenuActivity::class.java)
             intent.putExtra("ProductID", prod)
             startActivityForResult(intent, 0)
+        }
+
+        btnChat.setOnClickListener {
+            val intent = Intent(this, ChatLogActivity::class.java)
+            intent.putExtra("ProductID",prod)
+            intent.putExtra("UserId",userid)
+            startActivity(intent)
         }
 
     }
