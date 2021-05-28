@@ -6,7 +6,7 @@
     android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="21"
         android:targetSdkVersion="30" />
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -41,12 +41,11 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity">
 
-<!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
--->
+
         </activity>
         <activity android:name=".ChatLogActivity">
             <meta-data
@@ -98,13 +97,13 @@
             -->
         </activity>
         <activity android:name=".MainPageActivity">
-
+<!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+-->
         </activity>
         <activity android:name=".MainMore">
             <!--
@@ -115,9 +114,8 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".MainMapActivity">
-
-        </activity>
+        <activity android:name=".MainMapActivity"></activity>
+        <activity android:name=".MainSettingsActivity"></activity>
         <activity android:name=".MainActivity">
 
             <!--
@@ -252,7 +250,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <uses-library android:name="com.google.android.maps"/>
-        <!--<meta-data android:name="com.google.android.maps.v2.API_KEY"
+        <!-- API 추가해야 함
+        <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAmAvFvrYqErfcT0HC9U_CzoMIOWrEXCoo"/>-->
         <uses-library
             android:name="org.apache.http.legacy"

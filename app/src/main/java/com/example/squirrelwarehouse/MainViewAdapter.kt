@@ -15,7 +15,7 @@ class MainViewAdapter(var items:ArrayList<MainItem>) : RecyclerView.Adapter<Main
         return ViewHolder(itemView)
     }
 
-    override fun getItemCount() = items.count()
+    override fun getItemCount() = 3
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]

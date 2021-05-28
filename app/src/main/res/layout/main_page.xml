@@ -140,6 +140,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
+                        android:id="@+id/cateTextView"
                         android:layout_width="200dp"
                         android:layout_height="35dp"
                         android:layout_marginLeft="15dp"
