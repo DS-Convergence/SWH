@@ -67,6 +67,18 @@ class MyPageActivity : AppCompatActivity() {
             mAlertDialog.show()
         }
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        //finish()
+        // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
+        var intent = Intent(this, MyPageActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+
+
+    }
     // 회원탈퇴 함수
     fun deleteId() {
         auth?.currentUser?.delete()

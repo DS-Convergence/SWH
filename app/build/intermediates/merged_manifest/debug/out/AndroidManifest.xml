@@ -11,7 +11,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -251,6 +252,9 @@
             <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAmAvFvrYqErfcT0HC9U_CzoMIOWrEXCoo"/>
         -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />

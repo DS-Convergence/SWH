@@ -5,4 +5,5 @@ data class UserModelFS (
         var email : String? = null,
         var nickname : String? = null,
         var location : String? = null,
-        var rating : Long? = 0 ){}
+        var rating : Long? = 0,
+        var userProPic : String? = null){}
