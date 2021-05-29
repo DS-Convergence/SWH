@@ -49,6 +49,8 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".ChatLogMoreActivity"
+            android:theme="@style/Transparent"/>
         <activity android:name=".ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

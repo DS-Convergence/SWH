@@ -1,26 +1,25 @@
 package com.example.squirrelwarehouse
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.squirrelwarehouse.LatestMessageActivity.Companion.currentUser
-import com.example.squirrelwarehouse.models.ChatMessage
-import com.example.squirrelwarehouse.models.Product
-import com.example.squirrelwarehouse.models.User
-import com.example.squirrelwarehouse.models.UserModelFS
+import com.bumptech.glide.Glide
+import com.example.squirrelwarehouse.models.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
+import kotlinx.android.synthetic.main.activity_chat_log.back_btn
+import kotlinx.android.synthetic.main.activity_my_page.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
-import kotlinx.android.synthetic.main.user_row_new_message.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -63,13 +62,13 @@ class ChatLogActivity : AppCompatActivity() {
 
 
         if (prod != null) {
-            firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            firestore?.collection("Product")?.document(prod!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                     task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
-                    chat_log_textview_productname.text = product?.productName
-                    chat_log_textview_username.text = product?.userName
 
+                    chat_log_textview_productname_up.setText(product?.productName)
+                    chat_log_textview_username.setText(product?.userName)
                     //userid = product?.userId.toString()
 
 
@@ -131,23 +130,49 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     private fun listenForMessages() { //지금까지 보낸 메세지 나열하기
+        var myUser: UserModelFS? = null
         val fromId = FirebaseAuth.getInstance().uid //나
+        Log.d("listenForMessages Test", "fromId : " +fromId)
         //val toId = toUser?.uid //상대방
         val toId = touserid
+        Log.d("listenForMessages Test", "touserid : " +touserid)
+
         //쓴 메세지를 들을 수 있게
         val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId")
+
+        var auth : FirebaseAuth = FirebaseAuth.getInstance()
+        var firestore : FirebaseFirestore? = FirebaseFirestore.getInstance()
+        var uid : String? = auth.currentUser?.uid
+        storage = FirebaseStorage.getInstance()
+
+        firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnCompleteListener {// 넘겨온 물건 id를 넣어주면 됨.
+                task ->
+            if(task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var myuser = task.result.toObject(UserModelFS::class.java)
+                myUser = myuser
+            }
+        }
+
         ref.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)
                 if (chatMessage != null) {
+                    Log.d("listenForMessages Test", "chatMessage is not null")
                     //채팅 메세지가 null이 아니라면
-                    Log.d(TAG, chatMessage.text)//로그 창에 보내줘
+                    Log.d("listenForMessages Test", " chatMessage.text" + chatMessage.text)//로그 창에 보내줘
                     if (chatMessage.fromId == FirebaseAuth.getInstance().uid) { //chatMessage가 보낸 사람일 경우
-                        val currentUser = currentUser ?: return
+                        Log.d("listenForMessages Test", "보낸 사람일경우")
+                        //val currentUser = currentUser ?: return
+                        adapter.add(ChatFromItem(chatMessage, fromId))
+                        Log.d("listenForMessages Test", "currentUser" + fromId)
                         //지금 로그인한 user의 아이디 : FirebaseAuth.getInstance().uid
-                        adapter.add(ChatFromItem(chatMessage, currentUser))
+
+                        //adapter.add(ChatFromItem(chatMessage, currentUser))
+                        Log.d("listenForMessages Test", "adapter.add(ChatFromItem(chatMessage, currentUser)) 실행" )
                     } else {//chatMessage가 받은 사람일 경우
+                        Log.d("listenForMessages Test", "받는 사람일경우")
                         adapter.add(ChatToItem(chatMessage, toUser))
+                        Log.d("listenForMessages Test", "adapter.add(ChatToItem(chatMessage, currentUser)) 실행" )
                     }
                 }
                 recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1)
@@ -202,18 +227,57 @@ class ChatLogActivity : AppCompatActivity() {
         latestMessageToRef.setValue(chatMessage)
     }
 
-    class ChatFromItem(val chatmessage: ChatMessage?, val user: User) : Item<ViewHolder>() {
+    class ChatFromItem(val chatmessage: ChatMessage?, val user: String?) : Item<ViewHolder>() {
+        private var firestore : FirebaseFirestore? = null
+        private var storage : FirebaseStorage? = null
+
+        //var userId = FirebaseAuth.getInstance().currentUser!!.uid
+
         override fun bind(viewHolder: ViewHolder, position: Int) {
             //text받아와서 뛰우기
             //access to view holder
             viewHolder.itemView.textView_from_row.text = chatmessage!!.text
             setTimeText(viewHolder)
             //이미지를 로드하기. load our user image into the User image icon
-            val uri = user.profileImageUrl
-            val targetImageView = viewHolder.itemView.imageview_chat_from_row
-            Picasso.get().load(uri).into(targetImageView) //imageview_chat_from_row  내쪽 프로필 설정
-        }
+            val targetImageView = viewHolder.itemView.imageview_chat_to_row
+            // val uri = user?.userProPic
+            // val targetImageView = viewHolder.itemView.imageview_chat_from_row
+            firestore?.collection("Users")?.document("user_${user}")?.get()
+                ?.addOnSuccessListener { doc ->
+                    var storageRef = storage?.reference?.child("images")
+                        ?.child(doc?.data?.get("userProPic").toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(viewHolder.itemView.context)
+                            .load(uri)
+                            .into(targetImageView)
+                        Log.v("IMAGE", "Success")
+                    }?.addOnFailureListener { //이미지 로드 실패시
+                        Toast.makeText(viewHolder.itemView.context, "실패", Toast.LENGTH_SHORT).show()
+                        Log.v("IMAGE", "failed")
 
+                    }
+                    /*
+            firestore?.collection("Users")?.document("user_${user}")?.get()?.addOnCompleteListener {  // Users에서 현재 userId를 가진 데이터를 가져옴
+                    task ->
+                if(task.isSuccessful) { // 데이터 가져오기를 성공하면
+                    var user = task.result.toObject(UserModelFS::class.java)
+                    val targetImageView = viewHolder.itemView.imageview_chat_to_row
+                    storage = FirebaseStorage.getInstance()
+                    var storageRef = storage?.reference?.child("images")?.child(user?.userProPic.toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(viewHolder.itemView.context)
+                            .load(uri)
+                            .into(targetImageView)
+                        Log.v("IMAGE", "Success")
+                    }?.addOnFailureListener { //이미지 로드 실패시
+                        Toast.makeText(viewHolder.itemView.context, "실패", Toast.LENGTH_SHORT).show()
+                        Log.v("IMAGE", "failed")
+                    }
+                }
+            }*/
+                    //Picasso.get().load(uri).into(targetImageView) //imageview_chat_from_row  내쪽 프로필 설정
+                }
+        }
         private fun setTimeText(viewHolder: ViewHolder){
             val dateFormat = SimpleDateFormat
                 .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
@@ -228,14 +292,42 @@ class ChatLogActivity : AppCompatActivity() {
     class ChatToItem(val chatmessage: ChatMessage?, val user: UserModelFS?) : Item<ViewHolder>() {
         //text받아와서 뛰우기
         //access to view holder
+        private var firestore : FirebaseFirestore? = null
+        private var storage : FirebaseStorage? = null
+        private lateinit var auth: FirebaseAuth
+
         override fun bind(viewHolder: ViewHolder, position: Int) {
             viewHolder.itemView.textView_to_row.text = chatmessage!!.text
             setTimeText(viewHolder)
 
             //이미지를 로드하기. load our user image into the User image icon
-            val uri = user?.userProPic
-            val targetImageView = viewHolder.itemView.imageview_chat_to_row
-            Picasso.get().load(uri).into(targetImageView) //imageview_chat_to_row  tkdeoqkd 프로필 설정
+            //val uri = ImageView.setImageURI(Uri.parse(File(user?.userProPic).toString()));
+            //val uri = user?.userProPic
+            // 사진 불러오기
+            firestore?.collection("Users")?.document("user_${user!!.uid}")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                    task ->
+                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                    var user = task.result.toObject(UserModelFS::class.java)
+                    val targetImageView = viewHolder.itemView.imageview_chat_to_row
+                    storage = FirebaseStorage.getInstance()
+                    var storageRef = storage?.reference?.child("images")?.child(user?.userProPic.toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(viewHolder.itemView.context)
+                            .load(uri)
+                            .into(targetImageView)
+                        Log.v("IMAGE", "Success")
+
+                    }?.addOnFailureListener { //이미지 로드 실패시
+                        Toast.makeText(viewHolder.itemView.context, "실패", Toast.LENGTH_SHORT).show()
+                        Log.v("IMAGE", "failed")
+                    }
+
+
+                }
+            }
+
+            //val targetImageView = viewHolder.itemView.imageview_chat_to_row
+           // Picasso.get().load(uri).into(targetImageView) //imageview_chat_to_row  tkdeoqkd 프로필 설정
 
         }
 
