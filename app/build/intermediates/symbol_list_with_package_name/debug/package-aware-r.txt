@@ -1814,7 +1814,6 @@ id FUNCTION
 id LastMessage_textview_new_message
 id META
 id NO_DEBUG
-id Productname_textview_new_message
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1922,9 +1921,9 @@ id center_vertical
 id chain
 id chains
 id chat_from_row_time
+id chat_log_textview_productname
 id chat_log_textview_username
 id chat_to_row_time
-id chattime_textview_new_message
 id checkbox
 id checked
 id chip

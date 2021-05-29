@@ -62,7 +62,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
 
-        var prod = "6GEOflMDzMmONVrtRdjP"
+        var prod = "G3YlgUR4RvigVQcCqiuO"
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
@@ -72,7 +72,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 tvProdName.text = product?.productName
                 tvProdCategory.text = product?.category
                 tvTime.text = product?.uploadTime
-                //tvStatus.text = product?
+                tvStatus.text = product?.status
                 tvUser.text = product?.userName
                 tvUserLocation.text = product?.region.toString()
                 tvProdDetail.text = product?.productDetail
@@ -130,24 +130,6 @@ class ProductDetailActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                     Log.v("IMAGE","failed")
                 }
-/*
-                // 좋아요
-                firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
-                    task ->
-                    if(task.isSuccessful){
-                        var favorite = task.result.toObject(Favorite::class.java)
-                        var array = favorite?.products
-                        if (array != null) {
-                            for(product in array) {
-                                if(product.equals(prod)) {
-                                    state = true;
-                                }
-                            }
-
-                        }
-                    }
-                }
-*/
 
 
                 // 현재 사용자가 글쓴이면 더보기 보이고 아니면 안보이도록
@@ -161,10 +143,7 @@ class ProductDetailActivity : AppCompatActivity() {
                     btnHeart.visibility = View.VISIBLE
                     btnChat.visibility = View.VISIBLE
                 }
-/*
-                if(state) btnHeart.setImageResource(R.drawable.heart_green)
-                else btnHeart.setImageResource(R.drawable.heart_white)
-*/
+
             }
         }
 
@@ -177,10 +156,71 @@ class ProductDetailActivity : AppCompatActivity() {
             if(!state) {
                 btnHeart.setImageResource(R.drawable.heart_green)
                 state = true;
+
+                // Favorite 컬렉션에 있는 uid를 이용
+                // 하얀색 하트를 누르면 초록색 하트로 변함과 동시에
+                // 데이터 베이스에 하트 누른 물건 추가
+                firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
+                        task ->
+                    if(task.isSuccessful){
+                        var favorite = task.result.toObject(Favorite::class.java)
+                        var array : ArrayList<String> = favorite?.products as ArrayList<String>
+                        array.add(prod)
+
+                        var map = mutableMapOf<String,Any>()
+                        map["products"] = array
+
+                        firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
+                                task ->
+                            if(task.isSuccessful) {
+                                Log.v("HEART","Update Success")
+                                Toast.makeText(applicationContext,"관심물품 추가",Toast.LENGTH_SHORT).show()
+                            }
+                            else {
+                                Log.v("HEART","Update Failed")
+                            }
+                        }
+
+
+                        //Log.v("HEART","Success"+ state.toString())
+                    }else {
+                        //Log.v("HEART","Failed")
+                    }
+                }
+
             }
             else {
                 btnHeart.setImageResource(R.drawable.heart_white)
                 state = false;
+
+                firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
+                        task ->
+                    if(task.isSuccessful){
+                        var favorite = task.result.toObject(Favorite::class.java)
+                        var array : ArrayList<String> = favorite?.products as ArrayList<String>
+                        array.remove(prod)
+
+                        var map = mutableMapOf<String,Any>()
+                        map["products"] = array
+
+                        firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
+                                task ->
+                            if(task.isSuccessful) {
+                                Log.v("HEART","Update Success")
+                                Toast.makeText(applicationContext,"관심물품 삭제",Toast.LENGTH_SHORT).show()
+                            }
+                            else{
+                                Log.v("HEART","Update Failed")
+                            }
+                        }
+
+
+                        //Log.v("HEART","Success"+ state.toString())
+                    }else {
+                        //Log.v("HEART","Failed")
+                    }
+                }
+
             }
         }
 
