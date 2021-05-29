@@ -10,6 +10,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.User
 import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,8 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.activity_sign_up.back_btn
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
+
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -83,6 +86,18 @@ class SignUpActivity : AppCompatActivity() {
                             UserModelFS.email = email.text.toString()
                             UserModelFS.nickname = nickname.text.toString()
                             firestore?.collection("Users")?.document("user_${auth?.currentUser?.uid}")?.set(UserModelFS)
+
+                            // 예은 코드. Favorite 컬렉션 생성
+                            var array : ArrayList<String> = arrayListOf<String>()
+                            var fav = Favorite(array)
+                            firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.set(fav).addOnCompleteListener {
+                                task ->
+                                if(task.isSuccessful) {
+                                    Log.v("Favorite","Success")
+                                }
+                            }
+                            // 예은 코드 끝
+
 
                             uploadImageToFirebaseStorage() //은배가 추가
                             val user = auth.currentUser
