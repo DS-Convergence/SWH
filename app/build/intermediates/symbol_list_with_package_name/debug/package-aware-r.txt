@@ -1922,6 +1922,7 @@ id chain
 id chains
 id chat_from_row_time
 id chat_log_textview_productname
+id chat_log_textview_productname_up
 id chat_log_textview_username
 id chat_to_row_time
 id checkbox
