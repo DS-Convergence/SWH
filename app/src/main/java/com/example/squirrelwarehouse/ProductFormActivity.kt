@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -31,6 +32,9 @@ import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+import kotlin.collections.List
 
 class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -61,13 +65,24 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private var beforeURI : Uri? = null     // 이전 사진
     private var imageChange = false
 
+
+    // tensorflow Lite
+    private val MODEL_PATH = "mobilenet_quant_v1_224.tflite"
+    private val QUANT = true
+    private val LABEL_PATH = "labels.txt"
+    private val INPUT_SIZE = 224
+
+    private var classifier: Classifier? = null
+
+    private val executor: Executor = Executors.newSingleThreadExecutor()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_form)
 
         // 변수 초기화
         etProdName = findViewById(R.id.et_prodName)
-        //etCategory = findViewById(R.id.et_category)
+        etCategory = findViewById(R.id.et_category)
         etProdDetail = findViewById(R.id.et_prodDetail)
         etRentalFee = findViewById(R.id.et_rentalFee)
         etDeposit = findViewById(R.id.et_deposit)
@@ -104,7 +119,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             btnUpload.setText("수정")
 
             firestore?.collection("Product")?.document(text!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                    task ->
+                task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
                     etProdName.setText(product?.productName)
@@ -130,8 +145,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                         Glide.with(applicationContext)
-                            .load(uri)
-                            .into(img)
+                                .load(uri)
+                                .into(img)
                         img.visibility = View.VISIBLE
                         //beforeURI = uri
                         //Log.v("IMAGE",uri.toString())
@@ -149,7 +164,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 지도
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment?
+                .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
 
@@ -225,7 +240,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 var userId = FirebaseAuth.getInstance().currentUser!!.uid
                 var document = "user_" + userId
                 firestore?.collection("Users")?.document(document)?.get()?.addOnCompleteListener {  // Users에서 현재 userId를 가진 데이터를 가져옴
-                        task ->
+                    task ->
                     if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                         var user = task.result.toObject(UserModelFS::class.java)
                         var userName = user?.nickname.toString()
@@ -238,14 +253,17 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // 책 210쪽 보고 수정하기
                             var product = Product(userId,userName,pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
                             firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
-                                    task ->
+                                task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
                                     // 사진을 데이터베이스로 넘겨야함.
                                     // https://riapapa-collection.tistory.com/42
                                     // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
                                     storageRef?.putFile(uri!!)?.addOnSuccessListener {
                                         Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show() // 잘 들어갔나 확인 하려고 적어 놓음.
-                                        // 메인페이지로 넘어가야함.
+                                        // 먼저 메인화면으로 돌아 갔다가
+                                        // ProductDetailActivity로 넘어가도록.
+                                        // 뒤로 가는 버튼으로 글쓰기 화면이 다시 나오지 않도록
+
                                     }
                                 }
                             }
@@ -305,6 +323,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
 
+        // tensorflow Lite 초기화
+        initTensorFlowAndLoadModel()
+
     }
 
     //갤러리에서 이미지 불러온 후 행동
@@ -322,7 +343,20 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     img.visibility = View.VISIBLE
 
                     //imgUri = absolutelyPath(uri)
+
+                    // 사진이 바뀌면 true
                     imageChange = true;
+
+
+                    // 사진 비트맵으로 변환
+                    // 모델에 넣어서 결과 가져오기
+                    var bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+                    bitmap = Bitmap.createScaledBitmap(bitmap!!, INPUT_SIZE, INPUT_SIZE, false)
+                    val results: List<Classifier.Recognition> = classifier!!.recognizeImage(bitmap)
+                    // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
+                    // 나중에 바뀔 코드
+                    etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+
 
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -376,6 +410,27 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             "음악" -> return 6
             "기타" -> return 7
             else -> return 7
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        executor.execute { classifier!!.close() }
+    }
+
+    private fun initTensorFlowAndLoadModel() {
+        executor.execute {
+            classifier = try {
+                TensorFlowImageClassifier.create(
+                        assets,
+                        MODEL_PATH,
+                        LABEL_PATH,
+                        INPUT_SIZE,
+                        QUANT)
+                //makeButtonVisible();
+            } catch (e: java.lang.Exception) {
+                throw RuntimeException("Error initializing TensorFlow!", e)
+            }
         }
     }
 

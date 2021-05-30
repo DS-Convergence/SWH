@@ -33,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
+
 }
 
 dependencies {
@@ -76,6 +82,13 @@ dependencies {
 
     // 이미지 회전 방지(glide 라이브러리)
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    // tensorflow Lite
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    compile 'com.wonderkiln:camerakit:0.13.1'
+    compile 'org.tensorflow:tensorflow-lite:+'
 
 }
 

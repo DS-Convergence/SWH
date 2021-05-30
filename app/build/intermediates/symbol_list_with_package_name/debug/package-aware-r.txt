@@ -238,6 +238,19 @@ attr civ_border_color
 attr civ_border_overlay
 attr civ_border_width
 attr civ_circle_background_color
+attr ckCropOutput
+attr ckDoubleTapToToggleFacing
+attr ckFacing
+attr ckFlash
+attr ckFocus
+attr ckJpegQuality
+attr ckLockVideoAspectRatio
+attr ckMethod
+attr ckPermissions
+attr ckPinchToZoom
+attr ckVideoBitRate
+attr ckVideoQuality
+attr ckZoom
 attr clickAction
 attr clockFaceBackgroundColor
 attr clockHandColor
@@ -1741,6 +1754,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable focus_marker_fill
+drawable focus_marker_outline
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_green
@@ -1891,6 +1906,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back
 id back_btn
 id bar
 id barrier
@@ -1944,6 +1960,7 @@ id container
 id content
 id contentPanel
 id contiguous
+id continuous
 id coordinator
 id cos
 id counterclockwise
@@ -1996,6 +2013,7 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_category
 id et_deposit
 id et_prodDetail
 id et_prodName
@@ -2012,11 +2030,13 @@ id fitToContents
 id fixed
 id flip
 id floating
+id focusMarkerContainer
 id forever
 id frameLayout
 id frameLayout1
 id frameLayout2
 id frameLayout3
+id front
 id ghost_view
 id ghost_view_holder
 id go_sign_up_btn
@@ -2032,6 +2052,7 @@ id groups
 id guideline
 id header_title
 id hideable
+id highest
 id hobbytestBtn
 id home
 id homeAsUp
@@ -2074,6 +2095,7 @@ id largeLabel
 id latest_message_more_users
 id layout
 id layout_map
+id lazy
 id left
 id leftToRight
 id light
@@ -2086,6 +2108,7 @@ id list_item
 id location_accept_switch
 id log_in_btn
 id logout_btn
+id lowest
 id main
 id main_map
 id map
@@ -2110,6 +2133,10 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id max1080p
+id max2160p
+id max480p
+id max720p
 id media_actions
 id message
 id middle
@@ -2180,6 +2207,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id picture
 id pin
 id position
 id postLayout
@@ -2190,6 +2218,7 @@ id pw_login
 id pw_sign_up
 id pw_sign_up_check
 id qr_button_chat_log
+id qvga
 id radio
 id rating_txt
 id ratio
@@ -2251,6 +2280,7 @@ id snap
 id snapMargins
 id sp_category
 id spacer
+id speed
 id spline
 id split_action_bar
 id spnCate
@@ -2271,10 +2301,14 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
+id still
 id stop
 id stretch
+id strict
 id submenuarrow
 id submit_area
+id surface_view
+id surface_view_container
 id sv
 id tabMode
 id tag_accessibility_actions
@@ -2285,6 +2319,8 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tap
+id tapWithMarker
 id terms_btn
 id terrain
 id test_checkbox_android_button_tint
@@ -2305,6 +2341,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView8
 id textView9
 id textView_camera_chat_log_more
 id textView_chat_log_more_qr
@@ -2320,6 +2357,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id texture_view
 id thumb
 id time
 id timeTV
@@ -2330,6 +2368,7 @@ id title_template
 id toggle
 id top
 id topPanel
+id torch
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -2468,6 +2507,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout layout_focus_marker
 layout listview
 layout listview_form
 layout main_itemview
@@ -2543,6 +2583,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout surface_view
 layout test_action_chip
 layout test_chip_zero_corner_radius
 layout test_design_checkbox
@@ -2557,6 +2598,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout texture_view
 layout user_evaluation
 layout user_info_listview
 layout user_row_new_message
@@ -3438,6 +3480,7 @@ styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMod
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed gestureInsetBottomIgnored shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
+styleable CameraView android_adjustViewBounds ckCropOutput ckDoubleTapToToggleFacing ckFacing ckFlash ckFocus ckJpegQuality ckLockVideoAspectRatio ckMethod ckPermissions ckPinchToZoom ckVideoBitRate ckVideoQuality ckZoom
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
