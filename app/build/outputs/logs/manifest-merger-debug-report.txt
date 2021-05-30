@@ -4,6 +4,8 @@ ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:2:1-267:12
 INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:2:1-267:12
 INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:2:1-267:12
 INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:2:1-267:12
+MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:2:1-27:12
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\c0b77515ae76b293f59b852757a6f1a0\jetified-tensorflow-lite-2.5.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5ac095bc27153d1bf34614b11ea4b371\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:2:1-21:12
@@ -26,6 +28,7 @@ MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\LeeYeEun\.g
 MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\31daf8d401b40fad4c78277bdd2dce3c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\aa628d6d617ff054a85ec72c39f8a28f\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:15:1-49:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9e9a000ecb62cd60b870848e4ec26f60\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5809d09fdd6f7110c739dc52abf7dfed\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\581e844bc29aec348d9ed6d5c523d59b\jetified-play-services-auth-base-17.0.0\AndroidManifest.xml:2:1-7:12
@@ -58,7 +61,6 @@ MERGED from [androidx.core:core:1.3.2] C:\Users\LeeYeEun\.gradle\caches\transfor
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\172f2b9346f9677b2bb0671a8c83ae68\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\f7fc7c4c3863732f0e2d5f6327d4ca3a\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\edd4af655dbd057eb5be5d6fe5eb858a\jetified-firebase-components-16.1.0\AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\7eb2586f7ec83777356ecc5357928bee\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5f9abb899f07749543275aa77807f688\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\a222ecf57e43d099e31f45f99accb94a\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -96,6 +98,10 @@ uses-sdk
 ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
 INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
 INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
+MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:6:5-8:41
+MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:6:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\c0b77515ae76b293f59b852757a6f1a0\jetified-tensorflow-lite-2.5.0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\c0b77515ae76b293f59b852757a6f1a0\jetified-tensorflow-lite-2.5.0\AndroidManifest.xml:7:5-8:41
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5ac095bc27153d1bf34614b11ea4b371\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5ac095bc27153d1bf34614b11ea4b371\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:6:5-8:41
@@ -140,6 +146,8 @@ MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\LeeYeEun
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\aa628d6d617ff054a85ec72c39f8a28f\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9e9a000ecb62cd60b870848e4ec26f60\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9e9a000ecb62cd60b870848e4ec26f60\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5809d09fdd6f7110c739dc52abf7dfed\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:5:5-7:41
@@ -204,8 +212,6 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\LeeYeEun\.gradle\caches\
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\f7fc7c4c3863732f0e2d5f6327d4ca3a\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\edd4af655dbd057eb5be5d6fe5eb858a\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\edd4af655dbd057eb5be5d6fe5eb858a\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\75c489ca9644540d4a6e843b448d241d\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\7eb2586f7ec83777356ecc5357928bee\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\7eb2586f7ec83777356ecc5357928bee\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5f9abb899f07749543275aa77807f688\documentfile-1.0.0\AndroidManifest.xml:20:5-44
@@ -243,6 +249,7 @@ INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
 	android:minSdkVersion
 		ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:9:9-35
 		INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml
+		MERGED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:9:9-35
 		INJECTED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:12:5-79
@@ -296,6 +303,10 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\LeeYeEun
 		ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:21:9-32
 application
 ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:23:5-265:19
+MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:25:5-20
+MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:25:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\c0b77515ae76b293f59b852757a6f1a0\jetified-tensorflow-lite-2.5.0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\c0b77515ae76b293f59b852757a6f1a0\jetified-tensorflow-lite-2.5.0\AndroidManifest.xml:10:5-20
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:11:5-19:19
@@ -734,3 +745,39 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\LeeYeEun
 		ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:259:13-37
 	android:name
 		ADDED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:258:13-50
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.CAMERA
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:11:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:12:5-71
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:12:22-68
+uses-feature#android.hardware.camera
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
+	android:required
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
+uses-feature#android.hardware.camera.front
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
+uses-feature#android.hardware.microphone
+ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:2:1-267:12 reason: com.wonderkiln.camerakit.core requested WRITE_EXTERNAL_STORAGE

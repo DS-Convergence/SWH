@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -31,6 +32,9 @@ import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+import kotlin.collections.List
 
 class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -61,13 +65,24 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private var beforeURI : Uri? = null     // 이전 사진
     private var imageChange = false
 
+
+    // tensorflow Lite
+    private val MODEL_PATH = "mobilenet_quant_v1_224.tflite"
+    private val QUANT = true
+    private val LABEL_PATH = "labels.txt"
+    private val INPUT_SIZE = 224
+
+    private var classifier: Classifier? = null
+
+    private val executor: Executor = Executors.newSingleThreadExecutor()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_form)
 
         // 변수 초기화
         etProdName = findViewById(R.id.et_prodName)
-        //etCategory = findViewById(R.id.et_category)
+        etCategory = findViewById(R.id.et_category)
         etProdDetail = findViewById(R.id.et_prodDetail)
         etRentalFee = findViewById(R.id.et_rentalFee)
         etDeposit = findViewById(R.id.et_deposit)
@@ -245,7 +260,10 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                                     // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
                                     storageRef?.putFile(uri!!)?.addOnSuccessListener {
                                         Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show() // 잘 들어갔나 확인 하려고 적어 놓음.
-                                        // 메인페이지로 넘어가야함.
+                                        // 먼저 메인화면으로 돌아 갔다가
+                                        // ProductDetailActivity로 넘어가도록.
+                                        // 뒤로 가는 버튼으로 글쓰기 화면이 다시 나오지 않도록
+
                                     }
                                 }
                             }
@@ -305,6 +323,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
 
+        // tensorflow Lite 초기화
+        initTensorFlowAndLoadModel()
+
     }
 
     //갤러리에서 이미지 불러온 후 행동
@@ -322,7 +343,20 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     img.visibility = View.VISIBLE
 
                     //imgUri = absolutelyPath(uri)
+
+                    // 사진이 바뀌면 true
                     imageChange = true;
+
+
+                    // 사진 비트맵으로 변환
+                    // 모델에 넣어서 결과 가져오기
+                    var bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+                    bitmap = Bitmap.createScaledBitmap(bitmap!!, INPUT_SIZE, INPUT_SIZE, false)
+                    val results: List<Classifier.Recognition> = classifier!!.recognizeImage(bitmap)
+                    // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
+                    // 나중에 바뀔 코드
+                    etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+
 
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -376,6 +410,27 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             "음악" -> return 6
             "기타" -> return 7
             else -> return 7
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        executor.execute { classifier!!.close() }
+    }
+
+    private fun initTensorFlowAndLoadModel() {
+        executor.execute {
+            classifier = try {
+                TensorFlowImageClassifier.create(
+                    assets,
+                    MODEL_PATH,
+                    LABEL_PATH,
+                    INPUT_SIZE,
+                    QUANT)
+                //makeButtonVisible();
+            } catch (e: java.lang.Exception) {
+                throw RuntimeException("Error initializing TensorFlow!", e)
+            }
         }
     }
 
