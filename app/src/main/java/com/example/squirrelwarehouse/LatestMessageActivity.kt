@@ -40,7 +40,7 @@ class LatestMessageActivity : AppCompatActivity() {
 
         adapter.setOnItemClickListener { item,view->
             Log.d(TAG,"123")
-            val intent = Intent(this, ChatLogActivity::class.java)
+            val intent = Intent(this, ChatLogListActivity::class.java)
             //we are missing the caht partner user
             val row = item as LatestMessageRow
             intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)

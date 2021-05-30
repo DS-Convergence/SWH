@@ -22,15 +22,6 @@ class NewMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
 
-        //다운받은 GroupAdapter사용
-        //더미 데이타
-        //val adapter = GroupAdapter<ViewHolder>()
-        //adapter.add(UserItem())
-        //adapter.add(UserItem())
-        //adapter.add(UserItem())
-        // recyclerview_newmessage.adapter = adapter //User리스트 보여주기 위해서 어뎁터
-        //recyclerview_newmessage.layoutManneger = LinearLayoutManager(this)라고 해도 되긴하지ㅏㅁㄴ,
-
         fetchUser() //Database에 있는 user들을 fetch하는 것
 
     }
@@ -58,7 +49,7 @@ class NewMessageActivity : AppCompatActivity() {
                 adapter.setOnItemClickListener{item, view ->
 
                     val userItem = item as UserItem
-                    val intent = Intent(view.context, ChatLogActivity::class.java)
+                    val intent = Intent(view.context, ChatLogListActivity::class.java)
                     //                   intent.putExtra(USER_KEY,item.user.username)
                     intent.putExtra(USER_KEY,userItem.user)
                     startActivity(intent)
