@@ -61,11 +61,14 @@
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
 
         <activity android:name="com.example.squirrelwarehouse.TempActivity" >
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />

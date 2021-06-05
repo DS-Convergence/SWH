@@ -1,9 +1,14 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,13 +26,16 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
 import kotlinx.android.synthetic.main.activity_chat_log.back_btn
+import kotlinx.android.synthetic.main.activity_chat_log_more.*
 import kotlinx.android.synthetic.main.activity_my_page.*
 import kotlinx.android.synthetic.main.activity_new_message.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
+import kotlinx.android.synthetic.main.product_form.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.List
 
 
 class ChatLogActivity : AppCompatActivity() {
@@ -45,7 +53,7 @@ class ChatLogActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var touserid : String //유저아이디
     private lateinit var toimgUri : String //프로필 이미지
-
+    private var uri : Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +69,7 @@ class ChatLogActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
         auth = FirebaseAuth.getInstance()
-
+        val fromId = FirebaseAuth.getInstance().uid
         var intent = intent
         var prod = intent.getStringExtra("ProductID")
         touserid = intent.getStringExtra("UserId").toString()
@@ -96,14 +104,42 @@ class ChatLogActivity : AppCompatActivity() {
             Log.d(TAG, " Attempt to send message.....")
             performSendMessage() // 새로운 메소드. 어떻게 firebase의 메세지를 보낼지
         }
+        
 
         qr_button_chat_log.setOnClickListener {
+            //ChatLogMore띄울때 정보 같이 넘겨주기
             val intent = Intent(this, ChatLogMoreActivity::class.java)
-            startActivity(intent) //NewMessageActivity창 뜸.
+            intent.putExtra("userId1", touserid) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
+            Log.d("CHECK_INTENT", "userId1 " + touserid)
+            intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
+            Log.d("CHECK_INTENT", "userId2 " + fromId)
+            intent.putExtra("productId", prod)
+            Log.d("CHECK_INTENT", "productId " + prod)
+            startActivityForResult(intent, 0)
         }
 
-    }
 
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 0) {
+            // Make sure the request was successful
+            if (resultCode == Activity.RESULT_OK) {
+                try {
+                    // 선택한 이미지를 가져옴.
+                    // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
+                    uri = data!!.data
+                    //.with(this).load(uri).into(??)
+                    //??.visibility = View.VISIBLE
+
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
     private fun listenForMessages() { //지금까지 보낸 메세지 나열하기
         var myUser: UserModelFS? = null
         val fromId = FirebaseAuth.getInstance().uid //나
@@ -154,7 +190,6 @@ class ChatLogActivity : AppCompatActivity() {
                                 // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                 firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
                                     // 넘겨온 물건 id를 넣어주면 됨.
-
                                         task ->
                                     if(task.isSuccessful){
                                         toUser = task.result.toObject(UserModelFS::class.java)
@@ -203,7 +238,9 @@ class ChatLogActivity : AppCompatActivity() {
         val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
-        val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+        var prod = intent.getStringExtra("ProductID")
+        //물건이 기준이 되도록 바꿈.
+        val chatMessage = ChatMessage(prod!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
         //val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
 
         reference.setValue(chatMessage)

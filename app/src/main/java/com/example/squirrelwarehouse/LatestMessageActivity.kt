@@ -8,19 +8,25 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.squirrelwarehouse.models.ChatMessage
+import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_latest_message.*
+import kotlinx.android.synthetic.main.user_row_new_message.*
+import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import kotlin.collections.HashMap
 
 class LatestMessageActivity : AppCompatActivity() {
-    companion object {
+    private var firestore : FirebaseFirestore? = null
+    private var chatmessage :ChatMessage? = null
+        companion object {
         var currentUser: User? = null
         val TAG = "LatestActivity"
     }
@@ -44,6 +50,9 @@ class LatestMessageActivity : AppCompatActivity() {
             //we are missing the caht partner user
             val row = item as LatestMessageRow
             intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
+           Log.d("TEST","view.chat_log_textview_productname" + item.chatMessage.id)
+
+            intent.putExtra("prod", item.chatMessage.id)
             startActivity(intent)
         }
 
@@ -70,6 +79,7 @@ class LatestMessageActivity : AppCompatActivity() {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 //새로운 child있을 떄마다 notify.
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)?:return
+
                 latestMessageMap[snapshot.key!!] = chatMessage //actual value는 chatMessage
                 refreshRecyclerViewMessges()
 
