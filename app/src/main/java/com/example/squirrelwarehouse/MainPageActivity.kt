@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -19,8 +22,9 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main_itemview.*
 import kotlinx.android.synthetic.main.main_page.*
 
+
 class MainPageActivity : AppCompatActivity() {
-    //private lateinit var database: DatabaseReference
+    private lateinit var database: DatabaseReference
     private var firestore : FirebaseFirestore? = null
     private var storage : FirebaseStorage? = null
     private lateinit var auth: FirebaseAuth
@@ -44,7 +48,7 @@ class MainPageActivity : AppCompatActivity() {
 
         var gotoMap = gotomap
         gotoMap.setOnClickListener {
-            val intent = Intent(this, MainMapActivity::class.java)
+            val intent = Intent(this, ItemLoc::class.java)
             startActivityForResult(intent, 0)
         }
 
@@ -75,11 +79,26 @@ class MainPageActivity : AppCompatActivity() {
         // 메인페이지 물품 보기
         // TODO: 메인페이지 리사이클러뷰 내용 넣기
         // https://hijjang2.tistory.com/313
+        // https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cosmosjs&logNo=221050368244
+
+        // 파이어베이스 데이터 읽기
         lateinit var item: MainItem
-        //database = Firebase.database.reference
-        firestore = FirebaseFirestore.getInstance()
-        storage = FirebaseStorage.getInstance()
-        auth = FirebaseAuth.getInstance()
+        database = Firebase.database.reference
+        //firestore = FirebaseFirestore.getInstance()
+        //storage = FirebaseStorage.getInstance()
+        //auth = FirebaseAuth.getInstance()
+        val itemListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                lateinit var item : MainItem
+                val name = snapshot.getValue(String::class.java)!!
+                item.name = name
+                // val thumb
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.v("ItemLoad","failed")
+            }
+        }
 
         // 업데이트
         updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)

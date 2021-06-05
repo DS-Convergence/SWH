@@ -14,7 +14,7 @@ class ListViewActivity : AppCompatActivity() {
 
         val adapter = ListAdapter()
 
-        adapter.items.add(List("title1","16:03","세부사항",""))
+        adapter.items.add(Item("title1","16:03","세부사항",""))
 
         listView.adapter = adapter
     }

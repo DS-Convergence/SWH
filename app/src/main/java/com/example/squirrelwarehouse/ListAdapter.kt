@@ -3,15 +3,12 @@ package com.example.squirrelwarehouse
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.listview.view.*
 
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-    val items = ArrayList<List>()
+    val items = ArrayList<Item>()
 
     override fun getItemCount() = items.size
 
@@ -26,7 +23,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun setItem(item : List) {
+        fun setItem(item : Item) {
             if(item.imgbtn!="") {
                 // 이미지 데이터 가져와서 넣는부분 - activity에서 uri 넣으면 여기서 item에 적용.
             }

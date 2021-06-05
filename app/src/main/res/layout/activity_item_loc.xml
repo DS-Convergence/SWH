@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ItemLoc">
+    tools:context=".ItemLoc"
+    android:name="com.google.android.gms.maps.SupportMapFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
