@@ -90,6 +90,9 @@ dependencies {
     compile 'com.wonderkiln:camerakit:0.13.1'
     compile 'org.tensorflow:tensorflow-lite:+'
 
+    // QR 코드
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
 }
 
 androidExtensions{
