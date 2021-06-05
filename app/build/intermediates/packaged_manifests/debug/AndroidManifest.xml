@@ -35,6 +35,16 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -50,6 +60,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
 
+        <activity android:name="com.example.squirrelwarehouse.TempActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
         <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
@@ -64,6 +81,8 @@
         <activity
             android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
             android:theme="@style/Transparent" />
+        <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -102,6 +121,16 @@
             </intent-filter>
             -->
         </activity>
+        <activity android:name="com.example.squirrelwarehouse.ProductRentalQRActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ProductRentalCameraActivity" />
+        <!-- QR코드 -->
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
@@ -133,8 +162,7 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.example.squirrelwarehouse.MainMapActivity" >
-        </activity>
+        <activity android:name="com.example.squirrelwarehouse.MainMapActivity" />
         <activity android:name="com.example.squirrelwarehouse.MainActivity" >
 
             <!--
@@ -184,7 +212,6 @@
                 android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service> <!-- Needs to be explicitly declared on P+ -->
-
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"
@@ -271,7 +298,7 @@
 
         <uses-library android:name="com.google.android.maps" />
         <!--
-            <meta-data android:name="com.google.android.maps.v2.API_KEY"
+<meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAmAvFvrYqErfcT0HC9U_CzoMIOWrEXCoo"/>
         -->
         <uses-library
