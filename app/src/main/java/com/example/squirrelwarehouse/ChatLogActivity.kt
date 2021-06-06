@@ -55,6 +55,8 @@ class ChatLogActivity : AppCompatActivity() {
     private lateinit var toimgUri : String //프로필 이미지
     private var uri : Uri? = null
 
+    private lateinit var prodUserId : String  // 물건 주인 id
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
@@ -84,6 +86,7 @@ class ChatLogActivity : AppCompatActivity() {
                     chat_log_textview_productname_up.setText(product?.productName)
                     chat_log_textview_username.setText(product?.userName)
                     //userid = product?.userId.toString()
+                    prodUserId = product?.userId.toString()
 
 
                 }
@@ -109,9 +112,16 @@ class ChatLogActivity : AppCompatActivity() {
         qr_button_chat_log.setOnClickListener {
             //ChatLogMore띄울때 정보 같이 넘겨주기
             val intent = Intent(this, ChatLogMoreActivity::class.java)
-            intent.putExtra("userId1", touserid) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
+            intent.putExtra("userId1", prodUserId) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
             Log.d("CHECK_INTENT", "userId1 " + touserid)
-            intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
+
+            // 예은코드. 확인하면 주석 지우삼
+            if(fromId.equals(prodUserId)) { // 현재 이용자가 물건 주인이면 null
+                intent.putExtra("userId2", touserid) //빌리는 사람_카메라 띄우기
+            }
+            else { // 아니면 현재 이용자 id 넘긴다
+                intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
+            }
             Log.d("CHECK_INTENT", "userId2 " + fromId)
             intent.putExtra("productId", prod)
             Log.d("CHECK_INTENT", "productId " + prod)

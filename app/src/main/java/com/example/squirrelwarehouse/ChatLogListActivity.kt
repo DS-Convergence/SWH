@@ -33,6 +33,9 @@ class ChatLogListActivity : AppCompatActivity() {
     val adapter = GroupAdapter<ViewHolder>()//새로운 어뎁터
     var toUser: User? = null
     private var firestore : FirebaseFirestore? = null
+
+    private lateinit var prodUserId : String  // 물건 주인 id
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
@@ -59,6 +62,8 @@ class ChatLogListActivity : AppCompatActivity() {
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
                     chat_log_textview_productname_up.text = product?.productName.toString()
+                    prodUserId = product?.userId.toString()
+                    Log.v("ProdUserId",prodUserId)
                 }
             }
         }
@@ -85,9 +90,16 @@ class ChatLogListActivity : AppCompatActivity() {
         qr_button_chat_log.setOnClickListener {
             //ChatLogMore띄울때 정보 같이 넘겨주기
             val intent = Intent(this, ChatLogMoreActivity::class.java)
-            intent.putExtra("userId1", touserid) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
+            intent.putExtra("userId1", prodUserId) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
             Log.d("CHECK_INTENT", "userId1 " + touserid)
-            intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
+
+            // 예은 코드. 확인하면 주석 지우삼
+            if(fromId.equals(prodUserId)) { // 현재 이용자가 물건 주인이면 null
+                intent.putExtra("userId2", touserid) //빌리는 사람_카메라 띄우기
+            }
+            else { // 아니면 현재 이용자 id 넘긴다
+                intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
+            }
             Log.d("CHECK_INTENT", "userId2 " + fromId)
             intent.putExtra("productId", prod)
             Log.d("CHECK_INTENT", "productId " + prod)
@@ -138,6 +150,7 @@ class ChatLogListActivity : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid //나는 보내는 사람이니까 from
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         val toId = user!!.uid
+        var prod = intent.getStringExtra("prod").toString()
 
         //firebase에 user-message만듦.
         //두번 올려 줘야 하니까 파이어 베이스에
@@ -147,7 +160,7 @@ class ChatLogListActivity : AppCompatActivity() {
         val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
-        val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+        val chatMessage = ChatMessage(prod, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
 
         reference.setValue(chatMessage)
                 .addOnSuccessListener {
