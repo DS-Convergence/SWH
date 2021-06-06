@@ -62,7 +62,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
 
-        var prod = "G3YlgUR4RvigVQcCqiuO"
+        var prod = "93rEd9K64U6qLghEq0A8"
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
