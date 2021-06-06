@@ -11,13 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
+import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main_itemview.*
 import kotlinx.android.synthetic.main.main_page.*
@@ -82,33 +77,41 @@ class MainPageActivity : AppCompatActivity() {
         // https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cosmosjs&logNo=221050368244
 
         // 파이어베이스 데이터 읽기
-        lateinit var item: MainItem
-        database = Firebase.database.reference
-        //firestore = FirebaseFirestore.getInstance()
-        //storage = FirebaseStorage.getInstance()
-        //auth = FirebaseAuth.getInstance()
-        val itemListener = object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                lateinit var item : MainItem
-                val name = snapshot.getValue(String::class.java)!!
-                item.name = name
-                // val thumb
+        //lateinit var arr : ArrayList<MainItem>
+        lateinit var item : MainItem
+        database = FirebaseDatabase.getInstance().reference
+        /*database.child("Product").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(prodsnapshot: DataSnapshot) {
+                val prodId = prodsnapshot.getValue(String::class.java)!!
+                val query : Query = database.limitToFirst(10)
+                query.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        loadItem(snapshot, adapter)
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) {}
+                })
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                Log.v("ItemLoad","failed")
-            }
-        }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })*/
 
         // 업데이트
         updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var updateList:ArrayList<MainItem> = arrayListOf()
+        var updateAdapter : MainViewAdapter = MainViewAdapter()
+        //var updateList:ArrayList<MainItem> = arrayListOf()
+        /*while(arr!=null) {
+            var i : Int = 0
+            var item : MainItem = arr.get(i)
+            adapter.items.add(item)
+        }*/
+        updateAdapter.items.clear()
         for(i in 1..5) {
-            item = MainItem("","업데이트"+i)
-            // item = MainItem(가장 최근 아이템 3개 받아서 저장)
-            updateList.add(item)
+            item = MainItem("","최신"+i)
+            //updateList.add(item)
+            updateAdapter.items.add(item)
         }
-        updateView.adapter = MainViewAdapter(updateList)
+        updateView.adapter = updateAdapter
 
         // 업데이트 - 더보기
         var moreUpdate = moreUpdate
@@ -123,13 +126,16 @@ class MainPageActivity : AppCompatActivity() {
         var usrCategory:String = "운동"  // 추천 알고리즘 결과 상위 카테고리로 설정
         cateTextView.text = "#"+usrCategory
         cateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        var cateAdapter : MainViewAdapter = MainViewAdapter()
+        cateAdapter.items.clear()
         var cateList:ArrayList<MainItem> = arrayListOf()
         /*for(i in 1..5) {
             item = MainItem("","카테고리"+i)
             // item = MainItem(지정 카테고리 상위 아이템 3개 받아서 저장)
             cateList.add(item)
         }*/
-        var prodId = "LciNSbXgkv7TQq3gDrj4"
+        //lateinit var item : MainItem
+        var prodId = "93rEd9K64U6qLghEq0A8"
         lateinit var prdName : String
         firestore?.collection("Product")?.document(prodId)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
             task ->
@@ -153,10 +159,10 @@ class MainPageActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"데이터 로드 실패", Toast.LENGTH_LONG).show()
             }
         }
-        cateList.add(item)
-        cateList.add(MainItem("","카테고리1"))
-        cateList.add(MainItem("","카테고리2"))
-        cateView.adapter = MainViewAdapter(cateList)
+        cateAdapter.items.add(item)
+        cateAdapter.items.add(MainItem("","카테고리2"))
+        cateAdapter.items.add(MainItem("","카테고리3"))
+        cateView.adapter = cateAdapter
 
         // 카테고리 - 더보기
         var moreCate = moreCate
@@ -170,13 +176,16 @@ class MainPageActivity : AppCompatActivity() {
 
         // 추천
         rcmdView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var rcmdList:ArrayList<MainItem> = arrayListOf()
+        var rcmdAdapter : MainViewAdapter = MainViewAdapter()
+        //var rcmdList:ArrayList<MainItem> = arrayListOf()
+        rcmdAdapter.items.clear()
         for(i in 1..5) {
             item = MainItem("","추천"+i)
             // item = MainItem(추천 알고리즘 결과의 상위 아이템 3개 받아서 저장)
-            rcmdList.add(item)
+            //rcmdList.add(item)
+            rcmdAdapter.items.add(item)
         }
-        rcmdView.adapter = MainViewAdapter(rcmdList)
+        rcmdView.adapter = rcmdAdapter
 
         // 추천 - 더보기
         var moreRcmd = moreRcmd
@@ -187,7 +196,55 @@ class MainPageActivity : AppCompatActivity() {
         })
     }
 
-    private fun searchItem(query: String) {
+    private fun searchItem(query: String) {}
 
+    fun loadItem(dataSnapshot: DataSnapshot, adapter: MainViewAdapter) {
+        val prodIterator = dataSnapshot.children.iterator()
+        if (prodIterator.hasNext()) {
+            adapter.items.clear()
+            val product = prodIterator.next()
+            val itemsIterator = product.children.iterator()
+            while (itemsIterator.hasNext()) {
+                val currentItem = itemsIterator.next()
+                val map = currentItem.value as HashMap<String, Any>
+                //val userId = map["userId"].toString()
+                //val author = map["userName"].toString()
+                //val category = map["category"].toString()
+                val thumb = map["imageUri"].toString()
+                val name = map["productName"].toString()
+                //val time = Date(map["uploadTime"] as Long).toString()
+
+                adapter.items.add(MainItem(thumb,name))
+            }
+        }
     }
+/*
+    fun loadRCView(db:Firebase) : ArrayList<MainItem> {
+        lateinit var arr : ArrayList<MainItem>
+        lateinit var item : MainItem
+        lateinit var TAG : String
+
+        val itemListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val name = snapshot.getValue(String::class.java)!!
+                item.name = name
+                item.thumb = thumb.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.v("ItemLoad","failed")
+            }
+        }
+
+        //database.child("Product").child(userId)
+
+        // 데이터 받아서 객체에 넣고 배열 만들기
+        while(db==null) {
+            item.name =
+            item.thumb =
+            arr.add(item)
+        }
+
+        return arr;
+    }*/
 }
