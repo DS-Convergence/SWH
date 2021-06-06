@@ -8,10 +8,14 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.main_itemview.view.*
 
-class MainViewAdapter(var items:ArrayList<MainItem>) : RecyclerView.Adapter<MainViewAdapter.ViewHolder>() {
+class MainViewAdapter : RecyclerView.Adapter<MainViewAdapter.ViewHolder>() {
+    var items = ArrayList<MainItem>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewAdapter.ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.main_itemview,parent,false)
+    override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int
+    ): MainViewAdapter.ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.main_itemview, parent, false)
         return ViewHolder(itemView)
     }
 
