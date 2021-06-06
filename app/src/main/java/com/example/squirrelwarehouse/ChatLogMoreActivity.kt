@@ -35,8 +35,8 @@ class ChatLogMoreActivity : AppCompatActivity() {
         val main : View = findViewById(R.id.main)   // 예은 추가
 
         var intent = intent
-        var touserid = intent.getStringExtra("userId1").toString() // 빌려주는 사람. QR코드 제공
-        var fromId = intent.getStringExtra("userId2").toString()  // 빌리는 사람. 카메라 제공
+        var user1 = intent.getStringExtra("userId1").toString() // 빌려주는 사람. QR코드 제공
+        var user2 = intent.getStringExtra("userId2").toString()  // 빌리는 사람. 카메라 제공
         var prod = intent.getStringExtra("productId")
 
         auth = FirebaseAuth.getInstance()
@@ -55,13 +55,13 @@ class ChatLogMoreActivity : AppCompatActivity() {
 
 
             // 현재 유저가 빌려주는 사람인 경우 QR코드로. touserid
-            if(auth.currentUser!!.uid.equals(touserid)) {
+            if(auth.currentUser!!.uid.equals(user1)) {
                 //예은이 코드로 정보 넘겨주기_ProductRentalQRActivity
                 val intent = Intent(this, ProductRentalQRActivity::class.java)
-                intent.putExtra("userId1", touserid) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
-                Log.d("CHECK_ChatLogMore", "userId1 " + touserid)
-                intent.putExtra("userId2", fromId) //빌리는 사람_카메라 띄우기
-                Log.d("CHECK_ChatLogMore", "userId2 " + fromId)
+                intent.putExtra("userId1", user1) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
+                Log.d("CHECK_ChatLogMore", "userId1 " + user1)
+                intent.putExtra("userId2", user2) //빌리는 사람_카메라 띄우기
+                Log.d("CHECK_ChatLogMore", "userId2 " + user2)
                 intent.putExtra("productId", prod)
                 Log.d("CHECK_ChatLogMore", "productId " + prod)
                 startActivityForResult(intent, 0)
@@ -85,6 +85,7 @@ class ChatLogMoreActivity : AppCompatActivity() {
 
     }
 
+    // 예은 코드
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
