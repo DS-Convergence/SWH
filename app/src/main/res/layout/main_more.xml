@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/rice_white">
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/moreBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/rice_white"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/more" />
+
+        <ImageButton
+            android:id="@+id/noticeBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="100dp"
+            android:background="@color/rice_white"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/notice" />
+
+        <ImageButton
+            android:id="@+id/settingBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="50dp"
+            android:background="@color/rice_white"
+            android:foregroundTint="@color/mocha_brown"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings" />
+
+        <ImageButton
+            android:id="@+id/mypageBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:background="@color/rice_white"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/users" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/hobbytestBtn"
+        android:layout_width="364dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/asparagus_green"
+        android:fontFamily="@font/goyang"
+        android:gravity="center|start|center_vertical"
+        android:text="나는 어떤 취미와 잘 어울릴까?"
+        android:textSize="23sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="5">
+
+        <LinearLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:text="전체 카테고리"
+                android:textColor="@color/mocha_brown"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/goyang"
+                android:text="일반 카테고리"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/spnCate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/category"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/goyang"
+                android:text="취미 카테고리"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/spnHobby"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/cate_hobby"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:text="지역 선택"
+                android:textColor="@color/mocha_brown"
+                android:textSize="23sp" />
+
+            <Spinner
+                android:id="@+id/spnLoc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/location"/>
+
+            <Spinner
+                android:id="@+id/spnLocDetail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginVertical="10dp"
+                android:spinnerMode="dropdown"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/peanut_brown"
+        android:fontFamily="@font/goyang"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"
+        android:text="적용"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:cornerRadius="100dp" />
+
+</LinearLayout>
