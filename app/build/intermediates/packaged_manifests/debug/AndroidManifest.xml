@@ -137,7 +137,7 @@
         <activity
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
-        <activity android:name="com.example.squirrelwarehouse.ListViewActivity" >
+        <activity android:name="com.example.squirrelwarehouse.UpdateMoreActivity" >
 
             <!--
             <intent-filter>
