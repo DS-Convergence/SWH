@@ -29,7 +29,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun setItem(item : Item) {
+        fun setItem(item : Item) {/*
             if(item.imgbtn!="") {
                 // 이미지 데이터 가져와서 넣는부분 - activity에서 uri 넣으면 여기서 item에 적용.
             }
@@ -40,7 +40,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
             itemView.titleTV.text = item.title
             //itemView.timeTV.text = item.time
             itemView.detailTV.text = item.detail
-            // https://recipes4dev.tistory.com/168
+            // https://recipes4dev.tistory.com/168*/
 
         }
     }

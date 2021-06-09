@@ -1,51 +1,48 @@
 package com.example.squirrelwarehouse
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
+import com.example.squirrelwarehouse.models.Product
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.listview_form.*
 
 class UpdateMoreActivity : AppCompatActivity() {
+
+    lateinit var itemAdapter : ItemAdapter
+    val datas = mutableListOf<Item>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.listview_form)
 
-        // lateinit var item : Item
-        val adapter = GroupAdapter<ViewHolder>()
-        listView.adapter = adapter
+        val layoutManager = LinearLayoutManager(this)
+        listView.setLayoutManager(layoutManager)
 
-        // adapter.items.add(Item("title1","16:03","세부사항",""))
-        if(intent.hasExtra("updateList")) {
-            listView.layoutManager = LinearLayoutManager(this)
-            var data : ArrayList<HashMap<String, String>> = intent.getSerializableExtra("updateList") as ArrayList<HashMap<String, String>>
-            // var arr : ArrayList<Item> = arrayListOf()
-            // val keys: Iterator<String> = data.keys.iterator()
+        itemAdapter = ItemAdapter(this)
+        listView.adapter = itemAdapter
 
-            // var adapter = ListAdapter()
+        var data : ArrayList<HashMap<String, String>> = intent.getSerializableExtra("updateList") as ArrayList<HashMap<String, String>>
 
-            for(i in 0..data.size-1) {
-                val keys : Iterator<String> = data.get(i).keys.iterator()
-                while (keys.hasNext()) {
-                    val tmp : String = ""
-                    val prodId = keys.next()
-                    val title : String? = data.get(i).get(prodId).toString()
+        for(i in 0..data.size-1) {
+            lateinit var item : Item
+            val keys : Iterator<String> = data.get(i).keys.iterator()
+            while (keys.hasNext()) {
+                val tmp : String = ""
+                val prodId = keys.next()
+                val title : String? = data.get(i).get(prodId).toString()
 
-                    // item = Item(prodId,title,tmp,tmp)
-                    //adapter.add(Item(prodId, title, tmp, tmp))
-                }
+                item = Item(prodId,title,"")
+                datas.add(item)
             }
-            adapter.setOnItemClickListener { item, view ->  }
-        } else {
-            Toast.makeText(this, "데이터 불러오기 실패", Toast.LENGTH_LONG).show()
         }
+
+        itemAdapter.datas = datas
+        itemAdapter.notifyDataSetChanged()
+
+
     }
 
 
