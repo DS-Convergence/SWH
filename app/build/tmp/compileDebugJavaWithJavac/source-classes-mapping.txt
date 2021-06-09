@@ -7,3 +7,5 @@ com/example/squirrelwarehouse/TensorFlowImageClassifier.java
  com.example.squirrelwarehouse.TensorFlowImageClassifier$2
 com/example/squirrelwarehouse/BuildConfig.java
  com.example.squirrelwarehouse.BuildConfig
+com/example/squirrelwarehouse/test.java
+ com.example.squirrelwarehouse.test
