@@ -112,7 +112,7 @@
         <activity
             android:name=".ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
-        <activity android:name=".ListViewActivity">
+        <activity android:name=".UpdateMoreActivity">
 
             <!--
             <intent-filter>

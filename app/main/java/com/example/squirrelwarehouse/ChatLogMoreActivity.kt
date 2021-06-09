@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.Rental
 import com.example.squirrelwarehouse.models.User
 import com.google.firebase.auth.FirebaseAuth
@@ -50,54 +49,32 @@ class ChatLogMoreActivity : AppCompatActivity() {
 
         textView_return_chat_log_more.setOnClickListener {
 
-            var temp = user1
-
             // 이미 저장된 정보라면
             // touserId와 fromId가 바뀌어야함.
-            firestore?.collection("Rental")?.document(user1+user2+prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                task ->
-                if (task.isSuccessful) {
-                    var rental = task.result.toObject(Rental::class.java)
-                    if(rental?.userId1 != null) {
-                        temp = user2
-                        Log.v("RENTAL",temp)
-                    }
-                    else {
-                        Log.v("RENTAL","실패")
-                    }
-
-                    // 현재 유저가 빌려주는 사람인 경우 QR코드로. touserid
-                    if(auth.currentUser!!.uid.equals(temp)) {
-                        //예은이 코드로 정보 넘겨주기_ProductRentalQRActivity
-                        val intent = Intent(this, ProductRentalQRActivity::class.java)
-                        intent.putExtra("userId1", user1) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
-                        Log.d("CHECK_ChatLogMore", "userId1 " + user1)
-                        intent.putExtra("userId2", user2) //빌리는 사람_카메라 띄우기
-                        Log.d("CHECK_ChatLogMore", "userId2 " + user2)
-                        intent.putExtra("productId", prod)
-                        Log.d("CHECK_ChatLogMore", "productId " + prod)
-                        startActivityForResult(intent, 0)
-                    }
-
-                    // 현재 유저가 빌리는 사람인 경우 카메라로. fromId
-                    else {
-                        val intentIntegrator = IntentIntegrator(this)
-                        intentIntegrator.setPrompt("")
-                        intentIntegrator.setBeepEnabled(true)
-                        intentIntegrator.captureActivity = ProductRentalCameraActivity::class.java
-                        intentIntegrator.initiateScan()
-                    }
 
 
-                }
-                else {
-                    Log.v("RENTAL","실패")
-                }
+
+            // 현재 유저가 빌려주는 사람인 경우 QR코드로. touserid
+            if(auth.currentUser!!.uid.equals(user1)) {
+                //예은이 코드로 정보 넘겨주기_ProductRentalQRActivity
+                val intent = Intent(this, ProductRentalQRActivity::class.java)
+                intent.putExtra("userId1", user1) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
+                Log.d("CHECK_ChatLogMore", "userId1 " + user1)
+                intent.putExtra("userId2", user2) //빌리는 사람_카메라 띄우기
+                Log.d("CHECK_ChatLogMore", "userId2 " + user2)
+                intent.putExtra("productId", prod)
+                Log.d("CHECK_ChatLogMore", "productId " + prod)
+                startActivityForResult(intent, 0)
             }
 
-
-
-
+            // 현재 유저가 빌리는 사람인 경우 카메라로. fromId
+            else {
+                val intentIntegrator = IntentIntegrator(this)
+                intentIntegrator.setPrompt("")
+                intentIntegrator.setBeepEnabled(true)
+                intentIntegrator.captureActivity = ProductRentalCameraActivity::class.java
+                intentIntegrator.initiateScan()
+            }
 
         }
 
@@ -165,10 +142,6 @@ class ChatLogMoreActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
-
-        finish()
     }
-
-
 
 }
