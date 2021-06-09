@@ -137,15 +137,7 @@
         <activity
             android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
-        <activity android:name="com.example.squirrelwarehouse.UpdateMoreActivity" >
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
+        <activity android:name="com.example.squirrelwarehouse.UpdateMoreActivity" />
         <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
 
             <!--

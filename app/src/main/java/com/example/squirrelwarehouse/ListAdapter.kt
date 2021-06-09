@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.listview_form.*
 
 
-class ListAdapter(var items : ArrayList<Item>) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+    // (var items : ArrayList<Item>)
+    var items = ArrayList<Item>()
 
     override fun getItemCount() = items.size
 
@@ -24,14 +26,6 @@ class ListAdapter(var items : ArrayList<Item>) : RecyclerView.Adapter<ListAdapte
     override fun onBindViewHolder(holder: ListAdapter.ViewHolder, position: Int) {
         val item = items[position]
         holder.setItem(item)
-
-        /*
-        holder.itemView.setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("prodId", item.prodId)
-            startActivityForResult(intent,0)
-        }
-         */
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -47,6 +41,7 @@ class ListAdapter(var items : ArrayList<Item>) : RecyclerView.Adapter<ListAdapte
             //itemView.timeTV.text = item.time
             itemView.detailTV.text = item.detail
             // https://recipes4dev.tistory.com/168
+
         }
     }
 }
