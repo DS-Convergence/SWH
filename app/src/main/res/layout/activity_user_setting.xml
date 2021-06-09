@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white"
+    tools:context=".UserSettingActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/oat_yellow">
+
+            <TextView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:paddingLeft="20dp"
+                android:fontFamily="@font/goyang"
+                android:textColor="@color/mocha_brown"
+                android:text="&lt;" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:paddingLeft="60dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="15dp"
+                android:textSize="30sp"
+                android:textColor="@color/mocha_brown"
+                android:text="회원정보 설정"/>
+
+
+        </FrameLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/blank_profile_picture" />
+
+        <!-- 이메일 수정 불가로 -->
+        <TextView
+            android:id="@+id/email_edit_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="이메일"/>
+        <EditText
+            android:id="@+id/nick_edit_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="닉네임"/>
+
+        <!-- 비밀 번호 변경과 닉네임 변경을 분리하기 -->
+        <EditText
+            android:id="@+id/new_pw_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:hint="새 비밀번호(6자리이상)"/>
+        <EditText
+            android:id="@+id/new_pw_check_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:hint="새 비밀번호 확인"/>
+
+
+        <Button
+            android:id="@+id/edit_setting_btn"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="50dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:gravity="center"
+            android:text="설정"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyang"
+            android:backgroundTint="@color/peanut_brown"/>
+
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

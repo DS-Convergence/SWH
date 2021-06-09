@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/oat_yellow">
+        <!--back 버튼 textview로 구현-->
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="20dp"
+            android:text="&lt;"
+            android:textColor="@color/mocha_brown"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="60dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:text="물건 이름"
+            android:textColor="@color/mocha_brown"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/btn_submenu"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="···"
+            android:textSize="40sp" />
+        <!-- 얘는 visible 속성 사용해서 없애고 만들고 하면 될듯 함. -->
+
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/info_bar"
+        android:layout_below="@id/bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:id="@+id/img_prod"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/white"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/btn_report"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/siren" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/peanut_brown" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+                <!-- padding 5dp > 10dp 변경 -->
+
+                <TextView
+                    android:id="@+id/tv_prodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:text="물건이름"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="28sp" />
+                <!-- textsize 30sp > 28sp 변경 -->
+
+                <TextView
+                    android:id="@+id/tv_prodCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_prodName"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:paddingTop="3dp"
+                    android:text="카테고리명"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="15sp" />
+                <!-- textsize 13sp > 15sp 변경 -->
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_prodCategory"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:paddingTop="3dp"
+                    android:text="시간"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="13sp" />
+                <!-- textsize 10sp > 13sp 변경 -->
+
+                <TextView
+                    android:id="@+id/tv_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:text="글쓴이"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_uesrLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_user"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:paddingTop="3dp"
+                    android:text="지역"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="false"
+                    android:layout_toRightOf="@id/tv_prodName"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="거래상태" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/peanut_brown" />
+
+            <TextView
+                android:id="@+id/tv_prodDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:lines="30"
+                android:padding="10dp"
+                android:text="상품 설명 글을 작성하시면 여기에 작성됩니다~~"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/info_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lace_white"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp">
+
+        <ImageButton
+            android:id="@+id/btn_heart"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/btn_chat"
+            android:background="@android:color/transparent"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart_white" />
+
+        <Button
+            android:id="@+id/btn_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/tawny_brown"
+            android:fontFamily="@font/jsdongkang_regular"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="채팅하기"
+            android:textSize="20sp" />
+        <!-- textsize 30sp > 20sp 변경 -->
+
+        <TextView
+            android:id="@+id/tv_deposit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:text="보증금 : 0000원"
+            android:textColor="@color/mocha_brown"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_rentalfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_deposit"
+            android:fontFamily="@font/goyang"
+            android:text="대여료 : 0000원"
+            android:textColor="@color/mocha_brown"
+            android:textSize="25sp" />
+        <!-- textsize 20sp > 25sp 변경 -->
+    </RelativeLayout>
+
+</RelativeLayout>

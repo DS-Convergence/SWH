@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rice_white">
+
+    <FrameLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/oat_yellow">
+        <!--back 버튼 textview로 구현-->
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="20dp"
+            android:text="&lt;"
+            android:textColor="@color/mocha_brown"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/goyang"
+            android:paddingLeft="60dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:text="게시글 작성"
+            android:textColor="@color/mocha_brown"
+            android:textSize="30sp" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/mocha_brown"
+                android:text="사진 선택" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:srcCompat="@tools:sample/avatars" />
+            <!-- 사진이 크기에 따라서 사진이 달라지기 때문에 가운데를 중심으로 크롭하는 centerCrop사용 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/goyang"
+                    android:text="물건 이름"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_prodName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/grey"
+                    android:ems="10"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/goyang"
+                    android:text="카테고리"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@color/grey"
+                    android:ems="10"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/goyang"
+                    android:text="카테고리"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/sp_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:entries="@array/category"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_prodDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/grey"
+                android:ems="10"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:gravity="start|top"
+                android:hint="설명글을 작성하세요"
+                android:inputType="textMultiLine"
+                android:lines="10"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/goyang"
+                    android:text="보증금"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/grey"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:gravity="center|right"
+                    android:inputType="number"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/goyang"
+                    android:text="원" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_rentalFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/goyang"
+                    android:text="대여료"
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_rentalFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/grey"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:gravity="center|right"
+                    android:inputType="number"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/goyang"
+                    android:text="원" />
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/cb_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:text="희망 거래 위치"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp" />
+
+            <com.example.squirrelwarehouse.TouchFrameLayout
+                android:id="@+id/layout_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    tools:context=".MapsActivity" />
+            </com.example.squirrelwarehouse.TouchFrameLayout>
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/peanut_brown"
+                android:fontFamily="@font/goyang"
+                android:gravity="center"
+                android:text="업로드"
+                android:textSize="18sp"
+                app:cornerRadius="100dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
