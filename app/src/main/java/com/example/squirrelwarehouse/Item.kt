@@ -1,4 +1,5 @@
 package com.example.squirrelwarehouse
 
-data class Item (val title:String?, val time:String?, val detail:String?, val imgbtn:String?)
-//val overview:String?,
+data class Item (var prodId:String?, var title:String?, var detail:String?, var imgbtn:String?)
+//val overview:String?
+// time:String?

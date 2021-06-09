@@ -7,7 +7,6 @@ import android.widget.ImageView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.journeyapps.barcodescanner.BarcodeEncoder
-import kotlinx.coroutines.*
 
 class ProductRentalQRActivity : AppCompatActivity() {
 
@@ -39,18 +38,12 @@ class ProductRentalQRActivity : AppCompatActivity() {
             val bitmap = barcodeEncoder.createBitmap(bitMatrix)
             imgQRCode!!.setImageBitmap(bitmap)
 
+            // 찍어도 계속 남아있느게 문제
+            // 시간 10초 정도 주고 이전 화면으로 되돌아가게 하거나 해야할 듯
+
         } catch (e: Exception) {
 
         }
-
-
-        // 찍어도 계속 남아있느게 문제
-        // 시간 10초 정도 주고 이전 화면으로 되돌아가게 하거나 해야할 듯
-        GlobalScope.launch {
-            delay(10000L) // 10초
-            finish()
-        }
-
 
     }
 }
