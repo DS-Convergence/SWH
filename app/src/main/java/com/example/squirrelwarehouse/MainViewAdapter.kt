@@ -8,9 +8,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.main_itemview.view.*
 
-class MainViewAdapter : RecyclerView.Adapter<MainViewAdapter.ViewHolder>() {
-    var items = ArrayList<MainItem>()
-
+class MainViewAdapter(var items : ArrayList<MainItem>) : RecyclerView.Adapter<MainViewAdapter.ViewHolder>() {
+// 위에 부정확함. 확인할 것.
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
@@ -19,7 +18,7 @@ class MainViewAdapter : RecyclerView.Adapter<MainViewAdapter.ViewHolder>() {
         return ViewHolder(itemView)
     }
 
-    override fun getItemCount() = 3
+    override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
