@@ -7,11 +7,11 @@ import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main_itemview.*
@@ -77,55 +77,32 @@ class MainPageActivity : AppCompatActivity() {
         // https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cosmosjs&logNo=221050368244
 
         // 파이어베이스 데이터 읽기
-        //lateinit var arr : ArrayList<MainItem>
+        /* lateinit var arr : ArrayList<MainItem>
         lateinit var item : MainItem
         database = FirebaseDatabase.getInstance().reference
-        /*database.child("Product").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(prodsnapshot: DataSnapshot) {
-                val prodId = prodsnapshot.getValue(String::class.java)!!
-                val query : Query = database.limitToFirst(10)
-                query.addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        loadItem(snapshot, adapter)
-                    }
-
-                    override fun onCancelled(databaseError: DatabaseError) {}
-                })
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })*/
+         */
 
         // 업데이트
-        updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var updateAdapter : MainViewAdapter = MainViewAdapter()
-        //var updateList:ArrayList<MainItem> = arrayListOf()
-        /*while(arr!=null) {
-            var i : Int = 0
-            var item : MainItem = arr.get(i)
-            adapter.items.add(item)
-        }*/
-        updateAdapter.items.clear()
-        for(i in 1..5) {
-            item = MainItem("","최신"+i)
-            //updateList.add(item)
-            updateAdapter.items.add(item)
-        }
-        updateView.adapter = updateAdapter
+        // 리사이클러뷰: updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        // var updateAdapter : MainViewAdapter = MainViewAdapter()
+        var updateList : ArrayList<HashMap<String, String>> = dataInArray()
+
+        // updateAdapter.items.clear()
+        // updateView.adapter = updateAdapter
 
         // 업데이트 - 더보기
         var moreUpdate = moreUpdate
-        moreUpdate.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                // listView로 연결하기
-            }
-        })
+        moreUpdate.setOnClickListener {
+            val intent = Intent(this, UpdateMoreActivity::class.java)
+            intent.putExtra("updateList",updateList)
+            startActivityForResult(intent, 0)
+        }
 
 
         // 카테고리 : 지정 카테고리 항목 보여주기
-        var usrCategory:String = "운동"  // 추천 알고리즘 결과 상위 카테고리로 설정
+        /*var usrCategory:String = "운동"  // 추천 알고리즘 결과 상위 카테고리로 설정
         cateTextView.text = "#"+usrCategory
-        cateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        //cateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         var cateAdapter : MainViewAdapter = MainViewAdapter()
         cateAdapter.items.clear()
         var cateList:ArrayList<MainItem> = arrayListOf()
@@ -162,7 +139,8 @@ class MainPageActivity : AppCompatActivity() {
         cateAdapter.items.add(item)
         cateAdapter.items.add(MainItem("","카테고리2"))
         cateAdapter.items.add(MainItem("","카테고리3"))
-        cateView.adapter = cateAdapter
+        //cateView.adapter = cateAdapter
+        */
 
         // 카테고리 - 더보기
         var moreCate = moreCate
@@ -175,7 +153,7 @@ class MainPageActivity : AppCompatActivity() {
 
 
         // 추천
-        rcmdView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        /*//rcmdView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         var rcmdAdapter : MainViewAdapter = MainViewAdapter()
         //var rcmdList:ArrayList<MainItem> = arrayListOf()
         rcmdAdapter.items.clear()
@@ -185,7 +163,8 @@ class MainPageActivity : AppCompatActivity() {
             //rcmdList.add(item)
             rcmdAdapter.items.add(item)
         }
-        rcmdView.adapter = rcmdAdapter
+        //rcmdView.adapter = rcmdAdapter
+        */
 
         // 추천 - 더보기
         var moreRcmd = moreRcmd
@@ -197,6 +176,25 @@ class MainPageActivity : AppCompatActivity() {
     }
 
     private fun searchItem(query: String) {}
+
+    fun dataInArray(): ArrayList<HashMap<String, String>> {
+        firestore = FirebaseFirestore.getInstance()
+        val data = firestore?.collection("Product")
+        val itemList = arrayListOf<HashMap<String, String>>()
+
+        itemList.clear()
+        if (data != null) {
+            data.get().addOnSuccessListener { prodId ->
+                for(document in prodId) {
+                    val item = hashMapOf<String, String>((document.id to document["productName"]) as Pair<String, String>)
+                    itemList.add(item)
+                }
+            }.addOnFailureListener { exception ->
+                Log.w("MainPageActivity", "Error getting documents")
+            }
+        }
+        return itemList
+    }
 
     fun loadItem(dataSnapshot: DataSnapshot, adapter: MainViewAdapter) {
         val prodIterator = dataSnapshot.children.iterator()
