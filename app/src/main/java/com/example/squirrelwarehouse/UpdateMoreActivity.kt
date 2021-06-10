@@ -25,24 +25,22 @@ class UpdateMoreActivity : AppCompatActivity() {
         listView.adapter = itemAdapter
 
         var data : ArrayList<HashMap<String, String>> = intent.getSerializableExtra("updateList") as ArrayList<HashMap<String, String>>
+        lateinit var item : Item
 
         for(i in 0..data.size-1) {
-            lateinit var item : Item
             val keys : Iterator<String> = data.get(i).keys.iterator()
             while (keys.hasNext()) {
-                val tmp : String = ""
+                // val tmp : String = ""
                 val prodId = keys.next()
                 val title : String? = data.get(i).get(prodId).toString()
 
-                item = Item(prodId,title,"")
+                item = Item(prodId,title)
                 datas.add(item)
             }
         }
 
         itemAdapter.datas = datas
         itemAdapter.notifyDataSetChanged()
-
-
     }
 
 

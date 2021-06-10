@@ -196,6 +196,7 @@ class MainPageActivity : AppCompatActivity() {
         return itemList
     }
 
+    /*
     fun loadItem(dataSnapshot: DataSnapshot, adapter: MainViewAdapter) {
         val prodIterator = dataSnapshot.children.iterator()
         if (prodIterator.hasNext()) {
@@ -216,33 +217,6 @@ class MainPageActivity : AppCompatActivity() {
             }
         }
     }
-/*
-    fun loadRCView(db:Firebase) : ArrayList<MainItem> {
-        lateinit var arr : ArrayList<MainItem>
-        lateinit var item : MainItem
-        lateinit var TAG : String
+     */
 
-        val itemListener = object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val name = snapshot.getValue(String::class.java)!!
-                item.name = name
-                item.thumb = thumb.toString()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.v("ItemLoad","failed")
-            }
-        }
-
-        //database.child("Product").child(userId)
-
-        // 데이터 받아서 객체에 넣고 배열 만들기
-        while(db==null) {
-            item.name =
-            item.thumb =
-            arr.add(item)
-        }
-
-        return arr;
-    }*/
 }
