@@ -264,6 +264,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                                         // ProductDetailActivity로 넘어가도록.
                                         // 뒤로 가는 버튼으로 글쓰기 화면이 다시 나오지 않도록
 
+                                        finish()
+
                                     }
                                 }
                             }
