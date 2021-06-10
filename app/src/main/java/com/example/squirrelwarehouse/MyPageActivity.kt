@@ -52,8 +52,9 @@ class MyPageActivity : AppCompatActivity() {
         }
 
         terms_btn.setOnClickListener {
-            val intent = Intent(this, TermsAndConditionsActivity::class.java)
+            val intent = Intent(this, UserInfoActivity::class.java)
             startActivity(intent)
+            //TermsAndConditionsActivity
         }
 
         user_setting_btn.setOnClickListener {

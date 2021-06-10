@@ -39,7 +39,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:textColor="@color/mocha_brown"
-                    android:textSize="20sp"></TextView>
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/timeTV"
@@ -49,7 +49,7 @@
                     android:fontFamily="@font/jsdongkang_regular"
                     android:gravity="right|center_vertical"
                     android:textColor="@color/mocha_brown"
-                    android:textSize="15sp"></TextView>
+                    android:textSize="15sp"/>
             </LinearLayout>
 
             <TextView
@@ -60,7 +60,10 @@
                 android:fontFamily="@font/jsdongkang_regular"
                 android:gravity="center_vertical"
                 android:textColor="@color/mocha_brown"
-                android:textSize="15sp"></TextView>
+                android:ems="10"
+                android:maxLines="1"
+                android:ellipsize="end"
+               android:textSize="15sp"/>
         </LinearLayout>
     </LinearLayout>
 

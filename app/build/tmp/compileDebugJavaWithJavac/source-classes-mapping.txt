@@ -1,3 +1,7 @@
+com/example/squirrelwarehouse/CategoryHobby.java
+ com.example.squirrelwarehouse.CategoryHobby
+com/example/squirrelwarehouse/Category.java
+ com.example.squirrelwarehouse.Category
 com/example/squirrelwarehouse/Classifier.java
  com.example.squirrelwarehouse.Classifier
  com.example.squirrelwarehouse.Classifier$Recognition
