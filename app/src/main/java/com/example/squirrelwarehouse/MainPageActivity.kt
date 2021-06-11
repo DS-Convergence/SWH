@@ -76,16 +76,18 @@ class MainPageActivity : AppCompatActivity() {
         // https://hijjang2.tistory.com/313
         // https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cosmosjs&logNo=221050368244
 
-        // 파이어베이스 데이터 읽기
-        /* lateinit var arr : ArrayList<MainItem>
-        lateinit var item : MainItem
-        database = FirebaseDatabase.getInstance().reference
-         */
-
         // 업데이트
-        // 리사이클러뷰: updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        // var updateAdapter : MainViewAdapter = MainViewAdapter()
+        // 리사이클러뷰:
+        updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        var updateAdapter : ItemAdapter = ItemAdapter()
         var updateList : ArrayList<HashMap<String, String>> = dataInArray()
+
+        var updateList:ArrayList<MainItem> = arrayListOf()
+        for(i in 1..5) {
+            item = MainItem("","최신"+i)
+            updateList.add(item)
+        }
+        updateView.adapter = MainViewAdapter(updateList)
 
         // updateAdapter.items.clear()
         // updateView.adapter = updateAdapter
