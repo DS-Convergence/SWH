@@ -51,6 +51,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map : FrameLayout
     private lateinit var img : ImageView
 
+    private lateinit var spCategory : Spinner
+
     private var mMap: GoogleMap? = null
 
     private var firestore : FirebaseFirestore? = null
@@ -103,7 +105,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnImg : Button = findViewById(R.id.btn_img)
 
         // 스패너
-        var spCategory : Spinner = findViewById(R.id.sp_category)
+        spCategory = findViewById(R.id.sp_category)
         val category = resources.getStringArray(R.array.category)
         var adapterCate : ArrayAdapter<String>
         adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
@@ -358,6 +360,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
                     // 나중에 바뀔 코드
                     etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+                    var cate = Category(results.get(0).toString())
+                    spCategory.setSelection(cate.category)
 
 
                 } catch (e: Exception) {

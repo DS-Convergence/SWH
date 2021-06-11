@@ -7,3 +7,7 @@ com/example/squirrelwarehouse/TensorFlowImageClassifier.java
  com.example.squirrelwarehouse.TensorFlowImageClassifier$2
 com/example/squirrelwarehouse/BuildConfig.java
  com.example.squirrelwarehouse.BuildConfig
+com/example/squirrelwarehouse/CategoryHobby.java
+ com.example.squirrelwarehouse.CategoryHobby
+com/example/squirrelwarehouse/Category.java
+ com.example.squirrelwarehouse.Category
