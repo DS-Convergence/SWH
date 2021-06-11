@@ -37,12 +37,13 @@ class ItemAdapter(private val context: Context) : RecyclerView.Adapter<ItemAdapt
         fun bind(item: Item) {
             // title.text = item.title
 
-            itemView.titleTV.text = item.title
+            itemView.title.text = item.title
             // itemView.timeTV.text = item.time
             // itemView.detailTV.text = item.detail
 
             //이미지를 로드하기. load our user image into the User image icon
             val data = FirebaseFirestore.getInstance()?.collection("Product")
+            var ref = FirebaseStorage.getInstance().getReference()
             lateinit var imgURI : Any
             var arr : ArrayList<String> = arrayListOf()
             if (data != null) {
@@ -50,12 +51,11 @@ class ItemAdapter(private val context: Context) : RecyclerView.Adapter<ItemAdapt
                     for(document in prodId) {
                         // 이미지 넣기
                         imgURI = document["imageURI"]!!
-                        var ref = FirebaseStorage.getInstance().getReference()
                         var imgref = ref.child("/product")?.child(imgURI?.toString())
                         imgref?.downloadUrl?.addOnSuccessListener { uri ->
                             Glide.with(context)
                                     .load(uri)
-                                    .into(itemView.prevImg)
+                                    .into(itemView.thumb)
                             Log.v("IMAGE","Success")
                         }
                         arr.add(document.id)
