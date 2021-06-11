@@ -51,6 +51,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map : FrameLayout
     private lateinit var img : ImageView
 
+    private lateinit var spCategory : Spinner
+
     private var mMap: GoogleMap? = null
 
     private var firestore : FirebaseFirestore? = null
@@ -103,7 +105,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnImg : Button = findViewById(R.id.btn_img)
 
         // 스패너
-        var spCategory : Spinner = findViewById(R.id.sp_category)
+        spCategory = findViewById(R.id.sp_category)
         val category = resources.getStringArray(R.array.category)
         var adapterCate : ArrayAdapter<String>
         adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
@@ -119,7 +121,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             btnUpload.setText("수정")
 
             firestore?.collection("Product")?.document(text!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                task ->
+                    task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
                     etProdName.setText(product?.productName)
@@ -145,8 +147,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                         Glide.with(applicationContext)
-                                .load(uri)
-                                .into(img)
+                            .load(uri)
+                            .into(img)
                         img.visibility = View.VISIBLE
                         //beforeURI = uri
                         //Log.v("IMAGE",uri.toString())
@@ -164,7 +166,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 지도
         val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment?
+            .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
 
@@ -240,7 +242,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 var userId = FirebaseAuth.getInstance().currentUser!!.uid
                 var document = "user_" + userId
                 firestore?.collection("Users")?.document(document)?.get()?.addOnCompleteListener {  // Users에서 현재 userId를 가진 데이터를 가져옴
-                    task ->
+                        task ->
                     if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                         var user = task.result.toObject(UserModelFS::class.java)
                         var userName = user?.nickname.toString()
@@ -253,7 +255,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // 책 210쪽 보고 수정하기
                             var product = Product(userId,userName,pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
                             firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
-                                task ->
+                                    task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
                                     // 사진을 데이터베이스로 넘겨야함.
                                     // https://riapapa-collection.tistory.com/42
@@ -298,7 +300,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 // 보증금
                 if(text!=null) {
                     firestore?.collection("Product")?.document(text!!)?.update(map)?.addOnCompleteListener {
-                        task ->
+                            task ->
                         if(task.isSuccessful) {
                             Log.v("Update","Success")
 
@@ -358,6 +360,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
                     // 나중에 바뀔 코드
                     etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+                    var cate = Category(results.get(0).toString())
+                    spCategory.setSelection(cate.category)
 
 
                 } catch (e: Exception) {
@@ -424,11 +428,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         executor.execute {
             classifier = try {
                 TensorFlowImageClassifier.create(
-                        assets,
-                        MODEL_PATH,
-                        LABEL_PATH,
-                        INPUT_SIZE,
-                        QUANT)
+                    assets,
+                    MODEL_PATH,
+                    LABEL_PATH,
+                    INPUT_SIZE,
+                    QUANT)
                 //makeButtonVisible();
             } catch (e: java.lang.Exception) {
                 throw RuntimeException("Error initializing TensorFlow!", e)
