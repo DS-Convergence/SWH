@@ -33,7 +33,7 @@ class MainViewAdapter(var items : ArrayList<MainItem>) : RecyclerView.Adapter<Ma
             }
             else {
                 // 이미지 데이터가 비어있을 때 기본이미지로 도토리 넣기
-                itemView.thumb.setImageResource(R.drawable.acorn)
+                //itemView.thumb.setImageResource(R.drawable.acorn)
             }
             itemView.itemName.text = item.name
         }

@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
@@ -78,8 +79,9 @@ class MainPageActivity : AppCompatActivity() {
 
         // 업데이트
         // 리사이클러뷰:
+/*
         updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var updateAdapter : ItemAdapter = ItemAdapter()
+        var updateAdapter : ItemAdapter = ItemAdapter(this)
         var updateList : ArrayList<HashMap<String, String>> = dataInArray()
 
         var updateList:ArrayList<MainItem> = arrayListOf()
@@ -88,6 +90,22 @@ class MainPageActivity : AppCompatActivity() {
             updateList.add(item)
         }
         updateView.adapter = MainViewAdapter(updateList)
+
+        // updateAdapter.items.clear()
+        // updateView.adapter = updateAdapter
+
+        // 업데이트 - 더보기
+        var moreUpdate = moreUpdate
+        moreUpdate.setOnClickListener {
+            val intent = Intent(this, UpdateMoreActivity::class.java)
+            intent.putExtra("updateList",updateList)
+            startActivityForResult(intent, 0)
+        }
+ */
+        // 업데이트
+        // 리사이클러뷰: updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        // var updateAdapter : MainViewAdapter = MainViewAdapter()
+        var updateList : ArrayList<HashMap<String, String>> = dataInArray()
 
         // updateAdapter.items.clear()
         // updateView.adapter = updateAdapter
