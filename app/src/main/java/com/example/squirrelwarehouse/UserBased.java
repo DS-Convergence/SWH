@@ -1,4 +1,4 @@
-package com.example.squirrelwarehouse;// package algorithm;
+package com.example.squirrelwarehouse;
 
 public class UserBased {
 	
