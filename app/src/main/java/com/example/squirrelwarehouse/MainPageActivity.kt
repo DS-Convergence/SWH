@@ -211,10 +211,6 @@ class MainPageActivity : AppCompatActivity() {
         //ct_title3.text = products.get(2).productName
 
 
-        updateView.adapter = ViewRecyclerViewAdapter()
-        updateView.layoutManager = LinearLayoutManager(this)
-
-
     }
 
     private fun searchItem(query: String) {}
