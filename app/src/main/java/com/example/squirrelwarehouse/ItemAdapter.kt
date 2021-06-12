@@ -37,7 +37,7 @@ class ItemAdapter(private val context: Context) : RecyclerView.Adapter<ItemAdapt
         fun bind(item: Item) {
             // title.text = item.title
 
-            itemView.title.text = item.title
+            itemView.titleTV.text = item.title
             // itemView.timeTV.text = item.time
             // itemView.detailTV.text = item.detail
 
