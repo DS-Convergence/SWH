@@ -254,7 +254,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
                             // 책 210쪽 보고 수정하기
                             var product = Product(userId,userName,pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
-                            firestore?.collection("Product")?.document()?.set(product)?.addOnCompleteListener {
+                            firestore?.collection("Product")?.document(userId+"_"+timeStamp)?.set(product)?.addOnCompleteListener {
                                     task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
                                     // 사진을 데이터베이스로 넘겨야함.
