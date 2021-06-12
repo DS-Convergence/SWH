@@ -2426,7 +2426,12 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id updateView
+id up_thbm1
+id up_thbm2
+id up_thbm3
+id up_title1
+id up_title2
+id up_title3
 id useLogo
 id user_listview
 id user_propic_img
