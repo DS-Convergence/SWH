@@ -57,6 +57,10 @@ class MyPageActivity : AppCompatActivity() {
             //TermsAndConditionsActivity
         }
 
+        my_list_btn.setOnClickListener {
+            val intent = Intent(this, MyListActivity::class.java)
+            startActivity(intent)
+        }
         user_setting_btn.setOnClickListener {
             val intent = Intent(this, UserSettingActivity::class.java)
             startActivity(intent)

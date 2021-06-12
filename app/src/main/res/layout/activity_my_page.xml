@@ -97,6 +97,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="80dp"
+            android:id="@+id/my_list_btn"
             android:backgroundTint="@color/peanut_brown"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/goyang"
