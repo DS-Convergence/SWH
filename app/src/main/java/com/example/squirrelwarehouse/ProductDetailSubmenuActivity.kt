@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -78,7 +79,14 @@ class ProductDetailSubmenuActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        finish()
+        if(requestCode==0) {
+            if(resultCode == Activity.RESULT_OK) {
+                val intent = Intent()
+                intent.putExtra("TextOut", data!!.getStringExtra("TextOut"))
+                setResult(Activity.RESULT_OK, intent)
+                finish()
+            }
+        }
 
         // 물건을 수정하고는 ProductDetialActivity로 가야하고
         // 물건을 삭제할때는 메인화면으로 돌아가야 함.

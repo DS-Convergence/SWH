@@ -2204,6 +2204,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_list_btn
 id mypageBtn
 id navigation_header_container
 id never
@@ -2411,6 +2412,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_bar_prodName
 id tv_deposit
 id tv_modify
 id tv_prodCategory
@@ -2531,6 +2533,7 @@ layout activity_item_loc
 layout activity_latest_message
 layout activity_log_in
 layout activity_main
+layout activity_my_list
 layout activity_my_page
 layout activity_new_message
 layout activity_report

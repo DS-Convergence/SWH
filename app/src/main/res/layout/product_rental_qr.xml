@@ -30,7 +30,7 @@
             android:paddingLeft="60dp"
             android:paddingTop="13dp"
             android:paddingBottom="15dp"
-            android:text="대여하기"
+            android:text="물건 대여/반납"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
 
@@ -45,15 +45,15 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/goyang"
         android:gravity="center"
-        android:text="대여를 위해 QR코드를\n인증해주세요."
+        android:text="대여/반납을 위해 \nQR코드를 인증해주세요."
         android:textColor="@color/mocha_brown"
         android:textSize="40sp" />
     <!-- testSize 25sp > 40sp로 변경 -->
 
     <ImageView
         android:id="@+id/img_qrcode"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_below="@id/textView5"
         android:layout_centerInParent="false"
         android:layout_centerHorizontal="true"

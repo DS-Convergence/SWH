@@ -56,6 +56,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse" >
+        <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
@@ -125,8 +127,7 @@
             -->
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ProductRentalQRActivity" />
-        <activity android:name="com.example.squirrelwarehouse.ProductRentalCameraActivity" />
-        <!-- QR코드 -->
+        <activity android:name="com.example.squirrelwarehouse.ProductRentalCameraActivity" /> <!-- QR코드 -->
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

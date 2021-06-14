@@ -26,15 +26,10 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import java.io.File
-import java.sql.Timestamp
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
-import kotlin.collections.List
 
 class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -320,6 +315,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     }
                 }
 
+                val intent = Intent()
+                intent.putExtra("TextOut", text)
+                setResult(Activity.RESULT_OK, intent)
                 finish()
             }
 
