@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/goyang"
-                    android:text="카테고리"
+                    android:text="물건인식"
                     android:textColor="@color/mocha_brown"
                     android:textSize="18sp" />
 

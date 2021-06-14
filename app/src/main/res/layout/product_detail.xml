@@ -24,7 +24,7 @@
             android:textSize="50sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_bar_prodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"

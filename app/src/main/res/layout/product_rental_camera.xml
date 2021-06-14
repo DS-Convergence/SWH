@@ -30,7 +30,7 @@
             android:paddingLeft="60dp"
             android:paddingTop="13dp"
             android:paddingBottom="15dp"
-            android:text="대여하기"
+            android:text="물건 대여/반납"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
 
@@ -45,7 +45,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/goyang"
         android:gravity="center"
-        android:text="대여를 위해 QR코드를\n인증해주세요."
+        android:text="대여/반납을 위해 \nQR코드를 인증해주세요."
         android:textColor="@color/mocha_brown"
         android:textSize="40sp" />
 

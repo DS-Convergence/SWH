@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,7 @@ import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.product_detail.*
 import kotlinx.android.synthetic.main.product_form.*
 
 
@@ -34,6 +36,8 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     private lateinit var userid : String
+
+    private lateinit var prod : String  // 물건 id
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,35 +66,37 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
         val intent = intent
-        val prod = intent.getStringExtra("data").toString()
+        prod = intent.getStringExtra("data").toString()
 
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                 task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                 var product = task.result.toObject(Product::class.java)
-                tvProdName.text = product?.productName
-                tvProdCategory.text = product?.category
-                tvTime.text = product?.uploadTime
-                tvStatus.text = product?.status
-                tvUser.text = product?.userName
-                tvUserLocation.text = product?.region.toString()
-                tvProdDetail.text = product?.productDetail
+                tv_prodName.text = product?.productName
+                tv_prodCategory.text = product?.category
+                tv_time.text = product?.uploadTime
+                tv_status.text = product?.status
+                tv_user.text = product?.userName
+                tv_uesrLocation.text = product?.region.toString()
+                tv_prodDetail.text = product?.productDetail
+
+                tv_bar_prodName.text = product?.productName
 
                 // 보증금
                 if(product?.deposit.equals("")) { // 체크가 안되어 있거나
-                    tvDeposit.text = "보증금: 0원"
+                    tv_deposit.text = "보증금: 0원"
                 }
                 else {
-                    tvDeposit.text = "보증금: " + product?.deposit + "원"
+                    tv_deposit.text = "보증금: " + product?.deposit + "원"
                 }
 
                 // 대여료
                 if(product?.rentalFee.equals("")) {
-                    tvRentalfee.text = "대여료: 0원"
+                    tv_rentalfee.text = "대여료: 0원"
                 }
                 else {
-                    tvRentalfee.text = "대여료: " + product?.rentalFee + "원"
+                    tv_rentalfee.text = "대여료: " + product?.rentalFee + "원"
                 }
 
 
@@ -252,10 +258,23 @@ class ProductDetailActivity : AppCompatActivity() {
 
         //finish()
         // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
+        /*
         var intent = Intent(this, ProductDetailActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
+*/
+        if(requestCode==0) {
+            if(resultCode == Activity.RESULT_OK) {
+                val intent = Intent()
+                //prod = data!!.getStringExtra("TextOut").toString()
+                var intent2 = Intent(this, ProductDetailActivity::class.java)
+                intent2.putExtra("data",data!!.getStringExtra("TextOut").toString())
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent2)
+                finish()
+            }
+        }
 
 
     }

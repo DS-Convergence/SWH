@@ -2,6 +2,8 @@ com/example/squirrelwarehouse/CategoryHobby.java
  com.example.squirrelwarehouse.CategoryHobby
 com/example/squirrelwarehouse/Category.java
  com.example.squirrelwarehouse.Category
+com/example/squirrelwarehouse/UserBased.java
+ com.example.squirrelwarehouse.UserBased
 com/example/squirrelwarehouse/Classifier.java
  com.example.squirrelwarehouse.Classifier
  com.example.squirrelwarehouse.Classifier$Recognition
@@ -11,5 +13,3 @@ com/example/squirrelwarehouse/TensorFlowImageClassifier.java
  com.example.squirrelwarehouse.TensorFlowImageClassifier$2
 com/example/squirrelwarehouse/BuildConfig.java
  com.example.squirrelwarehouse.BuildConfig
-com/example/squirrelwarehouse/UserBased.java
- com.example.squirrelwarehouse.UserBased
