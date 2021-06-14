@@ -12,12 +12,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_temp.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_temp.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_on.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\swh_icon.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon_round.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon_round.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_evaluation.xml.flat",
@@ -144,16 +144,16 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_item_loc.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_list.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_my_list.xml"
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\more.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_rounded_select_photo_button.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable-v24\\rounded_select_photo_button.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\more.png"
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_list.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_my_list.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_swh_icon_round.png.flat",
