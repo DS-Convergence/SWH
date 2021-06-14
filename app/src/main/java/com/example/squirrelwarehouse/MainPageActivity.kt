@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.UserModelFS
@@ -24,7 +26,7 @@ import kotlinx.android.synthetic.main.main_page.*
 class MainPageActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private var firestore = FirebaseFirestore.getInstance()
-    private var storage : FirebaseStorage? = null
+    private var storage = FirebaseStorage.getInstance()
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -207,8 +209,209 @@ class MainPageActivity : AppCompatActivity() {
         //ct_title2.text = products.get(1).productName
         //ct_title3.text = products.get(2).productName
 
+        // 일단 물건 id로 하나씩 가져오는 건 성공
+        /*
+        firestore?.collection("Product")?.document("5Bf4S5mm7hRhvu3LbdPUbCI8hMh1_20210612_144047")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if(task.isSuccessful) {
+                var product = task.result.toObject(Product::class.java)
+                up_title1.text = product?.productName
+
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    Glide.with(applicationContext)
+                            .load(uri)
+                            .into(up_thbm1)
+                    Log.v("IMAGE", "Success")
+                }?.addOnFailureListener { //이미지 로드 실패시
+                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                    Log.v("IMAGE","failed")
+                }
+            }
+
+        }
+         */
+
+
+        // 성공,,,,,,
+        // 최신 업데이트
+        var products = ArrayList<Product>()
+        firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
+                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                    //products.clear()
+                    if (querySnapshot == null) return@addSnapshotListener
+
+                    // 데이터 받아오기
+                    for (snapshot in querySnapshot!!.documents) {
+                        var item = snapshot.toObject(Product::class.java)
+                        if (item != null) {
+                            products.add(item)
+                            Log.v("PRODUCTS",products.size.toString())
+                            Log.v("PRODUCTS",item.productName.toString())
+                        }
+
+                    }
+
+                    // 일단 다 invisible
+                    up_title1.visibility = View.INVISIBLE
+                    up_title2.visibility = View.INVISIBLE
+                    up_title3.visibility = View.INVISIBLE
+
+                    // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
+                    // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                    if(products.size >= 1) {
+                        up_title1.visibility = View.VISIBLE
+
+                        up_title1.text = products.get(0).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(0).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm1)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(products.size >= 2) {
+                        up_title2.visibility = View.VISIBLE
+
+                        up_title2.text = products.get(1).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(1).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm2)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(products.size >= 3) {
+                        up_title3.visibility = View.VISIBLE
+
+                        up_title3.text = products.get(2).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(2).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm3)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                }
+
+
+        update1.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",products!![0].userId+"_"+products!![0].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+
+        update2.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",products!![1].userId+"_"+products!![1].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+
+        update3.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",products!![2].userId+"_"+products!![2].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+
+
+
+
+        // 특정 카테고리 물품만
+        var cateProds = ArrayList<Product>()
+        var category = "디지털/가전"
+        cateTextView.text = category
+        firestore?.collection("Product")?.whereEqualTo("category", category)?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
+                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                    //cateProds.clear()
+                    if (querySnapshot == null) return@addSnapshotListener
+
+                    // 데이터 받아오기
+                    for (snapshot in querySnapshot!!.documents) {
+                        var item = snapshot.toObject(Product::class.java)
+                        if (item != null) {
+                            cateProds.add(item)
+                            Log.v("PRODUCTS", cateProds.size.toString())
+                            Log.v("PRODUCTS", item.productName.toString())
+                        }
+                    }
+
+                    ct_title1.visibility = View.INVISIBLE
+                    ct_title2.visibility = View.INVISIBLE
+                    ct_title3.visibility = View.INVISIBLE
+
+                    if(cateProds.size >= 1) {
+                        ct_title1.visibility = View.VISIBLE
+
+                        ct_title1.text = cateProds.get(0).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(0).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(ct_thbm1)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(cateProds.size >= 2) {
+                        ct_title2.visibility = View.VISIBLE
+
+                        ct_title2.text = cateProds.get(1).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(1).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(ct_thbm2)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(cateProds.size >= 3) {
+                        ct_title3.visibility = View.VISIBLE
+
+                        ct_title3.text = cateProds.get(2).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(2).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(ct_thbm3)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+
+
+
+                }
+
+        // 여기서 오류남. ArrayList가 또 0이라고함. 위에꺼는 안그런데,,
+        // https://stackoverflow.com/questions/50123649/does-tasks-whenallsuccess-guarantee-the-order-in-which-i-pass-tasks-to-it 이거 해보기
+        // 아무래도 생명주기와 관련이 있지 않을가,,,,, 아닌듯,,,
+        cate1.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+        cate2.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",cateProds!![1].userId+"_"+cateProds!![1].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+        cate3.setOnClickListener {
+            var intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("data",cateProds!![2].userId+"_"+cateProds!![2].uploadTime)
+            startActivityForResult(intent, 0)
+        }
+
 
     }
+
+
 
     private fun searchItem(query: String) {}
 

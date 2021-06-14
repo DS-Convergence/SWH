@@ -129,18 +129,20 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/update1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/up_thbm1"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -156,18 +158,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/update2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/up_thbm2"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -183,18 +187,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/update3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/up_thbm3"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -246,18 +252,20 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/cate1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/ct_thbm1"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -273,18 +281,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/cate2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/ct_thbm2"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -300,18 +310,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/cate3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/ct_thbm3"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView

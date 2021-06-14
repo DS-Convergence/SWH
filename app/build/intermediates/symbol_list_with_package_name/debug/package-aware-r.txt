@@ -1945,6 +1945,9 @@ id buttonPanel
 id cache_measures
 id cancel_action
 id cancel_button
+id cate1
+id cate2
+id cate3
 id cateTextView
 id cb_deposit
 id cb_location
@@ -2434,6 +2437,9 @@ id up_thbm3
 id up_title1
 id up_title2
 id up_title3
+id update1
+id update2
+id update3
 id useLogo
 id user_listview
 id user_propic_img

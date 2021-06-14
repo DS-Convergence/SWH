@@ -139,15 +139,18 @@ class ProductDetailActivity : AppCompatActivity() {
 
 
                 // 현재 사용자가 글쓴이면 더보기 보이고 아니면 안보이도록
+                // 더보기, 찜하기, 채팅하기, 신고버튼
                 if(product?.userId.equals(auth.currentUser!!.uid)) { //
                     btnSubmenu.visibility = View.VISIBLE
                     btnHeart.visibility = View.GONE
                     btnChat.visibility = View.GONE
+                    btn_report.visibility = View.GONE
                 }
                 else {
                     btnSubmenu.visibility = View.GONE
                     btnHeart.visibility = View.VISIBLE
                     btnChat.visibility = View.VISIBLE
+                    btn_report.visibility = View.VISIBLE
                 }
 
             }
