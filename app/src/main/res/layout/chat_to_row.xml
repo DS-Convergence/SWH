@@ -5,24 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp">
+    android:padding="5dp"
+    android:layout_marginBottom="10dp">
 
     <TextView
         android:id="@+id/textView_to_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:background="@drawable/colorback1round"
+        android:fontFamily="@font/jsdongkang_regular"
         android:maxWidth="240dp"
         android:padding="16dp"
-        android:textSize="13sp"
-        android:fontFamily="@font/jsdongkang_regular"
         android:text="This is my Message"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageview_chat_to_row"
+        android:textSize="13sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageview_chat_to_row"
-        app:layout_constraintTop_toTopOf="@+id/imageview_chat_to_row" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageview_chat_to_row"
@@ -43,7 +45,7 @@
         android:id="@+id/chat_to_row_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="6dp"
         android:fontFamily="@font/jsdongkang_regular"
         android:text="시간"
         android:textColor="#5A3E29"
