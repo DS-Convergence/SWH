@@ -66,8 +66,8 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // intent로 물건 id 정보 넘겨 받아야함!
         val intent = intent
-        prod = intent.getStringExtra("data").toString()
-
+        //prod = intent.getStringExtra("data").toString()
+        prod = "5Bf4S5mm7hRhvu3LbdPUbCI8hMh1_20210612_144047"
 
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                 task ->
