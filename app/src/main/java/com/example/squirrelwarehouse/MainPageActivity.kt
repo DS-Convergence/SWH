@@ -21,6 +21,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main_itemview.view.*
 import kotlinx.android.synthetic.main.main_page.*
+import kotlinx.android.synthetic.main.product_detail.*
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -404,11 +405,143 @@ class MainPageActivity : AppCompatActivity() {
         }
         cate3.setOnClickListener {
             var intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("data",cateProds!![2].userId+"_"+cateProds!![2].uploadTime)
+            intent.putExtra("data", cateProds!![2].userId + "_" + cateProds!![2].uploadTime)
             startActivityForResult(intent, 0)
         }
 
 
+        // 추천목록 메인에서만 일단 보여주기
+        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143229")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var product = task.result.toObject(Product::class.java)
+                rc_title1.text = product?.productName
+                // 사진 불러오기
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    Glide.with(applicationContext)
+                            .load(uri)
+                            .into(rc_thbm1)
+                    Log.v("IMAGE", "Success")
+                }?.addOnFailureListener { //이미지 로드 실패시
+                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                    Log.v("IMAGE", "failed")
+                }
+            }
+        }
+
+        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143256")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var product = task.result.toObject(Product::class.java)
+                rc_title2.text = product?.productName
+                // 사진 불러오기
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    Glide.with(applicationContext)
+                            .load(uri)
+                            .into(rc_thbm2)
+                    Log.v("IMAGE", "Success")
+                }
+            }
+        }
+
+        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143229")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var product = task.result.toObject(Product::class.java)
+                rc_title3.text = product?.productName
+                // 사진 불러오기
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    Glide.with(applicationContext)
+                            .load(uri)
+                            .into(rc_thbm3)
+                    Log.v("IMAGE", "Success")
+                }
+            }
+        }
+
+        firestore?.collection("Product")?.document("nqOPrU4ZcTfI1xoKlapXjjvFOXE2_20210612_142809")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var product = task.result.toObject(Product::class.java)
+                rc_title1.text = product?.productName
+                // 사진 불러오기
+                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    Glide.with(applicationContext)
+                            .load(uri)
+                            .into(rc_thbm1)
+                    Log.v("IMAGE", "Success")
+                }
+            }
+        }
+
+        /*firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
+                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                    //products.clear()
+                    if (querySnapshot == null) return@addSnapshotListener
+
+                    // 데이터 받아오기
+                    for (snapshot in querySnapshot!!.documents) {
+                        var item = snapshot.toObject(Product::class.java)
+                        if (item != null) {
+                            products.add(item)
+                            Log.v("PRODUCTS",products.size.toString())
+                            Log.v("PRODUCTS",item.productName.toString())
+                        }
+
+                    }
+
+                    // 일단 다 invisible
+                    up_title1.visibility = View.INVISIBLE
+                    up_title2.visibility = View.INVISIBLE
+                    up_title3.visibility = View.INVISIBLE
+
+                    // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
+                    // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                    if(products.size >= 1) {
+                        up_title1.visibility = View.VISIBLE
+
+                        up_title1.text = products.get(0).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(0).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm1)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(products.size >= 2) {
+                        up_title2.visibility = View.VISIBLE
+
+                        up_title2.text = products.get(1).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(1).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm2)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                    if(products.size >= 3) {
+                        up_title3.visibility = View.VISIBLE
+
+                        up_title3.text = products.get(2).productName.toString()
+
+                        var storageRef = storage?.reference?.child("product")?.child(products.get(2).imageURI.toString())
+                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                            Glide.with(applicationContext)
+                                    .load(uri)
+                                    .into(up_thbm3)
+                            Log.v("IMAGE","Success")
+                        }
+                    }
+                }
+         */
     }
 
 
