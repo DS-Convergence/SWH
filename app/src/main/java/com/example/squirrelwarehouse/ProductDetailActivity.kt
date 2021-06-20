@@ -277,6 +277,9 @@ class ProductDetailActivity : AppCompatActivity() {
                 startActivity(intent2)
                 finish()
             }
+            else {
+                finish()
+            }
         }
 
 
