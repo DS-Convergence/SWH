@@ -166,7 +166,7 @@ class ChatLogMoreActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
 
-        Toast.makeText(this,"반납완료", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"대여/반납완료", Toast.LENGTH_LONG).show();
         finish()
     }
 
