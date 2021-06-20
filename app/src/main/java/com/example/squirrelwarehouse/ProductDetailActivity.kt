@@ -277,8 +277,11 @@ class ProductDetailActivity : AppCompatActivity() {
                 startActivity(intent2)
                 finish()
             }
-            else {
+            else if(resultCode == Activity.CONTEXT_INCLUDE_CODE) {
                 finish()
+            }
+            else {
+                //finish()
             }
         }
 
