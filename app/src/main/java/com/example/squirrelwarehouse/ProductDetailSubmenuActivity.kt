@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.UserModelFS
@@ -59,8 +60,10 @@ class ProductDetailSubmenuActivity : AppCompatActivity() {
                                 task ->
                                 if(task.isSuccessful) {
                                     Log.v("DELETE","Success")
+                                    Toast.makeText(applicationContext, "삭제 완료", Toast.LENGTH_SHORT).show()
+
+                                    // 성공적으로 삭제 후 메인화면으로 넘어감.
                                     finish()
-                                    // 메인화면으로 넘어가야함.
                                 }
                             }
                         }

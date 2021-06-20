@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -818,6 +819,19 @@ class MainPageActivity : AppCompatActivity() {
             }
             return sum / (Math.sqrt(sum1) * Math.sqrt(sum2))
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        //finish()
+        // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
+        var intent = Intent(this, MainPageActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+
+
     }
 
 }
