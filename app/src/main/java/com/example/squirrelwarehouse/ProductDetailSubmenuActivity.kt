@@ -63,6 +63,10 @@ class ProductDetailSubmenuActivity : AppCompatActivity() {
                                     Toast.makeText(applicationContext, "삭제 완료", Toast.LENGTH_SHORT).show()
 
                                     // 성공적으로 삭제 후 메인화면으로 넘어감.
+                                    //finish()
+                                    val intent = Intent()
+                                    intent.putExtra("TextOut", text)
+                                    setResult(Activity.CONTEXT_INCLUDE_CODE, intent)
                                     finish()
                                 }
                             }
