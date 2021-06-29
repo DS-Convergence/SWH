@@ -39,6 +39,8 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var prod : String  // 물건 id
 
+    private lateinit var prodUser : String  // 물건 주인 id
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
@@ -82,6 +84,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
+
 
                 // 보증금
                 if(product?.deposit.equals("")) { // 체크가 안되어 있거나
@@ -250,6 +253,12 @@ class ProductDetailActivity : AppCompatActivity() {
         btnChat.setOnClickListener {
             val intent = Intent(this, ChatLogActivity::class.java)
             intent.putExtra("ProductID",prod)
+            intent.putExtra("UserId",userid)
+            startActivity(intent)
+        }
+
+        tvUser.setOnClickListener {
+            val intent = Intent(this, MainPageActivity::class.java)
             intent.putExtra("UserId",userid)
             startActivity(intent)
         }
