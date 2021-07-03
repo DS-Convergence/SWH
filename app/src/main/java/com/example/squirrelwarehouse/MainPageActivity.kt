@@ -198,7 +198,9 @@ class MainPageActivity : AppCompatActivity() {
         // 추천 - 더보기
         var moreRcmd = moreRcmd
         moreRcmd.setOnClickListener {
-            Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
+            //Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
+            var ubr = UserBasedRcmd("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")
+            ubr.UserBased("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")
         }
 
 
@@ -689,6 +691,7 @@ class MainPageActivity : AppCompatActivity() {
         lateinit var rcmdList : ArrayList<String>   // 물건 정보 들어갈 배열
 
         fun UserBased(userId: String) {
+
             this.user = userId
             var data : ArrayList<ArrayList<Int>> = getData()    // product와 favorite 비교해서 선호데이터 받기
 
@@ -743,7 +746,7 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         fun getRcmd() : ArrayList<String> {
-            rcmdList.add("hi")
+            //rcmdList.add("hi")
             return rcmdList
         }
 
@@ -753,22 +756,26 @@ class MainPageActivity : AppCompatActivity() {
             // favorite 데이터랑 product 데이터 가져와야 함
             // data, users
             // sim = Array(data.size) { DoubleArray(data.size) }
-            lateinit var productArr : ArrayList<String>
+
+            Log.v("RcmdList", "getData()호출")
+
+            var productArr = ArrayList<String>()
             firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                productArr.clear()
+                //productArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
 
                 // 데이터 받아오기
                 for (snapshot in querySnapshot!!.documents) {
                     var item = snapshot.toObject(Product::class.java)
                     productArr.add(item!!.userId.toString() + "_" + item!!.uploadTime.toString())
+                    Log.v("RcmdList", item!!.productName.toString())
                 }
             }
             product = productArr
 
-            lateinit var userArr : ArrayList<String>
+            var userArr = ArrayList<String>()
             firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                userArr.clear()
+                //userArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
 
                 // 데이터 받아오기
@@ -779,9 +786,9 @@ class MainPageActivity : AppCompatActivity() {
             }
             users = userArr
 
-            lateinit var favArr : ArrayList<ArrayList<String>>
+            var favArr = ArrayList<ArrayList<String>>()
             firestore?.collection("Favorite")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                favArr.clear()
+                //favArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
 
                 // 데이터 받아오기
