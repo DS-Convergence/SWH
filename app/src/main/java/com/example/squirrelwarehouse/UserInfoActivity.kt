@@ -3,22 +3,32 @@ package com.example.squirrelwarehouse
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_user_info.*
-import kotlinx.android.synthetic.main.listview.view.*
+import android.util.Log
+import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
 
 
 class UserInfoActivity : AppCompatActivity() {
-
+    private var firestore : FirebaseFirestore? = null
+    var storage : FirebaseStorage?=null
+    var uid : String? = null
+    var nickname : String? = null
+    var location : String? = null
+    var rating : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_info)
+        firestore = FirebaseFirestore.getInstance()
+        storage = FirebaseStorage.getInstance()
+
+        uid = intent.getStringExtra("UserId")
+        if (uid != null) {
+            Log.d("유저아이디", uid!!)
+        }
 
         report_btn.setOnClickListener {
             val intent = Intent(this, ReportActivity::class.java)
@@ -33,47 +43,33 @@ class UserInfoActivity : AppCompatActivity() {
         layoutManager.setStackFromEnd(true)
         user_listview.layoutManager = layoutManager
 
-        user_listview.adapter = ItemAdapter2()
+        user_listview.adapter = ItemAdapter2(uid,this) //uid 넘겨주기
+
+        firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
+            nickname = doc?.data?.get("nickname").toString()
+            location = doc?.data?.get("location").toString()
+            rating = doc?.data?.get("rating").toString()
+            usernickname_txt.text = nickname
+            user_writing_list_tv.text = nickname + " 님의 게시글"
+            userlocation_txt.text = location
+            userrating_txt.text = rating
+            var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
+            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                Glide.with(applicationContext)
+                        .load(uri)
+                        .into(user_propic_img)
+                Log.v("IMAGE","Success")
+            }?.addOnFailureListener { //이미지 로드 실패시
+                Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                Log.v("IMAGE","failed")
+
+            }
+        }
 
     }
-/*    inner class ItemAdapter2 : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-        var itemList: ArrayList<Item2> = arrayListOf()
 
-        init {
-            firestore?.collection("Product")?.whereEqualTo("userId", auth.currentUser?.uid)
-                    ?.get()?.addOnSuccessListener { documents ->
-                        itemList.clear()
-                        for (doc in documents) {
-                            title = doc?.data?.get("productName").toString()
-                            time = doc?.data?.get("uploadTime").toString()
-                            detail = doc?.data?.get("productDetail").toString()
-                            item_pic = doc?.data?.get("imageURI").toString()
-                            var item = Item2(title, time, detail, item_pic)
-                            itemList.add(item!!)
-                        }
-                        notifyDataSetChanged()//새로고침
-                    }
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            var view = LayoutInflater.from(parent.context).inflate(R.layout.listview, parent, false)
-            return ViewHolder(view)
-        }
-        inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        }
-
-        override fun getItemCount(): Int {
-            return itemList.size
-        }
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            var viewHolder = (holder as ViewHolder).itemView
-            viewHolder.titleTV.text = itemList[position].title
-            viewHolder.timeTV.text = itemList[position].time
-            viewHolder.detailTV.text = itemList[position].detail
-        }
         //TODO 사용자 별로 띄우는 거 보여주기(current말고), 그외 연결도 하기
 
-    }*/
+
 
 }

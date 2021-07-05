@@ -2207,6 +2207,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_listView
 id my_list_btn
 id mypageBtn
 id navigation_header_container
@@ -2445,7 +2446,10 @@ id user_listview
 id user_propic_img
 id user_setting_btn
 id user_writing_list_tv
+id userlocation_txt
 id username_textview_new_message
+id usernickname_txt
+id userrating_txt
 id view
 id view_offset_helper
 id visible

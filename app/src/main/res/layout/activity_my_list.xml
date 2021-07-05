@@ -36,7 +36,7 @@
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listView"
+        android:id="@+id/my_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/rice_white"/>

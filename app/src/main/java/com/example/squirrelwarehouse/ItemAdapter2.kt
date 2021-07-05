@@ -1,16 +1,19 @@
 package com.example.squirrelwarehouse
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import android.util.Log
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.listview.view.*
 
-class ItemAdapter2 : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
     private var firestore : FirebaseFirestore? = null
-    private lateinit var auth : FirebaseAuth
+    private var storage : FirebaseStorage? = null
     var title : String? = null
     var time : String? = null
     var detail : String? = null
@@ -18,7 +21,10 @@ class ItemAdapter2 : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
     var itemList: ArrayList<Item2> = arrayListOf()
 
     init {
-        firestore?.collection("Product")?.whereEqualTo("userId", auth.currentUser?.uid)
+        //Log.d("실험","uid   ${uid}")
+        firestore = FirebaseFirestore.getInstance()
+        storage = FirebaseStorage.getInstance()
+        firestore?.collection("Product")?.whereEqualTo("userId", uid)
             ?.get()?.addOnSuccessListener { documents ->
                 itemList.clear()
                 for (doc in documents) {
@@ -38,6 +44,7 @@ class ItemAdapter2 : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
         return ViewHolder(view)
     }
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
     }
 
     override fun getItemCount(): Int {
@@ -49,6 +56,15 @@ class ItemAdapter2 : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
         viewHolder.titleTV.text = itemList[position].title
         viewHolder.timeTV.text = itemList[position].time
         viewHolder.detailTV.text = itemList[position].detail
+        // 사진 불러오기
+        var storageRef = storage?.reference?.child("product")?.child(itemList!![position].imageURI.toString())
+        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+            Glide.with(context)
+                    .load(uri)
+                    .into(viewHolder.thumb)
+            //Log.v("IMAGE","Success")
+
+        }
     }
 
 

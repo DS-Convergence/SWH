@@ -258,7 +258,7 @@ class ProductDetailActivity : AppCompatActivity() {
         }
 
         tvUser.setOnClickListener {
-            val intent = Intent(this, MainPageActivity::class.java)
+            val intent = Intent(this, UserInfoActivity::class.java)
             intent.putExtra("UserId",userid)
             startActivity(intent)
         }
