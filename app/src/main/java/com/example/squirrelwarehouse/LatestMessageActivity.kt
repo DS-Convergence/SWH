@@ -26,7 +26,7 @@ import kotlin.collections.HashMap
 class LatestMessageActivity : AppCompatActivity() {
     private var firestore : FirebaseFirestore? = null
     private var chatmessage :ChatMessage? = null
-        companion object {
+    companion object {
         var currentUser: User? = null
         val TAG = "LatestActivity"
     }
@@ -50,7 +50,7 @@ class LatestMessageActivity : AppCompatActivity() {
             //we are missing the caht partner user
             val row = item as LatestMessageRow
             intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
-           Log.d("TEST","view.chat_log_textview_productname" + item.chatMessage.id)
+            Log.d("TEST","view.chat_log_textview_productname" + item.chatMessage.id)
 
             intent.putExtra("prod", item.chatMessage.id)
             startActivity(intent)
@@ -68,9 +68,9 @@ class LatestMessageActivity : AppCompatActivity() {
         adapter.clear()
         latestMessageMap.values.forEach{
             adapter.add(LatestMessageRow(it))
-
         }
     }
+
     private fun listenForLatestMessage(){
         //최근 메세제 읽어오는 리스너
         val fromId = FirebaseAuth.getInstance().uid

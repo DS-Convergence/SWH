@@ -25,6 +25,8 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){ //ìµœê
     private lateinit var auth: FirebaseAuth
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
+        Log.d("CHECK_LATES","chatMessage.text : " + chatMessage.text)
+
         viewHolder.itemView.LastMessage_textview_new_message.text = chatMessage.text
 
         val chatPartnerId: String
@@ -33,6 +35,7 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){ //ìµœê
         }else{
             chatPartnerId = chatMessage.fromId
         }
+
         var prod = chatMessage.id
         Log.d("CHECK_LATES","chatMessage.id : " + chatMessage.id)
 

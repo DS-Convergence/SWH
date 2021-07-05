@@ -53,7 +53,6 @@ class NewMessageActivity : AppCompatActivity() {
                     //                   intent.putExtra(USER_KEY,item.user.username)
                     intent.putExtra(USER_KEY,userItem.user)
                     startActivity(intent)
-
                     finish() //다시 리스트로 안돌아가고 메인 으로 돌아가는
                 }
                 recyclerview_newmessage_morefirends.adapter = adapter
@@ -62,9 +61,7 @@ class NewMessageActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
 
             }
-
         })
-
     }
 }
 

@@ -26,14 +26,15 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ChatLogListActivity : AppCompatActivity() {
+
     companion object {
         //var currentUser: User? = null
         val TAG = "chatLog"
     }
+
     val adapter = GroupAdapter<ViewHolder>()//새로운 어뎁터
     var toUser: User? = null
     private var firestore : FirebaseFirestore? = null
-
     private lateinit var prodUserId : String  // 물건 주인 id
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class ChatLogListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat_log)
 
         back_btn.setOnClickListener {
+            //뒤로가기 버튼
             finish()
         }
 
@@ -68,18 +70,16 @@ class ChatLogListActivity : AppCompatActivity() {
             }
         }
 
-
-
         listenForMessages() //지금까지 대화 한 내열 나열, 내가 보낸 마지막 쪽으로 커서 있게 만듦.
         //fetchCurrentUser() //지금 currentUser setting하는 메소드인데 이부분 다시 찾아보기.
         //보내기 버튼 누리면 보내지게
+
         send_button_chat_log.setOnClickListener {
             Log.d(TAG, " Attempt to send message.....")
             performSendMessage() // 새로운 메소드. 어떻게 firebase의 메세지를 보낼지
         }
 
         qr_button_chat_log.setOnClickListener {
-            //투명배경으로 뜨는거 어떻게 구현하지? 액티비티 필요하려나?
             val intent = Intent(this, ChatLogMoreActivity::class.java)
             startActivityForResult(intent, 0)
         }
@@ -112,7 +112,8 @@ class ChatLogListActivity : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid //나
         val toId = toUser?.uid //상대방
         //쓴 메세지를 들을 수 있게
-        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId")
+        var prod = intent.getStringExtra("ProductID")
+        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId/$prod")
         ref.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)
@@ -156,25 +157,25 @@ class ChatLogListActivity : AppCompatActivity() {
         //두번 올려 줘야 하니까 파이어 베이스에
         //메세지 보낸 사람( current Uer )은 보낸 메세지로 올리고_reference
         //받은 사람은 받은 메세지로 upload되야 하니까_toReference
-        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId").push()
-        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
+        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId/$prod").push()
+        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId/$prod").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
         val chatMessage = ChatMessage(prod, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
 
         reference.setValue(chatMessage)
-                .addOnSuccessListener {
-                    Log.d(TAG, "Saved our chat message: ${reference.key}")
-                    editText_chat_log.text.clear() //보내면 내용 지우기
-                    recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-                }
+            .addOnSuccessListener {
+                Log.d(TAG, "Saved our chat message: ${reference.key}")
+                editText_chat_log.text.clear() //보내면 내용 지우기
+                recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+            }
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
-        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId/$prod")
         latestMessageRef.setValue(chatMessage)
 
-        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId/$prod")
         latestMessageToRef.setValue(chatMessage)
     }
 
@@ -194,7 +195,7 @@ class ChatLogListActivity : AppCompatActivity() {
 
         private fun setTimeText(viewHolder: ViewHolder){
             val dateFormat = SimpleDateFormat
-                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
             viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatmessage!!.time)
         }
 
@@ -218,7 +219,7 @@ class ChatLogListActivity : AppCompatActivity() {
 
         private fun setTimeText(viewHolder: ViewHolder){
             val dateFormat = SimpleDateFormat
-                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
             viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatmessage!!.time)
         }
 

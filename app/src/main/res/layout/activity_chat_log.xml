@@ -51,13 +51,14 @@
 
     </FrameLayout>
 
+
     <EditText
         android:id="@+id/editText_chat_log"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="5dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:ems="10"
@@ -65,23 +66,9 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
+
         app:layout_constraintStart_toEndOf="@+id/qr_button_chat_log"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView_chat_log" />
-
-    <Button
-        android:id="@+id/send_button_chat_log"
-        android:layout_width="65dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/goyang"
-        android:text="전송"
-        android:textColor="@color/mocha_brown"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:backgroundTint="#BC9F83"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText_chat_log" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_chat_log"
@@ -95,19 +82,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageButton
+        android:id="@+id/camera_chat_log_more"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="3dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/qr_button_chat_log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qr_button_chat_log"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/gallery" />
+
     <ImageButton
         android:id="@+id/qr_button_chat_log"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:scaleType="fitCenter"
-        android:layout_marginStart="5dp"
-        app:backgroundTint="#BC9F83"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
+        android:scaleType="fitCenter"
+        app:backgroundTint="#BC9F83"
         app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/camera_chat_log_more"
         app:layout_constraintTop_toTopOf="@+id/editText_chat_log"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/more_dots" />
 
-
+    <ImageButton
+        android:id="@+id/send_button_chat_log"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="3dp"
+        app:backgroundTint="#BC9F83"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_log"
+        app:srcCompat="@drawable/send"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
