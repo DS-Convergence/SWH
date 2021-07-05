@@ -54,7 +54,6 @@ class ChatLogActivity : AppCompatActivity() {
     private lateinit var touserid : String //유저아이디
     private lateinit var toimgUri : String //프로필 이미지
     private var uri : Uri? = null
-
     private lateinit var prodUserId : String  // 물건 주인 id
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +71,7 @@ class ChatLogActivity : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
         auth = FirebaseAuth.getInstance()
         val fromId = FirebaseAuth.getInstance().uid
-        var intent = intent
+        // var intent = intent
         var prod = intent.getStringExtra("ProductID")
         touserid = intent.getStringExtra("UserId").toString()
 
@@ -87,8 +86,6 @@ class ChatLogActivity : AppCompatActivity() {
                     chat_log_textview_username.setText(product?.userName)
                     //userid = product?.userId.toString()
                     prodUserId = product?.userId.toString()
-
-
                 }
             }
         }
@@ -103,11 +100,20 @@ class ChatLogActivity : AppCompatActivity() {
         listenForMessages() //지금까지 대화 한 내열 나열, 내가 보낸 마지막 쪽으로 커서 있게 만듦.
         //fetchCurrentUser() //지금 currentUser setting하는 메소드인데 이부분 다시 찾아보기.
         //보내기 버튼 누리면 보내지게
+
+        camera_chat_log_more.setOnClickListener {
+            //이미지 불러오기기(갤러리 접근)
+            //왜 이 화면에서 이 코드가 실행이 안될까...
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = MediaStore.Images.Media.CONTENT_TYPE
+            startActivityForResult(intent, 1) //PICK_IMAGE에는 본인이 원하는 상수넣으면된다.
+        }
+
         send_button_chat_log.setOnClickListener {
             Log.d(TAG, " Attempt to send message.....")
             performSendMessage() // 새로운 메소드. 어떻게 firebase의 메세지를 보낼지
         }
-        
+
 
         qr_button_chat_log.setOnClickListener {
             //ChatLogMore띄울때 정보 같이 넘겨주기
@@ -115,7 +121,7 @@ class ChatLogActivity : AppCompatActivity() {
             intent.putExtra("userId1", prodUserId) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
             Log.d("CHECK_INTENT", "userId1 " + touserid)
 
-            // 예은코드. 확인하면 주석 지우삼
+            // 예은코드.
             if(fromId.equals(prodUserId)) { // 현재 이용자가 물건 주인이면 null
                 intent.putExtra("userId2", touserid) //빌리는 사람_카메라 띄우기
             }
@@ -127,39 +133,38 @@ class ChatLogActivity : AppCompatActivity() {
             Log.d("CHECK_INTENT", "productId " + prod)
             startActivityForResult(intent, 0)
         }
-
-
-
     }
+
+    //갤러리에서 이미지 가져와서 채팅창에 띄우기
+    //아직 미완성
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 0) {
+        if (requestCode == 1) {
             // Make sure the request was successful
             if (resultCode == Activity.RESULT_OK) {
                 try {
-                    // 선택한 이미지를 가져옴.
                     // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
                     uri = data!!.data
-                    //.with(this).load(uri).into(??)
-                    //??.visibility = View.VISIBLE
-
+                    Log.d("CHECK", "갤러리 화면 넘어옴")
+                    //Glide.with(this).load(uri).into(img)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
             }
         }
     }
+
     private fun listenForMessages() { //지금까지 보낸 메세지 나열하기
         var myUser: UserModelFS? = null
         val fromId = FirebaseAuth.getInstance().uid //나
         Log.d("listenForMessages Test", "fromId : " +fromId)
         //val toId = toUser?.uid //상대방
         val toId = touserid
-        Log.d("listenForMessages Test", "touserid : " +touserid)
+        Log.d("listenForMessages Test", "touserid : "+touserid)
 
         //쓴 메세지를 들을 수 있게
-        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId")
+        var prod = intent.getStringExtra("ProductID")
+        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId/$prod")
 
         var auth : FirebaseAuth = FirebaseAuth.getInstance()
         var firestore : FirebaseFirestore? = FirebaseFirestore.getInstance()
@@ -239,19 +244,20 @@ class ChatLogActivity : AppCompatActivity() {
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         //val toId = user!!.uid
         val toId = touserid
-
+        var prod = intent.getStringExtra("ProductID")
         //firebase에 user-message만듦.
         //두번 올려 줘야 하니까 파이어 베이스에
         //메세지 보낸 사람( current Uer )은 보낸 메세지로 올리고_reference
         //받은 사람은 받은 메세지로 upload되야 하니까_toReference
-        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId").push()
-        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
+        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId/$prod").push()
+        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId/$prod").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
-        var prod = intent.getStringExtra("ProductID")
+
         //물건이 기준이 되도록 바꿈.
         val chatMessage = ChatMessage(prod!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
         //val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+
 
         reference.setValue(chatMessage)
             .addOnSuccessListener {
@@ -262,12 +268,14 @@ class ChatLogActivity : AppCompatActivity() {
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
-        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId/$prod")
         latestMessageRef.setValue(chatMessage)
 
-        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId/$prod")
         latestMessageToRef.setValue(chatMessage)
     }
+
+
 
     class ChatFromItem(val chatmessage: ChatMessage?, val user: UserModelFS?) : Item<ViewHolder>() {
         private var firestore : FirebaseFirestore? = null

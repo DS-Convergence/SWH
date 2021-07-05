@@ -1,11 +1,16 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.Rental
 import com.example.squirrelwarehouse.models.User
@@ -22,9 +27,10 @@ import java.util.*
 
 
 class ChatLogMoreActivity : AppCompatActivity() {
-
+    private var uri : Uri? = null
     val adapter = GroupAdapter<ViewHolder>()//새로운 어뎁터
     var toUser: User? = null
+    private var classifier: Classifier? = null
 
     private lateinit var auth: FirebaseAuth
     private var firestore : FirebaseFirestore? = null
@@ -43,11 +49,6 @@ class ChatLogMoreActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
-        textView_camera_chat_log_more.setOnClickListener {
-            //val intent = Intent(this, ::class.java)
-            //startActivityForResult(intent, 0)
-        }
-
         textView_return_chat_log_more.setOnClickListener {
 
             var temp = user1
@@ -55,7 +56,7 @@ class ChatLogMoreActivity : AppCompatActivity() {
             // 이미 저장된 정보라면
             // touserId와 fromId가 바뀌어야함.
             firestore?.collection("Rental")?.document(user1+user2+prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                task ->
+                    task ->
                 if (task.isSuccessful) {
                     var rental = task.result.toObject(Rental::class.java)
                     if(rental?.userId1 != null) {
@@ -95,10 +96,6 @@ class ChatLogMoreActivity : AppCompatActivity() {
                 }
             }
 
-
-
-
-
         }
 
         // 예은 추가
@@ -111,6 +108,8 @@ class ChatLogMoreActivity : AppCompatActivity() {
     // 예은 코드
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+
         if (result != null) {
             //qrcode 가 없으면
             if (result.contents == null) {
@@ -126,7 +125,7 @@ class ChatLogMoreActivity : AppCompatActivity() {
                     var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
 
                     firestore?.collection("Rental")?.document(user1+user2+productId)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                        task ->
+                            task ->
                         if(task.isSuccessful) {
                             var rental = task.result.toObject(Rental::class.java)
                             var id= rental?.userId1

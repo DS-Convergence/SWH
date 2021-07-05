@@ -1775,6 +1775,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable focus_marker_fill
 drawable focus_marker_outline
+drawable gallery
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_green
@@ -1826,6 +1827,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_button
 drawable rounded_select_photo_button
+drawable send
 drawable settings
 drawable siren
 drawable splash
@@ -1943,6 +1945,7 @@ id btn_submenu
 id btn_upload
 id buttonPanel
 id cache_measures
+id camera_chat_log_more
 id cancel_action
 id cancel_button
 id cate1
@@ -2020,7 +2023,6 @@ id disjoint
 id divider
 id divider2
 id divider3
-id divider_chat_log_more
 id dragDown
 id dragEnd
 id dragLeft
@@ -2381,7 +2383,6 @@ id textView4
 id textView5
 id textView8
 id textView9
-id textView_camera_chat_log_more
 id textView_chat_log_more_qr
 id textView_from_row
 id textView_return_chat_log_more
