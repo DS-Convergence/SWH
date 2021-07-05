@@ -199,8 +199,8 @@ class MainPageActivity : AppCompatActivity() {
         var moreRcmd = moreRcmd
         moreRcmd.setOnClickListener {
             //Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
-            var ubr = UserBasedRcmd("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")
-            ubr.UserBased("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")
+            var ubr = UserBasedRcmd("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")  // 현재 유저 아이디 필요
+
         }
 
 
@@ -681,28 +681,143 @@ class MainPageActivity : AppCompatActivity() {
         }
     }
 
-    inner class UserBasedRcmd(private var userId : String) {
-        var user : String? = userId
+    inner class UserBasedRcmd {
+        lateinit var user : String
         // var userIndex = 0
         // var data = arrayOf(datas)
-        lateinit var sim: ArrayList<ArrayList<Double>>    // 유사도
-        lateinit var users : ArrayList<String>
-        lateinit var product : ArrayList<String>
-        lateinit var rcmdList : ArrayList<String>   // 물건 정보 들어갈 배열
+        var sim = ArrayList<ArrayList<Double>>()    // 유사도
+        var users = ArrayList<String>()
+        var product = ArrayList<String>()
+        var fav = ArrayList<ArrayList<String>>()
+        var rcmdList = ArrayList<String>()   // 물건 정보 들어갈 배열
 
-        fun UserBased(userId: String) {
+        var dataArr = ArrayList<ArrayList<Int>>()   // 전체 유저의 선호도 데이터
+
+
+        constructor(userId : String) {
 
             this.user = userId
-            var data : ArrayList<ArrayList<Int>> = getData()    // product와 favorite 비교해서 선호데이터 받기
+            //var data : ArrayList<ArrayList<Int>> = getData()    // product와 favorite 비교해서 선호데이터 받기
 
+            firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                //userArr.clear()
+                if (querySnapshot == null) return@addSnapshotListener
+
+                // 데이터 받아오기
+                for (snapshot in querySnapshot!!.documents) {
+                    var item = snapshot.toObject(UserModelFS::class.java)
+                    users.add(item!!.uid.toString())
+                    //Log.v("RcmdList", "user: " + item!!.uid.toString())
+                }
+
+
+                firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                    //productArr.clear()
+                    if (querySnapshot == null) return@addSnapshotListener
+
+                    // 데이터 받아오기
+                    for (snapshot in querySnapshot!!.documents) {
+                        var item = snapshot.toObject(Product::class.java)
+                        product.add(item!!.userId.toString() + "_" + item!!.uploadTime.toString())
+                        //Log.v("RcmdList", item!!.productName.toString())
+                    }
+
+                    firestore?.collection("Favorite")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                        //favArr.clear()
+                        if (querySnapshot == null) return@addSnapshotListener
+
+                        // 데이터 받아오기
+                        for (snapshot in querySnapshot!!.documents) {
+                            var item = snapshot.toObject(Favorite::class.java)
+                            fav.add(item!!.products as java.util.ArrayList<String>)
+                        }
+
+                        //Log.v("RcmdList", "유저개수: " + users.size)
+                        //Log.v("RcmdList", "물건개수: " + product.size)
+                        //Log.v("RcmdList", "좋아요개수: " + fav.size)
+
+
+                        // 물건 있는지 없는지 0 1 행렬
+                        for(i in 0..fav.size-1) {
+                            var arr = ArrayList<Int>()   // 한 사람의 선호도 데이터
+                            for(j in 0..product.size-1) {
+                                // Log.v("RcmdList", "물건개수: " + j)
+                                if(fav.get(i).contains(product.get(j)))
+                                    arr.add(1)
+                                else
+                                    arr.add(0)
+
+                                //Log.v("RcmdList", "dataArr: " + arr.get(j))
+                            }
+                            dataArr.add(arr)
+
+                            //Log.v("RcmdList", "dataArr개수: " + dataArr.size)
+                            //Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
+                        }
+
+
+                        // 유사도 행렬
+                        for (i in 0..users.size-1) {
+                            var simArr = ArrayList<Double>()
+                            for(j in 0..users.size-1) {
+                                if(i==j)
+                                    simArr.add(0.0)
+                                else
+                                    simArr.add(cosineSimilarity(dataArr.get(i),dataArr.get(j)))
+
+                                Log.v("RcmdList", "sim : " + simArr.get(j).toString())
+                            }
+                            sim.add(simArr)
+
+                            Log.v("RcmdList", "sim개수: " + sim.size)
+                        }
+
+
+                        // 현재 유저와 다른 유저와의 유사도만 뽑아내기
+                        var index1 = 0  // 현재 유저의 순서?인덱스? 뽑아내기
+                        while (index1 < users.size) {
+                            if (users.get(index1).equals(user.substring(5))) //userIndex = i;
+                                break
+                            index1++
+                        }
+                        Log.v("RcmdList", "user: " + users.get(index1))
+
+                        // 유사도 제일 높은 사람의 정보 출력하기
+                        var max = sim.get(index1).get(0)
+                        var index2 = 0
+                        for (j in 0..users.size-1) {
+                            if (max < sim.get(index1).get(j)) {
+                                max = sim.get(index1).get(j)
+                                index2 = j
+                            }
+                        }
+                        Log.v("RcmdList", "user: " + users.get(index2))
+
+                        // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
+                        for (j in 0..dataArr.get(index1).size-1) {
+                            if (dataArr.get(index1).get(j) == 0 && dataArr.get(index2).get(j) != 0) {
+                                if(!product.get(j).contains(user.substring(5))) {
+                                    rcmdList.add(product.get(j))
+                                    Log.v("RcmdList", "추천물품 : "+product.get(j))
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+/*
             // 유사도 행렬
             for (i in 0..users.size-1) {
-                lateinit var simArr : ArrayList<Double>
+                var simArr = ArrayList<Double>()
                 for(j in 0..users.size-1) {
                     if(i==j)
                         simArr.add(0.0)
                     else
                         simArr.add(cosineSimilarity(data.get(i),data.get(j)))
+
+                    Log.v("RcmdList", simArr.get(j).toString())
                 }
                 sim.add(simArr)
             }
@@ -716,7 +831,7 @@ class MainPageActivity : AppCompatActivity() {
             }
 
             // 유사도 제일 높은 사람의 정보 출력하기
-            var max: Double = sim.get(index1).get(0)
+            var max = sim.get(index1).get(0)
             var index2 = 0
             for (j in 0..users.size-1) {
                 if (max < sim.get(index1).get(j)) {
@@ -725,24 +840,13 @@ class MainPageActivity : AppCompatActivity() {
                 }
             }
 
-            // 나랑 유사도가 가장 높은 사람의 물건 선호도 출력
-            /*for (dd in data.get(index2)) {
-                print("$dd ")
-            }
-             */
-
-            // 나의 물건 선호도 출력
-            /*for (dd in data.get(index1)) {
-                print("$dd ")
-            }
-             */
-
             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
             for (j in 0..data.get(index1).size-1) {
                 if (data.get(index1).get(j) == 0 && data.get(index2).get(j) != 0) {
                     rcmdList.add(product.get(j))
+                    Log.v("RcmdList", "추천물품 : "+product.get(j))
                 }
-            }
+            }*/
         }
 
         fun getRcmd() : ArrayList<String> {
@@ -773,7 +877,7 @@ class MainPageActivity : AppCompatActivity() {
             }
             product = productArr
 
-            var userArr = ArrayList<String>()
+            //var userArr = ArrayList<String>()
             firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                 //userArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
@@ -781,10 +885,14 @@ class MainPageActivity : AppCompatActivity() {
                 // 데이터 받아오기
                 for (snapshot in querySnapshot!!.documents) {
                     var item = snapshot.toObject(UserModelFS::class.java)
-                    userArr.add(item!!.uid.toString())
+                    users.add(item!!.uid.toString())
+                    Log.v("RcmdList", "user: " + item!!.uid.toString())
                 }
+
+                Log.v("RcmdList", "유저개수: " + users.size)
             }
-            users = userArr
+            //users = userArr
+            Log.v("RcmdList", "유저개2수: " + users.size)
 
             var favArr = ArrayList<ArrayList<String>>()
             firestore?.collection("Favorite")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -798,20 +906,20 @@ class MainPageActivity : AppCompatActivity() {
                 }
             }
 
-            lateinit var data : ArrayList<ArrayList<Int>>   // 전체 유저의 선호도 데이터
-            lateinit var arr : ArrayList<Int>   // 한 사람의 선호도 데이터
+            var data1 = ArrayList<ArrayList<Int>>()   // 전체 유저의 선호도 데이터
+            var arr = ArrayList<Int>()   // 한 사람의 선호도 데이터
             for(i in 0..favArr.size-1) {
-                arr.clear()
+                //arr.clear()
                 for(j in 0..productArr.size-1) {
                     if(favArr.get(i).contains(productArr.get(j)))
                         arr.add(1)
                     else
                         arr.add(0)
                 }
-                data.add(arr)
+                data1.add(arr)
             }
 
-            return data
+            return data1
         }
 
         private fun cosineSimilarity(user1: ArrayList<Int>, user2: ArrayList<Int>): Double {
