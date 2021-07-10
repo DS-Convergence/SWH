@@ -31,7 +31,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".MyListActivity"></activity>
+        <activity android:name=".MyFavoriteListActivity"></activity>
+        <activity android:name=".MyListActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -52,11 +53,13 @@
         <activity android:name=".UserSettingActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".ChatLogMoreActivity"
@@ -78,7 +81,13 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ReportActivity" />
         <activity android:name=".TermsAndConditionsActivity" />
         <activity android:name=".DeleteAccountActivity" />
