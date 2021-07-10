@@ -61,6 +61,10 @@ class MyPageActivity : AppCompatActivity() {
             val intent = Intent(this, MyListActivity::class.java)
             startActivity(intent)
         }
+        my_fav_list_btn.setOnClickListener {
+            val intent = Intent(this, MyFavoriteListActivity::class.java)
+            startActivity(intent)
+        }
         user_setting_btn.setOnClickListener {
             val intent = Intent(this, UserSettingActivity::class.java)
             startActivity(intent)

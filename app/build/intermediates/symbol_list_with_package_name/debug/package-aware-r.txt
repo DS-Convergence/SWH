@@ -2209,6 +2209,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_fav_listView
+id my_fav_list_btn
 id my_listView
 id my_list_btn
 id mypageBtn
@@ -2544,6 +2546,7 @@ layout activity_item_loc
 layout activity_latest_message
 layout activity_log_in
 layout activity_main
+layout activity_my_favorite_list
 layout activity_my_list
 layout activity_my_page
 layout activity_new_message

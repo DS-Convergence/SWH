@@ -14,31 +14,17 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.listview.view.*
 
 class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+    //유저게시글, 나의 게시글 용 어댑터
     private var firestore : FirebaseFirestore? = null
     private var storage : FirebaseStorage? = null
     var title : String? = null
-    var time : String? = null
-    var detail : String? = null
-    var item_pic : String? = null
     var itemList: ArrayList<Product> = arrayListOf()
 
     init {
         //Log.d("실험","uid   ${uid}")
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
-        /*firestore?.collection("Product")?.whereEqualTo("userId", uid)
-            ?.get()?.addOnSuccessListener { documents ->
-                itemList.clear()
-                for (doc in documents) {
-                    title = doc?.data?.get("productName").toString()
-                    time = doc?.data?.get("uploadTime").toString()
-                    detail = doc?.data?.get("productDetail").toString()
-                    item_pic = doc?.data?.get("imageURI").toString()
-                    var item = Item2(title, time, detail, item_pic)
-                    itemList.add(item!!)
-                }
-                notifyDataSetChanged()//새로고침
-            }*/
+
         firestore?.collection("Product")?.whereEqualTo("userId", uid)
                 ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     itemList.clear()
@@ -81,8 +67,6 @@ class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerV
         }
         viewHolder.setOnClickListener {
 
-            // 이거를 쓰려면 product이름을 바꿔야함. userid+uploadTime 이런식으로로
-            // 지금은 오류남. 암튼 이 코드로 했을 때 다음 페이지로 넘어가는 건 확실함. 해봄.
             Intent(context, ProductDetailActivity::class.java).apply {
                 putExtra("data", itemList!![position].userId+"_"+itemList!![position].uploadTime)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -90,7 +74,7 @@ class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerV
 
         }
     }
-    //성공하면 Item2 클래스 지우기
+
 
 
 }
