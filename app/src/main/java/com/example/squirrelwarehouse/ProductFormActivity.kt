@@ -99,7 +99,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
 
-        // 스패너
+        // 스피너
         spCategory = findViewById(R.id.sp_category)
         val category = resources.getStringArray(R.array.category)
         var adapterCate : ArrayAdapter<String>
@@ -358,8 +358,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
                     // 나중에 바뀔 코드
                     etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
-                    var cate = Category(results.get(0).toString())
-                    spCategory.setSelection(cate.category)
+                    var cate = Category(results.get(0).toString())    // 물건의 카테고리 가져오기
+                    spCategory.setSelection(cate.category)      // 카테고리 설정하기
 
 
                 } catch (e: Exception) {
