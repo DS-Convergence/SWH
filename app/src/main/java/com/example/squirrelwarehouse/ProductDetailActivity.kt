@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.product_detail.*
-import kotlinx.android.synthetic.main.product_form.*
 
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -261,6 +260,10 @@ class ProductDetailActivity : AppCompatActivity() {
             val intent = Intent(this, UserInfoActivity::class.java)
             intent.putExtra("UserId",userid)
             startActivity(intent)
+        }
+
+        back_btn.setOnClickListener {
+            finish()
         }
 
     }
