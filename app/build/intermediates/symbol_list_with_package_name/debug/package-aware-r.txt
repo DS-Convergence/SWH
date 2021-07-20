@@ -2100,6 +2100,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageImageView_from_row
+id imageImage_to_row
 id imageView2
 id imageView5
 id imageView_new_message
@@ -2559,6 +2561,8 @@ layout activity_terms_and_conditions
 layout activity_user_info
 layout activity_user_setting
 layout chat_from_row
+layout chat_image_from_row
+layout chat_image_to_row
 layout chat_to_row
 layout custom_dialog
 layout design_bottom_navigation_item
