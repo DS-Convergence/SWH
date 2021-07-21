@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import android.util.Log
+import com.example.squirrelwarehouse.models.Favorite
+import kotlinx.android.synthetic.main.activity_my_favorite_list.*
 import kotlinx.android.synthetic.main.activity_my_favorite_list.back_btn
 import kotlinx.android.synthetic.main.activity_my_list.*
 import kotlinx.android.synthetic.main.listview.view.*
@@ -35,72 +37,80 @@ class MyFavoriteListActivity : AppCompatActivity() {
         back_btn.setOnClickListener {
             finish()
         }
+
         val layoutManager = LinearLayoutManager(this)
         layoutManager.setReverseLayout(true)
         layoutManager.setStackFromEnd(true)
-        my_listView.layoutManager = layoutManager
+        my_fav_listView.layoutManager = layoutManager
+        my_fav_listView.adapter = FavListAdapter()
 
-        my_listView.adapter = FavListAdapter()
     }
+
     inner class FavListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-        var products: ArrayList<Product> = arrayListOf()
-        lateinit var favList: Array<String>
+        var itemList: ArrayList<Product> = arrayListOf()
         init {
-            /*
-            firestore?.collection("Favorite")?.document("${uid}")?.get()?.addOnSuccessListener { doc ->
-                //배열에 있는 물건 하나씩 꺼내서 리사이클러뷰에 표시
-                //favList = doc?.data?.get("products")
-                favList = arrayOf(doc?.data?.get("products").toString())
-                for(prodId in favList){
-                    Log.d("실험 !!! ", prodId)
-                    firestore?.collection("Product")?.document("${prodId}")?.get()?.addOnSuccessListener { doc ->
-                        products.clear()
-                        var item = doc.toObject(Product::class.java)
-                        products.add(item!!)
+            Log.d("찜목록", "로그 뜨나요")
+            firestore?.collection("Favorite")?.document("${uid}")?.get()
+                    ?.addOnSuccessListener { doc ->
+                        Log.d("찜목록", "로그 뜨나요2")
+                        //products.clear()
+                        var item = doc.toObject(Favorite::class.java)
+                        var array = item?.products
+                        Log.d("찜목록", "로그 뜨나요3")
+                        if (array != null) {
+                            for (productID in array) {
+                                Log.d("찜목록____id", productID)
+                                firestore?.collection("Product")?.document(productID)?.get()
+                                        ?.addOnSuccessListener { doc ->
+                                            var thing = doc.toObject(Product::class.java)
+                                            itemList.add(thing!!)
+                                            Log.d("불러와지나요1","${itemList[0].productName}")
+                                            notifyDataSetChanged()//이거 위치 중요
+                                        }
+                            }
+                        } else {
+                            Log.d("찜목록", "array null")
+                        }
+
                     }
-                    notifyDataSetChanged()
-                }
-            }
-             */
         }
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             var view =
-                LayoutInflater.from(parent.context).inflate(R.layout.listview, parent, false)
+                    LayoutInflater.from(parent.context).inflate(R.layout.listview, parent, false)
             return CustomViewHolder(view)
         }
+
         inner class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         }
 
         override fun getItemCount(): Int {
-            return products.size
+            return itemList.size
         }
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             var viewHolder = (holder as CustomViewHolder).itemView
-            viewHolder.titleTV.text = products[position].productName
-            viewHolder.timeTV.text = products[position].uploadTime
-            viewHolder.detailTV.text = products[position].productDetail
+            viewHolder.titleTV.text = itemList[position].productName
+            viewHolder.timeTV.text = itemList[position].uploadTime
+            viewHolder.detailTV.text = itemList[position].productDetail
             // 사진 불러오기
-            var storageRef = storage?.reference?.child("product")?.child(products!![position].imageURI.toString())
+            var storageRef = storage?.reference?.child("product")?.child(itemList!![position].imageURI.toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)
                         .load(uri)
                         .into(viewHolder.thumb)
-                //Log.v("IMAGE","Success")
+                Log.v("IMAGE","Success")
 
             }
             viewHolder.setOnClickListener {
-
-                // 이거를 쓰려면 product이름을 바꿔야함. userid+uploadTime 이런식으로로
-                // 지금은 오류남. 암튼 이 코드로 했을 때 다음 페이지로 넘어가는 건 확실함. 해봄.
                 Intent(this@MyFavoriteListActivity, ProductDetailActivity::class.java).apply {
-                    putExtra("data", products!![position].userId+"_"+products!![position].uploadTime)
+                    putExtra("data", itemList!![position].userId + "_" + itemList!![position].uploadTime)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                }.run {startActivity(this)}
+                }.run { startActivity(this) }
 
             }
         }
+
 
     }
 }
