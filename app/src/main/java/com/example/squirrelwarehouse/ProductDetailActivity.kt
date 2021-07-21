@@ -40,6 +40,10 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var prodUser : String  // 물건 주인 id
 
+    private var start: Long = 0
+    private var stop: Long = 0
+    private var total: Long = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
@@ -300,4 +304,22 @@ class ProductDetailActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        start = System.currentTimeMillis()
+        Log.v("MainActivity", "onStart() "+start)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        stop = System.currentTimeMillis()
+        total += (stop - start)
+        Log.v("MainActivity", "onStop() "+(stop - start))
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.v("MainActivity", "onDestroy() " + (total/1000) + "초")
+    }
 }
