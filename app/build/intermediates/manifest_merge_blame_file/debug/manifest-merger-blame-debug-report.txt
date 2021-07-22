@@ -5,127 +5,127 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-7-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
+7-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:8:5-10:41
 8        android:minSdkVersion="21"
-8-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:9:9-35
+8-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:9:9-35
 9        android:targetSdkVersion="30" />
-9-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:10:9-38
+9-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:10:9-38
 10    <!-- Include required permissions for Google Maps API to run. -->
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:12:5-79
-11-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:12:22-76
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:5-79
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:13:5-67
-12-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:13:22-64
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:13:5-67
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:13:22-64
 13    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-13-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:14:5-98
-13-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:14:22-95
+13-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:14:5-98
+13-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:14:22-95
 14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-14-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:15:5-81
-14-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:15:22-78
+14-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:15:5-81
+14-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:15:22-78
 15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-15-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:16:5-79
-15-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:16:22-76
+15-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:16:5-79
+15-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:16:22-76
 16
 17    <uses-feature
-17-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:18:5-20:35
+17-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:18:5-20:35
 18        android:glEsVersion="0x00020000"
-18-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:19:9-41
+18-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:9-41
 19        android:required="true" />
-19-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:20:9-32
+19-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:20:9-32
 20
 21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
-21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
+21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
+21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
 22    <uses-permission android:name="android.permission.CAMERA" />
-22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:11:5-65
-22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:11:22-62
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:11:5-65
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:11:22-62
 23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:12:5-71
-23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:12:22-68
+23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:12:5-71
+23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:12:22-68
 24
 25    <uses-feature android:name="android.hardware.camera" />
-25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
-25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
+25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
+25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
 26    <uses-feature
-26-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
+26-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
 27        android:name="android.hardware.camera.autofocus"
-27-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
+27-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
 28        android:required="false" />
-28-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
+28-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
 29    <uses-feature
-29-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
+29-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
 30        android:name="android.hardware.camera.front"
-30-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
+30-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
 31        android:required="false" />
-31-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
+31-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
 32    <uses-feature
-32-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
+32-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
 33        android:name="android.hardware.microphone"
-33-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
+33-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
 34        android:required="false" />
-34-->[com.wonderkiln:camerakit:0.13.1] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\50b6a2e4e34a1a49900f93ab0fa3621c\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
+34-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
 35
 36    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 37
 38    <uses-feature
-38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
+38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
 39        android:name="android.hardware.camera.flash"
-39-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
+39-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
 40        android:required="false" />
-40-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
+40-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
 41    <uses-feature
-41-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
+41-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
 42        android:name="android.hardware.screen.landscape"
-42-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
+42-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
 43        android:required="false" />
-43-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
+43-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
 44    <uses-feature
-44-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
+44-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
 45        android:name="android.hardware.wifi"
-45-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
+45-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
 46        android:required="false" />
-46-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
+46-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
 47
 48    <application
-48-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:22:5-287:19
+48-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:22:5-287:19
 49        android:allowBackup="true"
-49-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:23:9-35
+49-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:23:9-35
 50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-50-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:24:9-77
+50-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:24:9-77
 51        android:debuggable="true"
-51-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:25:9-34
+51-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:25:9-34
 52        android:extractNativeLibs="false"
-52-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:26:9-42
+52-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:26:9-42
 53        android:icon="@mipmap/swh_icon"
-53-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:27:9-40
+53-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:27:9-40
 54        android:label="@string/app_name"
-54-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:28:9-41
+54-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:28:9-41
 55        android:roundIcon="@mipmap/swh_icon_round"
-55-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:29:9-51
+55-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:29:9-51
 56        android:supportsRtl="true"
-56-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:30:9-35
+56-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:9-35
 57        android:testOnly="true"
-57-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:31:9-32
+57-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-32
 58        android:theme="@style/Theme.SquirrelWarehouse" >
-58-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:32:9-55
+58-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-55
 59        <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
-59-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:34:9-69
-59-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:34:19-57
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:9-69
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:19-57
 60        <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
-60-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:35:9-52
-60-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:35:19-49
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:35:9-52
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:35:19-49
 61
 62        <meta-data
-62-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:37:9-39:71
+62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:9-39:71
 63            android:name="com.google.android.geo.API_KEY"
-63-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:38:13-58
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:38:13-58
 64            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
-64-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:39:13-68
+64-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:13-68
 65
 66        <activity android:name="com.example.squirrelwarehouse.TempActivity" >
-66-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:41:9-50:20
-66-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:41:19-47
+66-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:41:9-50:20
+66-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:41:19-47
 67
 68            <!--
 69            <intent-filter>
@@ -136,20 +136,20 @@
 74            -->
 75        </activity>
 76        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
-76-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:51:9-52
-76-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:51:19-49
+76-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-52
+76-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-49
 77        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
-77-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:52:9-54
-77-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:52:19-51
+77-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-54
+77-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-51
 78        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
-78-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:53:9-57
-78-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:53:19-54
+78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-57
+78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-54
 79        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-79-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:54:9-52
-79-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:54:19-49
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:9-52
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:19-49
 80        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-80-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:55:9-63:20
-80-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:55:19-48
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:55:9-63:20
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:55:19-48
 81
 82            <!--
 83            <intent-filter>
@@ -160,33 +160,33 @@
 88            -->
 89        </activity>
 90        <activity
-90-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:64:9-66:50
+90-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:9-66:50
 91            android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
-91-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:65:13-48
+91-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-48
 92            android:theme="@style/Transparent" />
-92-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:66:13-47
+92-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:13-47
 93        <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
-93-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:67:9-57
-93-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:67:19-54
+93-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-57
+93-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-54
 94        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
-94-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:68:9-59
-94-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:68:19-56
+94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-59
+94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-56
 95        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
-95-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:69:9-73:20
-95-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:69:19-50
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-73:20
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-50
 96            <meta-data
-96-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:70:13-72:58
+96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:13-72:58
 97                android:name="android.support.PARENT_ACTIVITY"
-97-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:71:17-63
+97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:17-63
 98                android:value=".LatestMessageActivity" />
-98-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:72:17-55
+98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:72:17-55
 99        </activity>
 100        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity" />
-100-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:74:9-56
-100-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:74:19-53
+100-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:9-56
+100-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:19-53
 101        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
-101-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:75:9-83:20
-101-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:75:19-56
+101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:9-83:20
+101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:19-56
 102
 103            <!--
 104            <intent-filter>
@@ -196,34 +196,34 @@
 108            -->
 109        </activity>
 110        <activity android:name="com.example.squirrelwarehouse.SplashActivity" >
-110-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:84:9-90:20
-110-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:84:19-49
+110-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:9-90:20
+110-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:19-49
 111            <intent-filter>
-111-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:85:13-89:29
+111-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:13-89:29
 112                <action android:name="android.intent.action.MAIN" />
-112-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:86:17-69
-112-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:86:25-66
+112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:17-69
+112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:25-66
 113
 114                <category android:name="android.intent.category.LAUNCHER" />
-114-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:88:17-77
-114-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:88:27-74
+114-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:17-77
+114-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:27-74
 115            </intent-filter>
 116        </activity>
 117        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-117-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:91:9-52
-117-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:91:19-49
-118        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
-118-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:92:9-64
-118-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:92:19-61
+117-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:9-52
+117-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:19-49
+118        <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-53
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:19-50
 119        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-119-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:93:9-59
-119-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:93:19-56
+119-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:9-59
+119-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:19-56
 120        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-120-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:94:9-68
-120-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:94:19-65
+120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:9-68
+120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:19-65
 121        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
-121-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:95:9-103:20
-121-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:95:19-54
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:9-103:20
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:19-54
 122
 123            <!--
 124            <intent-filter>
@@ -233,8 +233,8 @@
 128            -->
 129        </activity>
 130        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" >
-130-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:104:9-112:20
-130-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:104:19-56
+130-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:104:9-112:20
+130-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:104:19-56
 131
 132            <!--
 133            <intent-filter>
@@ -244,37 +244,37 @@
 137            -->
 138        </activity>
 139        <activity android:name="com.example.squirrelwarehouse.ProductRentalQRActivity" />
-139-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:113:9-61
-139-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:113:19-58
+139-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:113:9-61
+139-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:113:19-58
 140        <activity android:name="com.example.squirrelwarehouse.ProductRentalCameraActivity" /> <!-- QR코드 -->
-140-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:114:9-65
-140-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:114:19-62
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:114:9-65
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:114:19-62
 141        <activity
-141-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:115:9-118:49
+141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:9-118:49
 142            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-142-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:116:13-74
+142-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:116:13-74
 143            android:clearTaskOnLaunch="true"
-143-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
+143-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
 144            android:screenOrientation="fullSensor"
-144-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:117:13-51
+144-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:117:13-51
 145            android:stateNotNeeded="true"
-145-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
+145-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
 146            android:theme="@style/zxing_CaptureTheme"
-146-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
+146-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
 147            android:windowSoftInputMode="stateAlwaysHidden" />
-147-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\LeeYeEun\.gradle\caches\transforms-2\files-2.1\9cbf878254098a8843239a8cb1d51902\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
+147-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
 148        <activity
-148-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:119:9-121:50
+148-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:119:9-121:50
 149            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
-149-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:120:13-57
+149-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:120:13-57
 150            android:theme="@style/Transparent" />
-150-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:121:13-47
+150-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:121:13-47
 151        <activity android:name="com.example.squirrelwarehouse.UpdateMoreActivity" />
-151-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:122:9-56
-151-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:122:19-53
+151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:122:9-56
+151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:122:19-53
 152        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" >
-152-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:123:9-132:20
-152-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:123:19-51
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:123:9-132:20
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:123:19-51
 153
 154            <!--
 155            <intent-filter>
@@ -285,8 +285,8 @@
 160            -->
 161        </activity>
 162        <activity android:name="com.example.squirrelwarehouse.MainMore" >
-162-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:133:9-141:20
-162-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:133:19-43
+162-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:133:9-141:20
+162-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:133:19-43
 163
 164            <!--
 165            <intent-filter>
@@ -296,11 +296,11 @@
 169            -->
 170        </activity>
 171        <activity android:name="com.example.squirrelwarehouse.MainMapActivity" />
-171-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:142:9-53
-171-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:142:19-50
+171-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:9-53
+171-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:19-50
 172        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
-172-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:143:9-151:20
-172-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:143:19-47
+172-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:9-151:20
+172-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:19-47
 173
 174            <!--
 175            <intent-filter>
@@ -311,251 +311,251 @@
 180        </activity>
 181
 182        <service
-182-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:153:9-191:19
+182-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:153:9-191:19
 183            android:name="com.google.firebase.components.ComponentDiscoveryService"
-183-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:154:13-84
+183-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:154:13-84
 184            android:directBootAware="true"
-184-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:155:13-43
+184-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:155:13-43
 185            android:exported="false" >
-185-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:156:13-37
+185-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:156:13-37
 186            <meta-data
-186-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:157:13-159:85
+186-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:157:13-159:85
 187                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-187-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:158:17-122
+187-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:158:17-122
 188                android:value="com.google.firebase.components.ComponentRegistrar" />
-188-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:159:17-82
+188-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:159:17-82
 189            <meta-data
-189-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:160:13-162:85
+189-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:160:13-162:85
 190                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-190-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:161:17-124
+190-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:161:17-124
 191                android:value="com.google.firebase.components.ComponentRegistrar" />
-191-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:162:17-82
+191-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:162:17-82
 192            <meta-data
-192-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:163:13-165:85
+192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:163:13-165:85
 193                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-193-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:164:17-126
+193-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:17-126
 194                android:value="com.google.firebase.components.ComponentRegistrar" />
-194-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:165:17-82
+194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:17-82
 195            <meta-data
-195-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:166:13-168:85
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:13-168:85
 196                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-196-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:167:17-116
+196-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:167:17-116
 197                android:value="com.google.firebase.components.ComponentRegistrar" />
-197-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:168:17-82
+197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:17-82
 198            <meta-data
-198-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:169:13-171:85
+198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:169:13-171:85
 199                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-199-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:170:17-113
+199-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:170:17-113
 200                android:value="com.google.firebase.components.ComponentRegistrar" />
-200-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:171:17-82
+200-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:171:17-82
 201            <meta-data
-201-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:172:13-174:85
+201-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:172:13-174:85
 202                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-202-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:173:17-109
+202-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:173:17-109
 203                android:value="com.google.firebase.components.ComponentRegistrar" />
-203-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:174:17-82
+203-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:174:17-82
 204            <meta-data
-204-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:175:13-177:85
+204-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:175:13-177:85
 205                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-205-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:176:17-111
+205-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:176:17-111
 206                android:value="com.google.firebase.components.ComponentRegistrar" />
-206-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:177:17-82
+206-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:177:17-82
 207            <meta-data
-207-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:178:13-180:85
+207-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:178:13-180:85
 208                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-208-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:179:17-107
+208-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:179:17-107
 209                android:value="com.google.firebase.components.ComponentRegistrar" />
-209-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:180:17-82
+209-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:180:17-82
 210            <meta-data
-210-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:181:13-183:85
+210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:181:13-183:85
 211                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-211-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:182:17-109
+211-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:182:17-109
 212                android:value="com.google.firebase.components.ComponentRegistrar" />
-212-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:183:17-82
+212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:183:17-82
 213            <!--
 214                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
 215                clients to use it as well, by defining this registrar in their own core/common library.
 216            -->
 217            <meta-data
-217-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:188:13-190:85
+217-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:188:13-190:85
 218                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-218-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:189:17-121
+218-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:189:17-121
 219                android:value="com.google.firebase.components.ComponentRegistrar" />
-219-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:190:17-82
+219-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:190:17-82
 220        </service> <!-- Needs to be explicitly declared on P+ -->
 221        <activity
-221-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:192:9-196:75
+221-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:192:9-196:75
 222            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-222-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:193:13-93
+222-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:193:13-93
 223            android:excludeFromRecents="true"
-223-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:194:13-46
+223-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:194:13-46
 224            android:exported="false"
-224-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:195:13-37
+224-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:13-37
 225            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-225-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:196:13-72
+225-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:196:13-72
 226        <!--
 227            Service handling Google Sign-In user revocation. For apps that do not integrate with
 228            Google Sign-In, this service will never be started.
 229        -->
 230        <service
-230-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:201:9-205:51
+230-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:9-205:51
 231            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-231-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:202:13-89
+231-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:13-89
 232            android:exported="true"
-232-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:203:13-36
+232-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:13-36
 233            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-233-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:204:13-107
+233-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:204:13-107
 234            android:visibleToInstantApps="true" />
-234-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:205:13-48
+234-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:13-48
 235
 236        <provider
-236-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:207:9-210:40
+236-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:9-210:40
 237            android:name="com.squareup.picasso.PicassoProvider"
-237-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:208:13-64
+237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:13-64
 238            android:authorities="com.example.squirrelwarehouse.com.squareup.picasso"
-238-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:209:13-85
+238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:209:13-85
 239            android:exported="false" />
-239-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:210:13-37
+239-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:13-37
 240
 241        <activity
-241-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:212:9-229:20
+241-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:9-229:20
 242            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-242-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:213:13-80
+242-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:213:13-80
 243            android:excludeFromRecents="true"
-243-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:214:13-46
+243-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:214:13-46
 244            android:exported="true"
-244-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:215:13-36
+244-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:215:13-36
 245            android:launchMode="singleTask"
-245-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:216:13-44
+245-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:216:13-44
 246            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-246-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:217:13-72
+246-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:217:13-72
 247            <intent-filter>
-247-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:218:13-228:29
+247-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:218:13-228:29
 248                <action android:name="android.intent.action.VIEW" />
-248-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:219:17-69
-248-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:219:25-66
+248-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:219:17-69
+248-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:219:25-66
 249
 250                <category android:name="android.intent.category.DEFAULT" />
-250-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:17-76
-250-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:27-73
+250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:17-76
+250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:27-73
 251                <category android:name="android.intent.category.BROWSABLE" />
-251-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:222:17-78
-251-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:222:27-75
+251-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:222:17-78
+251-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:222:27-75
 252
 253                <data
-253-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:224:17-227:51
+253-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:224:17-227:51
 254                    android:host="firebase.auth"
-254-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:225:21-49
+254-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:225:21-49
 255                    android:path="/"
-255-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:226:21-37
+255-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:226:21-37
 256                    android:scheme="genericidp" />
-256-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:227:21-48
+256-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:227:21-48
 257            </intent-filter>
 258        </activity>
 259        <activity
-259-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:230:9-247:20
+259-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:230:9-247:20
 260            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-260-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:231:13-79
+260-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:231:13-79
 261            android:excludeFromRecents="true"
-261-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:232:13-46
+261-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:232:13-46
 262            android:exported="true"
-262-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:233:13-36
+262-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:233:13-36
 263            android:launchMode="singleTask"
-263-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:234:13-44
+263-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:234:13-44
 264            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-264-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:235:13-72
+264-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:235:13-72
 265            <intent-filter>
-265-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:236:13-246:29
+265-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:236:13-246:29
 266                <action android:name="android.intent.action.VIEW" />
-266-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:219:17-69
-266-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:219:25-66
+266-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:219:17-69
+266-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:219:25-66
 267
 268                <category android:name="android.intent.category.DEFAULT" />
-268-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:17-76
-268-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:27-73
+268-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:17-76
+268-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:27-73
 269                <category android:name="android.intent.category.BROWSABLE" />
-269-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:222:17-78
-269-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:222:27-75
+269-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:222:17-78
+269-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:222:27-75
 270
 271                <data
-271-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:224:17-227:51
+271-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:224:17-227:51
 272                    android:host="firebase.auth"
-272-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:225:21-49
+272-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:225:21-49
 273                    android:path="/"
-273-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:226:21-37
+273-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:226:21-37
 274                    android:scheme="recaptcha" />
-274-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:227:21-48
+274-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:227:21-48
 275            </intent-filter>
 276        </activity>
 277
 278        <service
-278-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:249:9-258:19
+278-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:249:9-258:19
 279            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-279-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:250:13-101
+279-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:250:13-101
 280            android:enabled="true"
-280-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:251:13-35
+280-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:251:13-35
 281            android:exported="false" >
-281-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:252:13-37
+281-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:252:13-37
 282            <intent-filter>
-282-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:253:13-257:29
+282-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:253:13-257:29
 283                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-283-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:254:17-89
-283-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:254:25-86
+283-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:254:17-89
+283-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:254:25-86
 284
 285                <category android:name="android.intent.category.DEFAULT" />
-285-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:17-76
-285-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:221:27-73
+285-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:17-76
+285-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:27-73
 286            </intent-filter>
 287        </service>
 288
 289        <provider
-289-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:260:9-265:39
+289-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:260:9-265:39
 290            android:name="com.google.firebase.provider.FirebaseInitProvider"
-290-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:261:13-77
+290-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:261:13-77
 291            android:authorities="com.example.squirrelwarehouse.firebaseinitprovider"
-291-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:262:13-85
+291-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:262:13-85
 292            android:directBootAware="true"
-292-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:263:13-43
+292-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:263:13-43
 293            android:exported="false"
-293-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:264:13-37
+293-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:264:13-37
 294            android:initOrder="100" />
-294-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:265:13-36
+294-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:265:13-36
 295
 296        <activity
-296-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:267:9-270:75
+296-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:267:9-270:75
 297            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-297-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:268:13-79
+297-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:268:13-79
 298            android:exported="false"
-298-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:269:13-37
+298-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:269:13-37
 299            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-299-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:270:13-72
+299-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:270:13-72
 300
 301        <meta-data
-301-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:272:9-274:69
+301-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:272:9-274:69
 302            android:name="com.google.android.gms.version"
-302-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:273:13-58
+302-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:273:13-58
 303            android:value="@integer/google_play_services_version" />
-303-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:274:13-66
+303-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:274:13-66
 304
 305        <uses-library android:name="com.google.android.maps" />
-305-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:276:9-64
-305-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:276:23-61
+305-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:276:9-64
+305-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:276:23-61
 306        <!--
 307<meta-data android:name="com.google.android.maps.v2.API_KEY"
 308            android:value="AIzaSyAmAvFvrYqErfcT0HC9U_CzoMIOWrEXCoo"/>
 309        -->
 310        <uses-library
-310-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:281:9-283:40
+310-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:281:9-283:40
 311            android:name="org.apache.http.legacy"
-311-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:282:13-50
+311-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:282:13-50
 312            android:required="false" />
-312-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:283:13-37
+312-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:283:13-37
 313        <uses-library
-313-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:281:9-283:40
+313-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:281:9-283:40
 314            android:name="org.apache.http.legacy"
-314-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:282:13-50
+314-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:282:13-50
 315            android:required="false" />
-315-->C:\AndroidP\SWH\app\src\main\AndroidManifest.xml:283:13-37
+315-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:283:13-37
 316    </application>
 317
 318</manifest>

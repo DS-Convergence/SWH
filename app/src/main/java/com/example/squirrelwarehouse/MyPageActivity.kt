@@ -51,8 +51,8 @@ class MyPageActivity : AppCompatActivity() {
             Log.d("로그-1-success-record받기-","nickname ${nickname}")
         }
 
-        terms_btn.setOnClickListener {
-            val intent = Intent(this, UserInfoActivity::class.java)
+        terms_btn.setOnClickListener { // 개인정보 정책 으로 이동하는 버튼
+            val intent = Intent(this, PrivacyActivity::class.java)
             startActivity(intent)
             //TermsAndConditionsActivity
         }

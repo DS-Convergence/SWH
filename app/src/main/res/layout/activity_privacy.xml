@@ -40,23 +40,20 @@
                     android:paddingBottom="15dp"
                     android:textSize="30sp"
                     android:textColor="@color/mocha_brown"
-                    android:text="이용약관"/>
+                    android:text="개인정보 정책"/>
 
 
             </FrameLayout>
 
-            <TextView
-                
-                android:layout_width="wrap_content"
+            <WebView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
                 android:padding="10dp"
                 android:fontFamily="@font/jsdongkang_regular"
                 android:textSize="20sp"
                 android:textColor="@color/mocha_brown"
-                android:text="\n다람쥐창고의 이용약관은 아래와 같습니다.
-                              \n이용약관 어쩌구 저쩌구
-                              \n어쩌구 저쩌구"/>
+                android:id="@+id/web_view"/>
 
 
 
