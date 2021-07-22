@@ -33,6 +33,8 @@ class UpdateMoreActivity : AppCompatActivity() {
 
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
+
+        page_title.text = "최근 업데이트"
 /*
         val layoutManager = LinearLayoutManager(this)
         listView.setLayoutManager(layoutManager)
