@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -37,10 +38,10 @@ class MainMore : AppCompatActivity() {
         }
 
         var applybtn = applyBtn
-        applybtn.setOnClickListener {
+        /*applybtn.setOnClickListener {
             // TODO: spinner 값 적용해서 listview로 보여주기
             //startActivityForResult(intent, 0)
-        }
+        }*/
 
 
 
@@ -71,7 +72,7 @@ class MainMore : AppCompatActivity() {
         sLocation.adapter = adapterLoc
 
         // Listener 연결
-        sCategory.setSelection(1)
+        // sCategory.setSelection(1)
         sCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(applicationContext, "카테고리를 선택해주세요.", Toast.LENGTH_LONG).show()
@@ -84,7 +85,15 @@ class MainMore : AppCompatActivity() {
                     id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
+                Toast.makeText(applicationContext, sCategory.selectedItem.toString(), Toast.LENGTH_LONG).show()
             }
+        }
+
+        applybtn.setOnClickListener {
+            // TODO: spinner 값 적용해서 listview로 보여주기
+            var intent = Intent(this, FilteringResult::class.java)
+            intent.putExtra("category", sCategory.selectedItem.toString())
+            startActivityForResult(intent, 0)
         }
 
         sCateHob.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -93,10 +102,10 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
             }

@@ -88,15 +88,11 @@ class FilteringResult : AppCompatActivity() {
             }
 
             viewHolder.setOnClickListener {
-
-                // 이거를 쓰려면 product이름을 바꿔야함. userid+uploadTime 이런식으로로
-                // 지금은 오류남. 암튼 이 코드로 했을 때 다음 페이지로 넘어가는 건 확실함. 해봄.
                 Intent(this@FilteringResult, ProductDetailActivity::class.java).apply {
                     //putExtra("data", "아무래도 물건 넣을때 이름을 줘야지 되겠어~~~~~")
                     putExtra("data", products!![position].userId+"_"+products!![position].uploadTime)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }.run { startActivity(this)}
-
             }
 
         }
