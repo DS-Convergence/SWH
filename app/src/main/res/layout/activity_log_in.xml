@@ -84,6 +84,7 @@
             android:textSize="20sp"
             android:fontFamily="@font/goyang"
             android:backgroundTint="@color/asparagus_green"/>
+        <!--
         <Button
             android:layout_width="350dp"
             android:layout_height="60dp"
@@ -94,6 +95,7 @@
             android:textSize="20sp"
             android:fontFamily="@font/goyang"
             android:backgroundTint="@color/avocado_green"/>
+            -->
 
     </FrameLayout>
 
