@@ -168,6 +168,7 @@
             </intent-filter>
             -->
         </activity>
+        <activity android:name="com.example.squirrelwarehouse.FilteringResult" />
         <activity android:name="com.example.squirrelwarehouse.MainMapActivity" />
         <activity android:name="com.example.squirrelwarehouse.MainActivity" >
 

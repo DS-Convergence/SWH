@@ -15,8 +15,7 @@ class MainMore : AppCompatActivity() {
 
         var gotomain = moreBtn
         gotomain.setOnClickListener {
-            val intent = Intent(this, MainPageActivity::class.java)
-            startActivityForResult(intent, 0)
+            finish()
         }
 
         var noticebtn = noticeBtn
@@ -94,6 +93,7 @@ class MainMore : AppCompatActivity() {
             var intent = Intent(this, FilteringResult::class.java)
             intent.putExtra("category", sCategory.selectedItem.toString())
             startActivityForResult(intent, 0)
+            finish()
         }
 
         sCateHob.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
