@@ -2458,6 +2458,7 @@ id userrating_txt
 id view
 id view_offset_helper
 id visible
+id web_view
 id wide
 id withText
 id withdrawal_btn
@@ -2552,12 +2553,12 @@ layout activity_my_favorite_list
 layout activity_my_list
 layout activity_my_page
 layout activity_new_message
+layout activity_privacy
 layout activity_report
 layout activity_set_location_information
 layout activity_sign_up
 layout activity_splash
 layout activity_temp
-layout activity_terms_and_conditions
 layout activity_user_info
 layout activity_user_setting
 layout chat_from_row

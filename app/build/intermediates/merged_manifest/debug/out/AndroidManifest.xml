@@ -115,7 +115,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-        <activity android:name="com.example.squirrelwarehouse.TermsAndConditionsActivity" />
+        <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
         <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
         <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
