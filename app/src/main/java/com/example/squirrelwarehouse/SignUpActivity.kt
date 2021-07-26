@@ -11,6 +11,7 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import com.example.squirrelwarehouse.models.Favorite
+import com.example.squirrelwarehouse.models.StayTime
 import com.example.squirrelwarehouse.models.User
 import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
@@ -94,6 +95,15 @@ class SignUpActivity : AppCompatActivity() {
                                 task ->
                                 if(task.isSuccessful) {
                                     Log.v("Favorite","Success")
+
+                                    var map = mutableMapOf<String,Int>()
+                                    var st = StayTime(map)
+                                    firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.set(st).addOnCompleteListener {
+                                        task ->
+                                        if(task.isSuccessful) {
+                                            Log.v("StayTime","Success")
+                                        }
+                                    }
                                 }
                             }
                             // 예은 코드 끝
