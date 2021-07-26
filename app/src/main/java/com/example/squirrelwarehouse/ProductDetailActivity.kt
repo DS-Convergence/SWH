@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
+import com.example.squirrelwarehouse.models.StayTime
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -321,5 +322,42 @@ class ProductDetailActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.v("MainActivity", "onDestroy() " + (total/1000) + "초")
+
+        //auth = FirebaseAuth.getInstance()
+        //var map = mutableMapOf<String,Int>()
+        // prod 오류나면 여기서 정의 해줘야함.
+        //map.put(prod, (total/1000).toInt())
+        //var staytime = StayTime(map)
+
+        // 데이터 베이스에 물건 본 시간 넣는 코드
+        firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.get()?.addOnCompleteListener {
+            task ->
+            if(task.isSuccessful) {
+
+                var staytime = task.result.toObject(StayTime::class.java)
+                var stmap = (staytime?.products as Map<String,Int>).toMutableMap()
+                if(stmap.containsKey(prod)) { // 이미 있는 물건, 즉 이미 본 물건이라면 본 시간을 업데이트
+                    stmap[prod] = stmap.get(prod)!!.toInt() + (total/1000).toInt()
+                }
+                else { // 처음보는 물건은 그냥 추가
+                    stmap.put(prod, (total/1000).toInt())
+                }
+
+                var map = mutableMapOf<String,Any>()
+                map["products"] = stmap
+
+                firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
+                    task ->
+                    if(task.isSuccessful) {
+                        Log.v("staytime","Update Success")
+                    }
+                    else {
+                        Log.v("staytime","Update Failed")
+                    }
+                }
+            }
+        }
+
+
     }
 }
