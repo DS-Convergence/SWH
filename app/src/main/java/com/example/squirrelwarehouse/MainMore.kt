@@ -13,44 +13,51 @@ class MainMore : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_more)
 
+        // spinner 변수 선언, 아이디 연결
+        var sCategory:Spinner = spnCate
+        var sCateHob:Spinner = spnHobby
+        var sLocation:Spinner = spnLoc
+        var sLocDet:Spinner = spnLocDetail
+
+        // 메인으로 돌아가기 버튼
         var gotomain = moreBtn
         gotomain.setOnClickListener {
             finish()
         }
 
+        // 알림 버튼
         var noticebtn = noticeBtn
         noticebtn.setOnClickListener {
             // TODO: notice -> listview 로 보여주기
             //startActivityForResult(intent, 0)
         }
 
+        // 설정 버튼
         var settingbtn = settingBtn
         settingbtn.setOnClickListener {
             val intent = Intent(this, MainSettingsActivity::class.java)
             startActivityForResult(intent, 0)
         }
 
+        // 마이페이지 버튼
         var mypagebtn = mypageBtn
         mypagebtn.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             startActivityForResult(intent, 0)
         }
 
+        // 적용 버튼
         var applybtn = applyBtn
-        /*applybtn.setOnClickListener {
+        applybtn.setOnClickListener {
             // TODO: spinner 값 적용해서 listview로 보여주기
-            //startActivityForResult(intent, 0)
-        }*/
+            var intent = Intent(this, FilteringResult::class.java)
+            intent.putExtra("category", sCategory.selectedItem.toString())
+            startActivityForResult(intent, 0)
+            finish()
+        }
 
 
 
-        // spinner 변수 선언, 아이디 연결
-        var sCategory:Spinner = spnCate
-        var sCateHob:Spinner = spnHobby
-        var sLocation:Spinner = spnLoc
-        var sLocDet:Spinner = spnLocDetail
-        //sCategory.findViewById<Spinner>(R.id.spnCate)
-        //sLocation.findViewById<Spinner>(R.id.spnLoc)
 
         // 변수에 배열 저장
         val category = resources.getStringArray(R.array.category)
@@ -71,7 +78,7 @@ class MainMore : AppCompatActivity() {
         sLocation.adapter = adapterLoc
 
         // Listener 연결
-        // sCategory.setSelection(1)
+        sCategory.setSelection(0)
         sCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(applicationContext, "카테고리를 선택해주세요.", Toast.LENGTH_LONG).show()
@@ -88,14 +95,7 @@ class MainMore : AppCompatActivity() {
             }
         }
 
-        applybtn.setOnClickListener {
-            // TODO: spinner 값 적용해서 listview로 보여주기
-            var intent = Intent(this, FilteringResult::class.java)
-            intent.putExtra("category", sCategory.selectedItem.toString())
-            startActivityForResult(intent, 0)
-            finish()
-        }
-
+        sCateHob.setSelection(0)
         sCateHob.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(applicationContext, "카테고리를 선택해주세요.", Toast.LENGTH_LONG).show()
@@ -113,6 +113,7 @@ class MainMore : AppCompatActivity() {
 
         var adapterLocDe : ArrayAdapter<String>
         var locdetail : Array<String> = resources.getStringArray(R.array.loc_special)
+        sLocation.setSelection(0)
         sLocation.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(applicationContext, "지역을 선택해주세요.", Toast.LENGTH_LONG).show()
