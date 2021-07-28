@@ -13,7 +13,6 @@ class MainMore : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_more)
 
-        // edit
 
         // spinner 변수 선언, 아이디 연결
         var sCategory:Spinner = spnCate
