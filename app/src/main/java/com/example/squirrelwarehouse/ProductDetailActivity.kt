@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.product_detail.*
+import java.text.SimpleDateFormat
 
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -81,13 +82,19 @@ class ProductDetailActivity : AppCompatActivity() {
                 var product = task.result.toObject(Product::class.java)
                 tv_prodName.text = product?.productName
                 tv_prodCategory.text = product?.category
-                tv_time.text = product?.uploadTime
                 tv_status.text = product?.status
                 tv_user.text = product?.userName
                 tv_uesrLocation.text = product?.region.toString()
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
+
+                // 시간 데이터 형식 변경
+                var sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+                var date = sdf.parse(product?.uploadTime)
+                sdf = SimpleDateFormat("yy년 MM월 dd일 HH시 mm분")
+                var dateStr = sdf.format(date)
+                tv_time.text = dateStr
 
 
                 // 보증금

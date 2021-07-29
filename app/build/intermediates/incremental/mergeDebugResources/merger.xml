@@ -6525,6 +6525,7 @@
         <item>사기</item>
         <item>기타 사유 선택</item>
     </string-array><string-array name="category">
+        <item>선택안함</item>
         <item>디지털/가전</item>
         <item>생활/인테리어</item>
         <item>스포츠/레저</item>
@@ -6534,6 +6535,7 @@
         <item>음악</item>
         <item>기타</item>
     </string-array><string-array name="cate_hobby">
+        <item>선택안함</item>
         <item>문화/예술</item>
         <item>공예</item>
         <item>요리</item>
@@ -6543,6 +6545,7 @@
         <item>공부</item>
         <item>게임</item>
     </string-array><string-array name="location">
+        <item>선택안함</item>
         <item>특별시</item>
         <item>광역시</item>
         <item>강원도</item>
