@@ -167,8 +167,13 @@ class ChatLogListActivity : AppCompatActivity() {
                     //두번 올려 줘야 하니까 파이어 베이스에
                     //메세지 보낸 사람( current Uer )은 보낸 메세지로 올리고_reference
                     //받은 사람은 받은 메세지로 upload되야 하니까_toReference
-                    val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId").push()
-                    val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
+
+                    //2021_07_31수정
+                    var toidprod = toId + "_" +prod
+                    var fromidprod = fromId + "_" + prod
+
+                    val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toidprod").push()
+                    val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromidprod").push()
                     if (fromId == null) return //보내는 ID없으면 그냥 return
 
 
@@ -183,14 +188,20 @@ class ChatLogListActivity : AppCompatActivity() {
                         }
                     toReference.setValue(chatImage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
                     Log.d("CHECK", "chatImage올림 toreferece는 "+ toReference)
-                    //새로보낸메세지를 위해서
-                    val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
-                    latestMessageRef.setValue(chatImage)
-                    Log.d("CHECK", "chatImage올림 latestMessageRef "+ latestMessageRef)
 
-                    val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
-                    latestMessageToRef.setValue(chatImage)
-                    Log.d("CHECK", "chatImage올림 latestMessageToRef "+ latestMessageToRef)
+
+                    //새로보낸메세지를 위해서 사진은 안올리게 바꿈 2021_07_31
+                    /*
+                    //val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toidprod")
+                    //latestMessageRef.setValue(chatImage)
+                    //Log.d("CHECK", "chatImage올림 latestMessageRef "+ latestMessageRef)
+
+                    //val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromidprod")
+                    //latestMessageToRef.setValue(chatImage)
+                    //Log.d("CHECK", "chatImage올림 latestMessageToRef "+ latestMessageToRef)
+                    */
+
+
                     //end here
 
 
@@ -207,8 +218,12 @@ class ChatLogListActivity : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid //나
         val toId = toUser?.uid //상대방
         //쓴 메세지를 들을 수 있게
-        var prod = intent.getStringExtra("ProductID")
-        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId")
+        var prod = intent.getStringExtra("prod").toString()
+
+        var toidprod = toId + "_" +prod
+        var fromidprod = fromId + "_" + prod
+
+        val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toidprod")
 
 
         var auth : FirebaseAuth = FirebaseAuth.getInstance()
@@ -329,12 +344,17 @@ class ChatLogListActivity : AppCompatActivity() {
         val toId = user!!.uid
         var prod = intent.getStringExtra("prod").toString()
 
+
+        //2021_07_31수정
+        var toidprod = toId + "_" +prod
+        var fromidprod = fromId + "_" + prod
+
         //firebase에 user-message만듦.
         //두번 올려 줘야 하니까 파이어 베이스에
         //메세지 보낸 사람( current Uer )은 보낸 메세지로 올리고_reference
         //받은 사람은 받은 메세지로 upload되야 하니까_toReference
-        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toId").push()
-        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
+        val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toidprod").push()
+        val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromidprod").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
         val chatMessage = ChatMessage(prod, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
@@ -348,10 +368,10 @@ class ChatLogListActivity : AppCompatActivity() {
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
-        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toidprod")
         latestMessageRef.setValue(chatMessage)
 
-        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromidprod")
         latestMessageToRef.setValue(chatMessage)
     }
 
