@@ -138,6 +138,17 @@ class ChatLogMoreActivity : AppCompatActivity() {
                                         Log.v("RENTAL", "UpdateSuccess")
                                         // 다시 채팅창으로 돌아가야함.
                                         // finish()
+
+                                        // 큐알코드를 두번 찍으면 "대여종료/대여완료"로 변경
+                                        var map = mutableMapOf<String,Any>()
+                                        map["status"] = "대여 종료"
+
+                                        firestore?.collection("Product")?.document(productId!!)?.update(map)?.addOnCompleteListener { task ->
+                                            if (task.isSuccessful) {
+                                                Log.v("Update", "Success")
+                                                Toast.makeText(this,"반납 완료", Toast.LENGTH_LONG).show()
+                                            }
+                                        }
                                     }
                                 }
 
@@ -150,6 +161,17 @@ class ChatLogMoreActivity : AppCompatActivity() {
                                         Log.v("RENTAL","Success")
                                         // 다시 채팅창으로 돌아가야함.
                                         // finish()
+
+                                        // 큐알코드를 처음 찍으면 "대여 중"으로 변경
+                                        var map = mutableMapOf<String,Any>()
+                                        map["status"] = "대여 중"
+
+                                        firestore?.collection("Product")?.document(productId!!)?.update(map)?.addOnCompleteListener { task ->
+                                            if (task.isSuccessful) {
+                                                Log.v("Update", "Success")
+                                                Toast.makeText(this,"대여 완료", Toast.LENGTH_LONG).show()
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -158,14 +180,14 @@ class ChatLogMoreActivity : AppCompatActivity() {
 
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    //Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_LONG).show()
                 }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
 
-        Toast.makeText(this,"대여/반납완료", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"대여/반납완료", Toast.LENGTH_LONG).show()
         finish()
     }
 
