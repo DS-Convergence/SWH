@@ -61,6 +61,10 @@ class MyPageActivity : AppCompatActivity() {
             val intent = Intent(this, MyListActivity::class.java)
             startActivity(intent)
         }
+        transaction_list_btn.setOnClickListener {
+            val intent = Intent(this, TransactionListActivity::class.java)
+            startActivity(intent)
+        }
         my_fav_list_btn.setOnClickListener {
             val intent = Intent(this, MyFavoriteListActivity::class.java)
             startActivity(intent)
@@ -81,6 +85,7 @@ class MyPageActivity : AppCompatActivity() {
             auth.signOut()
             val intent = Intent(this,LogInActivity::class.java)
             startActivity(intent)
+            //finish() 로그아웃하면 정보를 다 날려야 함
         }
         withdrawal_btn.setOnClickListener {
             val mAlertDialog = AlertDialog.Builder(this)

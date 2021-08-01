@@ -49,22 +49,21 @@ class MyFavoriteListActivity : AppCompatActivity() {
     inner class FavListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         var itemList: ArrayList<Product> = arrayListOf()
         init {
-            Log.d("찜목록", "로그 뜨나요")
+            //Log.d("찜목록", "로그 뜨나요")
             firestore?.collection("Favorite")?.document("${uid}")?.get()
                     ?.addOnSuccessListener { doc ->
-                        Log.d("찜목록", "로그 뜨나요2")
-                        //products.clear()
+                        //Log.d("찜목록", "로그 뜨나요2")
                         var item = doc.toObject(Favorite::class.java)
                         var array = item?.products
-                        Log.d("찜목록", "로그 뜨나요3")
+                        //Log.d("찜목록", "로그 뜨나요3")
                         if (array != null) {
                             for (productID in array) {
-                                Log.d("찜목록____id", productID)
+                                //Log.d("찜목록____id", productID)
                                 firestore?.collection("Product")?.document(productID)?.get()
                                         ?.addOnSuccessListener { doc ->
                                             var thing = doc.toObject(Product::class.java)
                                             itemList.add(thing!!)
-                                            Log.d("불러와지나요1","${itemList[0].productName}")
+                                            //Log.d("불러와지나요1","${itemList[0].productName}")
                                             notifyDataSetChanged()//이거 위치 중요
                                         }
                             }

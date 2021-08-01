@@ -26,5 +26,5 @@ class MyListActivity : AppCompatActivity() {
         my_listView.adapter = ItemAdapter2(auth.currentUser?.uid.toString(),this)
 
     }
-    //TODO 되는지 테스트 하기
+
 }

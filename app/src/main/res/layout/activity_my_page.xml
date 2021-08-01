@@ -106,6 +106,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="80dp"
+            android:id="@+id/transaction_list_btn"
             android:backgroundTint="@color/peanut_brown"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/goyang"
