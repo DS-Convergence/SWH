@@ -158,6 +158,7 @@ class UpdateMoreActivity : AppCompatActivity() {
 
             viewHolder.titleTV.text = products!![position].productName
             viewHolder.timeTV.text = products!![position].uploadTime
+            viewHolder.detailTV.text = products!![position].productDetail
 
 
             // 사진 불러오기

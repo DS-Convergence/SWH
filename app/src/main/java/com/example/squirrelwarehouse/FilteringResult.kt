@@ -3,6 +3,7 @@ package com.example.squirrelwarehouse
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -75,17 +76,16 @@ class FilteringResult : AppCompatActivity() {
 
             viewHolder.titleTV.text = products!![position].productName
             viewHolder.timeTV.text = products!![position].uploadTime
+            viewHolder.detailTV.text = products!![position].productDetail
 
 
             // 사진 불러오기
-            var storageRef = storage?.reference?.child("product")?.child(products!![position].imageURI.toString())
+            /*var storageRef = storage?.reference?.child("product")?.child(products!![position].imageURI.toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)
                         .load(uri)
                         .into(viewHolder.thumb)
-                //Log.v("IMAGE","Success")
-
-            }
+            }*/
 
             viewHolder.setOnClickListener {
                 Intent(this@FilteringResult, ProductDetailActivity::class.java).apply {

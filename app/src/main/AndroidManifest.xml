@@ -27,7 +27,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".TransactionListActivity"></activity>
+
+        <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
 
@@ -118,27 +119,13 @@
             android:name=".ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".UpdateMoreActivity" />
-        <activity android:name=".MainPageActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".MainMore">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
+        <activity android:name=".MainPageActivity" />
+        <activity android:name=".MainMore" />
         <activity android:name=".FilteringResult" />
-        <activity android:name=".MainMapActivity" />
+        <activity android:name=".NoticeActivity"/>
+        <activity android:name=".MainSettingsActivity" />
+        <activity android:name=".ItemLoc" />
+
         <activity android:name=".MainActivity">
 
             <!--
