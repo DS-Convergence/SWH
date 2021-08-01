@@ -56,6 +56,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse" >
+        <activity android:name="com.example.squirrelwarehouse.TransactionListActivity" />
         <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
         <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
 

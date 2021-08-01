@@ -68,8 +68,6 @@ class UserInfoActivity : AppCompatActivity() {
 
     }
 
-        //TODO 사용자 별로 띄우는 거 보여주기(current말고), 그외 연결도 하기
-
 
 
 }
