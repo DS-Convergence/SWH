@@ -35,10 +35,16 @@
             android:text="주변 물품 보기"/>
     </FrameLayout>
 
-    <com.google.android.gms.maps.MapView
+    <!--<com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" />-->
 
+    <fragment
+            android:id="@+id/main_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
 
 </LinearLayout>

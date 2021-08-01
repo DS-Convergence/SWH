@@ -12,8 +12,10 @@ class MainMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 안 쓰는 액티비티
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_map)
+        setContentView(R.layout.activity_item_loc)
 
         val mapFragment = SupportMapFragment.newInstance()
         supportFragmentManager

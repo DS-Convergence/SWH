@@ -19,6 +19,7 @@ class MainMore : AppCompatActivity() {
         var sCateHob:Spinner = spnHobby
         var sLocation:Spinner = spnLoc
         var sLocDet:Spinner = spnLocDetail
+        sLocDet.visibility = View.INVISIBLE
 
         // 메인으로 돌아가기 버튼
         var gotomain = moreBtn
@@ -30,7 +31,8 @@ class MainMore : AppCompatActivity() {
         var noticebtn = noticeBtn
         noticebtn.setOnClickListener {
             // TODO: notice -> listview 로 보여주기
-            //startActivityForResult(intent, 0)
+            val intent = Intent(this, NoticeActivity::class.java)
+            startActivityForResult(intent, 0)
         }
 
         // 설정 버튼
@@ -45,16 +47,20 @@ class MainMore : AppCompatActivity() {
         mypagebtn.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             startActivityForResult(intent, 0)
+            finish()
         }
 
         // 적용 버튼
         var applybtn = applyBtn
         applybtn.setOnClickListener {
             // TODO: spinner 값 적용해서 listview로 보여주기
-            var intent = Intent(this, FilteringResult::class.java)
-            intent.putExtra("category", sCategory.selectedItem.toString())
-            startActivityForResult(intent, 0)
-            finish()
+            if(sCategory.selectedItemPosition!=0) {
+                var intent = Intent(this, FilteringResult::class.java)
+                intent.putExtra("category", sCategory.selectedItem.toString())
+                startActivityForResult(intent, 0)
+                finish()
+            } else
+                Toast.makeText(applicationContext, "카테고리를 선택해주세요.", Toast.LENGTH_LONG).show()
         }
 
 
@@ -91,8 +97,9 @@ class MainMore : AppCompatActivity() {
                     position: Int,
                     id: Long
             ) {
-                // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
-                Toast.makeText(applicationContext, sCategory.selectedItem.toString(), Toast.LENGTH_LONG).show()
+                // 항목 선택하면 filtering 해서 리스트로 보여주기
+                if(sCategory.selectedItemPosition!=0)
+                    Toast.makeText(applicationContext, sCategory.selectedItem.toString(), Toast.LENGTH_LONG).show()
             }
         }
 
@@ -114,6 +121,7 @@ class MainMore : AppCompatActivity() {
 
         var adapterLocDe : ArrayAdapter<String>
         var locdetail : Array<String> = resources.getStringArray(R.array.loc_special)
+
         sLocation.setSelection(0)
         sLocation.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -127,6 +135,9 @@ class MainMore : AppCompatActivity() {
                     id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
+                // if(location!=0) {
+                    // Toast
+                    // sLocDe.visibility = View.VISIBLE
                 val loc : String = sLocation.getSelectedItem().toString()
                 when(loc) {
                     "특별시" -> { locdetail = resources.getStringArray(R.array.loc_special) }
@@ -140,6 +151,7 @@ class MainMore : AppCompatActivity() {
                     "충청북도" -> { locdetail = resources.getStringArray(R.array.loc_ccbd) }
                     "충청남도" -> { locdetail = resources.getStringArray(R.array.loc_ccnd) }
                     "제주특별자치도" -> { locdetail = resources.getStringArray(R.array.loc_jjd) }
+                    // }
                 }
             }
         }
