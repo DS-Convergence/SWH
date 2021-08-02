@@ -20,6 +20,7 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_transaction_list.*
 import kotlinx.android.synthetic.main.listview.*
 import kotlinx.android.synthetic.main.listview.view.*
+import java.text.SimpleDateFormat
 
 class TransactionListActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
@@ -39,7 +40,7 @@ class TransactionListActivity : AppCompatActivity() {
             finish()
         }
         // 거래중(returnTime이 null), 거래 종료를 모두 보여줌
-        // <!--대여중 - 아스파라거스 그린--> , 대여종료 - 회색, 취소선
+        // 대여종료 - 회색, 취소선
         //  user1 이 물건 주인
         // 거래내역에는 내가 대여중, 대여완료한 물품이 뜨고 내물건 중에 대여중, 대여 완료는 내 게시글에 띄우기
         val layoutManager = LinearLayoutManager(this)
@@ -83,8 +84,14 @@ class TransactionListActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             var viewHolder = (holder as CustomViewHolder2).itemView
             viewHolder.titleTV.text = itemList[position].productName
-            viewHolder.timeTV.text = itemList[position].uploadTime
             viewHolder.detailTV.text = itemList[position].productDetail
+
+            // 시간 데이터 형식 변경
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+            var date = sdf.parse(itemList[position]?.uploadTime)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.timeTV.text = dateStr
             // 사진 불러오기
             var storageRef = storage?.reference?.child("product")?.child(itemList!![position].imageURI.toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
