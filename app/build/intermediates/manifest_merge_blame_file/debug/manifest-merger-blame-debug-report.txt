@@ -6,128 +6,128 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml
+8-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml
+9-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml
 10    <!-- Include required permissions for Google Maps API to run. -->
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:8:5-79
-11-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:8:22-76
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:8:5-79
+11-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:8:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:9:5-67
-12-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:9:22-64
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:9:5-67
+12-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:9:22-64
 13    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-13-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:10:5-98
-13-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:10:22-95
+13-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:10:5-98
+13-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:10:22-95
 14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-14-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:11:5-81
-14-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:11:22-78
+14-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:11:5-81
+14-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:11:22-78
 15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-15-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:12:5-79
-15-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:12:22-76
+15-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:5-79
+15-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:12:22-76
 16
 17    <uses-feature
-17-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:14:5-16:35
+17-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:14:5-16:35
 18        android:glEsVersion="0x00020000"
-18-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:15:9-41
+18-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:15:9-41
 19        android:required="true" />
-19-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:16:9-32
+19-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:16:9-32
 20
 21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
-21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
+21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
+21-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
 22    <uses-permission android:name="android.permission.CAMERA" />
-22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:11:5-65
-22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:11:22-62
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:11:5-65
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:11:22-62
 23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:12:5-71
-23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:12:22-68
+23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:12:5-71
+23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:12:22-68
 24
 25    <uses-feature android:name="android.hardware.camera" />
-25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
-25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
+25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
+25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
 26    <uses-feature
-26-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
+26-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
 27        android:name="android.hardware.camera.autofocus"
-27-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
+27-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
 28        android:required="false" />
-28-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
+28-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
 29    <uses-feature
-29-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
+29-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
 30        android:name="android.hardware.camera.front"
-30-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
+30-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
 31        android:required="false" />
-31-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
+31-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
 32    <uses-feature
-32-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
+32-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
 33        android:name="android.hardware.microphone"
-33-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
+33-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
 34        android:required="false" />
-34-->[com.wonderkiln:camerakit:0.13.1] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\f969874080580fd9f84961f077891c12\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
+34-->[com.wonderkiln:camerakit:0.13.1] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\8ba3192997a4acc2541d5728a7794627\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
 35
 36    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 37
 38    <uses-feature
-38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
+38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
 39        android:name="android.hardware.camera.flash"
-39-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
+39-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
 40        android:required="false" />
-40-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
+40-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
 41    <uses-feature
-41-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
+41-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
 42        android:name="android.hardware.screen.landscape"
-42-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
+42-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
 43        android:required="false" />
-43-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
+43-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
 44    <uses-feature
-44-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
+44-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
 45        android:name="android.hardware.wifi"
-45-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
+45-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
 46        android:required="false" />
-46-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
+46-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
 47
 48    <application
-48-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:18:5-273:19
+48-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:18:5-273:19
 49        android:allowBackup="true"
-49-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:19:9-35
+49-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:9-35
 50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-50-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:20:9-77
+50-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:20:9-77
 51        android:debuggable="true"
-51-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:21:9-34
+51-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:21:9-34
 52        android:extractNativeLibs="false"
-52-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:22:9-42
+52-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:22:9-42
 53        android:icon="@mipmap/swh_icon"
-53-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:23:9-40
+53-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:23:9-40
 54        android:label="@string/app_name"
-54-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:24:9-41
+54-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:24:9-41
 55        android:roundIcon="@mipmap/swh_icon_round"
-55-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:25:9-51
+55-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:25:9-51
 56        android:supportsRtl="true"
-56-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:26:9-35
+56-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:26:9-35
 57        android:testOnly="true"
-57-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:27:9-32
+57-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:27:9-32
 58        android:theme="@style/Theme.SquirrelWarehouse" >
-58-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:28:9-55
+58-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:28:9-55
 59        <activity android:name="com.example.squirrelwarehouse.TransactionListActivity" />
-59-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:31:9-61
-59-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:31:19-58
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-61
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:19-58
 60        <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
-60-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:32:9-60
-60-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:32:19-57
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-60
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:19-57
 61        <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
-61-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:33:9-52
-61-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:33:19-49
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:9-52
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:19-49
 62
 63        <meta-data
-63-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:35:9-37:71
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:35:9-37:71
 64            android:name="com.google.android.geo.API_KEY"
-64-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:36:13-58
+64-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:13-58
 65            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
-65-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:37:13-68
+65-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:13-68
 66
 67        <activity android:name="com.example.squirrelwarehouse.TempActivity" >
-67-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:39:9-48:20
-67-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:39:19-47
+67-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:9-48:20
+67-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:19-47
 68
 69            <!--
 70            <intent-filter>
@@ -138,20 +138,20 @@
 75            -->
 76        </activity>
 77        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
-77-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:49:9-52
-77-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:49:19-49
+77-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:9-52
+77-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:19-49
 78        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
-78-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:50:9-54
-78-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:50:19-51
+78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-54
+78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-51
 79        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
-79-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:51:9-57
-79-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:51:19-54
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-57
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-54
 80        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-80-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:52:9-52
-80-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:52:19-49
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-52
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-49
 81        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-81-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:53:9-62:20
-81-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:53:19-48
+81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-62:20
+81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-48
 82
 83            <!--
 84            <intent-filter>
@@ -162,33 +162,33 @@
 89            -->
 90        </activity>
 91        <activity
-91-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:63:9-65:50
+91-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:63:9-65:50
 92            android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
-92-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:64:13-48
+92-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:13-48
 93            android:theme="@style/Transparent" />
-93-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:65:13-47
+93-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-47
 94        <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
-94-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:9-57
-94-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:66:19-54
+94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:9-57
+94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:19-54
 95        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
-95-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:67:9-59
-95-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:67:19-56
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-59
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-56
 96        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
-96-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:68:9-72:20
-96-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:68:19-50
+96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-72:20
+96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-50
 97            <meta-data
-97-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:69:13-71:58
+97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:13-71:58
 98                android:name="android.support.PARENT_ACTIVITY"
-98-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:70:17-63
+98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:17-63
 99                android:value=".LatestMessageActivity" />
-99-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:71:17-55
+99-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:17-55
 100        </activity>
 101        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity" />
-101-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:73:9-56
-101-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:73:19-53
+101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:73:9-56
+101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:73:19-53
 102        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
-102-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:74:9-82:20
-102-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:74:19-56
+102-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:9-82:20
+102-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:19-56
 103
 104            <!--
 105            <intent-filter>
@@ -198,34 +198,34 @@
 109            -->
 110        </activity>
 111        <activity android:name="com.example.squirrelwarehouse.SplashActivity" >
-111-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:9-89:20
-111-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:83:19-49
+111-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:83:9-89:20
+111-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:83:19-49
 112            <intent-filter>
-112-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:84:13-88:29
+112-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:13-88:29
 113                <action android:name="android.intent.action.MAIN" />
-113-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:85:17-69
-113-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:85:25-66
+113-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:17-69
+113-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:25-66
 114
 115                <category android:name="android.intent.category.LAUNCHER" />
-115-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:87:17-77
-115-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:87:27-74
+115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:17-77
+115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:27-74
 116            </intent-filter>
 117        </activity>
 118        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-118-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:90:9-52
-118-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:90:19-49
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:90:9-52
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:90:19-49
 119        <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
-119-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:91:9-53
-119-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:91:19-50
+119-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:9-53
+119-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:19-50
 120        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-120-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:92:9-59
-120-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:92:19-56
+120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-59
+120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:19-56
 121        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-121-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:93:9-68
-121-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:93:19-65
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:9-68
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:19-65
 122        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
-122-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:94:9-102:20
-122-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:94:19-54
+122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:9-102:20
+122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:19-54
 123
 124            <!--
 125            <intent-filter>
@@ -235,8 +235,8 @@
 129            -->
 130        </activity>
 131        <activity android:name="com.example.squirrelwarehouse.ProductDetailActivity" >
-131-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:103:9-111:20
-131-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:103:19-56
+131-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:103:9-111:20
+131-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:103:19-56
 132
 133            <!--
 134            <intent-filter>
@@ -246,55 +246,55 @@
 138            -->
 139        </activity>
 140        <activity android:name="com.example.squirrelwarehouse.ProductRentalQRActivity" />
-140-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:112:9-61
-140-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:112:19-58
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:112:9-61
+140-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:112:19-58
 141        <activity android:name="com.example.squirrelwarehouse.ProductRentalCameraActivity" /> <!-- QR코드 -->
-141-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:113:9-65
-141-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:113:19-62
+141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:113:9-65
+141-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:113:19-62
 142        <activity
-142-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:114:9-117:49
+142-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:114:9-117:49
 143            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-143-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:115:13-74
+143-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:115:13-74
 144            android:clearTaskOnLaunch="true"
-144-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
+144-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
 145            android:screenOrientation="fullSensor"
-145-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:116:13-51
+145-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:116:13-51
 146            android:stateNotNeeded="true"
-146-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
+146-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
 147            android:theme="@style/zxing_CaptureTheme"
-147-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
+147-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
 148            android:windowSoftInputMode="stateAlwaysHidden" />
-148-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ADMIN\.gradle\caches\transforms-2\files-2.1\e44d5103a35d2b1a7e9a488793e5387b\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
+148-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\sewon\.gradle\caches\transforms-2\files-2.1\28d1bf32536926f692c70bbdacbbd012\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
 149        <activity
-149-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:118:9-120:50
+149-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:118:9-120:50
 150            android:name="com.example.squirrelwarehouse.ProductDetailSubmenuActivity"
-150-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:119:13-57
+150-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:119:13-57
 151            android:theme="@style/Transparent" />
-151-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:120:13-47
+151-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:120:13-47
 152        <activity android:name="com.example.squirrelwarehouse.UpdateMoreActivity" />
-152-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:121:9-56
-152-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:121:19-53
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:121:9-56
+152-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:121:19-53
 153        <activity android:name="com.example.squirrelwarehouse.MainPageActivity" />
-153-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:122:9-54
-153-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:122:19-51
+153-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:122:9-54
+153-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:122:19-51
 154        <activity android:name="com.example.squirrelwarehouse.MainMore" />
-154-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:123:9-46
-154-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:123:19-43
+154-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:123:9-46
+154-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:123:19-43
 155        <activity android:name="com.example.squirrelwarehouse.FilteringResult" />
-155-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:124:9-53
-155-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:124:19-50
+155-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:124:9-53
+155-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:124:19-50
 156        <activity android:name="com.example.squirrelwarehouse.NoticeActivity" />
-156-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:125:9-51
-156-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:125:19-49
+156-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:125:9-51
+156-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:125:19-49
 157        <activity android:name="com.example.squirrelwarehouse.MainSettingsActivity" />
-157-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:126:9-58
-157-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:126:19-55
+157-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:126:9-58
+157-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:126:19-55
 158        <activity android:name="com.example.squirrelwarehouse.ItemLoc" />
-158-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:127:9-45
-158-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:127:19-42
+158-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:127:9-45
+158-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:127:19-42
 159        <activity android:name="com.example.squirrelwarehouse.MainActivity" >
-159-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:129:9-137:20
-159-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:129:19-47
+159-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:129:9-137:20
+159-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:129:19-47
 160
 161            <!--
 162            <intent-filter>
@@ -305,251 +305,251 @@
 167        </activity>
 168
 169        <service
-169-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:139:9-177:19
+169-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:139:9-177:19
 170            android:name="com.google.firebase.components.ComponentDiscoveryService"
-170-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:140:13-84
+170-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:140:13-84
 171            android:directBootAware="true"
-171-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:141:13-43
+171-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:141:13-43
 172            android:exported="false" >
-172-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:142:13-37
+172-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:142:13-37
 173            <meta-data
-173-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:143:13-145:85
+173-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:143:13-145:85
 174                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-174-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:144:17-122
+174-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:144:17-122
 175                android:value="com.google.firebase.components.ComponentRegistrar" />
-175-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:145:17-82
+175-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:145:17-82
 176            <meta-data
-176-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:146:13-148:85
+176-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:146:13-148:85
 177                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-177-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:147:17-124
+177-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:147:17-124
 178                android:value="com.google.firebase.components.ComponentRegistrar" />
-178-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:148:17-82
+178-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:148:17-82
 179            <meta-data
-179-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:149:13-151:85
+179-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:149:13-151:85
 180                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-180-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:150:17-126
+180-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:150:17-126
 181                android:value="com.google.firebase.components.ComponentRegistrar" />
-181-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:151:17-82
+181-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:151:17-82
 182            <meta-data
-182-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:152:13-154:85
+182-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:152:13-154:85
 183                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-183-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:153:17-116
+183-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:153:17-116
 184                android:value="com.google.firebase.components.ComponentRegistrar" />
-184-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:154:17-82
+184-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:154:17-82
 185            <meta-data
-185-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:155:13-157:85
+185-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:155:13-157:85
 186                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-186-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:156:17-113
+186-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:156:17-113
 187                android:value="com.google.firebase.components.ComponentRegistrar" />
-187-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:157:17-82
+187-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:157:17-82
 188            <meta-data
-188-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:158:13-160:85
+188-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:158:13-160:85
 189                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-189-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:159:17-109
+189-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:159:17-109
 190                android:value="com.google.firebase.components.ComponentRegistrar" />
-190-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:160:17-82
+190-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:160:17-82
 191            <meta-data
-191-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:161:13-163:85
+191-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:161:13-163:85
 192                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-192-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:162:17-111
+192-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:162:17-111
 193                android:value="com.google.firebase.components.ComponentRegistrar" />
-193-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:163:17-82
+193-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:163:17-82
 194            <meta-data
-194-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:164:13-166:85
+194-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:164:13-166:85
 195                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-195-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:165:17-107
+195-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:165:17-107
 196                android:value="com.google.firebase.components.ComponentRegistrar" />
-196-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:166:17-82
+196-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:166:17-82
 197            <meta-data
-197-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:167:13-169:85
+197-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:167:13-169:85
 198                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-198-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:168:17-109
+198-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:168:17-109
 199                android:value="com.google.firebase.components.ComponentRegistrar" />
-199-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:169:17-82
+199-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:169:17-82
 200            <!--
 201                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
 202                clients to use it as well, by defining this registrar in their own core/common library.
 203            -->
 204            <meta-data
-204-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:174:13-176:85
+204-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:174:13-176:85
 205                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-205-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:175:17-121
+205-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:175:17-121
 206                android:value="com.google.firebase.components.ComponentRegistrar" />
-206-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:176:17-82
+206-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:176:17-82
 207        </service> <!-- Needs to be explicitly declared on P+ -->
 208        <activity
-208-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:178:9-182:75
+208-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:178:9-182:75
 209            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-209-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:179:13-93
+209-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:179:13-93
 210            android:excludeFromRecents="true"
-210-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:180:13-46
+210-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:180:13-46
 211            android:exported="false"
-211-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:181:13-37
+211-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:181:13-37
 212            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-212-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:182:13-72
+212-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:182:13-72
 213        <!--
 214            Service handling Google Sign-In user revocation. For apps that do not integrate with
 215            Google Sign-In, this service will never be started.
 216        -->
 217        <service
-217-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:187:9-191:51
+217-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:187:9-191:51
 218            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-218-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:188:13-89
+218-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:188:13-89
 219            android:exported="true"
-219-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:189:13-36
+219-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:189:13-36
 220            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-220-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:190:13-107
+220-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:190:13-107
 221            android:visibleToInstantApps="true" />
-221-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:191:13-48
+221-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:191:13-48
 222
 223        <provider
-223-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:193:9-196:40
+223-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:193:9-196:40
 224            android:name="com.squareup.picasso.PicassoProvider"
-224-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:194:13-64
+224-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:194:13-64
 225            android:authorities="com.example.squirrelwarehouse.com.squareup.picasso"
-225-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:195:13-85
+225-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:195:13-85
 226            android:exported="false" />
-226-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:196:13-37
+226-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:196:13-37
 227
 228        <activity
-228-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:198:9-215:20
+228-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:198:9-215:20
 229            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-229-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:199:13-80
+229-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:199:13-80
 230            android:excludeFromRecents="true"
-230-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:200:13-46
+230-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:200:13-46
 231            android:exported="true"
-231-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:201:13-36
+231-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:201:13-36
 232            android:launchMode="singleTask"
-232-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:202:13-44
+232-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:202:13-44
 233            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-233-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:203:13-72
+233-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:203:13-72
 234            <intent-filter>
-234-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:204:13-214:29
+234-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:204:13-214:29
 235                <action android:name="android.intent.action.VIEW" />
-235-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:17-69
-235-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:25-66
+235-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:17-69
+235-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:25-66
 236
 237                <category android:name="android.intent.category.DEFAULT" />
-237-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:17-76
-237-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:27-73
+237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:17-76
+237-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:27-73
 238                <category android:name="android.intent.category.BROWSABLE" />
-238-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:17-78
-238-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:27-75
+238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:17-78
+238-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:27-75
 239
 240                <data
-240-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:210:17-213:51
+240-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:17-213:51
 241                    android:host="firebase.auth"
-241-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:211:21-49
+241-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:211:21-49
 242                    android:path="/"
-242-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:212:21-37
+242-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:21-37
 243                    android:scheme="genericidp" />
-243-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:213:21-48
+243-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:213:21-48
 244            </intent-filter>
 245        </activity>
 246        <activity
-246-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:216:9-233:20
+246-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:216:9-233:20
 247            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-247-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:217:13-79
+247-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:217:13-79
 248            android:excludeFromRecents="true"
-248-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:218:13-46
+248-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:218:13-46
 249            android:exported="true"
-249-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:219:13-36
+249-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:219:13-36
 250            android:launchMode="singleTask"
-250-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:220:13-44
+250-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:220:13-44
 251            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-251-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:221:13-72
+251-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:221:13-72
 252            <intent-filter>
-252-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:222:13-232:29
+252-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:222:13-232:29
 253                <action android:name="android.intent.action.VIEW" />
-253-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:17-69
-253-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:205:25-66
+253-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:17-69
+253-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:205:25-66
 254
 255                <category android:name="android.intent.category.DEFAULT" />
-255-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:17-76
-255-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:27-73
+255-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:17-76
+255-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:27-73
 256                <category android:name="android.intent.category.BROWSABLE" />
-256-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:17-78
-256-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:208:27-75
+256-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:17-78
+256-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:208:27-75
 257
 258                <data
-258-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:210:17-213:51
+258-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:210:17-213:51
 259                    android:host="firebase.auth"
-259-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:211:21-49
+259-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:211:21-49
 260                    android:path="/"
-260-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:212:21-37
+260-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:212:21-37
 261                    android:scheme="recaptcha" />
-261-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:213:21-48
+261-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:213:21-48
 262            </intent-filter>
 263        </activity>
 264
 265        <service
-265-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:235:9-244:19
+265-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:235:9-244:19
 266            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-266-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:236:13-101
+266-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:236:13-101
 267            android:enabled="true"
-267-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:237:13-35
+267-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:237:13-35
 268            android:exported="false" >
-268-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:238:13-37
+268-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:238:13-37
 269            <intent-filter>
-269-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:239:13-243:29
+269-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:239:13-243:29
 270                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-270-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:240:17-89
-270-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:240:25-86
+270-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:240:17-89
+270-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:240:25-86
 271
 272                <category android:name="android.intent.category.DEFAULT" />
-272-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:17-76
-272-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:207:27-73
+272-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:17-76
+272-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:207:27-73
 273            </intent-filter>
 274        </service>
 275
 276        <provider
-276-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:246:9-251:39
+276-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:246:9-251:39
 277            android:name="com.google.firebase.provider.FirebaseInitProvider"
-277-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:247:13-77
+277-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:247:13-77
 278            android:authorities="com.example.squirrelwarehouse.firebaseinitprovider"
-278-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:248:13-85
+278-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:248:13-85
 279            android:directBootAware="true"
-279-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:249:13-43
+279-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:249:13-43
 280            android:exported="false"
-280-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:250:13-37
+280-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:250:13-37
 281            android:initOrder="100" />
-281-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:251:13-36
+281-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:251:13-36
 282
 283        <activity
-283-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:253:9-256:75
+283-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:253:9-256:75
 284            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-284-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:254:13-79
+284-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:254:13-79
 285            android:exported="false"
-285-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:255:13-37
+285-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:255:13-37
 286            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-286-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:256:13-72
+286-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:256:13-72
 287
 288        <meta-data
-288-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:258:9-260:69
+288-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:258:9-260:69
 289            android:name="com.google.android.gms.version"
-289-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:259:13-58
+289-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:259:13-58
 290            android:value="@integer/google_play_services_version" />
-290-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:260:13-66
+290-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:260:13-66
 291
 292        <uses-library android:name="com.google.android.maps" />
-292-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:262:9-64
-292-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:262:23-61
+292-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:262:9-64
+292-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:262:23-61
 293        <!--
 294<meta-data android:name="com.google.android.maps.v2.API_KEY"
 295            android:value="AIzaSyAmAvFvrYqErfcT0HC9U_CzoMIOWrEXCoo"/>
 296        -->
 297        <uses-library
-297-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:267:9-269:40
+297-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:267:9-269:40
 298            android:name="org.apache.http.legacy"
-298-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:268:13-50
+298-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:268:13-50
 299            android:required="false" />
-299-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:269:13-37
+299-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:269:13-37
 300        <uses-library
-300-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:267:9-269:40
+300-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:267:9-269:40
 301            android:name="org.apache.http.legacy"
-301-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:268:13-50
+301-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:268:13-50
 302            android:required="false" />
-302-->C:\Users\ADMIN\gitWorkStation\SWH\app\src\main\AndroidManifest.xml:269:13-37
+302-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:269:13-37
 303    </application>
 304
 305</manifest>

@@ -2,17 +2,20 @@ package com.example.squirrelwarehouse
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.listview.view.*
+import kotlinx.android.synthetic.main.product_detail.*
+import java.text.SimpleDateFormat
 
 class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
     //유저게시글, 나의 게시글 용 어댑터
@@ -55,8 +58,15 @@ class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerV
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         var viewHolder = (holder as ViewHolder).itemView
         viewHolder.titleTV.text = itemList[position].productName
-        viewHolder.timeTV.text = itemList[position].uploadTime
         viewHolder.detailTV.text = itemList[position].productDetail
+        //viewHolder.timeTV.text = itemList[position].uploadTime
+
+        // 시간 데이터 형식 변경
+        var sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+        var date = sdf.parse(itemList[position]?.uploadTime)
+        sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+        var dateStr = sdf.format(date)
+        viewHolder.timeTV.text = dateStr
         // 사진 불러오기
         var storageRef = storage?.reference?.child("product")?.child(itemList!![position].imageURI.toString())
         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
@@ -66,6 +76,19 @@ class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerV
             //Log.v("IMAGE","Success")
 
         }
+        // 거래 상태에 따른 뷰 바꾸기
+        // 대여중 - 아스파라거스 그린, 대여종료 - 회색, 취소선
+        if(itemList[position].status.equals("대여 종료")){
+            //색 회색으로 변경
+            viewHolder.titleTV.setTextColor(ContextCompat.getColor(context!!,R.color.grey))
+            // 최소선 긋기
+            viewHolder.titleTV.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+        }
+        else if(itemList[position].status.equals("대여 중")){
+            //색 녹색으로 변경
+            viewHolder.titleTV.setTextColor(ContextCompat.getColor(context!!,R.color.asparagus_green))
+        }
+
         viewHolder.setOnClickListener {
 
             Intent(context, ProductDetailActivity::class.java).apply {
