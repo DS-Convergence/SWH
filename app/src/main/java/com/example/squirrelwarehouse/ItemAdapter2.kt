@@ -79,14 +79,21 @@ class ItemAdapter2(var uid : String?, private val context : Context) : RecyclerV
         // 거래 상태에 따른 뷰 바꾸기
         // 대여중 - 아스파라거스 그린, 대여종료 - 회색, 취소선
         if(itemList[position].status.equals("대여 종료")){
-            //색 회색으로 변경
-            viewHolder.titleTV.setTextColor(ContextCompat.getColor(context!!,R.color.grey))
-            // 최소선 긋기
-            viewHolder.titleTV.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+            // 글자색 흰색으로 변경
+            viewHolder.statusTV.setTextColor(ContextCompat.getColor(context!!,R.color.white))
+            // 글자 배경색 진회색
+            viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(context!!,R.color.dark_grey))
+            viewHolder.statusTV.text = "대여 종료"
+            //배경색 회색으로
+            viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(context!!,R.color.grey))
+
         }
         else if(itemList[position].status.equals("대여 중")){
-            //색 녹색으로 변경
-            viewHolder.titleTV.setTextColor(ContextCompat.getColor(context!!,R.color.asparagus_green))
+            // 글자색 흰색으로 변경
+            viewHolder.statusTV.setTextColor(ContextCompat.getColor(context!!,R.color.white))
+            // 글자 배경색 녹색
+            viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(context!!,R.color.asparagus_green))
+            viewHolder.statusTV.text = "대여 중"
         }
 
         viewHolder.setOnClickListener {
