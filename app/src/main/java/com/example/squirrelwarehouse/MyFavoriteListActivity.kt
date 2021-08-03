@@ -112,16 +112,23 @@ class MyFavoriteListActivity : AppCompatActivity() {
             }
 
             // 거래 상태에 따른 뷰 바꾸기
-            // 대여중 - 아스파라거스 그린, 대여종료 - 회색, 취소선
+            // 대여중 - 아스파라거스 그린, 대여종료 - 회색
             if(itemList[position].status.equals("대여 종료")){
-                //색 회색으로 변경
-                viewHolder.titleTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
-                // 최소선 긋기
-                viewHolder.titleTV.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+                // 글자색 흰색으로 변경
+                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
+                // 글자 배경색 진회색
+                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.dark_grey))
+                viewHolder.statusTV.text = "대여 종료"
+                //배경색 회색으로
+                viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
+
             }
             else if(itemList[position].status.equals("대여 중")){
-                //색 녹색으로 변경
-                viewHolder.titleTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
+                // 글자색 흰색으로 변경
+                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
+                // 글자 배경색 녹색
+                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
+                viewHolder.statusTV.text = "대여 중"
             }
             viewHolder.setOnClickListener {
                 Intent(this@MyFavoriteListActivity, ProductDetailActivity::class.java).apply {
