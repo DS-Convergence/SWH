@@ -88,6 +88,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReportActivity" />
+        <activity android:name="UserEvaluationActivity"
+            android:theme="@style/Transparent" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".DeleteAccountActivity" />
         <activity android:name=".SetLocationInformationActivity" />

@@ -147,6 +147,10 @@ class ChatLogMoreActivity : AppCompatActivity() {
                                             if (task.isSuccessful) {
                                                 Log.v("Update", "Success")
                                                 Toast.makeText(this,"반납 완료", Toast.LENGTH_LONG).show()
+
+                                                // 반납이 완료되면 평점 페이지로 이동
+                                                val intent = Intent(this, UserEvaluationActivity::class.java)
+                                                startActivity(intent)
                                             }
                                         }
                                     }

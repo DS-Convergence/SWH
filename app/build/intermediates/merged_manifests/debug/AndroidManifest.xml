@@ -116,6 +116,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
+        <activity
+            android:name="com.example.squirrelwarehouse.UserEvaluationActivity"
+            android:theme="@style/Transparent" />
         <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
         <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
