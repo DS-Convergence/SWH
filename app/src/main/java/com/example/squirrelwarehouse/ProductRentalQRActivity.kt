@@ -64,7 +64,7 @@ class ProductRentalQRActivity : AppCompatActivity() {
                     var rtime= rental?.returnTime // 그냥 이 데이터가 있는 지 알면, 이게 처음 찍는게 아니라는 것을 의미.
                     if(rtime != null) {
                         val intent = Intent(this@ProductRentalQRActivity, UserEvaluationActivity::class.java)
-                        startActivity(intent)
+                        startActivityForResult(intent, 0)
                     }
                     else {
                         finish()
@@ -80,7 +80,6 @@ class ProductRentalQRActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         // 평점페이지에서 다시 돌아오면 finish()
-        Toast.makeText(this,"되돌아옴.", Toast.LENGTH_LONG).show()
         finish()
     }
 
