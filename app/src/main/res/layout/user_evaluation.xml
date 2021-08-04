@@ -83,5 +83,13 @@
                 tools:srcCompat="@drawable/acorn_empty" />
         </TableRow>
 
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="[닫기]"
+            android:textColor="@color/mocha_brown" />
+
     </LinearLayout>
 </RelativeLayout>
