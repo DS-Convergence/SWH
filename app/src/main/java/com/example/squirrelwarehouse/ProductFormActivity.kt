@@ -47,6 +47,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var img : ImageView
 
     private lateinit var spCategory : Spinner
+    private lateinit var spCategoryHobby : Spinner
 
     private var mMap: GoogleMap? = null
 
@@ -99,12 +100,20 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
 
-        // 스피너
+        // 스피너. 물건 카테고리
         spCategory = findViewById(R.id.sp_category)
         val category = resources.getStringArray(R.array.category)
         var adapterCate : ArrayAdapter<String>
         adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
         spCategory.adapter = adapterCate
+
+        // 스피너2. 취미 카테고리
+        spCategoryHobby = findViewById(R.id.sp_categoryHobby)
+        val categoryHobby = resources.getStringArray(R.array.cate_hobby)
+        var adapterCate2 : ArrayAdapter<String>
+        adapterCate2 = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, categoryHobby)
+        spCategoryHobby.adapter = adapterCate2
+
 
 
         // 수정할 경우
@@ -122,7 +131,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     etProdName.setText(product?.productName)
                     //etCategory.setText(product?.category)
                     spCategory.setSelection(getCateNum(product?.category))
-
+                    spCategoryHobby.setSelection(getCateHobbyNum(product?.categoryHobby))
 
                     etProdDetail.setText(product?.productDetail)
                     // 보증금 체크박스랑 다 고려해주어야함. null이 아니면 체크박스 체크하고, 금액 표시
@@ -213,6 +222,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var pName = etProdName.text.toString()
             //var pCate = etCategory.text.toString()
             var pCate = spCategory.selectedItem.toString()
+            var pCateHobby = spCategoryHobby.selectedItem.toString()
             var pDetail = etProdDetail.text.toString()
             var pDeposit = etDeposit.text.toString()
             var pRental = etRentalFee.text.toString()
@@ -248,7 +258,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
                             // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
                             // 책 210쪽 보고 수정하기
-                            var product = Product(userId,userName,pName, pCate, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
+                            var product = Product(userId,userName,pName, pCate, pCateHobby, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
                             firestore?.collection("Product")?.document(userId+"_"+timeStamp)?.set(product)?.addOnCompleteListener {
                                     task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
@@ -277,6 +287,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                 var map = mutableMapOf<String,Any>()
                 map["productName"] = pName
                 map["category"] = pCate
+                map["categoryHobby"] = pCateHobby
                 map["productDetail"] = pDetail
 
                 if(!cbDeposit.isChecked) pDeposit = ""
@@ -358,8 +369,12 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
                     // 나중에 바뀔 코드
                     etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+
                     var cate = Category(results.get(0).toString())    // 물건의 카테고리 가져오기
                     spCategory.setSelection(cate.category)      // 카테고리 설정하기
+
+                    var cateHobby = CategoryHobby(results.get(0).toString())   // 취미 카테고리 가져오기
+                    spCategoryHobby.setSelection(cateHobby.category)
 
 
                 } catch (e: Exception) {
@@ -405,15 +420,30 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     fun getCateNum(cate: String?) : Int {
 
         when(cate) {
-            "디지털/가전" -> return 0
-            "생활/인테리어" -> return 1
-            "스포츠/레저" -> return 2
-            "패션/뷰티/미용" -> return 3
-            "문구/완구" -> return 4
-            "도서" -> return 5
-            "음악" -> return 6
-            "기타" -> return 7
-            else -> return 7
+            "디지털/가전" -> return 1
+            "생활/인테리어" -> return 2
+            "스포츠/레저" -> return 3
+            "패션/뷰티/미용" -> return 4
+            "문구/완구" -> return 5
+            "도서" -> return 6
+            "음악" -> return 7
+            "기타" -> return 8
+            else -> return 8
+        }
+    }
+
+    fun getCateHobbyNum(cate: String?) : Int {
+
+        when(cate) {
+            "문화/예술" -> return 1
+            "공예" -> return 2
+            "요리" -> return 3
+            "미술" -> return 4
+            "운동/스포츠" -> return 5
+            "원예" -> return 6
+            "공부" -> return 7
+            "게임" -> return 8
+            else -> return 8
         }
     }
 

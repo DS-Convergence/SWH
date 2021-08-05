@@ -22,6 +22,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var tvProdName : TextView
     private lateinit var tvProdCategory : TextView
+    private lateinit var tvProdCategoryHobby : TextView
     private lateinit var tvTime : TextView
     private lateinit var tvStatus : TextView
     private lateinit var tvUser : TextView
@@ -52,6 +53,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         tvProdName = findViewById(R.id.tv_prodName)
         tvProdCategory = findViewById(R.id.tv_prodCategory)
+        tvProdCategoryHobby = findViewById(R.id.tv_prodCategoryHobby)
         tvTime = findViewById(R.id.tv_time)
         tvStatus = findViewById(R.id.tv_status)
         tvUser = findViewById(R.id.tv_user)
@@ -82,6 +84,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 var product = task.result.toObject(Product::class.java)
                 tv_prodName.text = product?.productName
                 tv_prodCategory.text = product?.category
+                tv_prodCategoryHobby.text = product?.categoryHobby
                 tv_status.text = product?.status
                 tv_user.text = product?.userName
                 tv_uesrLocation.text = product?.region.toString()
