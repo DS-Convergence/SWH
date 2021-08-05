@@ -1067,7 +1067,7 @@ public class CategoryHobby {
 
     public int getCategory() {  // 카테고리 번호 반환 0~8
 
-        return map.get(product);
+        return map.get(product)+1;
 
     }
 }

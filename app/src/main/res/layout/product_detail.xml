@@ -164,6 +164,26 @@
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
                     android:text="거래상태" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_prodName"
+                    android:layout_toRightOf="@id/tv_prodCategory"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="|"
+                    android:textColor="@color/mocha_brown" />
+
+                <TextView
+                    android:id="@+id/tv_prodCategoryHobby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_prodName"
+                    android:layout_toRightOf="@id/textView6"
+                    android:text="카테고리명2"
+                    android:textColor="@color/mocha_brown" />
             </RelativeLayout>
 
             <View
