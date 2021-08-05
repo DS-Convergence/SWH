@@ -150,8 +150,6 @@ class ChatLogActivity : AppCompatActivity() {
             // Make sure the request was successful
             if (resultCode == Activity.RESULT_OK) {
                 try {
-                    // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
-
                     uri = data!!.data
                     var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
                     var imgFileName = "IMAGE_" + timeStamp + "_.jpg"
@@ -231,7 +229,6 @@ class ChatLogActivity : AppCompatActivity() {
         Log.d("listenForMessages Test", "fromId : " +fromId)
         //val toId = toUser?.uid //상대방
         val toId = touserid
-
 
         Log.d("listenForMessages Test", "touserid : "+touserid)
 

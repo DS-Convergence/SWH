@@ -8,7 +8,6 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.squirrelwarehouse.LatestMessageActivity.Companion.currentUser
 import com.example.squirrelwarehouse.models.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -19,7 +18,6 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
-import kotlinx.android.synthetic.main.activity_chat_log_more.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_from_row.view.chat_from_row_time
 import kotlinx.android.synthetic.main.chat_from_row.view.imageview_chat_from_row
@@ -28,8 +26,6 @@ import kotlinx.android.synthetic.main.chat_image_to_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.chat_to_row_time
 import kotlinx.android.synthetic.main.chat_to_row.view.imageview_chat_to_row
-import kotlinx.android.synthetic.main.user_row_new_message.*
-import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -225,7 +221,6 @@ class ChatLogListActivity : AppCompatActivity() {
 
         val ref = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$toidprod")
 
-
         var auth : FirebaseAuth = FirebaseAuth.getInstance()
         var firestore : FirebaseFirestore? = FirebaseFirestore.getInstance()
         var uid : String? = auth.currentUser?.uid
@@ -270,7 +265,9 @@ class ChatLogListActivity : AppCompatActivity() {
                                 } else {//chatMessage가 받은 사람일 경우
                                     Log.d("listenForMessages Test", "받는 사람일경우")
                                     Log.d("listenForMessages Test", "touserid " +toId)
-
+                                    adapter.add(ChatToItem(chatMessage, toUser))
+                                    Log.d("listenForMessages Test", " adapter.add(ChatToItem(chatMessage, touser)) 성공 " )
+                                    /*
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${toId}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
@@ -281,7 +278,7 @@ class ChatLogListActivity : AppCompatActivity() {
                                             toimgUri = touser?.userProPic.toString()
                                             adapter.add(ChatToItem(chatMessage, touser))
                                         }
-                                    }
+                                    }*/
 
                                 }
                             }else{
@@ -302,7 +299,9 @@ class ChatLogListActivity : AppCompatActivity() {
                                 } else {//chatMessage가 받은 사람일 경우
                                     Log.d("listenForMessages Test", "받는 사람일경우")
                                     Log.d("listenForMessages Test", "chatImage touserid " +toId)
-
+                                    adapter.add(ChatImageToItem(chatImage, toUser))
+                                    Log.d("listenForMessages Test", " adapter.add(ChatImageToItem(chatImage, touser)) 성공 " )
+                                    /*
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${toId}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
@@ -313,7 +312,7 @@ class ChatLogListActivity : AppCompatActivity() {
                                             toimgUri = touser?.userProPic.toString()
                                             adapter.add(ChatImageToItem(chatImage, touser))
                                         }
-                                    }
+                                    }*/
 
                                 }
                             }}
@@ -436,7 +435,7 @@ class ChatLogListActivity : AppCompatActivity() {
         }
     }
 
-    class ChatToItem(val chatmessage: ChatMessage?, val user: UserModelFS?) : Item<ViewHolder>() {
+    class ChatToItem(val chatmessage: ChatMessage?, val user: User?) : Item<ViewHolder>() {
         //text받아와서 뛰우기
         //access to view holder
         private var firestore : FirebaseFirestore? = null
@@ -540,7 +539,7 @@ class ChatLogListActivity : AppCompatActivity() {
         }
     }
 
-    class ChatImageToItem(val chatImage: ChatImage?, val user: UserModelFS?) : Item<ViewHolder>() {
+    class ChatImageToItem(val chatImage: ChatImage?, val user: User?) : Item<ViewHolder>() {
         //text받아와서 뛰우기
         //access to view holder
         private var firestore : FirebaseFirestore? = null
