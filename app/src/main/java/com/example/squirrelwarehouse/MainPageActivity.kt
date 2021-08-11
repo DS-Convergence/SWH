@@ -196,7 +196,7 @@ class MainPageActivity : AppCompatActivity() {
         var moreRcmd = moreRcmd
         moreRcmd.setOnClickListener {
             //Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
-            var ubr = UserBasedRcmd("user_nqOPrU4ZcTfI1xoKlapXjjvFOXE2")  // 현재 유저 아이디 필요
+            var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요
 
         }
 
@@ -707,7 +707,7 @@ class MainPageActivity : AppCompatActivity() {
                 for (snapshot in querySnapshot!!.documents) {
                     var item = snapshot.toObject(UserModelFS::class.java)
                     users.add(item!!.uid.toString())
-                    //Log.v("RcmdList", "user: " + item!!.uid.toString())
+                    Log.v("RcmdList", "user: " + item!!.uid.toString())
                 }
 
 
@@ -799,6 +799,25 @@ class MainPageActivity : AppCompatActivity() {
                                 if(!product.get(j).contains(user.substring(5))) {
                                     rcmdList.add(product.get(j))
                                     Log.v("RcmdList", "추천물품 : "+product.get(j))
+
+                                    firestore?.collection("Product")?.document(product.get(j))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                        task ->
+                                        if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                            var product = task.result.toObject(Product::class.java)
+                                            rc_title1.text = product?.productName
+                                            // 사진 불러오기
+                                            var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                                Glide.with(applicationContext)
+                                                        .load(uri)
+                                                        .into(rc_thbm1)
+                                                Log.v("IMAGE", "Success")
+                                            }?.addOnFailureListener { //이미지 로드 실패시
+                                                Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                                Log.v("IMAGE", "failed")
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
