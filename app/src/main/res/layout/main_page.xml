@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />
@@ -241,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />
@@ -363,7 +363,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />

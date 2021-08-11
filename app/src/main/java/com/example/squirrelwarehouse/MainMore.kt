@@ -95,10 +95,10 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 // 항목 선택하면 filtering 해서 리스트로 보여주기
                 if(sCategory.selectedItemPosition!=0)
@@ -113,10 +113,10 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 // TODO: 항목 선택하면 filtering 해서 리스트로 보여주기
             }
@@ -132,10 +132,10 @@ class MainMore : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
                 if(sLocation.selectedItemPosition!=0) {
                     Toast.makeText(applicationContext, sLocation.selectedItem.toString()+sLocation.selectedItemPosition, Toast.LENGTH_LONG).show()
