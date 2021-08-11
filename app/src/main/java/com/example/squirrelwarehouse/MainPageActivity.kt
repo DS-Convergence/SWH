@@ -62,10 +62,7 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         var searchBar = searchBar
-        searchBar.setOnClickListener {
-            searchBar.queryHint = "검색어를 입력하세요."
-
-        }
+        searchBar.queryHint = "검색어를 입력하세요"
         searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchItem(query!!)
@@ -549,7 +546,10 @@ class MainPageActivity : AppCompatActivity() {
 
 
 
-    private fun searchItem(query: String) {}
+    private fun searchItem(query: String) {
+        var intent = Intent(this, SearchResult::class.java)
+        startActivityForResult(intent, 0)
+    }
 
     fun dataInArray(): ArrayList<HashMap<String, String>> {
 

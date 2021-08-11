@@ -27,7 +27,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-
         <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
@@ -88,7 +87,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReportActivity" />
-        <activity android:name="UserEvaluationActivity"
+        <activity
+            android:name=".UserEvaluationActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".DeleteAccountActivity" />
@@ -121,13 +121,21 @@
             android:name=".ProductDetailSubmenuActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".UpdateMoreActivity" />
-        <activity android:name=".MainPageActivity" />
+        <activity android:name=".MainPageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <!--<meta-data android:name="android.app.searchable"/>-->
+        </activity>
+        <activity android:name=".SearchResult">
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".MainPageActivity"/>
+        </activity>
         <activity android:name=".MainMore" />
         <activity android:name=".FilteringResult" />
-        <activity android:name=".NoticeActivity"/>
+        <activity android:name=".NoticeActivity" />
         <activity android:name=".MainSettingsActivity" />
         <activity android:name=".ItemLoc" />
-
         <activity android:name=".MainActivity">
 
             <!--
