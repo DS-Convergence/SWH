@@ -28,6 +28,7 @@
         <item>원예</item>
         <item>공부</item>
         <item>게임</item>
+        <item>기타</item>
     </string-array>
 
     <string-array name="location">
