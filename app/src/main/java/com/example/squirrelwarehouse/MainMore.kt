@@ -9,16 +9,24 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.main_more.*
 
 class MainMore : AppCompatActivity() {
+    // spinner 변수 선언, 아이디 연결
+    var sCategory:Spinner = spnCate
+    var sCateHob:Spinner = spnHobby
+    var sLocation:Spinner = spnLoc
+    var sLocDet:Spinner = spnLocDetail
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_more)
 
-
+        /*
         // spinner 변수 선언, 아이디 연결
         var sCategory:Spinner = spnCate
         var sCateHob:Spinner = spnHobby
         var sLocation:Spinner = spnLoc
         var sLocDet:Spinner = spnLocDetail
+        sLocDet.visibility = View.INVISIBLE
+         */
         sLocDet.visibility = View.INVISIBLE
 
         // 메인으로 돌아가기 버튼
@@ -114,8 +122,8 @@ class MainMore : AppCompatActivity() {
             }
         }
 
-        var adapterLocDe : ArrayAdapter<String>
-        var locdetail : Array<String> = resources.getStringArray(R.array.loc_special)
+        // var adapterLocDe : ArrayAdapter<String>
+        // var locdetail : Array<String> = resources.getStringArray(R.array.loc_special)
 
         sLocation.setSelection(0)
         sLocation.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -132,25 +140,48 @@ class MainMore : AppCompatActivity() {
                 if(sLocation.selectedItemPosition!=0) {
                     Toast.makeText(applicationContext, sLocation.selectedItem.toString()+sLocation.selectedItemPosition, Toast.LENGTH_LONG).show()
                     // 이 안에서 바꾸는 locdetail 은 반영이 안됨
-                    when(sLocation.selectedItemPosition) {
-                        1 -> { locdetail = resources.getStringArray(R.array.loc_special) }
-                        2 -> { locdetail = resources.getStringArray(R.array.loc_gycity) }
-                        3 -> { locdetail = resources.getStringArray(R.array.loc_gwd) }
-                        4 -> { locdetail = resources.getStringArray(R.array.loc_ggd) }
-                        5 -> { locdetail = resources.getStringArray(R.array.loc_gsbd) }
-                        6 -> { locdetail = resources.getStringArray(R.array.loc_gsnd) }
-                        7 -> { locdetail = resources.getStringArray(R.array.loc_jlbd) }
-                        8 -> { locdetail = resources.getStringArray(R.array.loc_jlnd) }
-                        9 -> { locdetail = resources.getStringArray(R.array.loc_ccbd) }
-                        10 -> { locdetail = resources.getStringArray(R.array.loc_ccnd) }
-                        11 -> { locdetail = resources.getStringArray(R.array.loc_jjd) }
-                    }
-                    sLocDet.visibility = View.VISIBLE
+                    // locdetail = resources.getStringArray(R.array.loc_ggd)
+                    // sLocDet.visibility = View.VISIBLE
+                }
+                // lateinit var locdetail : Array<String>
+                when(sLocation.selectedItemPosition) {
+                    1 -> { setSpnVal(1) }
+                    2 -> { setSpnVal(2) }
+                    3 -> { setSpnVal(3) }
+                    4 -> { setSpnVal(4) }
+                    5 -> { setSpnVal(5) }
+                    6 -> { setSpnVal(6) }
+                    7 -> { setSpnVal(7) }
+                    8 -> { setSpnVal(8) }
+                    9 -> { setSpnVal(9) }
+                    10 -> { setSpnVal(10) }
+                    11 -> { setSpnVal(11) }
+                    else -> { Toast.makeText(applicationContext, "지역을 선택하세요.", Toast.LENGTH_LONG).show() }
                 }
             }
         }
 
+        /*
         adapterLocDe = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, locdetail)
         sLocDet.adapter = adapterLocDe
+         */
+    }
+
+
+    fun setSpnVal(position : Int) {
+        when(position) {
+            1 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_special))
+            2 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_gycity))
+            3 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_gwd))
+            4 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_ggd))
+            5 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_gsbd))
+            6 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_gsnd))
+            7 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_jlbd))
+            8 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_jlnd))
+            9 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_ccbd))
+            10 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_ccnd))
+            11 -> sLocDet.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.loc_jjd))
+        }
+        sLocDet.visibility = View.VISIBLE
     }
 }
