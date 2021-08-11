@@ -376,18 +376,20 @@
                     android:layout_marginBottom="100dp">
 
                     <LinearLayout
+                        android:id="@+id/rcmd1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/rc_thbm1"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -403,18 +405,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/rcmd2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/rc_thbm2"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
@@ -430,18 +434,20 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/rcmd3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:padding="5dp"
                             android:id="@+id/rc_thbm3"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             android:background="@color/rice_white"
+                            android:padding="5dp"
                             tools:srcCompat="@tools:sample/avatars" />
 
                         <TextView
