@@ -12,12 +12,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon.png"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_temp.xml.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_temp.xml"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_more.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\main_more.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_switch_track_on.xml.flat",
@@ -32,12 +32,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_more_qr.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_send.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\send.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
@@ -84,12 +84,12 @@
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-anydpi-v26\\swh_icon.xml"
     },
     {
-        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
-        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
-    },
-    {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon_round.png.flat",
         "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon_round.png"
+    },
+    {
+        "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "C:\\AndroidP\\SWH\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
