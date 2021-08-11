@@ -198,14 +198,8 @@ class MainPageActivity : AppCompatActivity() {
         moreRcmd.setOnClickListener {
             //Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
             //var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요
-<<<<<<< Updated upstream
-
-=======
             ubr.getRcmd()
->>>>>>> Stashed changes
         }
-
-        var ubr = UserBasedRcmd("user_" + FirebaseAuth.getInstance().currentUser!!.uid.toString())  // 현재 유저 아이디 필요
 
 
 
@@ -826,9 +820,6 @@ class MainPageActivity : AppCompatActivity() {
                                             }
                                         }
                                     }*/
-
-
-<<<<<<< Updated upstream
                                 }
                             }
                         }
@@ -902,8 +893,6 @@ class MainPageActivity : AppCompatActivity() {
                                         Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                                         Log.v("IMAGE", "failed")
                                     }
-=======
->>>>>>> Stashed changes
                                 }
                             }
                             Log.v("RcmdList", "배열 크기: "+rcmdList.size)
