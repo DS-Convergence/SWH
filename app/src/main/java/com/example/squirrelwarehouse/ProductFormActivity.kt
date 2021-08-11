@@ -443,7 +443,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             "원예" -> return 6
             "공부" -> return 7
             "게임" -> return 8
-            else -> return 8
+            "기타" -> return 9
+            else -> return 9
         }
     }
 
