@@ -914,6 +914,13 @@ class MainPageActivity : AppCompatActivity() {
                                     var product = task.result.toObject(Product::class.java)
                                     rc_title1.text = product?.productName
                                     rc_title1.visibility = View.VISIBLE
+
+                                    rcmd1.setOnClickListener {
+                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                        startActivityForResult(intent, 0)
+                                    }
+
                                     // 사진 불러오기
                                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
@@ -935,6 +942,13 @@ class MainPageActivity : AppCompatActivity() {
                                     var product = task.result.toObject(Product::class.java)
                                     rc_title2.text = product?.productName
                                     rc_title2.visibility = View.VISIBLE
+
+                                    rcmd2.setOnClickListener {
+                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                        startActivityForResult(intent, 0)
+                                    }
+
                                     // 사진 불러오기
                                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
@@ -956,6 +970,13 @@ class MainPageActivity : AppCompatActivity() {
                                     var product = task.result.toObject(Product::class.java)
                                     rc_title3.text = product?.productName
                                     rc_title3.visibility = View.VISIBLE
+
+                                    rcmd3.setOnClickListener {
+                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                        startActivityForResult(intent, 0)
+                                    }
+
                                     // 사진 불러오기
                                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
