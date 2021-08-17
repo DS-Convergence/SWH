@@ -29,6 +29,7 @@ class FilteringResult : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
 
+        /*
         if(intent.hasExtra("category")) {
             page_title.text = intent.getStringExtra("category")
             listView.adapter = ResultViewRecyclerViewAdapter()
@@ -37,8 +38,18 @@ class FilteringResult : AppCompatActivity() {
         else {
             Toast.makeText(this,"카테고리 미선택",Toast.LENGTH_LONG).show()
         }
+         */
+
+        var valarr = intent.getSerializableExtra("valList") as Array<String>
+        if(valarr.size!=0) {
+            page_title.text = "검색결과"
+            // Log.v("filtering result", "arr size: "+valarr.size) 로그 출력이 안 됨
+        }
+        else
+            page_title.text = "검색조건 미선택"
     }
 
+    /*
     inner class ResultViewRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         var products:ArrayList<Product> = arrayListOf()
 
@@ -97,4 +108,6 @@ class FilteringResult : AppCompatActivity() {
 
         }
     }
+
+     */
 }
