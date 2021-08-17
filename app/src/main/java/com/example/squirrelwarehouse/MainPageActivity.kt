@@ -50,6 +50,7 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         var gotoMap = gotomap
+        // TODO: 지도 시작
         gotoMap.setOnClickListener {
             val intent = Intent(this, ItemLoc::class.java)
             startActivityForResult(intent, 0)
