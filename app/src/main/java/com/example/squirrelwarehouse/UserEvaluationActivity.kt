@@ -2,28 +2,37 @@ package com.example.squirrelwarehouse
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.user_evaluation.*
 
 class UserEvaluationActivity : AppCompatActivity() {
 
-    private lateinit var imgAcorn1 : ImageButton
-    private lateinit var imgAcorn2 : ImageButton
-    private lateinit var imgAcorn3 : ImageButton
-    private lateinit var imgAcorn4 : ImageButton
-    private lateinit var imgAcorn5 : ImageButton
-
+    private lateinit var auth: FirebaseAuth
+    var firestore :FirebaseFirestore = FirebaseFirestore.getInstance()
+    private var ratingScore : Float = 0.0F
+    private var rating : Float = 0.0F
+    private var ratingCnt : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_evaluation)
-/*
-        imgAcorn1 = findViewById(R.id.img_acorn1)
-        imgAcorn2 = findViewById(R.id.img_acorn2)
-        imgAcorn3 = findViewById(R.id.img_acorn3)
-        imgAcorn4 = findViewById(R.id.img_acorn4)
-        imgAcorn5 = findViewById(R.id.img_acorn5)
-*/
+
+        auth = FirebaseAuth.getInstance()
+
+        rating_bar.setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
+            rating_bar.rating = rating
+            ratingScore = rating
+        }
+
+        firestore?.collection("Users")?.document("user_${auth?.currentUser?.uid}")
+                ?.get()?.addOnSuccessListener { doc ->
+                    rating = doc?.data?.get("rating").toString().toFloat()
+                    ratingCnt = doc?.data?.get("ratingCnt").toString().toInt()+1
+                    ratingScore += rating/ratingCnt
+                    firestore.collection("Users").document("user_${auth?.currentUser?.uid}")
+                            .update("rating",ratingScore,"ratingCnt",ratingCnt)
+                }
 
         tv_close.setOnClickListener {
             // 데이터 베이스에 데이터 저장
