@@ -50,11 +50,16 @@ class MainMore : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
+        var hobtestbtn = hobbytestBtn
+        hobtestbtn.setOnClickListener {
+            // TODO: 취미테스트 구현
+        }
+
         /*
         // 적용 버튼
         var applybtn = applyBtn
         applybtn.setOnClickListener {
-            // TODO: spinner 값 적용해서 listview로 보여주기
+            // spinner 값 적용해서 listview로 보여주기
             var intent = Intent(this, FilteringResult::class.java)
             intent.putExtra("valList", valList)
             startActivityForResult(intent, 0)
@@ -151,7 +156,7 @@ class MainMore : AppCompatActivity() {
         // 적용 버튼
         var applybtn = applyBtn
         applybtn.setOnClickListener {
-            // TODO: spinner 값 적용해서 listview로 보여주기
+            // spinner 값 적용해서 listview로 보여주기
             var intent = Intent(this, FilteringResult::class.java)
             intent.putExtra("valList", valList)
             startActivityForResult(intent, 0)
