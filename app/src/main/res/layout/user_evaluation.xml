@@ -38,6 +38,18 @@
             android:textColor="@color/mocha_brown"
             android:textSize="18sp" />
 
+        <!-- 우선은 별로 표시-->
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_bar"
+            android:layout_gravity="center_horizontal"
+            android:numStars="5"
+            android:stepSize="1"
+            android:progressTint="@color/cinnamon_brown"
+            android:progressBackgroundTint="@color/oat_yellow"/>
+        <!--
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -82,6 +94,7 @@
                 android:layout_weight="1"
                 tools:srcCompat="@drawable/acorn_empty" />
         </TableRow>
+        -->
 
         <TextView
             android:id="@+id/tv_close"
