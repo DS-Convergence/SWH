@@ -1,11 +1,17 @@
 package com.example.squirrelwarehouse
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.AttributeSet
@@ -14,6 +20,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.UserModelFS
@@ -21,8 +29,11 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.common.collect.MapMaker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -74,6 +85,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private val executor: Executor = Executors.newSingleThreadExecutor()
 
+    private var getLongitude : Double = 0.0
+    private var getLatitude : Double = 0.0
+
+    //private lateinit var marker: Marker
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_form)
@@ -99,6 +115,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnUpload : Button = findViewById(R.id.btn_upload)
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
+
+        val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // 스피너. 물건 카테고리
         spCategory = findViewById(R.id.sp_category)
@@ -198,10 +216,57 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 위치 체크박스가 체크되어야 지도 보임.
         cbLocation.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked) map.visibility = View.VISIBLE
+            if(isChecked) {
+                map.visibility = View.VISIBLE
+
+                val isGPSEnabled: Boolean = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+                val isNetworkEnabled: Boolean = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                //매니페스트에 권한이 추가되어 있다해도 여기서 다시 한번 확인해야함
+                if (Build.VERSION.SDK_INT >= 23 &&
+                    ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this@ProductFormActivity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 0)
+                } else {
+                    when { //프로바이더 제공자 활성화 여부 체크
+                        isNetworkEnabled -> {
+                            val location =
+                                lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) //인터넷기반으로 위치를 찾음
+                            getLongitude = location?.longitude!!
+                            getLatitude = location.latitude
+                            Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                            mMap!!.isMyLocationEnabled = isChecked
+
+                        }
+                        isGPSEnabled -> {
+                            val location =
+                                lm.getLastKnownLocation(LocationManager.GPS_PROVIDER) //GPS 기반으로 위치를 찾음
+                            getLongitude = location?.longitude!!
+                            getLatitude = location.latitude
+                            Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                            mMap!!.isMyLocationEnabled = isChecked
+                        }
+                        else -> {
+                        }
+                    }
+                    //몇초 간격과 몇미터를 이동했을시에 호출되는 부분 - 주기적으로 위치 업데이트를 하고 싶다면 사용
+                    // ****주기적 업데이트를 사용하다가 사용안할시에는 반드시 해제 필요****
+                    /*lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+                            1000, //몇초
+                            1F,   //몇미터
+                            gpsLocationListener)
+                    lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+                            1000,
+                            1F,
+                            gpsLocationListener)
+                    //해제부분. 상황에 맞게 잘 구현하자
+                    lm.removeUpdates(gpsLocationListener)*/
+
+                }
+
+            }
             else map.visibility = View.GONE
 
         }
+        lm.removeUpdates(gpsLocationListener)
 
         // 뒤로가기 버튼
         btnBack.setOnClickListener() {
@@ -386,12 +451,12 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val SEOUL = LatLng(37.56, 126.97)
+        val SEOUL = LatLng(37.52487, 126.92723)
         val markerOptions = MarkerOptions()
         markerOptions.position(SEOUL)
         markerOptions.title("서울")
         markerOptions.snippet("한국의 수도")
-        mMap!!.addMarker(markerOptions)
+        //mMap!!.addMarker(markerOptions)
 
 
         // 기존에 사용하던 다음 2줄은 문제가 있습니다.
@@ -399,7 +464,28 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         // CameraUpdateFactory.zoomTo가 오동작하네요.
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-        mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 10f))
+        mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 15f))
+
+        var marker: Marker? = null
+
+        mMap!!.setOnMapClickListener { latLng ->
+            // 마크가 하나만 생기도록 함.
+            marker?.remove()
+            marker = mMap!!.addMarker(MarkerOptions().position(latLng))
+        }
+    }
+
+    val gpsLocationListener = object : LocationListener {
+        override fun onLocationChanged(location: Location) {
+            val provider: String = location.provider
+            val longitude: Double = location.longitude
+            val latitude: Double = location.latitude
+            val altitude: Double = location.altitude
+        }
+        //아래 3개함수는 형식상 필수부분
+        override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
+        override fun onProviderEnabled(provider: String) {}
+        override fun onProviderDisabled(provider: String) {}
     }
 
     // 사진을 절대경로로 저장 >>>>> 사용 x 삭제바람
