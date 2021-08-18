@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.common.collect.MapMaker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.storage.FirebaseStorage
 import java.text.SimpleDateFormat
 import java.util.*
@@ -89,6 +90,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     private var getLatitude : Double = 0.0
 
     //private lateinit var marker: Marker
+
+    private var marker: Marker? = null
+    private var geopoint : GeoPoint? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -154,6 +158,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     etProdDetail.setText(product?.productDetail)
                     // 보증금 체크박스랑 다 고려해주어야함. null이 아니면 체크박스 체크하고, 금액 표시
                     // 대여료
+
+                    if(product?.region != null) {
+                        geopoint = product?.region
+                        var latLng = LatLng(geopoint!!.latitude, geopoint!!.longitude)
+                        mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+                        marker = mMap!!.addMarker(MarkerOptions().position(latLng))
+                    }
 
                     if(!product?.deposit.equals("")){
                         cbDeposit.isChecked = true;
@@ -323,7 +334,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
                             // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
                             // 책 210쪽 보고 수정하기
-                            var product = Product(userId,userName,pName, pCate, pCateHobby, pDetail, imgFileName, pDeposit, pRental, timeStamp,null, "대여 전")
+                            var product = Product(userId,userName,pName, pCate, pCateHobby, pDetail, imgFileName, pDeposit, pRental, timeStamp, geopoint, "대여 전")
                             firestore?.collection("Product")?.document(userId+"_"+timeStamp)?.set(product)?.addOnCompleteListener {
                                     task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.
@@ -349,7 +360,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
             // 수정인 경우
             if(btnUpload.text.equals("수정")) {
-                var map = mutableMapOf<String,Any>()
+                var map = mutableMapOf<String?,Any?>()
                 map["productName"] = pName
                 map["category"] = pCate
                 map["categoryHobby"] = pCateHobby
@@ -360,6 +371,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 map["deposit"] = pDeposit
                 map["rentalFee"] = pRental
+
+                map["region"] = geopoint
 
                 if(imageChange) {
                     // 사진첩에 들어갔을 경우. 사진을 바꿀 경우 imageChange가 true가 됨
@@ -452,10 +465,12 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         val SEOUL = LatLng(37.52487, 126.92723)
+        /*
         val markerOptions = MarkerOptions()
         markerOptions.position(SEOUL)
         markerOptions.title("서울")
         markerOptions.snippet("한국의 수도")
+         */
         //mMap!!.addMarker(markerOptions)
 
 
@@ -466,12 +481,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 15f))
 
-        var marker: Marker? = null
 
         mMap!!.setOnMapClickListener { latLng ->
             // 마크가 하나만 생기도록 함.
             marker?.remove()
             marker = mMap!!.addMarker(MarkerOptions().position(latLng))
+            Toast.makeText(applicationContext, marker?.position?.latitude.toString()+","+marker?.position?.longitude.toString(), Toast.LENGTH_SHORT).show()
+            geopoint = GeoPoint(marker!!.position.latitude,marker!!.position.longitude)
         }
     }
 

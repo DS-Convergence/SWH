@@ -87,7 +87,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 tv_prodCategoryHobby.text = product?.categoryHobby
                 tv_status.text = product?.status
                 tv_user.text = product?.userName
-                tv_uesrLocation.text = product?.region.toString()
+                //tv_uesrLocation.text = product?.region.toString()
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
