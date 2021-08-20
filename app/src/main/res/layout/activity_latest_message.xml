@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:background="@color/oat_yellow"
         app:layout_constraintTop_toTopOf="parent">
         <!--back 버튼 textview로 구현-->
@@ -20,20 +20,21 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="20dp"
+            android:paddingTop="15dp"
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
-            android:textSize="50sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="60dp"
-            android:paddingTop="13dp"
+            android:paddingTop="16dp"
             android:paddingBottom="15dp"
             android:text="채팅목록"
             android:textColor="@color/mocha_brown"
-            android:textSize="30sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +48,7 @@
             android:gravity="right"
             android:id="@+id/latest_message_more_users"
             android:textColor="@color/mocha_brown"
-            android:textSize="15sp" />
+            android:textSize="12sp" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

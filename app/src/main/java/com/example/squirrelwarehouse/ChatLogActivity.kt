@@ -20,8 +20,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
-import kotlinx.android.synthetic.main.activity_chat_log.back_btn
 import kotlinx.android.synthetic.main.activity_chat_log_more.*
+import kotlinx.android.synthetic.main.activity_latest_message.*
 import kotlinx.android.synthetic.main.activity_my_page.*
 import kotlinx.android.synthetic.main.activity_new_message.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -40,7 +40,6 @@ import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.coroutines.coroutineContext
 
 
 class ChatLogActivity : AppCompatActivity() {
@@ -67,11 +66,12 @@ class ChatLogActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
 
-        back_btn.setOnClickListener {
+        back_btn_chatting.setOnClickListener {
             finish()
         }
 
-        recyclerView_chat_log.adapter = adapter //새로운 object를 add할 수 있게 해주고 그럴 때마다 새롭게 refresh해줌.
+
+        recyclerView_chat_log_activity.adapter = adapter //새로운 object를 add할 수 있게 해주고 그럴 때마다 새롭게 refresh해줌.
 
         //ProductDetailActivity에서 데이터 받아오기
         firestore = FirebaseFirestore.getInstance()
@@ -89,8 +89,8 @@ class ChatLogActivity : AppCompatActivity() {
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
 
-                    chat_log_textview_productname_up.setText(product?.productName)
-                    chat_log_textview_username.setText(product?.userName)
+                    chat_log_textview_productname.setText(product?.productName)
+                    chat_log_activity_textview_username.setText(product?.userName)
                     //userid = product?.userId.toString()
                     prodUserId = product?.userId.toString()
                 }
@@ -108,7 +108,7 @@ class ChatLogActivity : AppCompatActivity() {
         //fetchCurrentUser() //지금 currentUser setting하는 메소드인데 이부분 다시 찾아보기.
         //보내기 버튼 누리면 보내지게
 
-        camera_chat_log_more.setOnClickListener {
+        chat_log_camera_chat_log_more.setOnClickListener {
             //이미지 불러오기기(갤러리 접근)
             //왜 이 화면에서 이 코드가 실행이 안될까...
             val intent = Intent(Intent.ACTION_PICK)
@@ -116,13 +116,13 @@ class ChatLogActivity : AppCompatActivity() {
             startActivityForResult(intent, 1) //PICK_IMAGE에는 본인이 원하는 상수넣으면된다.
         }
 
-        send_button_chat_log.setOnClickListener {
+        chat_log_send_button_chat_log.setOnClickListener {
             Log.d(TAG, " Attempt to send message.....")
             performSendMessage() // 새로운 메소드. 어떻게 firebase의 메세지를 보낼지
         }
 
 
-        qr_button_chat_log.setOnClickListener {
+        qr_button.setOnClickListener {
             //ChatLogMore띄울때 정보 같이 넘겨주기
             val intent = Intent(this, ChatLogMoreActivity::class.java)
             intent.putExtra("userId1", prodUserId) //빌려주는 사람_게시글 올린 사람_QR코드 띄우기
@@ -143,7 +143,6 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     //갤러리에서 이미지 가져와서 채팅창에 띄우기
-    //아직 미완성
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1) {
@@ -201,7 +200,7 @@ class ChatLogActivity : AppCompatActivity() {
                             Log.d("CHECK", "chatImage올림 referece는 "+ reference)
                             Log.d(ChatLogListActivity.TAG, "Saved our chat message: ${reference.key}")
                             //editText_chat_log.text.clear() //보내면 내용 지우기
-                            recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+                            recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
                         }
                     toReference.setValue(chatImage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
                     Log.d("CHECK", "chatImage올림 toreferece는 "+ toReference)
@@ -332,7 +331,7 @@ class ChatLogActivity : AppCompatActivity() {
 
                                 }
                             }}
-                        recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1)
+                        recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1)
                     }
 
                     override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
@@ -354,7 +353,7 @@ class ChatLogActivity : AppCompatActivity() {
 
     private fun performSendMessage() {
         //how do we actually send a messaage to firebase
-        val text = editText_chat_log.text.toString() //우리가 쓴 메세지를 text로 얻어와
+        val text = editText_chat_logg.text.toString() //우리가 쓴 메세지를 text로 얻어와
 
         val fromId = FirebaseAuth.getInstance().uid //나는 보내는 사람이니까 from
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
@@ -384,8 +383,8 @@ class ChatLogActivity : AppCompatActivity() {
         reference.setValue(chatMessage)
             .addOnSuccessListener {
                 Log.d(TAG, "Saved our chat message: ${reference.key}")
-                editText_chat_log.text.clear() //보내면 내용 지우기
-                recyclerView_chat_log.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+                editText_chat_logg.text.clear() //보내면 내용 지우기
+                recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
             }
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 

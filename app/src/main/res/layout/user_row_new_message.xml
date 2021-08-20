@@ -18,15 +18,15 @@
         android:fontFamily="@font/goyang"
         android:text="유저이름"
         android:textColor="#7D3C02"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView_new_message"
         app:layout_constraintTop_toTopOf="@+id/imageView_new_message" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_new_message"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -39,14 +39,13 @@
 
     <TextView
         android:id="@+id/chat_log_textview_productname"
-        android:layout_width="130dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/goyang"
-        android:gravity="center_horizontal"
         android:text="물건 이름"
         android:textColor="#7D3C02"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/username_textview_new_message"
         app:layout_constraintStart_toEndOf="@+id/username_textview_new_message"
         app:layout_constraintTop_toTopOf="@+id/username_textview_new_message"
@@ -60,7 +59,7 @@
         android:fontFamily="@font/goyang"
         android:text="마지막 채팅 내용"
         android:textColor="#7D3C02"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/username_textview_new_message"
         app:layout_constraintTop_toBottomOf="@+id/username_textview_new_message" />
 </androidx.constraintlayout.widget.ConstraintLayout>

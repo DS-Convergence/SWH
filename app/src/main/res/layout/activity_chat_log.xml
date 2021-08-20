@@ -10,52 +10,53 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:background="@color/oat_yellow"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-10dp">
         <!--back 버튼 textview로 구현-->
         <TextView
-            android:id="@+id/back_btn"
+            android:id="@+id/back_btn_chatting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="20dp"
+            android:paddingTop="15dp"
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
-            android:textSize="50sp" />
+            android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/chat_log_textview_username"
+            android:id="@+id/chat_log_activity_textview_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="60dp"
-            android:paddingTop="13dp"
+            android:paddingTop="16dp"
             android:paddingBottom="15dp"
             android:text="유저이름"
             android:textColor="@color/mocha_brown"
-            android:textSize="30sp" />
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/chat_log_textview_productname_up"
+            android:id="@+id/chat_log_textview_productname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
-            android:paddingLeft="180dp"
-            android:paddingTop="24dp"
-            android:paddingBottom="15dp"
+            android:paddingLeft="240dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="13dp"
             android:text="물건이름"
             android:textColor="@color/tawny_brown"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
     </FrameLayout>
 
 
     <EditText
-        android:id="@+id/editText_chat_log"
+        android:id="@+id/editText_chat_logg"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="5dp"
@@ -65,18 +66,17 @@
         android:hint="Enter Message"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
-
-        app:layout_constraintStart_toEndOf="@+id/qr_button_chat_log"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView_chat_log" />
+        app:layout_constraintEnd_toStartOf="@+id/chat_log_send_button_chat_log"
+        app:layout_constraintStart_toEndOf="@+id/qr_button"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_chat_log_activity" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_chat_log"
+        android:id="@+id/recyclerView_chat_log_activity"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#F6F2F1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/editText_chat_log"
+        app:layout_constraintBottom_toTopOf="@+id/editText_chat_logg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,39 +85,39 @@
 
 
     <ImageButton
-        android:id="@+id/camera_chat_log_more"
+        android:id="@+id/chat_log_camera_chat_log_more"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="3dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/qr_button_chat_log"
+        app:layout_constraintBottom_toBottomOf="@+id/qr_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/qr_button_chat_log"
+        app:layout_constraintTop_toTopOf="@+id/qr_button"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gallery" />
 
     <ImageButton
-        android:id="@+id/qr_button_chat_log"
+        android:id="@+id/qr_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:scaleType="fitCenter"
         app:backgroundTint="#BC9F83"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
-        app:layout_constraintStart_toEndOf="@+id/camera_chat_log_more"
-        app:layout_constraintTop_toTopOf="@+id/editText_chat_log"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_logg"
+        app:layout_constraintStart_toEndOf="@+id/chat_log_camera_chat_log_more"
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_logg"
+        app:layout_constraintVertical_bias="0.722"
         app:srcCompat="@drawable/more_dots" />
 
     <ImageButton
-        android:id="@+id/send_button_chat_log"
+        android:id="@+id/chat_log_send_button_chat_log"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:scaleType="fitCenter"
         android:layout_marginEnd="3dp"
         app:backgroundTint="#BC9F83"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_log"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_chat_logg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText_chat_log"
+        app:layout_constraintTop_toTopOf="@+id/editText_chat_logg"
         app:srcCompat="@drawable/send"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
