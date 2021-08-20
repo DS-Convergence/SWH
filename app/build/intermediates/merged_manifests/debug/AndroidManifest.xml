@@ -93,6 +93,7 @@
             android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
             android:theme="@style/Transparent" />
         <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
+        <activity android:name="com.example.squirrelwarehouse.ChatLogPictureMoreActivity" />
         <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
         <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
             <meta-data

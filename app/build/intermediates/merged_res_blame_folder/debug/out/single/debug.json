@@ -372,6 +372,10 @@
         "source": "D:\\GradProject2\\SWH\\app\\src\\main\\res\\drawable\\acorn.png"
     },
     {
+        "merged": "D:\\GradProject2\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_image_row.xml.flat",
+        "source": "D:\\GradProject2\\SWH\\app\\src\\main\\res\\layout\\chat_image_row.xml"
+    },
+    {
         "merged": "D:\\GradProject2\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_white.png.flat",
         "source": "D:\\GradProject2\\SWH\\app\\src\\main\\res\\drawable\\heart_white.png"
     },
@@ -398,6 +402,10 @@
     {
         "merged": "D:\\GradProject2\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_swh_icon_foreground.png.flat",
         "source": "D:\\GradProject2\\SWH\\app\\src\\main\\res\\mipmap-xxhdpi\\swh_icon_foreground.png"
+    },
+    {
+        "merged": "D:\\GradProject2\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_log_picture_more.xml.flat",
+        "source": "D:\\GradProject2\\SWH\\app\\src\\main\\res\\layout\\activity_chat_log_picture_more.xml"
     },
     {
         "merged": "D:\\GradProject2\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_report.xml.flat",

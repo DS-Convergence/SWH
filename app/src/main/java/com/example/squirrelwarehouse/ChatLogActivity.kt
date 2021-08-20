@@ -616,4 +616,36 @@ class ChatLogActivity : AppCompatActivity() {
             return R.layout.chat_image_to_row
         }
     }
+
+    class ChatImageItem(val chatImage: ChatImage, val user: UserModelFS?) : Item<ViewHolder>() {
+        //text받아와서 뛰우기
+        //access to view holder
+        private var firestore : FirebaseFirestore? = null
+        private var storage : FirebaseStorage? = FirebaseStorage.getInstance()
+
+        private lateinit var auth: FirebaseAuth
+
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            //viewHolder.itemView.textView_to_row.text = chatmessage!!.text
+            var photoUri: Uri? = null
+            photoUri = Uri.parse(chatImage!!.imageuri)
+            Log.d("listenForMessages Test" , "chatImage!!.Imageuri " + chatImage!!.imageuri)
+            //Picasso.get().load(photoUri).into(viewHolder.itemView.imageImage_to_row)
+
+            var storageReff = storage?.reference?.child("chatting")?.child(chatImage.imageuri)
+
+            Log.d("listenForMessages Test", "storageReff : " + storageReff)
+            storageReff?.downloadUrl?.addOnSuccessListener { uri ->
+                Log.d("listenForMessages Test" , "storageReff 안으로 들어옴")
+                Log.d("listenForMessages Test" , "chatImage!!.Imageuri " + chatImage.imageuri)
+                Log.d("listenForMessages Test" , "uri " +uri)
+            }
+
+        }
+
+
+        override fun getLayout(): Int {
+            return R.layout.chat_image_row
+        }
+    }
 }
