@@ -56,18 +56,54 @@ class ChatLogListActivity : AppCompatActivity() {
         }
 
         recyclerView_chat_log_activity.adapter = adapter //새로운 object를 add할 수 있게 해주고 그럴 때마다 새롭게 refresh해줌.
+        toUser = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
 
+        /*
         // 이부분 해결, 사진 누르면 새로운 창 뜨게
         adapter.setOnItemClickListener { item,view->
-            val intent = Intent(this, ChatLogListActivity::class.java)
+            Log.d("newcheck","누른거 확인")
+            val intent = Intent(this, ChatLogPictureMoreActivity::class.java)
             //we are missing the caht partner user
-            val row = item as LatestMessageRow
-            intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
-            Log.d("TEST","view.chat_log_textview_productname" + item.chatMessage.id)
+            /*
+            val row = item as ChatImageItem
+            Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
+            Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
+            intent.putExtra("chatimage", row.chatImage.imageuri)
+            startActivityForResult(intent, 0)
+            */
+            Log.d("newcheck", " item.id : " +  item.id)
+            Log.d("newcheck", " item.layout : " +  item.layout)
 
-            intent.putExtra("prod", item.chatMessage.id)
-            startActivity(intent)
-        }
+            try{
+                val row = item as ChatImageToItem}catch (e:NumberFormatException){
+                if ((item as ChatImageFromItem).chatImage != null) {
+                    val row = item as ChatImageFromItem
+                    Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
+                    Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
+                    intent.putExtra("chatimage", row.chatImage.toString())
+                    startActivityForResult(intent, 0)
+                }
+                }
+            try{
+                if((item as ChatImageToItem).user!!.uid == toUser!!.uid) {
+                    if ((item as ChatImageToItem).chatImage != null) {
+                        val row = item as ChatImageToItem
+                        Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
+                        Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
+                        intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                        startActivityForResult(intent, 0)
+                    }
+                }
+            }catch (e:NumberFormatException){
+                if ((item as ChatImageFromItem).chatImage != null) {
+                    val row = item as ChatImageFromItem
+                    Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
+                    Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
+                    intent.putExtra("chatimage", row.chatImage.toString())
+                    startActivityForResult(intent, 0)
+                }
+            }
+        }*/
 
 
         //상단 바이름 설정
@@ -607,4 +643,36 @@ class ChatLogListActivity : AppCompatActivity() {
             return R.layout.chat_image_to_row
         }
     }
+
+    class ChatImageItem(val chatImage: ChatImage, val user: UserModelFS?) : Item<ViewHolder>() {
+        //text받아와서 뛰우기
+        //access to view holder
+        private var firestore : FirebaseFirestore? = null
+        private var storage : FirebaseStorage? = FirebaseStorage.getInstance()
+
+        private lateinit var auth: FirebaseAuth
+
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            //viewHolder.itemView.textView_to_row.text = chatmessage!!.text
+            var photoUri: Uri? = null
+            photoUri = Uri.parse(chatImage!!.imageuri)
+            Log.d("listenForMessages Test" , "chatImage!!.Imageuri " + chatImage!!.imageuri)
+            //Picasso.get().load(photoUri).into(viewHolder.itemView.imageImage_to_row)
+
+            var storageReff = storage?.reference?.child("chatting")?.child(chatImage.imageuri)
+
+            Log.d("listenForMessages Test", "storageReff : " + storageReff)
+            storageReff?.downloadUrl?.addOnSuccessListener { uri ->
+                Log.d("listenForMessages Test" , "storageReff 안으로 들어옴")
+                Log.d("listenForMessages Test" , "chatImage!!.Imageuri " + chatImage.imageuri)
+                Log.d("listenForMessages Test" , "uri " +uri)
+            }
+
+        }
+
+        override fun getLayout(): Int {
+            return R.layout.chat_image_row
+        }
+    }
+
 }

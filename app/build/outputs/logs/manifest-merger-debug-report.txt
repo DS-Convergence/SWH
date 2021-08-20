@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
 MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\45c25c5adf6ac716c7fbb14b50f8c636\jetified-camerakit-0.13.1\AndroidManifest.xml:2:1-27:12
 MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\d62f432c1af40e6880cb754c1bb8a965\jetified-tensorflow-lite-2.6.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5ac095bc27153d1bf34614b11ea4b371\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
@@ -76,9 +76,9 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\rladm\.gradle\cache
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\d1991d3b6bbf1d981bd5904c8dac7049\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\e100a95c05d84d114a846d9a71459157\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\36d143d4231c83e760f708dc998e96e2\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
-INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
+INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12
 	package
 		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:4:5-44
 		INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml
@@ -146,7 +146,7 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\rladm\.g
 	android:required
 		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:16:9-32
 application
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:18:5-285:19
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:18:5-286:19
 MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\45c25c5adf6ac716c7fbb14b50f8c636\jetified-camerakit-0.13.1\AndroidManifest.xml:25:5-20
 MERGED from [com.wonderkiln:camerakit:0.13.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\45c25c5adf6ac716c7fbb14b50f8c636\jetified-camerakit-0.13.1\AndroidManifest.xml:25:5-20
 MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\d62f432c1af40e6880cb754c1bb8a965\jetified-tensorflow-lite-2.6.0\AndroidManifest.xml:10:5-20
@@ -283,88 +283,92 @@ activity#com.example.squirrelwarehouse.ChatLogListActivity
 ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:66:9-57
 	android:name
 		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:66:19-54
+activity#com.example.squirrelwarehouse.ChatLogPictureMoreActivity
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:9-63
+	android:name
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:19-60
 activity#com.example.squirrelwarehouse.ChatLogMoreQRActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:9-59
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:9-59
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:67:19-56
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:19-56
 activity#com.example.squirrelwarehouse.ChatLogActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:9-72:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:69:9-73:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:68:19-50
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:69:19-50
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:69:13-71:58
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:70:13-72:58
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:71:17-55
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:72:17-55
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:70:17-63
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:71:17-63
 activity#com.example.squirrelwarehouse.NewMessageActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:73:9-56
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:74:9-56
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:73:19-53
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:74:19-53
 activity#com.example.squirrelwarehouse.LatestMessageActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:74:9-82:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:75:9-83:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:74:19-56
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:75:19-56
 activity#com.example.squirrelwarehouse.SplashActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:83:9-89:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:84:9-90:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:83:19-49
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:84:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:84:13-88:29
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:85:13-89:29
 action#android.intent.action.MAIN
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:85:17-69
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:86:17-69
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:85:25-66
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:86:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:87:17-77
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:88:17-77
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:87:27-74
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:88:27-74
 activity#com.example.squirrelwarehouse.ReportActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:90:9-52
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:91:9-52
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:90:19-49
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:91:19-49
 activity#com.example.squirrelwarehouse.UserEvaluationActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:91:9-93:50
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:92:9-94:50
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:93:13-47
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:94:13-47
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:92:13-51
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:93:13-51
 activity#com.example.squirrelwarehouse.PrivacyActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:94:9-53
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:95:9-53
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:94:19-50
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:95:19-50
 activity#com.example.squirrelwarehouse.DeleteAccountActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:95:9-59
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:96:9-59
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:95:19-56
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:96:19-56
 activity#com.example.squirrelwarehouse.SetLocationInformationActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:96:9-68
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:97:9-68
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:96:19-65
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:97:19-65
 activity#com.example.squirrelwarehouse.ProductFormActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:97:9-105:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:98:9-106:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:97:19-54
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:98:19-54
 activity#com.example.squirrelwarehouse.ProductDetailActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:106:9-114:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:107:9-115:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:106:19-56
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:107:19-56
 activity#com.example.squirrelwarehouse.ProductRentalQRActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:115:9-61
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:116:9-61
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:115:19-58
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:116:19-58
 activity#com.example.squirrelwarehouse.ProductRentalCameraActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:116:9-65
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:117:9-65
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:116:19-62
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:117:19-62
 activity#com.journeyapps.barcodescanner.CaptureActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:117:9-120:49
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:118:9-121:49
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:47:9-53:63
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:47:9-53:63
 	android:clearTaskOnLaunch
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
 	android:screenOrientation
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:119:13-51
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:120:13-51
 		REJECTED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:50:13-56
 	android:stateNotNeeded
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
@@ -373,65 +377,65 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradl
 	android:theme
 		ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
 	tools:replace
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:120:13-46
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:121:13-46
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:118:13-74
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:119:13-74
 activity#com.example.squirrelwarehouse.ProductDetailSubmenuActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:121:9-123:50
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:122:9-124:50
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:123:13-47
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:124:13-47
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:122:13-57
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:123:13-57
 activity#com.example.squirrelwarehouse.UpdateMoreActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:124:9-56
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:125:9-56
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:124:19-53
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:125:19-53
 activity#com.example.squirrelwarehouse.MainPageActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:125:9-130:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:126:9-131:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:125:19-51
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:126:19-51
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:126:13-128:29
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:127:13-129:29
 action#android.intent.action.SEARCH
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:127:17-71
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:128:17-71
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:127:25-68
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:128:25-68
 activity#com.example.squirrelwarehouse.SearchResult
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:131:9-135:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:132:9-136:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:131:19-47
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:132:19-47
 meta-data#android.app.default_searchable
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:132:13-134:53
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:133:13-135:53
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:134:17-50
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:135:17-50
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:133:17-62
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:134:17-62
 activity#com.example.squirrelwarehouse.MainMore
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:136:9-46
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:137:9-46
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:136:19-43
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:137:19-43
 activity#com.example.squirrelwarehouse.FilteringResult
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:137:9-53
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:138:9-53
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:137:19-50
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:138:19-50
 activity#com.example.squirrelwarehouse.NoticeActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:138:9-52
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:139:9-52
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:138:19-49
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:139:19-49
 activity#com.example.squirrelwarehouse.MainSettingsActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:139:9-58
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:140:9-58
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:139:19-55
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:140:19-55
 activity#com.example.squirrelwarehouse.ItemLoc
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:140:9-45
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:141:9-45
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:140:19-42
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:141:19-42
 activity#com.example.squirrelwarehouse.MainActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:141:9-149:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:142:9-150:20
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:141:19-47
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:142:19-47
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:151:9-189:19
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:152:9-190:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
@@ -453,239 +457,239 @@ MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\rladm\.gradle
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:154:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:155:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:37:13-32
 	android:directBootAware
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:153:13-43
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:154:13-43
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:152:13-84
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:153:13-84
 meta-data#com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:155:13-157:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:156:13-158:85
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\cc663184c548d003322c34310e900829\jetified-firebase-storage-ktx-19.2.1\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:157:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:158:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:156:17-122
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:157:17-122
 meta-data#com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:158:13-160:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:159:13-161:85
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5ceb8684cb5792152f591324995fceac\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:160:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:161:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:159:17-124
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:160:17-124
 meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:161:13-163:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:162:13-164:85
 MERGED from [com.google.firebase:firebase-firestore-ktx:22.1.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\81461a89661eabfaf22381d6aa539168\jetified-firebase-firestore-ktx-22.1.1\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-firestore-ktx:22.1.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\81461a89661eabfaf22381d6aa539168\jetified-firebase-firestore-ktx-22.1.1\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:163:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:164:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:162:17-126
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:163:17-126
 meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:164:13-166:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:165:13-167:85
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5a10703dd14304c718430301e1889383\jetified-firebase-auth-ktx-20.0.3\AndroidManifest.xml:11:13-13:85
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\5a10703dd14304c718430301e1889383\jetified-firebase-auth-ktx-20.0.3\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:166:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:167:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:165:17-116
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:166:17-116
 meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:167:13-169:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:168:13-170:85
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ce888931d247ec920165f8a6a12cfa5c\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ce888931d247ec920165f8a6a12cfa5c\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:169:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:170:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:168:17-113
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:169:17-113
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:170:13-172:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:171:13-173:85
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:172:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:173:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:171:17-109
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:172:17-109
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:173:13-175:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:174:13-176:85
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\90edf88e273712c4c84862ce5d5f14fe\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\90edf88e273712c4c84862ce5d5f14fe\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:175:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:176:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:174:17-111
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:175:17-111
 meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:176:13-178:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:177:13-179:85
 MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\31daf8d401b40fad4c78277bdd2dce3c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\31daf8d401b40fad4c78277bdd2dce3c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:178:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:179:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:177:17-107
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:178:17-107
 meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:179:13-181:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:180:13-182:85
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13d0b9c4688124b7e64f8eed605b7aaf\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13d0b9c4688124b7e64f8eed605b7aaf\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:181:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:182:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:180:17-109
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:181:17-109
 meta-data#com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:186:13-188:85
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:187:13-189:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:188:17-82
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:189:17-82
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:187:17-121
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:188:17-121
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:190:9-194:75
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:191:9-195:75
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:192:13-46
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:193:13-46
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:193:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:194:13-37
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:194:13-72
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:195:13-72
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:191:13-93
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:192:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:199:9-203:51
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:200:9-204:51
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\2e9918d50ebc8e08b27430d10112c6c2\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:201:13-36
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:202:13-36
 	android:visibleToInstantApps
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:203:13-48
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:204:13-48
 	android:permission
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:202:13-107
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:203:13-107
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:200:13-89
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:201:13-89
 provider#com.squareup.picasso.PicassoProvider
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:205:9-208:40
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:206:9-209:40
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\da17b9d4638cf424e51e3f21159a9299\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\da17b9d4638cf424e51e3f21159a9299\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:207:13-85
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:208:13-85
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:208:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:209:13-37
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:206:13-64
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:207:13-64
 activity#com.google.firebase.auth.internal.GenericIdpActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:210:9-227:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:211:9-228:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
 	android:excludeFromRecents
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:212:13-46
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:213:13-46
 	android:launchMode
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:214:13-44
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:215:13-44
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:213:13-36
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:214:13-36
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:215:13-72
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:216:13-72
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:211:13-80
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:212:13-80
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:216:13-226:29
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:217:13-227:29
 action#android.intent.action.VIEW
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:217:17-69
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:218:17-69
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:217:25-66
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:218:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:219:17-76
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:220:17-76
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:219:27-73
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:220:27-73
 category#android.intent.category.BROWSABLE
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:220:17-78
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:221:17-78
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:220:27-75
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:221:27-75
 data
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:222:17-225:51
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:223:17-226:51
 	android:path
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:224:21-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:225:21-37
 	android:host
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:223:21-49
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:224:21-49
 	android:scheme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:225:21-48
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:226:21-48
 activity#com.google.firebase.auth.internal.RecaptchaActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:228:9-245:20
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:229:9-246:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
 	android:excludeFromRecents
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:230:13-46
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:231:13-46
 	android:launchMode
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:232:13-44
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:233:13-44
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:231:13-36
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:232:13-36
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:233:13-72
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:234:13-72
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:229:13-79
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:230:13-79
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:234:13-244:29
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:235:13-245:29
 service#com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:247:9-256:19
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:248:9-257:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\70a6f1a74256c6cb65aeba2fb52e930b\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
 	android:enabled
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:249:13-35
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:250:13-35
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:250:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:251:13-37
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:248:13-101
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:249:13-101
 intent-filter#action:name:com.google.firebase.auth.api.gms.service.START+category:name:android.intent.category.DEFAULT
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:251:13-255:29
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:252:13-256:29
 action#com.google.firebase.auth.api.gms.service.START
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:252:17-89
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:253:17-89
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:252:25-86
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:253:25-86
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:258:9-263:39
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:259:9-264:39
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\ae2f92689330c0b3f959376548f2eea6\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 	android:authorities
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:260:13-85
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:261:13-85
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:262:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:263:13-37
 	android:directBootAware
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:261:13-43
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:262:13-43
 	android:initOrder
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:263:13-36
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:264:13-36
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:259:13-77
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:260:13-77
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:265:9-268:75
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:266:9-269:75
 MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\83a2b513ad1ea0501f85c2b220895c31\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\83a2b513ad1ea0501f85c2b220895c31\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:267:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:268:13-37
 	android:theme
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:268:13-72
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:269:13-72
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:266:13-79
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:267:13-79
 meta-data#com.google.android.gms.version
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:270:9-272:69
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:271:9-273:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\c7f14acf436a5ef303781d2cf847eb74\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\c7f14acf436a5ef303781d2cf847eb74\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:272:13-66
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:273:13-66
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:271:13-58
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:272:13-58
 uses-library#com.google.android.maps
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:274:9-64
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:275:9-64
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:274:23-61
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:275:23-61
 uses-library#org.apache.http.legacy
-ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:279:9-281:40
+ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:280:9-282:40
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\46569f595e4576bc17dbbdb47aed5368\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\46569f595e4576bc17dbbdb47aed5368\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 	android:required
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:281:13-37
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:282:13-37
 	android:name
-		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:280:13-50
+		ADDED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:281:13-50
 uses-sdk
 INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml
@@ -888,7 +892,7 @@ ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\rladm\.gradle\caches\trans
 	android:name
 		ADDED from [com.wonderkiln:camerakit:0.13.1] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\45c25c5adf6ac716c7fbb14b50f8c636\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-287:12 reason: com.wonderkiln.camerakit.core requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\GradProject2\SWH\app\src\main\AndroidManifest.xml:2:1-288:12 reason: com.wonderkiln.camerakit.core requested WRITE_EXTERNAL_STORAGE
 uses-feature#android.hardware.camera.flash
 ADDED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\rladm\.gradle\caches\transforms-2\files-2.1\13b57433122e758b6ba76a2228d41637\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
 	android:required
