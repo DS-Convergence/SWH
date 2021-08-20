@@ -18,7 +18,9 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.activity_chat_log.*
 import kotlinx.android.synthetic.main.activity_latest_message.*
+import kotlinx.android.synthetic.main.activity_latest_message.back_btn
 import kotlinx.android.synthetic.main.user_row_new_message.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import kotlin.collections.HashMap
@@ -38,7 +40,10 @@ class LatestMessageActivity : AppCompatActivity() {
         //recyclerview_latest_messages.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL)) //구분선
         //클릭하면 (최근 메세지) 채팅으로 들어가게
         //set item click listener on your adapter
-
+        back_btn.setOnClickListener {
+            //뒤로가기 버튼
+            finish()
+        }
         latest_message_more_users.setOnClickListener {
             val intent = Intent(this, NewMessageActivity::class.java)
             startActivity(intent) //NewMessageActivity창 뜸.
