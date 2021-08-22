@@ -119,8 +119,8 @@ class ChatLogMoreActivity : AppCompatActivity() {
                 try {
                     //data를 json으로 변환
                     val obj = JSONObject(result.contents)
-                    var user1 = obj.getString("user1")
-                    var user2 = obj.getString("user2")
+                    var user1 = obj.getString("user1") //물건 주인
+                    var user2 = obj.getString("user2") //대여 원하는 사람
                     var productId = obj.getString("productId")
                     var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
 
@@ -150,6 +150,8 @@ class ChatLogMoreActivity : AppCompatActivity() {
 
                                                 // 반납이 완료되면 평점 페이지로 이동
                                                 val intent = Intent(this, UserEvaluationActivity::class.java)
+                                                intent.putExtra("user1",user1)
+                                                intent.putExtra("user2",user2)
                                                 startActivity(intent)
                                             }
                                         }

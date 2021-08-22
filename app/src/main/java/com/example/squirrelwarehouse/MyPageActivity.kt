@@ -36,6 +36,7 @@ class MyPageActivity : AppCompatActivity() {
             nickname = doc?.data?.get("nickname").toString()
             uri = doc?.data?.get("userProPic").toString()
             id_sign_up_txt.text = nickname
+            rating_txt.text = doc?.data?.get("rating").toString()
             var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)
