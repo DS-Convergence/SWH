@@ -24,8 +24,8 @@ class ProductRentalQRActivity : AppCompatActivity() {
         setContentView(R.layout.product_rental_qr)
 
         var intent = intent
-        var user1 = intent.getStringExtra("userId1").toString()
-        var user2 = intent.getStringExtra("userId2").toString()
+        var user1 = intent.getStringExtra("userId1").toString() //물건 주인
+        var user2 = intent.getStringExtra("userId2").toString() //대여원하는 사람
         var prodId = intent.getStringExtra("productId").toString()
 
         var firestore = FirebaseFirestore.getInstance()
@@ -64,6 +64,8 @@ class ProductRentalQRActivity : AppCompatActivity() {
                     var rtime= rental?.returnTime // 그냥 이 데이터가 있는 지 알면, 이게 처음 찍는게 아니라는 것을 의미.
                     if(rtime != null) {
                         val intent = Intent(this@ProductRentalQRActivity, UserEvaluationActivity::class.java)
+                        intent.putExtra("user1",user1)
+                        intent.putExtra("user2",user2)
                         startActivityForResult(intent, 0)
                     }
                     else {
