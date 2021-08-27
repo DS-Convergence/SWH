@@ -76,6 +76,11 @@ class MainPageActivity : AppCompatActivity() {
         })
 
 
+        // 파워람쥐 뷰페이저 구현
+        val vpAdapter = MainViewpagerAdapter()
+        VPpoweruser.adapter = vpAdapter
+
+
 
         // 메인페이지 물품 보기
         // TODO: 메인페이지 리사이클러뷰 내용 넣기
