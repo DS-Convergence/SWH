@@ -63,7 +63,8 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/asparagus_green"
         android:fontFamily="@font/goyang"
-        android:gravity="center|start|center_vertical"
+        android:gravity="left|center_vertical"
+        android:layout_gravity="center"
         android:text="나는 어떤 취미와 잘 어울릴까?"
         android:textSize="23sp"/>
 
