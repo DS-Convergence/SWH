@@ -4,7 +4,7 @@ data class UserModelFS (
         var uid : String? = null,
         var email : String? = null,
         var nickname : String? = null,
-        var location : String? = null,
+        var introduce : String? = null,
         var rating : Float? = 0.0F,
         var ratingCnt : Int? = 0,
         var userProPic : String? = null){}
