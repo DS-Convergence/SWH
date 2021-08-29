@@ -83,6 +83,43 @@ class ChatLogActivity : AppCompatActivity() {
         touserid = intent.getStringExtra("UserId").toString()
 
 
+        // 이부분 해결, 사진 누르면 새로운 창 뜨게
+        adapter.setOnItemClickListener { item,view->
+            Log.d("newcheck","누른거 확인")
+            val intent = Intent(this, ChatLogPictureMoreActivity::class.java)
+            try{
+                val row = item as ChatLogActivity.ChatImageToItem
+            }catch (e:Exception){
+                try{
+                    if ((item as ChatLogActivity.ChatImageFromItem).chatImage != null) {
+                        val row = item as ChatLogActivity.ChatImageFromItem
+                        Log.d("newcheck", "ChatImageFromItem chatImage는 null이 아닌것 확인 성공")
+                        Log.d("newcheck", "ChatImageFromItem row.chatImage.toString() : " + row.chatImage.toString())
+
+                        intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                        Log.d("newcheck", "ChatImageFromItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
+                        startActivityForResult(intent, 0)
+                        Log.d("newcheck", "ChatImageFromItem 넘김")
+                    }
+                }catch (e:Exception){}
+
+            }
+            try{
+                    if ((item as ChatLogActivity.ChatImageToItem).chatImage != null) {
+                        val row = item as ChatLogActivity.ChatImageToItem
+                        Log.d("newcheck", "ChatImageToItem chatImage는 null이 아닌것 확인 성공")
+                        Log.d("newcheck", "ChatImageToItem row.chatImage.toString() : " + row.chatImage.toString())
+                        intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                        Log.d("newcheck", "ChatImageToItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
+                        startActivityForResult(intent, 0)
+                        Log.d("newcheck", "ChatImageToItem 넘김")
+                    }
+
+            }catch (e:Exception){
+            }
+        }
+
+
         if (prod != null) {
             firestore?.collection("Product")?.document(prod!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                     task ->
