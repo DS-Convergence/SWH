@@ -58,7 +58,7 @@ class ChatLogListActivity : AppCompatActivity() {
         recyclerView_chat_log_activity.adapter = adapter //새로운 object를 add할 수 있게 해주고 그럴 때마다 새롭게 refresh해줌.
         toUser = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
 
-        /*
+
         // 이부분 해결, 사진 누르면 새로운 창 뜨게
         adapter.setOnItemClickListener { item,view->
             Log.d("newcheck","누른거 확인")
@@ -75,35 +75,36 @@ class ChatLogListActivity : AppCompatActivity() {
             Log.d("newcheck", " item.layout : " +  item.layout)
 
             try{
-                val row = item as ChatImageToItem}catch (e:NumberFormatException){
-                if ((item as ChatImageFromItem).chatImage != null) {
-                    val row = item as ChatImageFromItem
-                    Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
-                    Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
-                    intent.putExtra("chatimage", row.chatImage.toString())
-                    startActivityForResult(intent, 0)
-                }
+                val row = item as ChatImageToItem}catch (e:Exception){
+                    try{
+                        if ((item as ChatImageFromItem).chatImage != null) {
+                            val row = item as ChatImageFromItem
+                            Log.d("newcheck", "ChatImageFromItem chatImage는 null이 아닌것 확인 성공")
+                            Log.d("newcheck", "ChatImageFromItem row.chatImage.toString() : " + row.chatImage.toString())
+
+                            intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                            Log.d("newcheck", "ChatImageFromItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
+                            startActivityForResult(intent, 0)
+                            Log.d("newcheck", "ChatImageFromItem 넘김")
+                        }
+                    }catch (e:Exception){}
+
                 }
             try{
                 if((item as ChatImageToItem).user!!.uid == toUser!!.uid) {
                     if ((item as ChatImageToItem).chatImage != null) {
                         val row = item as ChatImageToItem
-                        Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
-                        Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
+                        Log.d("newcheck", "ChatImageToItem chatImage는 null이 아닌것 확인 성공")
+                        Log.d("newcheck", "ChatImageToItem row.chatImage.toString() : " + row.chatImage.toString())
                         intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                        Log.d("newcheck", "ChatImageToItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
                         startActivityForResult(intent, 0)
+                        Log.d("newcheck", "ChatImageToItem 넘김")
                     }
                 }
-            }catch (e:NumberFormatException){
-                if ((item as ChatImageFromItem).chatImage != null) {
-                    val row = item as ChatImageFromItem
-                    Log.d("newcheck", "chatImage는 null이 아닌것 확인 성공")
-                    Log.d("newcheck", "row.chatImage.toString() : " + row.chatImage.toString())
-                    intent.putExtra("chatimage", row.chatImage.toString())
-                    startActivityForResult(intent, 0)
-                }
+            }catch (e:Exception){
             }
-        }*/
+        }
 
 
         //상단 바이름 설정

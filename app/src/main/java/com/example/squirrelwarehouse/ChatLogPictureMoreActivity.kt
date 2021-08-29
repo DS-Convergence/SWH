@@ -23,7 +23,7 @@ class ChatLogPictureMoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat_log_picture_more)
         var intent = intent
         var chatimageuri = intent.getStringExtra("chatimage").toString()
-
+        Log.d("newcheck" , "ChatLogPictureMoreActivity 안으러 들어옴")
         var firestore = FirebaseFirestore.getInstance()
 
         var storage : FirebaseStorage? = FirebaseStorage.getInstance()
@@ -38,11 +38,11 @@ class ChatLogPictureMoreActivity : AppCompatActivity() {
         //Picasso.get().load(photoUri).into(viewHolder.itemView.imageImageView_from_row)
         var storageReff = storage?.reference?.child("chatting")?.child(chatimageuri)
         //var storageRef = storage?.reference?.child("chatting")?.child(imgFileName)
-        Log.d("listenForMessages Test", "storageReff" + storageReff)
+        Log.d("newcheck", "storageReff" + storageReff)
         storageReff?.downloadUrl?.addOnSuccessListener { uri ->
-            Log.d("listenForMessages Test" , "storageReff 안으러 들어옴")
-            Log.d("listenForMessages Test" , "chatImage!!.Imageuri " + chatimageuri)
-            Log.d("listenForMessages Test" , "uri " +uri)
+            Log.d("newcheck" , "storageReff 안으러 들어옴")
+            Log.d("newcheck" , "chatImage!!.Imageuri " + chatimageuri)
+            Log.d("newcheck" , "uri " +uri)
             Picasso.get().load(uri).into(image_more_bigger_than_before)
         }
 
