@@ -17,7 +17,7 @@ class UserInfoActivity : AppCompatActivity() {
     var storage : FirebaseStorage?=null
     var uid : String? = null
     var nickname : String? = null
-    var location : String? = null
+    var introduce : String? = null
     var rating : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,11 +47,11 @@ class UserInfoActivity : AppCompatActivity() {
 
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
             nickname = doc?.data?.get("nickname").toString()
-            location = doc?.data?.get("location").toString()
+            introduce = doc?.data?.get("introduce").toString()
             rating = doc?.data?.get("rating").toString()
             usernickname_txt.text = nickname
             user_writing_list_tv.text = nickname + " 님의 게시글"
-            userlocation_txt.text = location
+            userintroduce_txt.text = introduce
             userrating_txt.text = rating
             var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->

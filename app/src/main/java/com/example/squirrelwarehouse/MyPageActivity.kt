@@ -18,8 +18,8 @@ class MyPageActivity : AppCompatActivity() {
     private var firestore : FirebaseFirestore? = null
     var uid : String? = null
     var nickname : String?= null
+    var introduce : String? = null
     var storage : FirebaseStorage?=null
-    var uri : String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
@@ -34,9 +34,10 @@ class MyPageActivity : AppCompatActivity() {
         uid = auth.currentUser?.uid
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
             nickname = doc?.data?.get("nickname").toString()
-            uri = doc?.data?.get("userProPic").toString()
+            introduce = doc?.data?.get("introduce").toString()
             id_sign_up_txt.text = nickname
             rating_txt.text = doc?.data?.get("rating").toString()
+            introduce_txt.text = introduce
             var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)

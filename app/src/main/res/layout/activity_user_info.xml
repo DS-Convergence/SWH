@@ -57,7 +57,7 @@
         android:textColor="@color/mocha_brown"
         android:text="닉네임"/>
     <TextView
-        android:id="@+id/userlocation_txt"
+        android:id="@+id/userintroduce_txt"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
@@ -67,7 +67,7 @@
         android:gravity="center"
         android:textSize="20sp"
         android:textColor="@color/mocha_brown"
-        android:text="위치"/>
+        android:text="한 줄 소개"/>
     <!--받아올때 두개를 한번에 받아오기?-->
     <TextView
         android:id="@+id/userrating_txt"
@@ -94,15 +94,17 @@
         android:background="@color/oat_yellow"
         android:textColor="@color/mocha_brown"
         android:text="  OOO 님의 게시글"/>
+
     <ScrollView
-        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp">
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="380dp"
-            android:id="@+id/user_listview" />
+            android:layout_marginTop="380dp" />
     </ScrollView>
 
     <ImageView

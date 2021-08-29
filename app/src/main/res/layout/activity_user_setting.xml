@@ -40,8 +40,9 @@
         </FrameLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/propic_img"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"
             android:src="@drawable/blank_profile_picture" />
@@ -51,7 +52,7 @@
             android:id="@+id/email_edit_tv"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="300dp"
             android:padding="10dp"
             android:fontFamily="@font/goyang"
             android:layout_gravity="center_horizontal"
@@ -64,6 +65,20 @@
             android:id="@+id/nick_edit_tv"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:padding="10dp"
+            android:fontFamily="@font/goyang"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@color/grey"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:text="닉네임"/>
+        <EditText
+            android:id="@+id/introduce_edit_tv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="400dp"
             android:padding="10dp"
             android:fontFamily="@font/goyang"
@@ -71,8 +86,9 @@
             android:gravity="center"
             android:background="@color/grey"
             android:textSize="20sp"
+            android:maxLines="1"
             android:textColor="@color/black"
-            android:text="닉네임"/>
+            android:text="한 줄 소개"/>
 
         <!-- 비밀 번호 변경과 닉네임 변경을 분리하기 -->
         <EditText
@@ -86,6 +102,7 @@
             android:gravity="center"
             android:background="@color/grey"
             android:textSize="20sp"
+            android:maxLines="1"
             android:textColor="@color/black"
             android:hint="새 비밀번호(6자리이상)"/>
         <EditText
@@ -107,7 +124,7 @@
             android:id="@+id/edit_setting_btn"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center_horizontal|bottom"
             android:gravity="center"
             android:text="설정"
