@@ -96,8 +96,10 @@ class SignUpActivity : AppCompatActivity() {
                                 if(task.isSuccessful) {
                                     Log.v("Favorite","Success")
 
-                                    var map = mutableMapOf<String,Int>()
-                                    var st = StayTime(map)
+                                    // StayTime 컬렉션 생성
+                                    var map = mutableMapOf<String,Int>() // 물건 본 시간 원데이터
+                                    var map2 = mutableMapOf<String,Int>() // 변환한 데이터
+                                    var st = StayTime(map, map2)
                                     firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.set(st).addOnCompleteListener {
                                         task ->
                                         if(task.isSuccessful) {
