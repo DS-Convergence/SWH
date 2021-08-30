@@ -16,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.product_detail.*
 import java.text.SimpleDateFormat
+import kotlin.math.ln
 
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -346,15 +347,38 @@ class ProductDetailActivity : AppCompatActivity() {
 
                 var staytime = task.result.toObject(StayTime::class.java)
                 var stmap = (staytime?.products as Map<String,Int>).toMutableMap()
+                var trmap = (staytime?.transform as Map<String,Int>).toMutableMap()
                 if(stmap.containsKey(prod)) { // 이미 있는 물건, 즉 이미 본 물건이라면 본 시간을 업데이트
                     stmap[prod] = stmap.get(prod)!!.toInt() + (total/1000).toInt()
                 }
                 else { // 처음보는 물건은 그냥 추가
-                    stmap.put(prod, (total/1000).toInt())
+                    if((total/1000).toInt() >= 1)   // 1초이상인 경우에만 데이터베이스에 넣기
+                        stmap.put(prod, (total/1000).toInt())
                 }
 
                 var map = mutableMapOf<String,Any>()
                 map["products"] = stmap
+
+
+                // 원데이터를 로그변환하는 코드
+                if(stmap.containsKey(prod)) { // 원데이터가 있는 경우에만, 1이상인 경우에만 변환적용
+                    trmap[prod] = ln(stmap.get(prod)!!.toDouble()).toInt()
+                    map["transform"] = trmap
+                }
+
+
+                /*
+                // 로그변환 위한 코드임. 일시적으로 필요한 코드. 사용 후 삭제
+                var trans = mutableMapOf<String,Int>()
+                for(p in stmap) {
+                    trans.put(p.key, ln(p.value.toDouble()).toInt())
+                    Log.v("trans",p.key + " " + ln(p.value.toDouble()).toInt())
+                }
+
+                map["transform"] = trans
+                // 사용후 삭제
+                */
+
 
                 firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
                     task ->
