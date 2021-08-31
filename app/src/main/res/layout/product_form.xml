@@ -258,7 +258,7 @@
                     android:text="원" />
             </LinearLayout>
 
-
+<!--
             <CheckBox
                 android:id="@+id/cb_location"
                 android:layout_width="match_parent"
@@ -267,12 +267,22 @@
                 android:text="희망 거래 위치"
                 android:textColor="@color/mocha_brown"
                 android:textSize="18sp" />
+-->
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/goyang"
+                android:text="희망 거래 위치"
+                android:textColor="@color/mocha_brown"
+                android:textSize="18sp" />
 
             <com.example.squirrelwarehouse.TouchFrameLayout
                 android:id="@+id/layout_map"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
+                android:layout_height="match_parent">
 
                 <fragment
                     android:id="@+id/map"

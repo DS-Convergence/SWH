@@ -107,7 +107,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         cbRentalFee = findViewById(R.id.cb_rentalFee)
         cbDeposit = findViewById(R.id.cb_deposit)
-        cbLocation = findViewById(R.id.cb_location)
+        //cbLocation = findViewById(R.id.cb_location)
 
         map = findViewById(R.id.layout_map)
         img = findViewById(R.id.img)
@@ -120,7 +120,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         val btnBack : TextView = findViewById(R.id.back_btn)
         val btnImg : Button = findViewById(R.id.btn_img)
 
-        val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        //val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // 스피너. 물건 카테고리
         spCategory = findViewById(R.id.sp_category)
@@ -224,7 +224,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             if(isChecked) etDeposit.isEnabled = true
             else etDeposit.isEnabled = false
         }
-
+/*
         // 위치 체크박스가 체크되어야 지도 보임.
         cbLocation.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) {
@@ -278,7 +278,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
         lm.removeUpdates(gpsLocationListener)
-
+*/
         // 뒤로가기 버튼
         btnBack.setOnClickListener() {
             finish()
@@ -312,6 +312,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var imgFileName = "IMAGE_" + timeStamp + "_.jpg"
             var storageRef = storage?.reference?.child("product")?.child(imgFileName)
 
+
+            // 물건이름, 카테고리, 지도 입력 안돼있으면 업로드 불가.
+            // if문 필요함.
 
             // 처음 올리는 경우. 즉 수정이 아닌 경우
             if(btnUpload.text.equals("업로드")) {
@@ -489,6 +492,54 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             Toast.makeText(applicationContext, marker?.position?.latitude.toString()+","+marker?.position?.longitude.toString(), Toast.LENGTH_SHORT).show()
             geopoint = GeoPoint(marker!!.position.latitude,marker!!.position.longitude)
         }
+
+
+        // 현재 위치 받아오기
+        val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        val isGPSEnabled: Boolean = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+        val isNetworkEnabled: Boolean = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+        //매니페스트에 권한이 추가되어 있다해도 여기서 다시 한번 확인해야함
+        if (Build.VERSION.SDK_INT >= 23 &&
+                ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this@ProductFormActivity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 0)
+        } else {
+            when { //프로바이더 제공자 활성화 여부 체크
+                isNetworkEnabled -> {
+                    val location =
+                            lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) //인터넷기반으로 위치를 찾음
+                    getLongitude = location?.longitude!!
+                    getLatitude = location.latitude
+                    Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                    mMap!!.isMyLocationEnabled = true
+
+                }
+                isGPSEnabled -> {
+                    val location =
+                            lm.getLastKnownLocation(LocationManager.GPS_PROVIDER) //GPS 기반으로 위치를 찾음
+                    getLongitude = location?.longitude!!
+                    getLatitude = location.latitude
+                    Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                    mMap!!.isMyLocationEnabled = true
+                }
+                else -> {
+                }
+            }
+            //몇초 간격과 몇미터를 이동했을시에 호출되는 부분 - 주기적으로 위치 업데이트를 하고 싶다면 사용
+            // ****주기적 업데이트를 사용하다가 사용안할시에는 반드시 해제 필요****
+            /*lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+                    1000, //몇초
+                    1F,   //몇미터
+                    gpsLocationListener)
+            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+                    1000,
+                    1F,
+                    gpsLocationListener)
+            //해제부분. 상황에 맞게 잘 구현하자
+            lm.removeUpdates(gpsLocationListener)*/
+
+        }
+        lm.removeUpdates(gpsLocationListener)
     }
 
     val gpsLocationListener = object : LocationListener {
