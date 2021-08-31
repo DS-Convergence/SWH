@@ -18,7 +18,7 @@ class MainViewpagerAdapter : PagerAdapter() {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view= LayoutInflater.from(container.context).inflate(R.layout.main_viewpager,container,false)
         view.nameTV.text = "유저 "+position
-        view.detailTV.text = "유저"+position+"의 한줄설명"
+        view.detailTV.text = "유저 "+position+"의 한줄설명"
         view.thumb.setImageResource(R.drawable.logo)
         container.addView(view)
         return view

@@ -3,6 +3,8 @@ package com.example.squirrelwarehouse
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +32,13 @@ class MainPageActivity : AppCompatActivity() {
     private var firestore = FirebaseFirestore.getInstance()
     private var storage = FirebaseStorage.getInstance()
     private lateinit var auth: FirebaseAuth
+
+    private var bnnPosition = 0
+
+    val handler = Handler(Looper.getMainLooper()) {
+        setpager()
+        true
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +88,9 @@ class MainPageActivity : AppCompatActivity() {
         // 파워람쥐 뷰페이저 구현
         val vpAdapter = MainViewpagerAdapter()
         VPpoweruser.adapter = vpAdapter
+
+        val thread=Thread(PagerRunnable())
+        thread.start()
 
 
 
@@ -551,11 +563,26 @@ class MainPageActivity : AppCompatActivity() {
          */
     }
 
-
-
     private fun searchItem(query: String) {
         var intent = Intent(this, SearchResult::class.java)
         startActivityForResult(intent, 0)
+    }
+
+    // 배너 페이지 변경
+    fun setpager() {
+        if(bnnPosition==3) bnnPosition=0
+        VPpoweruser.setCurrentItem(bnnPosition,true)
+        bnnPosition+=1
+    }
+
+    // n초마다 배너 넘기기
+    inner class PagerRunnable : Runnable {
+        override fun run() {
+            while(true){
+                Thread.sleep(1500)
+                handler.sendEmptyMessage(0)
+            }
+        }
     }
 
     fun dataInArray(): ArrayList<HashMap<String, String>> {
