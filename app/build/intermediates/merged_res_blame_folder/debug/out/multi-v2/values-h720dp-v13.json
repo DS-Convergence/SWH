@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< Updated upstream
             "outputFile": "C:\\AndroidP\\SWH\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\LeeYeEun\\.gradle\\caches\\transforms-2\\files-2.1\\e0378f8c1d3117da05875ab00019a56c\\appcompat-1.2.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+=======
+            "outputFile": "C:\\Users\\ADMIN\\gitWorkStation\\SWH\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ADMIN\\.gradle\\caches\\transforms-2\\files-2.1\\e0378f8c1d3117da05875ab00019a56c\\appcompat-1.2.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
