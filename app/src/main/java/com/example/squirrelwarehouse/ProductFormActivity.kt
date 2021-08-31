@@ -489,7 +489,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             // 마크가 하나만 생기도록 함.
             marker?.remove()
             marker = mMap!!.addMarker(MarkerOptions().position(latLng))
-            Toast.makeText(applicationContext, marker?.position?.latitude.toString()+","+marker?.position?.longitude.toString(), Toast.LENGTH_SHORT).show()
+            //Toast.makeText(applicationContext, marker?.position?.latitude.toString()+","+marker?.position?.longitude.toString(), Toast.LENGTH_SHORT).show()
             geopoint = GeoPoint(marker!!.position.latitude,marker!!.position.longitude)
         }
 
@@ -510,7 +510,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) //인터넷기반으로 위치를 찾음
                     getLongitude = location?.longitude!!
                     getLatitude = location.latitude
-                    Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
                     mMap!!.isMyLocationEnabled = true
 
                 }
@@ -519,7 +519,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             lm.getLastKnownLocation(LocationManager.GPS_PROVIDER) //GPS 기반으로 위치를 찾음
                     getLongitude = location?.longitude!!
                     getLatitude = location.latitude
-                    Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
                     mMap!!.isMyLocationEnabled = true
                 }
                 else -> {

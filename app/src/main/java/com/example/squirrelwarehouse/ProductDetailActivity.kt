@@ -2,6 +2,8 @@ package com.example.squirrelwarehouse
 
 import android.app.Activity
 import android.content.Intent
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.product_detail.*
+import kotlinx.coroutines.internal.AddLastDesc
 import java.text.SimpleDateFormat
 import kotlin.math.ln
 
@@ -58,7 +61,7 @@ class ProductDetailActivity : AppCompatActivity() {
         tvTime = findViewById(R.id.tv_time)
         tvStatus = findViewById(R.id.tv_status)
         tvUser = findViewById(R.id.tv_user)
-        tvUserLocation = findViewById(R.id.tv_uesrLocation)
+        tvUserLocation = findViewById(R.id.tv_userLocation)
         tvProdDetail = findViewById(R.id.tv_prodDetail)
         tvDeposit = findViewById(R.id.tv_deposit)
         tvRentalfee = findViewById(R.id.tv_rentalfee)
@@ -88,7 +91,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 tv_prodCategoryHobby.text = product?.categoryHobby
                 tv_status.text = product?.status
                 tv_user.text = product?.userName
-                //tv_uesrLocation.text = product?.region.toString()
+                tv_userLocation.text = "위치 정보 없음"
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
@@ -100,6 +103,23 @@ class ProductDetailActivity : AppCompatActivity() {
                 var dateStr = sdf.format(date)
                 tv_time.text = dateStr
 
+                var geocoder = Geocoder(this)
+                var list : List<Address>? = null
+                if(product?.region != null)
+                    list = geocoder.getFromLocation(product!!.region!!.latitude, product!!.region!!.longitude, 10)
+
+                if(list != null) {
+                    if(list.size!=0) {
+                        // https://bitsoul.tistory.com/135 주소 참고
+                        //tv_userLocation.text = list.get(0).getAddressLine(0).toString()  // 주소 전체
+                        //tv_userLocation.text = list.get(0).adminArea.toString() + " " + list.get(0).locality.toString()+ " " + list.get(0).thoroughfare.toString()
+                        Log.v("region",list.get(0).getAddressLine(0).toString())
+                        Log.v("region",list.get(0).toString())
+
+                        var str = list.get(0).toString().split(" ")
+                        tv_userLocation.text = str[1] + " " + str[2] + " " + str[3]
+                    }
+                }
 
                 // 보증금
                 if(product?.deposit.equals("")) { // 체크가 안되어 있거나
