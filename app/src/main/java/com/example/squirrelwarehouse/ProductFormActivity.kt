@@ -337,7 +337,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                             // 나중에 timestamp 형식 바꿀일 있을 때 아래 링크 참고
                             // http://blog.naver.com/PostView.nhn?blogId=traeumen927&logNo=221493556497&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
                             // 책 210쪽 보고 수정하기
-                            var product = Product(userId,userName,pName, pCate, pCateHobby, pDetail, imgFileName, pDeposit, pRental, timeStamp, geopoint, "대여 전")
+                            var product = Product(userId,userName,pName, pCate, pCateHobby, pDetail, imgFileName, pDeposit, pRental, timeStamp, geopoint, "대여 전", 0)
                             firestore?.collection("Product")?.document(userId+"_"+timeStamp)?.set(product)?.addOnCompleteListener {
                                     task ->
                                 if(task.isSuccessful) { // Product 컬렉션에 성공적으로 삽입되었을 경우, 사진을 storage에 넣어야함.

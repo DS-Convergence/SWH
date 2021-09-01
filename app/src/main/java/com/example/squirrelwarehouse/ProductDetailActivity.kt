@@ -51,6 +51,8 @@ class ProductDetailActivity : AppCompatActivity() {
     private var stop: Long = 0
     private var total: Long = 0
 
+    var viewcount : Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
@@ -81,7 +83,6 @@ class ProductDetailActivity : AppCompatActivity() {
         val intent = intent
         prod = intent.getStringExtra("data").toString()
 
-
         firestore?.collection("Product")?.document(prod)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                 task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
@@ -95,6 +96,8 @@ class ProductDetailActivity : AppCompatActivity() {
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
+
+                viewcount = product?.view
 
                 // 시간 데이터 형식 변경
                 var sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
@@ -404,6 +407,19 @@ class ProductDetailActivity : AppCompatActivity() {
                     task ->
                     if(task.isSuccessful) {
                         Log.v("staytime","Update Success")
+
+                        // 조회수 증가. 물건 주인이 본 것은 카운트 x
+                        if(!auth.currentUser!!.uid.equals(userid)){  // 현재 유저와 물건 주인이 같지 않으면 카운트
+                            var map = mutableMapOf<String?,Any?>()
+                            map["view"] = viewcount!!.toInt() + 1
+                            firestore?.collection("Product")?.document(prod)?.update(map)?.addOnCompleteListener {
+                                    task ->
+                                if(task.isSuccessful) {
+                                    Log.v("viewcount","Update Success")
+                                }
+                            }
+                        }
+
                     }
                     else {
                         Log.v("staytime","Update Failed")
