@@ -7,9 +7,6 @@
     android:orientation="vertical"
     android:background="@color/rice_white">
 
-    <!--라운드버튼: 기본버튼 -> cornerradius=100dp, backgroundTint 설정-->
-
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
