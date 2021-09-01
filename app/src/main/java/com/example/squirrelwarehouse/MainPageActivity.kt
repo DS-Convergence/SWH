@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -35,6 +36,8 @@ class MainPageActivity : AppCompatActivity() {
 
     private var bnnPosition = 0
 
+    private var isFabOpen = false
+
     val handler = Handler(Looper.getMainLooper()) {
         setpager()
         true
@@ -65,9 +68,20 @@ class MainPageActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
-        var writeBtn = writeBtn
+        var floatingBtn = fabMain
+        floatingBtn.setOnClickListener {
+            toggleFab()
+        }
+
+        var writeBtn = fabWrite
         writeBtn.setOnClickListener {
             val intent = Intent(this, ProductFormActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
+        var mypageBtn = fabMyPage
+        mypageBtn.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
             startActivityForResult(intent, 0)
         }
 
@@ -568,6 +582,20 @@ class MainPageActivity : AppCompatActivity() {
         startActivityForResult(intent, 0)
     }
 
+    private fun toggleFab() {
+        if(isFabOpen) {
+            // FAB 액션 열기
+            ObjectAnimator.ofFloat(fabWrite, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(fabMyPage, "translationY", 0f).apply { start() }
+        } else {
+            // FAB 액션 닫기
+            ObjectAnimator.ofFloat(fabWrite, "translationY", -150f).apply { start() }
+            ObjectAnimator.ofFloat(fabMyPage, "translationY", -300f).apply { start() }
+        }
+
+        isFabOpen = !isFabOpen
+    }
+
     // 배너 페이지 변경
     fun setpager() {
         if(bnnPosition==3) bnnPosition=0
@@ -579,7 +607,7 @@ class MainPageActivity : AppCompatActivity() {
     inner class PagerRunnable : Runnable {
         override fun run() {
             while(true){
-                Thread.sleep(1500)
+                Thread.sleep(2000)
                 handler.sendEmptyMessage(0)
             }
         }
