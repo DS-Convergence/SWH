@@ -27,7 +27,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".RcmdMore"></activity>
+        <activity android:name=".PowerRamgiApplicationActivity"></activity>
+        <activity android:name=".RcmdMore" />
         <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
@@ -64,7 +65,7 @@
             android:name=".ChatLogMoreActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".ChatLogListActivity" />
-        <activity android:name="ChatLogPictureMoreActivity" />
+        <activity android:name=".ChatLogPictureMoreActivity" />
         <activity android:name=".ChatLogMoreQRActivity" />
         <activity android:name=".ChatLogActivity">
             <meta-data
@@ -94,7 +95,6 @@
             android:theme="@style/Transparent" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".DeleteAccountActivity" />
-        <activity android:name=".SetLocationInformationActivity" />
         <activity android:name=".ProductFormActivity">
 
             <!--
