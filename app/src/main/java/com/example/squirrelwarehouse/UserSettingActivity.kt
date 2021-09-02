@@ -51,6 +51,8 @@ class UserSettingActivity : AppCompatActivity() {
 
         }
         back_btn.setOnClickListener {
+            var intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
             finish()
         }
         edit_setting_btn.setOnClickListener {
