@@ -79,8 +79,8 @@ class MyPageActivity : AppCompatActivity() {
         back_btn.setOnClickListener {
             finish()
         }
-        set_location_btn.setOnClickListener {
-            val intent = Intent(this, SetLocationInformationActivity::class.java)
+        powerRamgi_btn.setOnClickListener {
+            val intent = Intent(this,PowerRamgiApplicationActivity::class.java)
             startActivity(intent)
         }
         logout_btn.setOnClickListener {

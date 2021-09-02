@@ -152,8 +152,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:text="   위치정보 설정"
-                    android:id="@+id/set_location_btn"
+                    android:text="   개인정보 정책"
+                    android:id="@+id/terms_btn"
                     android:gravity="center_vertical"
                     android:fontFamily="@font/goyang"
                     android:textColor="@color/mocha_brown"
@@ -188,15 +188,26 @@
         </ScrollView>
     </FrameLayout>
 
-    <!-- 이용약관 -->
+
     <ImageView
-        android:id="@+id/terms_btn"
+        android:id="@+id/powerRamgi_btn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="right"
         android:layout_marginRight="15dp"
         android:layout_marginTop="75dp"
-        app:srcCompat="@drawable/info" />
+        app:srcCompat="@drawable/logo" />
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="파워람쥐\n신청"
+        android:textSize="10sp"
+        android:textColor="@color/mocha_brown"
+        android:fontFamily="@font/goyang"/>
 
 
 
