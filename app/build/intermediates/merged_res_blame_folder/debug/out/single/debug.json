@@ -68,12 +68,12 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-hdpi\\swh_icon_round.png"
     },
     {
-        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
-        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_log_in.xml"
-    },
-    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_transaction_list.xml.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_transaction_list.xml"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_log_in.xml"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_colorback3round.xml.flat",
@@ -184,10 +184,6 @@
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\mipmap-mdpi\\swh_icon.png"
     },
     {
-        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_set_location_information.xml.flat",
-        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_set_location_information.xml"
-    },
-    {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\more.png"
     },
@@ -230,6 +226,10 @@
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\drawable_more_dots.png.flat",
         "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\drawable\\more_dots.png"
+    },
+    {
+        "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_power_ramgi_application.xml.flat",
+        "source": "D:\\gitWorkbench\\SWH\\app\\src\\main\\res\\layout\\activity_power_ramgi_application.xml"
     },
     {
         "merged": "D:\\gitWorkbench\\SWH\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_item_loc.xml.flat",

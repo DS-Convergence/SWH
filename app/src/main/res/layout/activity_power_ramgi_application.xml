@@ -32,5 +32,51 @@
             android:textColor="@color/mocha_brown"
             android:text="파워람쥐 신청"/>
     </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="70dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:fontFamily="@font/goyang"
+                android:paddingTop="20dp"
+                android:textSize="20sp"
+                android:text="전문적인 대여서비스를 이용하고 싶다면
+\n파워람쥐를 이용해보세요!"
+                android:textColor="@color/cinnamon_brown"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jsdongkang_regular"
+                android:padding = "30dp"
+                android:layout_marginTop="70dp"
+                android:textColor="@color/mocha_brown"
+                android:textSize="15sp"
+                android:text="파워람쥐 서비스는 보다 전문적인 대여를 위해 사용자의 계정을 상단에 노출하는 서비스 입니다.
+\n모든 신청자 분들의 계정을 상단 노출하는 것은 노출의 효과가 유의미하지 않을 뿐더러 전문적인 대여서비스를 하고자 하는 사용자인지를 구분할 수 없기 때문에 적합한 사용자 만을 상단에 노출하게 됩니다.
+\n\n기본적으로 가입한 기간, 현재 등록한 물품의 종류와 개수, 파워람쥐를 신청하는 이유 등을 종합적으로 판단하여 선정하게 됩니다.
+\n신청을 하루에 한번만 가능하며, 하루에 두분이상 신청을 하는 경우에는 중복 신청으로 선정에서 배제됩니다.
+\n\n선정되어 기간이 만료되면 자동으로 갱신되는 것이 아닌 다시 신청해야 하며, 이 경우에는 신청사유는 필요치 않으며 결격사유만 없다면 자동 선정됩니다."
+                />
+        </FrameLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/powerRamgi_submit_btn"
+        android:text="신청하기"
+        android:fontFamily="@font/goyang"
+        android:backgroundTint="@color/peanut_brown"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
 
 </FrameLayout>

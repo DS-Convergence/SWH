@@ -108,133 +108,133 @@
 57-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:27:9-32
 58        android:theme="@style/Theme.SquirrelWarehouse" >
 58-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:28:9-55
-59        <activity android:name="com.example.squirrelwarehouse.RcmdMore" />
-59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:9-55
-59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:19-43
-60        <activity android:name="com.example.squirrelwarehouse.TransactionListActivity" />
-60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-61
-60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:19-58
-61        <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
-61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-60
-61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:19-57
-62        <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
-62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:9-52
-62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:19-49
-63
-64        <meta-data
-64-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:35:9-37:71
-65            android:name="com.google.android.geo.API_KEY"
-65-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:13-58
-66            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
-66-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:13-68
-67
-68        <activity android:name="com.example.squirrelwarehouse.TempActivity" >
-68-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:9-48:20
-68-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:19-47
-69
-70            <!--
-71            <intent-filter>
-72                <action android:name="android.intent.action.MAIN" />
-73
-74                <category android:name="android.intent.category.LAUNCHER" />
-75            </intent-filter>
-76            -->
-77        </activity>
-78        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
-78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:9-52
-78-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:19-49
-79        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
-79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-54
-79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-51
-80        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
-80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-57
-80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-54
-81        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
-81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-52
-81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-49
-82        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
-82-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-62:20
-82-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-48
-83
-84            <!--
-85            <intent-filter>
-86                <action android:name="android.intent.action.MAIN" />
-87
-88                <category android:name="android.intent.category.LAUNCHER" />
-89            </intent-filter>
-90            -->
-91        </activity>
-92        <activity
-92-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:63:9-65:50
-93            android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
-93-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:13-48
-94            android:theme="@style/Transparent" />
-94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-47
-95        <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
-95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:9-57
-95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:19-54
-96        <activity android:name="com.example.squirrelwarehouse.ChatLogPictureMoreActivity" />
-96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-63
-96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-60
-97        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
-97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-59
-97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-56
-98        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
-98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-73:20
-98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-50
-99            <meta-data
-99-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:13-72:58
-100                android:name="android.support.PARENT_ACTIVITY"
-100-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:17-63
-101                android:value=".LatestMessageActivity" />
-101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:72:17-55
-102        </activity>
-103        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity" />
-103-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:9-56
-103-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:19-53
-104        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
-104-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:9-83:20
-104-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:19-56
-105
-106            <!--
-107            <intent-filter>
-108                <action android:name="android.intent.action.MAIN" />
-109                <category android:name="android.intent.category.LAUNCHER" />
-110            </intent-filter>
-111            -->
-112        </activity>
-113        <activity android:name="com.example.squirrelwarehouse.SplashActivity" >
-113-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:9-90:20
-113-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:19-49
-114            <intent-filter>
-114-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:13-89:29
-115                <action android:name="android.intent.action.MAIN" />
-115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:17-69
-115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:25-66
-116
-117                <category android:name="android.intent.category.LAUNCHER" />
-117-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:17-77
-117-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:27-74
-118            </intent-filter>
-119        </activity>
-120        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
-120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:9-52
-120-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:19-49
-121        <activity
-121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-94:50
-122            android:name="com.example.squirrelwarehouse.UserEvaluationActivity"
-122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:13-51
-123            android:theme="@style/Transparent" />
-123-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:13-47
-124        <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
-124-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:9-53
-124-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:19-50
-125        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:9-59
-125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:19-56
-126        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
-126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:9-68
-126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:19-65
+59        <activity android:name="com.example.squirrelwarehouse.PowerRamgiApplicationActivity" />
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:9-76
+59-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:19-64
+60        <activity android:name="com.example.squirrelwarehouse.RcmdMore" />
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-46
+60-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:19-43
+61        <activity android:name="com.example.squirrelwarehouse.TransactionListActivity" />
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-61
+61-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:19-58
+62        <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
+62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:9-60
+62-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:19-57
+63        <activity android:name="com.example.squirrelwarehouse.MyListActivity" />
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:9-52
+63-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:19-49
+64
+65        <meta-data
+65-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:9-38:71
+66            android:name="com.google.android.geo.API_KEY"
+66-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:13-58
+67            android:value="AIzaSyCYOxK9NQsty3XveGp_ZIYPEtymlbTAM-E" />
+67-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:38:13-68
+68
+69        <activity android:name="com.example.squirrelwarehouse.TempActivity" >
+69-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:9-49:20
+69-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:19-47
+70
+71            <!--
+72            <intent-filter>
+73                <action android:name="android.intent.action.MAIN" />
+74
+75                <category android:name="android.intent.category.LAUNCHER" />
+76            </intent-filter>
+77            -->
+78        </activity>
+79        <activity android:name="com.example.squirrelwarehouse.MyPageActivity" />
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-52
+79-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-49
+80        <activity android:name="com.example.squirrelwarehouse.UserInfoActivity" />
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-54
+80-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-51
+81        <activity android:name="com.example.squirrelwarehouse.UserSettingActivity" />
+81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-57
+81-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-54
+82        <activity android:name="com.example.squirrelwarehouse.SignUpActivity" />
+82-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-52
+82-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-49
+83        <activity android:name="com.example.squirrelwarehouse.LogInActivity" >
+83-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:9-63:20
+83-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:19-48
+84
+85            <!--
+86            <intent-filter>
+87                <action android:name="android.intent.action.MAIN" />
+88
+89                <category android:name="android.intent.category.LAUNCHER" />
+90            </intent-filter>
+91            -->
+92        </activity>
+93        <activity
+93-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:9-66:50
+94            android:name="com.example.squirrelwarehouse.ChatLogMoreActivity"
+94-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-48
+95            android:theme="@style/Transparent" />
+95-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:13-47
+96        <activity android:name="com.example.squirrelwarehouse.ChatLogListActivity" />
+96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-57
+96-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-54
+97        <activity android:name="com.example.squirrelwarehouse.ChatLogPictureMoreActivity" />
+97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-64
+97-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-61
+98        <activity android:name="com.example.squirrelwarehouse.ChatLogMoreQRActivity" />
+98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-59
+98-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-56
+99        <activity android:name="com.example.squirrelwarehouse.ChatLogActivity" >
+99-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:9-74:20
+99-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:19-50
+100            <meta-data
+100-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:13-73:58
+101                android:name="android.support.PARENT_ACTIVITY"
+101-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:72:17-63
+102                android:value=".LatestMessageActivity" />
+102-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:73:17-55
+103        </activity>
+104        <activity android:name="com.example.squirrelwarehouse.NewMessageActivity" />
+104-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:9-56
+104-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:19-53
+105        <activity android:name="com.example.squirrelwarehouse.LatestMessageActivity" >
+105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:76:9-84:20
+105-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:76:19-56
+106
+107            <!--
+108            <intent-filter>
+109                <action android:name="android.intent.action.MAIN" />
+110                <category android:name="android.intent.category.LAUNCHER" />
+111            </intent-filter>
+112            -->
+113        </activity>
+114        <activity android:name="com.example.squirrelwarehouse.SplashActivity" >
+114-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:9-91:20
+114-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:19-49
+115            <intent-filter>
+115-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:13-90:29
+116                <action android:name="android.intent.action.MAIN" />
+116-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:17-69
+116-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:25-66
+117
+118                <category android:name="android.intent.category.LAUNCHER" />
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:89:17-77
+118-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:89:27-74
+119            </intent-filter>
+120        </activity>
+121        <activity android:name="com.example.squirrelwarehouse.ReportActivity" />
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-52
+121-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:19-49
+122        <activity
+122-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:9-95:50
+123            android:name="com.example.squirrelwarehouse.UserEvaluationActivity"
+123-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:13-51
+124            android:theme="@style/Transparent" />
+124-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:13-47
+125        <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
+125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:9-53
+125-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:19-50
+126        <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
+126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:9-59
+126-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:19-56
 127        <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
 127-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:98:9-106:20
 127-->D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:98:19-54

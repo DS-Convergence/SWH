@@ -227,124 +227,124 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\se
 		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
 		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:28:9-55
+activity#com.example.squirrelwarehouse.PowerRamgiApplicationActivity
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:9-76
+	android:name
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:19-64
 activity#com.example.squirrelwarehouse.RcmdMore
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:9-55
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-46
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:30:19-43
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:19-43
 activity#com.example.squirrelwarehouse.TransactionListActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:9-61
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-61
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:31:19-58
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:19-58
 activity#com.example.squirrelwarehouse.MyFavoriteListActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:9-60
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:9-60
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:32:19-57
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:19-57
 activity#com.example.squirrelwarehouse.MyListActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:9-52
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:9-52
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:33:19-49
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:34:19-49
 meta-data#com.google.android.geo.API_KEY
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:35:9-37:71
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:9-38:71
 	android:value
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:13-68
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:38:13-68
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:36:13-58
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:37:13-58
 activity#com.example.squirrelwarehouse.TempActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:9-48:20
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:9-49:20
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:39:19-47
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:40:19-47
 activity#com.example.squirrelwarehouse.MyPageActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:9-52
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-52
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:49:19-49
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-49
 activity#com.example.squirrelwarehouse.UserInfoActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:9-54
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-54
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:50:19-51
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-51
 activity#com.example.squirrelwarehouse.UserSettingActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:9-57
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-57
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:51:19-54
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-54
 activity#com.example.squirrelwarehouse.SignUpActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:9-52
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-52
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:52:19-49
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-49
 activity#com.example.squirrelwarehouse.LogInActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:9-62:20
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:9-63:20
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:53:19-48
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:54:19-48
 activity#com.example.squirrelwarehouse.ChatLogMoreActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:63:9-65:50
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:9-66:50
 	android:theme
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-47
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:13-47
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:64:13-48
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:65:13-48
 activity#com.example.squirrelwarehouse.ChatLogListActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:9-57
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-57
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:66:19-54
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-54
 activity#com.example.squirrelwarehouse.ChatLogPictureMoreActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:9-63
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-64
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:67:19-60
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-61
 activity#com.example.squirrelwarehouse.ChatLogMoreQRActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:9-59
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-59
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:68:19-56
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-56
 activity#com.example.squirrelwarehouse.ChatLogActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:9-73:20
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:9-74:20
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:69:19-50
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:19-50
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:70:13-72:58
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:13-73:58
 	android:value
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:72:17-55
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:73:17-55
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:71:17-63
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:72:17-63
 activity#com.example.squirrelwarehouse.NewMessageActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:9-56
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:9-56
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:74:19-53
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:19-53
 activity#com.example.squirrelwarehouse.LatestMessageActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:9-83:20
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:76:9-84:20
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:75:19-56
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:76:19-56
 activity#com.example.squirrelwarehouse.SplashActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:9-90:20
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:9-91:20
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:84:19-49
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:85:13-89:29
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:13-90:29
 action#android.intent.action.MAIN
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:17-69
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:17-69
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:86:25-66
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:87:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:17-77
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:89:17-77
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:88:27-74
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:89:27-74
 activity#com.example.squirrelwarehouse.ReportActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:9-52
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-52
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:91:19-49
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:19-49
 activity#com.example.squirrelwarehouse.UserEvaluationActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:92:9-94:50
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:9-95:50
 	android:theme
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:13-47
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:13-47
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:93:13-51
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:94:13-51
 activity#com.example.squirrelwarehouse.PrivacyActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:9-53
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:9-53
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:95:19-50
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:19-50
 activity#com.example.squirrelwarehouse.DeleteAccountActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:9-59
+ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:9-59
 	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:96:19-56
-activity#com.example.squirrelwarehouse.SetLocationInformationActivity
-ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:9-68
-	android:name
-		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:19-65
+		ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:97:19-56
 activity#com.example.squirrelwarehouse.ProductFormActivity
 ADDED from D:\gitWorkbench\SWH\app\src\main\AndroidManifest.xml:98:9-106:20
 	android:name
