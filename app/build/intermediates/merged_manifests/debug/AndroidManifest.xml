@@ -56,6 +56,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse" >
+        <activity android:name="com.example.squirrelwarehouse.PowerRamgiApplicationActivity" />
         <activity android:name="com.example.squirrelwarehouse.RcmdMore" />
         <activity android:name="com.example.squirrelwarehouse.TransactionListActivity" />
         <activity android:name="com.example.squirrelwarehouse.MyFavoriteListActivity" />
@@ -123,7 +124,6 @@
             android:theme="@style/Transparent" />
         <activity android:name="com.example.squirrelwarehouse.PrivacyActivity" />
         <activity android:name="com.example.squirrelwarehouse.DeleteAccountActivity" />
-        <activity android:name="com.example.squirrelwarehouse.SetLocationInformationActivity" />
         <activity android:name="com.example.squirrelwarehouse.ProductFormActivity" >
 
             <!--
