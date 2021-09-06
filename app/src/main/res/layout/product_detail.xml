@@ -10,40 +10,39 @@
     <FrameLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/oat_yellow">
         <!--back 버튼 textview로 구현-->
         <TextView
             android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:fontFamily="@font/goyang"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
-            android:textSize="50sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tv_bar_prodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:fontFamily="@font/goyang"
-            android:paddingLeft="60dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="15dp"
             android:text="물건 이름"
             android:textColor="@color/mocha_brown"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/btn_submenu"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
             android:gravity="center"
             android:text="···"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
         <!-- 얘는 visible 속성 사용해서 없애고 만들고 하면 될듯 함. -->
 
 
@@ -69,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginHorizontal="40dp"
                     android:layout_marginVertical="10dp"
                     android:background="@color/white"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -80,7 +79,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="40dp"
                     android:background="#00000000"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/siren" />
@@ -106,7 +105,7 @@
                     android:fontFamily="@font/jsdongkang_regular"
                     android:text="물건이름"
                     android:textColor="@color/mocha_brown"
-                    android:textSize="28sp" />
+                    android:textSize="25sp" />
                 <!-- textsize 30sp > 28sp 변경 -->
 
                 <TextView
@@ -118,7 +117,7 @@
                     android:paddingTop="3dp"
                     android:text="카테고리명"
                     android:textColor="@color/mocha_brown"
-                    android:textSize="15sp" />
+                    android:textSize="13sp" />
                 <!-- textsize 13sp > 15sp 변경 -->
 
                 <TextView
@@ -130,7 +129,7 @@
                     android:paddingTop="3dp"
                     android:text="시간"
                     android:textColor="@color/mocha_brown"
-                    android:textSize="13sp" />
+                    android:textSize="11sp" />
                 <!-- textsize 10sp > 13sp 변경 -->
 
                 <TextView
@@ -162,8 +161,8 @@
                     android:layout_alignParentEnd="false"
                     android:layout_toRightOf="@id/tv_prodName"
                     android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="거래상태" />
+                    android:text="거래상태"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -171,10 +170,13 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_prodName"
                     android:layout_toRightOf="@id/tv_prodCategory"
+                    android:fontFamily="@font/jsdongkang_regular"
                     android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
                     android:paddingRight="5dp"
                     android:text="|"
-                    android:textColor="@color/mocha_brown" />
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tv_prodCategoryHobby"
@@ -182,8 +184,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_prodName"
                     android:layout_toRightOf="@id/textView6"
+                    android:fontFamily="@font/jsdongkang_regular"
+                    android:paddingTop="3dp"
                     android:text="카테고리명2"
-                    android:textColor="@color/mocha_brown" />
+                    android:textColor="@color/mocha_brown"
+                    android:textSize="13sp" />
             </RelativeLayout>
 
             <View
@@ -202,7 +207,7 @@
                 android:padding="10dp"
                 android:text="상품 설명 글을 작성하시면 여기에 작성됩니다~~"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
     </ScrollView>
@@ -220,8 +225,8 @@
 
         <ImageButton
             android:id="@+id/btn_heart"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@id/btn_chat"
@@ -251,7 +256,7 @@
             android:fontFamily="@font/goyang"
             android:text="보증금 : 0000원"
             android:textColor="@color/mocha_brown"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_rentalfee"
@@ -261,7 +266,7 @@
             android:fontFamily="@font/goyang"
             android:text="대여료 : 0000원"
             android:textColor="@color/mocha_brown"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
         <!-- textsize 20sp > 25sp 변경 -->
     </RelativeLayout>
 

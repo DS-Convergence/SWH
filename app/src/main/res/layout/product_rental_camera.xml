@@ -47,7 +47,7 @@
         android:gravity="center"
         android:text="대여/반납을 위해 \nQR코드를 인증해주세요."
         android:textColor="@color/mocha_brown"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/qr_reader_view"
