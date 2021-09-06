@@ -21,22 +21,22 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:background="@color/oat_yellow"
             android:padding="10dp">
 
             <ImageButton
                 android:id="@+id/gotomore"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="left|center_vertical"
                 android:background="@color/oat_yellow"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/more" />
 
             <ImageButton
-                android:layout_width="120dp"
-                android:layout_height="60dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="@color/oat_yellow"
                 android:scaleType="fitCenter"
@@ -44,8 +44,8 @@
 
             <ImageButton
                 android:id="@+id/gotochat"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:background="@color/oat_yellow"
                 android:foregroundTint="@color/mocha_brown"
@@ -56,7 +56,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="120dp">
 
             <SearchView
                 android:id="@+id/searchBar"
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            android:layout_marginTop="150dp">
+            android:layout_marginTop="120dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                         android:layout_marginLeft="15dp"
                         android:fontFamily="@font/goyang"
                         android:text="파워람쥐"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         android:textColor="@color/mocha_brown" />
 
                 <androidx.viewpager.widget.ViewPager
@@ -125,7 +125,7 @@
                         android:fontFamily="@font/goyang"
                         android:text="최근 업데이트"
                         android:textColor="@color/mocha_brown"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         tools:layout_editor_absoluteX="1dp"
                         tools:layout_editor_absoluteY="0dp" />
 
@@ -172,7 +172,7 @@
                             android:fontFamily="@font/jsdongkang_regular"
                             android:text="물품명"
                             android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -201,7 +201,7 @@
                             android:fontFamily="@font/jsdongkang_regular"
                             android:text="물품명"
                             android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -230,7 +230,7 @@
                             android:fontFamily="@font/jsdongkang_regular"
                             android:text="물품명"
                             android:textColor="@color/mocha_brown"
-                            android:textSize="15sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -247,7 +247,7 @@
                         android:fontFamily="@font/goyang"
                         android:text="추천"
                         android:textColor="@color/mocha_brown"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         tools:layout_editor_absoluteX="1dp"
                         tools:layout_editor_absoluteY="0dp" />
 
@@ -364,7 +364,7 @@
                         android:fontFamily="@font/goyang"
                         android:text="카테고리"
                         android:textColor="@color/mocha_brown"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         tools:layout_editor_absoluteX="1dp"
                         tools:layout_editor_absoluteY="0dp" />
 
