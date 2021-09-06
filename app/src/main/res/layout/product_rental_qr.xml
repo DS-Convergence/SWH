@@ -42,12 +42,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/goyang"
         android:gravity="center"
         android:text="대여/반납을 위해 \nQR코드를 인증해주세요."
         android:textColor="@color/mocha_brown"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
     <!-- testSize 25sp > 40sp로 변경 -->
 
     <ImageView

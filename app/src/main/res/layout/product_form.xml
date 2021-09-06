@@ -59,8 +59,8 @@
 
             <ImageView
                 android:id="@+id/img"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="15dp"
                 android:background="@color/white"
@@ -92,7 +92,8 @@
                     android:ems="10"
                     android:fontFamily="@font/jsdongkang_regular"
                     android:inputType="textPersonName"
-                    android:paddingLeft="5dp" />
+                    android:paddingLeft="5dp"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,7 +128,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -182,7 +183,8 @@
                 android:hint="설명글을 작성하세요"
                 android:inputType="textMultiLine"
                 android:lines="10"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -211,7 +213,8 @@
                     android:fontFamily="@font/jsdongkang_regular"
                     android:gravity="center|right"
                     android:inputType="number"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -248,7 +251,8 @@
                     android:fontFamily="@font/jsdongkang_regular"
                     android:gravity="center|right"
                     android:inputType="number"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/textView9"
