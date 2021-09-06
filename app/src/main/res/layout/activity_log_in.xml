@@ -9,22 +9,21 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--height 50->70dp으로 변경-->
+        <!--height 70->50으로 변경-->
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:background="@color/oat_yellow">
             <!--back 버튼 textview로 구현-->
 
+            <!--textSize 30->25으로 변경-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/goyang"
                 android:layout_gravity="center"
-                android:paddingTop="13dp"
-                android:paddingBottom="15dp"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textColor="@color/mocha_brown"
                 android:text="로그인"/>
 
@@ -39,33 +38,36 @@
             android:layout_gravity="center_horizontal"/>
         <EditText
             android:id="@+id/id_login"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginTop="300dp"
             android:padding="10dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:maxLines="1"
             android:textColor="@color/mocha_brown"
             android:hint="아이디(이메일 주소)"/>
         <EditText
             android:id="@+id/pw_login"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginTop="360dp"
             android:padding="10dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:background="@color/grey"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:inputType="textPassword"
             android:textColor="@color/mocha_brown"
             android:hint="비밀번호"/>
         <Button
             android:id="@+id/log_in_btn"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="30dp"
             android:layout_height="60dp"
             android:layout_marginTop="440dp"
             android:layout_gravity="center_horizontal"
@@ -76,7 +78,8 @@
             android:backgroundTint="@color/peanut_brown"/>
         <Button
             android:id="@+id/go_sign_up_btn"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="30dp"
             android:layout_height="60dp"
             android:layout_marginTop="520dp"
             android:layout_gravity="center_horizontal"
