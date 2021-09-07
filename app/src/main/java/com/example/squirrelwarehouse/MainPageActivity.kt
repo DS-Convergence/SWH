@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
+import com.example.squirrelwarehouse.models.StayTime
 import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -677,72 +678,6 @@ class MainPageActivity : AppCompatActivity() {
     }
      */
 
-    inner class ViewRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-        var products: ArrayList<Product> = arrayListOf()
-
-        init {
-            firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                    ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                        products.clear()
-                        if (querySnapshot == null) return@addSnapshotListener
-
-                        // 데이터 받아오기
-                        for (snapshot in querySnapshot!!.documents) {
-                            var item = snapshot.toObject(Product::class.java)
-                            products.add(item!!)
-                        }
-                        notifyDataSetChanged()
-                    }
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            var view =
-                    LayoutInflater.from(parent.context).inflate(R.layout.main_itemview, parent, false)
-            return CustomViewHolder(view)
-        }
-
-        inner class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        }
-
-        override fun getItemCount(): Int {
-            return products.size
-        }
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            var viewHolder = (holder as CustomViewHolder).itemView
-
-            viewHolder.itemName.text = products!![position].productName
-
-
-
-            // 사진 불러오기
-            /*
-            var storageRef = storage?.reference?.child("product")?.child(products!![position].imageURI.toString())
-            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                Glide.with(applicationContext)
-                        .load(uri)
-                        .into(viewHolder.thumb)
-                //Log.v("IMAGE","Success")
-
-            }
-
-             */
-            viewHolder.setOnClickListener {
-
-                // 이거를 쓰려면 product이름을 바꿔야함. userid+uploadTime 이런식으로로
-                // 지금은 오류남. 암튼 이 코드로 했을 때 다음 페이지로 넘어가는 건 확실함. 해봄.
-                Intent(this@MainPageActivity, ProductDetailActivity::class.java).apply {
-                    //putExtra("data", "아무래도 물건 넣을때 이름을 줘야지 되겠어~~~~~")
-                    putExtra("data", "2rTo5Hxw65DQ7JbvGKpH")
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                }.run { startActivity(this)}
-
-            }
-
-        }
-    }
-
     inner class UserBasedRcmd {
         lateinit var user : String
         // var userIndex = 0
@@ -755,12 +690,15 @@ class MainPageActivity : AppCompatActivity() {
 
         var dataArr = ArrayList<ArrayList<Int>>()   // 전체 유저의 선호도 데이터
 
+        var st = ArrayList<Map<String, Int>>() // staytime 넣을
+
 
         constructor(userId : String) {
 
             this.user = userId
             //var data : ArrayList<ArrayList<Int>> = getData()    // product와 favorite 비교해서 선호데이터 받기
 
+            // user
             firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                 //userArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
@@ -773,6 +711,7 @@ class MainPageActivity : AppCompatActivity() {
                 }
 
 
+                // product
                 firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     //productArr.clear()
                     if (querySnapshot == null) return@addSnapshotListener
@@ -784,275 +723,314 @@ class MainPageActivity : AppCompatActivity() {
                         //Log.v("RcmdList", item!!.productName.toString())
                     }
 
-                    firestore?.collection("Favorite")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                        //favArr.clear()
+                    // stayTime
+                    firestore?.collection("StayTime")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         if (querySnapshot == null) return@addSnapshotListener
 
                         // 데이터 받아오기
                         for (snapshot in querySnapshot!!.documents) {
-                            var item = snapshot.toObject(Favorite::class.java)
-                            fav.add(item!!.products as java.util.ArrayList<String>)
+                            var item = snapshot.toObject(StayTime::class.java)
+                            //fav.add(item!!.products as java.util.ArrayList<String>)
+                            // 새로 가입한경우 null일 수 있음. 그 경우 고려해야함.
+                            st.add(item!!.transform as Map<String, Int>)
+
+                            // ArrayList<Map<String,Int>> 형식으로 받고
+                            // 리스트에서 맵 하나씩 꺼내서 product에 있는 물건이랑 하나하나 비교.
+                            // containKey(product)사용해서 있으면 getValue사용해서 값 넣기
+                            //item!!.transform!!.containsKey("물건id")
                         }
 
-                        //Log.v("RcmdList", "유저개수: " + users.size)
-                        //Log.v("RcmdList", "물건개수: " + product.size)
-                        //Log.v("RcmdList", "좋아요개수: " + fav.size)
 
-
-                        // 물건 있는지 없는지 0 1 행렬
-                        for(i in 0..fav.size-1) {
-                            var arr = ArrayList<Int>()   // 한 사람의 선호도 데이터
-                            for(j in 0..product.size-1) {
-                                // Log.v("RcmdList", "물건개수: " + j)
-                                if(fav.get(i).contains(product.get(j)))
-                                    arr.add(1)
-                                else
-                                    arr.add(0)
-
-                                //Log.v("RcmdList", "dataArr: " + arr.get(j))
+                        for(map in st) {
+                            var starr = ArrayList<Int>()
+                            for(i in 0..product.size-1) {
+                                if(map.containsKey(product.get(i))) {
+                                    starr.add(map.getValue(product.get(i)))
+                                }
+                                else {
+                                    starr.add(0)
+                                }
+                                Log.v("RcmdList", "starr: " + product.get(i) + " "+ starr.get(i))
                             }
-                            dataArr.add(arr)
-
-                            //Log.v("RcmdList", "dataArr개수: " + dataArr.size)
-                            //Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
+                            dataArr.add(starr)
+                            Log.v("RcmdList", "starr: 끝")
                         }
 
 
-                        // 유사도 행렬
-                        for (i in 0..users.size-1) {
-                            var simArr = ArrayList<Double>()
-                            for(j in 0..users.size-1) {
-                                if(i==j)
-                                    simArr.add(0.0)
-                                else
-                                    simArr.add(cosineSimilarity(dataArr.get(i),dataArr.get(j)))
+                        // favorite
+                        firestore?.collection("Favorite")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                            //favArr.clear()
+                            if (querySnapshot == null) return@addSnapshotListener
 
-                                Log.v("RcmdList", "sim : " + simArr.get(j).toString())
+                            // 데이터 받아오기
+                            for (snapshot in querySnapshot!!.documents) {
+                                var item = snapshot.toObject(Favorite::class.java)
+                                // 새로 가입한경우 null일 수 있음. 그 경우 고려해야함.
+                                fav.add(item!!.products as java.util.ArrayList<String>)
                             }
-                            sim.add(simArr)
 
-                            Log.v("RcmdList", "sim개수: " + sim.size)
-                        }
+                            Log.v("RcmdList", "유저개수: " + users.size)
+                            Log.v("RcmdList", "물건개수: " + product.size)
+                            Log.v("RcmdList", "좋아요개수: " + fav.size)
 
 
-                        // 현재 유저와 다른 유저와의 유사도만 뽑아내기
-                        var index1 = 0  // 현재 유저의 순서?인덱스? 뽑아내기
-                        while (index1 < users.size) {
-                            if (users.get(index1).equals(user.substring(5))) //userIndex = i;
-                                break
-                            index1++
-                        }
-                        Log.v("RcmdList", "user: " + users.get(index1))
+                            // 물건 있는지 없는지 0 1 행렬
+                            for(i in 0..fav.size-1) {
+                                var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
+                                for(j in 0..product.size-1) {
+                                    // Log.v("RcmdList", "물건개수: " + j)
+                                    if(fav.get(i).contains(product.get(j)))
+                                        arr.set(j, 10)
 
-                        // 유사도 제일 높은 사람의 정보 출력하기
-                        var max = sim.get(index1).get(0)
-                        var index2 = 0
-                        for (j in 0..users.size-1) {
-                            if (max < sim.get(index1).get(j)) {
-                                max = sim.get(index1).get(j)
-                                index2 = j
+                                    Log.v("RcmdList", " fav 포함: " +product.get(j) + " " + arr.get(j))
+                                }
+                                dataArr.set(i, arr)
+
+                                Log.v("RcmdList", "dataArr개수: " + dataArr.size)
+                                Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
                             }
-                        }
-                        Log.v("RcmdList", "user: " + users.get(index2))
 
-                        // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
-                        for (j in 0..dataArr.get(index1).size-1) {
-                            if (dataArr.get(index1).get(j) == 0 && dataArr.get(index2).get(j) != 0) {
-                                if(!product.get(j).contains(user.substring(5))) {
-                                    rcmdList.add(product.get(j))
-                                    Log.v("RcmdList", "추천물품 : "+product.get(j))
 
-                                    /*
-                                    firestore?.collection("Product")?.document(product.get(j))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                        task ->
-                                        if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                            var product = task.result.toObject(Product::class.java)
-                                            rc_title1.text = product?.productName
-                                            // 사진 불러오기
-                                            var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                                Glide.with(applicationContext)
-                                                        .load(uri)
-                                                        .into(rc_thbm1)
-                                                Log.v("IMAGE", "Success")
-                                            }?.addOnFailureListener { //이미지 로드 실패시
-                                                Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                                Log.v("IMAGE", "failed")
+                            // 유사도 행렬
+                            for (i in 0..users.size-1) {
+                                var simArr = ArrayList<Double>()
+                                for(j in 0..users.size-1) {
+                                    if(i==j)
+                                        simArr.add(0.0)
+                                    else
+                                        simArr.add(cosineSimilarity(dataArr.get(i),dataArr.get(j)))
+
+                                    Log.v("RcmdList", "sim : " + simArr.get(j).toString())
+                                }
+                                sim.add(simArr)
+
+                                Log.v("RcmdList", "sim개수: " + sim.size)
+                            }
+
+
+                            // 현재 유저와 다른 유저와의 유사도만 뽑아내기
+                            var index1 = 0  // 현재 유저의 순서?인덱스? 뽑아내기
+                            while (index1 < users.size) {
+                                if (users.get(index1).equals(user.substring(5))) //userIndex = i;
+                                    break
+                                index1++
+                            }
+                            Log.v("RcmdList", "user: " + users.get(index1))
+
+                            // 유사도 제일 높은 사람의 정보 출력하기
+                            var max = sim.get(index1).get(0)
+                            var index2 = 0
+                            for (j in 0..users.size-1) {
+                                if (max < sim.get(index1).get(j)) {
+                                    max = sim.get(index1).get(j)
+                                    index2 = j
+                                }
+                            }
+                            Log.v("RcmdList", "user: " + users.get(index2))
+
+                            // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
+                            for (j in 0..dataArr.get(index1).size-1) {
+                                if (dataArr.get(index1).get(j) == 0 && dataArr.get(index2).get(j) != 0) {
+                                    if(!product.get(j).contains(user.substring(5))) {
+                                        rcmdList.add(product.get(j))
+                                        Log.v("RcmdList", "추천물품 : "+product.get(j))
+
+                                        /*
+                                        firestore?.collection("Product")?.document(product.get(j))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                            task ->
+                                            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                                var product = task.result.toObject(Product::class.java)
+                                                rc_title1.text = product?.productName
+                                                // 사진 불러오기
+                                                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                                    Glide.with(applicationContext)
+                                                            .load(uri)
+                                                            .into(rc_thbm1)
+                                                    Log.v("IMAGE", "Success")
+                                                }?.addOnFailureListener { //이미지 로드 실패시
+                                                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                                    Log.v("IMAGE", "failed")
+                                                }
                                             }
+                                        }*/
+                                    }
+                                }
+                            }
+
+                            // 일단 다 invisible
+                            rc_title1.visibility = View.INVISIBLE
+                            rc_title2.visibility = View.INVISIBLE
+                            rc_title3.visibility = View.INVISIBLE
+
+                            Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
+
+                            // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
+                            // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                            if(rcmdList.size >= 1) {
+                                firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title1.text = product?.productName
+                                        rc_title1.visibility = View.VISIBLE
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm1)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
                                         }
-                                    }*/
+                                    }
+                                }
+                            }
+                            if(rcmdList.size >= 2) {
+                                firestore?.collection("Product")?.document(rcmdList.get(1))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title2.text = product?.productName
+                                        rc_title2.visibility = View.VISIBLE
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm2)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
+                                        }
+                                    }
+                                }
+                            }
+                            if(rcmdList.size >= 3) {
+                                firestore?.collection("Product")?.document(rcmdList.get(2))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title3.text = product?.productName
+                                        rc_title3.visibility = View.VISIBLE
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm3)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
+                                        }
+                                    }
+                                }
+                                Log.v("RcmdList", "배열 크기: "+rcmdList.size)
+                            }
+
+                            // 일단 다 invisible
+                            rc_title1.visibility = View.INVISIBLE
+                            rc_title2.visibility = View.INVISIBLE
+                            rc_title3.visibility = View.INVISIBLE
+
+                            Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
+
+                            // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
+                            // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                            if(rcmdList.size >= 1) {
+                                firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title1.text = product?.productName
+                                        rc_title1.visibility = View.VISIBLE
+
+                                        rcmd1.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm1)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
+                                        }
+                                    }
+                                }
+                            }
+                            if(rcmdList.size >= 2) {
+                                firestore?.collection("Product")?.document(rcmdList.get(1))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title2.text = product?.productName
+                                        rc_title2.visibility = View.VISIBLE
+
+                                        rcmd2.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm2)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
+                                        }
+                                    }
+                                }
+                            }
+                            if(rcmdList.size >= 3) {
+                                firestore?.collection("Product")?.document(rcmdList.get(2))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
+                                    task ->
+                                    if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                                        var product = task.result.toObject(Product::class.java)
+                                        rc_title3.text = product?.productName
+                                        rc_title3.visibility = View.VISIBLE
+
+                                        rcmd3.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        // 사진 불러오기
+                                        var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                    .load(uri)
+                                                    .into(rc_thbm3)
+                                            Log.v("IMAGE", "Success")
+                                        }?.addOnFailureListener { //이미지 로드 실패시
+                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            Log.v("IMAGE", "failed")
+                                        }
+                                    }
                                 }
                             }
                         }
 
-                        // 일단 다 invisible
-                        rc_title1.visibility = View.INVISIBLE
-                        rc_title2.visibility = View.INVISIBLE
-                        rc_title3.visibility = View.INVISIBLE
 
-                        Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
 
-                        // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                        // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
-                        if(rcmdList.size >= 1) {
-                            firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title1.text = product?.productName
-                                    rc_title1.visibility = View.VISIBLE
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm1)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                        }
-                        if(rcmdList.size >= 2) {
-                            firestore?.collection("Product")?.document(rcmdList.get(1))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title2.text = product?.productName
-                                    rc_title2.visibility = View.VISIBLE
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm2)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                        }
-                        if(rcmdList.size >= 3) {
-                            firestore?.collection("Product")?.document(rcmdList.get(2))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title3.text = product?.productName
-                                    rc_title3.visibility = View.VISIBLE
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm3)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                            Log.v("RcmdList", "배열 크기: "+rcmdList.size)
-                        }
-
-                        // 일단 다 invisible
-                        rc_title1.visibility = View.INVISIBLE
-                        rc_title2.visibility = View.INVISIBLE
-                        rc_title3.visibility = View.INVISIBLE
-
-                        Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
-
-                        // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                        // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
-                        if(rcmdList.size >= 1) {
-                            firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title1.text = product?.productName
-                                    rc_title1.visibility = View.VISIBLE
-
-                                    rcmd1.setOnClickListener {
-                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
-                                        startActivityForResult(intent, 0)
-                                    }
-
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm1)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                        }
-                        if(rcmdList.size >= 2) {
-                            firestore?.collection("Product")?.document(rcmdList.get(1))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title2.text = product?.productName
-                                    rc_title2.visibility = View.VISIBLE
-
-                                    rcmd2.setOnClickListener {
-                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
-                                        startActivityForResult(intent, 0)
-                                    }
-
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm2)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                        }
-                        if(rcmdList.size >= 3) {
-                            firestore?.collection("Product")?.document(rcmdList.get(2))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                task ->
-                                if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                                    var product = task.result.toObject(Product::class.java)
-                                    rc_title3.text = product?.productName
-                                    rc_title3.visibility = View.VISIBLE
-
-                                    rcmd3.setOnClickListener {
-                                        var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                        intent.putExtra("data",product?.userId+"_"+product?.uploadTime)
-                                        startActivityForResult(intent, 0)
-                                    }
-
-                                    // 사진 불러오기
-                                    var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                        Glide.with(applicationContext)
-                                                .load(uri)
-                                                .into(rc_thbm3)
-                                        Log.v("IMAGE", "Success")
-                                    }?.addOnFailureListener { //이미지 로드 실패시
-                                        Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                                        Log.v("IMAGE", "failed")
-                                    }
-                                }
-                            }
-                        }
                     }
+
                 }
             }
 
