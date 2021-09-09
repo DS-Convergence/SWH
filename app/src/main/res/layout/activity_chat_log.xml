@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="20dp"
-            android:paddingTop="15dp"
+            android:paddingTop="10dp"
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
             android:textSize="30sp" />
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
             android:paddingLeft="60dp"
-            android:paddingTop="16dp"
+            android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:text="유저이름"
             android:textColor="@color/mocha_brown"

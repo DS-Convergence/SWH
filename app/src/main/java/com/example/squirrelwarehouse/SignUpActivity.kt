@@ -4,12 +4,12 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.StayTime
 import com.example.squirrelwarehouse.models.User
@@ -17,12 +17,11 @@ import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.activity_sign_up.back_btn
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -57,7 +56,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "올바른 이메일 형식이 아닙니다.", Toast.LENGTH_SHORT).show()
             }
             else if(password.text.toString() != passwordCheck.text.toString()){
-                Toast.makeText(this, "비밀번호를 다시한번 확인해주세요.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "비밀번호를 다시한번 확인해주세요.", Toast.LENGTH_SHORT).show()
             }
             else {
                 //회원 가입 완료처리....-> 이후 이메일 인증 구현하기(주석 해제)
@@ -82,6 +81,8 @@ class SignUpActivity : AppCompatActivity() {
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success")
+                            Log.d("alarm", FirebaseMessaging.getInstance().token.toString())
+
                             //유저모델(파이어스토어)업로드 작업
                             UserModelFS.uid = auth?.currentUser?.uid
                             UserModelFS.email = email.text.toString()
@@ -91,24 +92,23 @@ class SignUpActivity : AppCompatActivity() {
                             // 예은 코드. Favorite 컬렉션 생성
                             var array : ArrayList<String> = arrayListOf<String>()
                             var fav = Favorite(array)
-                            firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.set(fav).addOnCompleteListener {
-                                task ->
+                            firestore?.collection("Favorite")?.document(auth.currentUser!!.uid)?.set(fav).addOnCompleteListener { task ->
                                 if(task.isSuccessful) {
-                                    Log.v("Favorite","Success")
+                                    Log.v("Favorite", "Success")
 
                                     // StayTime 컬렉션 생성
-                                    var map = mutableMapOf<String,Int>() // 물건 본 시간 원데이터
-                                    var map2 = mutableMapOf<String,Int>() // 변환한 데이터
+                                    var map = mutableMapOf<String, Int>() // 물건 본 시간 원데이터
+                                    var map2 = mutableMapOf<String, Int>() // 변환한 데이터
                                     var st = StayTime(map, map2)
-                                    firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.set(st).addOnCompleteListener {
-                                        task ->
+                                    firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.set(st).addOnCompleteListener { task ->
                                         if(task.isSuccessful) {
-                                            Log.v("StayTime","Success")
+                                            Log.v("StayTime", "Success")
                                         }
                                     }
                                 }
                             }
                             // 예은 코드 끝
+
 
 
                             uploadImageToFirebaseStorage() //은배가 추가
@@ -142,7 +142,7 @@ class SignUpActivity : AppCompatActivity() {
             //프로필 사진 고르는 버튼 누르면
             val intent = Intent(Intent.ACTION_PICK) //photo selector intent만들기
             intent.type = "image/*"  //우리가 원하는 intent type
-            startActivityForResult(intent,0) //비트맵을 이용해서 이미지 로딩하는 function.
+            startActivityForResult(intent, 0) //비트맵을 이용해서 이미지 로딩하는 function.
         }
         //EB가 추가한 코드 끝>>>>>>>>>>>>>>>>>>>>>>>//
     }
@@ -150,6 +150,7 @@ class SignUpActivity : AppCompatActivity() {
     //<<<<<<<<<<<<<<<<<<EB가 추가한 코드 시작//
     //여기 부터 메소드 세 개 더 추가함.
     var selectedPhotoUri: Uri? = null //우리가 선택한 이미지 밖으로 빼. 다른 곳에서도 쓸꺼야!
+
 
 
     //selectphoto_button.setOnClickListener에서 startActivityForResult로 실행되는
@@ -204,7 +205,7 @@ class SignUpActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     ref.downloadUrl.addOnSuccessListener {
                         it.toString() //it은 uri ( selectedPhotoUri)
-                        Log.d("RegisterActivity","File Location: $it")
+                        Log.d("RegisterActivity", "File Location: $it")
 
                         //데이터 베이스에 user 저장
                         saveUserToFirebaseDatabase(it.toString()) //profileImageUrl넘겨주며, 파이어 베이스에 유저 등록 메소드 호출
@@ -220,7 +221,31 @@ class SignUpActivity : AppCompatActivity() {
         //파이어 베이스에 유저 등록 : realtime database에 users밑에 profileImageURl, uid,username저장.
         val uid = FirebaseAuth.getInstance().uid?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid") //uid로 하위 클래스 나누기
-        val user = User(uid, nick_sign_up.text.toString(),profileImageUrl )
+        //val token :String
+        //2021_09_02 추가
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if(task.isSuccessful){
+                val token = task.result
+                val user = User(uid, token, nick_sign_up.text.toString(), profileImageUrl)
+                ref.setValue(user)
+                    .addOnSuccessListener {
+                        //어디로 넘어갈 지 세원이 한테 확인하고 코드 추가하기**
+                        val intent = Intent(this, LogInActivity::class.java) // **
+                        //back버튼 눌렀을 때 다시 register activity 안돌아가기 위해서 flag를 둠.
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent) //LatestActivity시작
+
+                    }
+                    .addOnFailureListener{//실패하면
+                    }
+            }
+        }
+
+        //val token = FirebaseMessaging.getInstance().token
+        //val token = FirebaseInstallations.getInstance().id.result
+        //val token = FirebaseMessaging.getInstance().getToken().toString()
+
         /*firestore.collection("Users").document("user_${uid}")
             .update("userProPic",profileImageUrl)*/
 
@@ -231,17 +256,7 @@ class SignUpActivity : AppCompatActivity() {
             .update("userProPic", imgFileName)
 
         //내가 만든 모델. models아래에 User
-        ref.setValue(user)
-            .addOnSuccessListener {
-                //어디로 넘어갈 지 세원이 한테 확인하고 코드 추가하기**
-                val intent = Intent(this, LogInActivity::class.java) // **
-                //back버튼 눌렀을 때 다시 register activity 안돌아가기 위해서 flag를 둠.
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent) //LatestActivity시작
 
-            }
-            .addOnFailureListener{//실패하면
-            }
     }
     //EB가 추가한 코드 끝>>>>>>>>>>>>>>>>>>>>>>>//
 
