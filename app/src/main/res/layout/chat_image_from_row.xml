@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@drawable/rounded_button" />
 
     <TextView
@@ -41,7 +41,7 @@
         android:fontFamily="@font/jsdongkang_regular"
         android:text="시간"
         android:textColor="#5A3E29"
-        android:textSize="5dp"
+        android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageImageView_from_row"
         app:layout_constraintHorizontal_bias="0.916"

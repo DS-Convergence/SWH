@@ -48,7 +48,7 @@
         android:fontFamily="@font/jsdongkang_regular"
         android:text="시간"
         android:textColor="#5A3E29"
-        android:textSize="5dp"
+        android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView_to_row"
         app:layout_constraintStart_toEndOf="@+id/textView_to_row" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,8 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".PowerRamgiApplicationActivity"></activity>
-        <activity android:name=".RcmdMore" />
+        <activity android:name=".RcmdMore"></activity>
         <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
@@ -65,7 +64,7 @@
             android:name=".ChatLogMoreActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".ChatLogListActivity" />
-        <activity android:name=".ChatLogPictureMoreActivity" />
+        <activity android:name="ChatLogPictureMoreActivity" />
         <activity android:name=".ChatLogMoreQRActivity" />
         <activity android:name=".ChatLogActivity">
             <meta-data
@@ -95,6 +94,7 @@
             android:theme="@style/Transparent" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".DeleteAccountActivity" />
+        <activity android:name=".SetLocationInformationActivity" />
         <activity android:name=".ProductFormActivity">
 
             <!--
@@ -197,6 +197,12 @@
             Service handling Google Sign-In user revocation. For apps that do not integrate with
             Google Sign-In, this service will never be started.
         -->
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <service
             android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
             android:exported="true"
