@@ -712,7 +712,7 @@ class MainPageActivity : AppCompatActivity() {
 
 
                 // product
-                firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                firestore?.collection("Product")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     //productArr.clear()
                     if (querySnapshot == null) return@addSnapshotListener
 
