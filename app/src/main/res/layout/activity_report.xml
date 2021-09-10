@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/rice_white"
     tools:context=".ReportActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/rice_white">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!--height 50->70dp으로 변경-->
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:background="@color/oat_yellow">
                 <!--back 버튼 textview로 구현-->
                 <TextView
                     android:id="@+id/back_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="50sp"
-                    android:paddingLeft="20dp"
+                    android:textSize="30sp"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="15dp"
                     android:fontFamily="@font/goyang"
                     android:textColor="@color/mocha_brown"
                     android:text="&lt;" />
@@ -35,10 +32,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/goyang"
-                    android:paddingLeft="60dp"
-                    android:paddingTop="13dp"
-                    android:paddingBottom="15dp"
-                    android:textSize="30sp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textSize="25sp"
                     android:textColor="@color/mocha_brown"
                     android:text="신고하기"/>
 
@@ -46,83 +41,40 @@
            </FrameLayout>
 
             <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="80dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:fontFamily="@font/goyang"
-                android:textSize="20sp"
-                android:textColor="@color/mocha_brown"
-                android:text="신고사유 : "/>
-            <!-- kt파일에 onClick으로 초기값 지정해주기-->
-            <Spinner
-                android:layout_width="300dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/jsdongkang_regular"
-                android:layout_gravity="right"
-                android:textColor="@color/black"/>
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="140dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:fontFamily="@font/goyang"
-                android:textSize="20sp"
-                android:textColor="@color/mocha_brown"
-                android:text="신고자료 : "/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="140dp"
-                android:layout_marginLeft="100dp"
-                android:gravity="center"
-                android:fontFamily="@font/goyang"
-                android:textSize="20sp"
-                android:backgroundTint="@color/peanut_brown"
-                android:text="첨부파일"/>
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="200dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:fontFamily="@font/goyang"
-                android:textSize="20sp"
-                android:textColor="@color/mocha_brown"
-                android:text="신고내용 : "/>
-
-            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="250dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/grey"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goyang"
+                android:padding = "30dp"
+                android:layout_marginTop="60dp"
+                android:textColor="@color/cinnamon_brown"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:text="신고가 필요한 사용자나 게시글이 보인다면 \n이 신고 폼을 작성하여 운영자에게 알려주세요!
+"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/jsdongkang_regular"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="신고내용을 입력하세요"
-                android:textColor="@color/black" />
+                android:padding = "30dp"
+                android:layout_marginTop="160dp"
+                android:textColor="@color/mocha_brown"
+                android:textSize="14sp"
+
+                android:text="신고 폼에는 신고하는 사유와 그의 근거를 사진으로 제출해주시면 빠르고 원활한 처리가 가능합니다.
+\n\n여러분들의 신고가 더 깨끗한 다람쥐창고를 만듭니다."/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:id="@+id/report_form_btn"
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/peanut_brown"
                 android:fontFamily="@font/goyang"
                 android:gravity="center"
-                android:text="제출하기"
+                android:text="신고 폼 작성"
                 android:textSize="20sp" />
 
         </FrameLayout>
-    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
