@@ -8,7 +8,7 @@
     tools:context=".MyFavoriteListActivity">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/oat_yellow">
 
         <TextView
@@ -16,21 +16,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
+            android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="&lt;"
             android:textColor="@color/mocha_brown"
-            android:textSize="50sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goyang"
-            android:paddingLeft="60dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="15dp"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:text="나의 찜 목록"
             android:textColor="@color/mocha_brown"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
 
     </FrameLayout>
