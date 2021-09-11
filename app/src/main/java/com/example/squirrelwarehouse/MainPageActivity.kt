@@ -750,10 +750,10 @@ class MainPageActivity : AppCompatActivity() {
                                 else {
                                     starr.add(0)
                                 }
-                                Log.v("RcmdList", "starr: " + product.get(i) + " "+ starr.get(i))
+                                //Log.v("RcmdList", "starr: " + product.get(i) + " "+ starr.get(i))
                             }
                             dataArr.add(starr)
-                            Log.v("RcmdList", "starr: 끝")
+                            //Log.v("RcmdList", "starr: 끝")
                         }
 
 
@@ -791,6 +791,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
 
 
+
                             // 유사도 행렬
                             for (i in 0..users.size-1) {
                                 var simArr = ArrayList<Double>()
@@ -799,6 +800,7 @@ class MainPageActivity : AppCompatActivity() {
                                         simArr.add(0.0)
                                     else
                                         simArr.add(cosineSimilarity(dataArr.get(i),dataArr.get(j)))
+                                        //simArr.add(pearsonSimilarity(dataArr.get(i),dataArr.get(j)))
 
                                     Log.v("RcmdList", "sim : " + simArr.get(j).toString())
                                 }
@@ -806,6 +808,7 @@ class MainPageActivity : AppCompatActivity() {
 
                                 Log.v("RcmdList", "sim개수: " + sim.size)
                             }
+
 
 
                             // 현재 유저와 다른 유저와의 유사도만 뽑아내기
@@ -816,6 +819,13 @@ class MainPageActivity : AppCompatActivity() {
                                 index1++
                             }
                             Log.v("RcmdList", "user: " + users.get(index1))
+
+
+                            // 현재 유저와의 유사도 확인
+                            for(i in 0..users.size-1) {
+                                Log.v("sim", sim.get(index1).get(i).toString())
+                            }
+
 
                             // 유사도 제일 높은 사람의 정보 출력하기
                             var max = sim.get(index1).get(0)
@@ -830,7 +840,7 @@ class MainPageActivity : AppCompatActivity() {
 
                             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
                             for (j in 0..dataArr.get(index1).size-1) {
-                                if (dataArr.get(index1).get(j) == 0 && dataArr.get(index2).get(j) != 0) {
+                                if (dataArr.get(index1).get(j) != 10 && dataArr.get(index2).get(j) >= 2) {
                                     if(!product.get(j).contains(user.substring(5))) {
                                         rcmdList.add(product.get(j))
                                         Log.v("RcmdList", "추천물품 : "+product.get(j))
@@ -1161,6 +1171,36 @@ class MainPageActivity : AppCompatActivity() {
                 sum2 += Math.pow(user2[i].toDouble(), 2.0)
             }
             return sum / (Math.sqrt(sum1) * Math.sqrt(sum2))
+        }
+
+        private fun pearsonSimilarity(user1: ArrayList<Int>, user2: ArrayList<Int>): Double {
+            // 피어슨 유사도 계산
+            var avg1 = 0.0
+            var avg2 = 0.0
+
+            // 평균 구하기
+
+            for (i in 0 until user1.size) {
+                avg1 += user1.get(i)
+                avg2 += user2.get(i)
+            }
+
+            avg1 = avg1 / user1.size
+            avg2 = avg2 / user2.size
+
+
+            // xy 분산
+            var sum1 = 0.0
+            var sum2 = 0.0
+            var sum12 = 0.0
+
+            for (i in 0 until user1.size) {
+                sum1 += Math.pow(user1.get(i) - avg1, 2.0).toInt()
+                sum2 += Math.pow(user2.get(i) - avg2, 2.0).toInt()
+                sum12 += (user1.get(i) - avg1) * (user2.get(i) - avg2)
+            }
+
+            return sum12 / (Math.sqrt(sum1.toDouble()) * Math.sqrt(sum2.toDouble()))
         }
     }
 
