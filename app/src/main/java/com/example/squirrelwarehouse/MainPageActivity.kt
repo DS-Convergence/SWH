@@ -773,23 +773,23 @@ class MainPageActivity : AppCompatActivity() {
                             Log.v("RcmdList", "물건개수: " + product.size)
                             Log.v("RcmdList", "좋아요개수: " + fav.size)
 
-
+/*
                             // 물건 있는지 없는지 0 1 행렬
                             for(i in 0..fav.size-1) {
                                 var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
                                 for(j in 0..product.size-1) {
                                     // Log.v("RcmdList", "물건개수: " + j)
                                     if(fav.get(i).contains(product.get(j)))
-                                        arr.set(j, 10)
+                                        arr[j] = 10
 
-                                    Log.v("RcmdList", " fav 포함: " +product.get(j) + " " + arr.get(j))
+                                    //Log.v("RcmdList", " fav 포함: " +product.get(j) + " " + arr.get(j))
                                 }
                                 dataArr.set(i, arr)
 
                                 Log.v("RcmdList", "dataArr개수: " + dataArr.size)
                                 Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
                             }
-
+*/
 
 
                             // 유사도 행렬

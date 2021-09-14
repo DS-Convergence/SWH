@@ -194,6 +194,13 @@ class ProductDetailActivity : AppCompatActivity() {
                     btn_report.visibility = View.VISIBLE
                 }
 
+                // 대여완료된 물건이면 채팅하기 버튼 숨김
+                if(product?.status.equals("대여 종료")) {
+                    btnChat.visibility = View.INVISIBLE
+                    //btnHeart.visibility = View.GONE
+                    tv_closed.visibility = View.VISIBLE
+                }
+
             }
         }
 
@@ -402,29 +409,29 @@ class ProductDetailActivity : AppCompatActivity() {
                 // 사용후 삭제
                 */
 
+                // 머무른 시간과 조회수 적용
+                if(!auth.currentUser!!.uid.equals(userid)){  // 물건 주인이 현재 사용자이면 머무른 시간과 조회수 모두 적용 x
+                    firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
+                        task ->
+                        if(task.isSuccessful) {
+                            Log.v("staytime","Update Success")
 
-                firestore?.collection("StayTime")?.document(auth.currentUser!!.uid)?.update(map)?.addOnCompleteListener {
-                    task ->
-                    if(task.isSuccessful) {
-                        Log.v("staytime","Update Success")
-
-                        // 조회수 증가. 물건 주인이 본 것은 카운트 x
-                        if(!auth.currentUser!!.uid.equals(userid)){  // 현재 유저와 물건 주인이 같지 않으면 카운트
                             var map = mutableMapOf<String?,Any?>()
                             map["view"] = viewcount!!.toInt() + 1
                             firestore?.collection("Product")?.document(prod)?.update(map)?.addOnCompleteListener {
-                                    task ->
+                                task ->
                                 if(task.isSuccessful) {
                                     Log.v("viewcount","Update Success")
                                 }
                             }
-                        }
 
-                    }
-                    else {
-                        Log.v("staytime","Update Failed")
+                        }
+                        else {
+                            Log.v("staytime","Update Failed")
+                        }
                     }
                 }
+
             }
         }
 
