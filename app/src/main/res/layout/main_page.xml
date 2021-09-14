@@ -56,16 +56,16 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="110dp">
 
             <SearchView
                 android:id="@+id/searchBar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="60dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:paddingVertical="5dp"
                 android:background="@color/grey"
                 android:iconifiedByDefault="false"/>
@@ -77,7 +77,7 @@
                 android:layout_gravity="bottom|right"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/rice_white"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/around_loc" />
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingVertical="10dp"
+                android:paddingVertical="5dp"
                 android:paddingTop="5dp">
 
                 <TextView
@@ -116,7 +116,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="200dp"
@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="center"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />
@@ -238,7 +238,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="200dp"
@@ -257,7 +257,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="center"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />
@@ -354,7 +354,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:id="@+id/cateTextView"
@@ -374,7 +374,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:fontFamily="@font/goyang"
-                        android:gravity="right"
+                        android:gravity="center"
                         android:text="더보기"
                         android:textColor="@color/mocha_brown"
                         android:textSize="15sp" />

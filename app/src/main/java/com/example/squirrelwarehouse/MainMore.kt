@@ -50,10 +50,12 @@ class MainMore : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
+        /*
         var hobtestbtn = hobbytestBtn
         hobtestbtn.setOnClickListener {
             // TODO: 취미테스트 구현
         }
+         */
 
         /*
         // 적용 버튼
@@ -185,6 +187,7 @@ class MainMore : AppCompatActivity() {
         }
         adapterLocDe = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, strarr)
         sLocDet.adapter = adapterLocDe
+        tvLocDetail.visibility = View.VISIBLE
         sLocDet.visibility = View.VISIBLE
         sLocDet.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(

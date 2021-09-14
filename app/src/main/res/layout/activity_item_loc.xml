@@ -10,27 +10,26 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/oat_yellow">
 
         <TextView
             android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:paddingLeft="20dp"
+            android:layout_gravity="center_vertical"
             android:fontFamily="@font/goyang"
+            android:paddingLeft="15dp"
+            android:text="&lt;"
             android:textColor="@color/mocha_brown"
-            android:text="&lt;" />
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:fontFamily="@font/goyang"
-            android:paddingLeft="60dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="15dp"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textColor="@color/mocha_brown"
             android:text="주변 물품 보기"/>
     </FrameLayout>
