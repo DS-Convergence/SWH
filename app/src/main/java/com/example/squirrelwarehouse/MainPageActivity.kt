@@ -1,19 +1,15 @@
 package com.example.squirrelwarehouse
 
 import android.animation.ObjectAnimator
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
@@ -24,7 +20,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.main_itemview.view.*
 import kotlinx.android.synthetic.main.main_page.*
 import kotlinx.android.synthetic.main.product_detail.*
 
@@ -203,12 +198,11 @@ class MainPageActivity : AppCompatActivity() {
 
         // 카테고리 - 더보기
         var moreCate = moreCate
-        moreCate.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                // listView로 연결
-
-            }
-        })
+        moreCate.setOnClickListener {
+            val intent = Intent(this, CateMoreActivity::class.java)
+            intent.putExtra("cateName","디지털/가전")
+            startActivityForResult(intent, 0)
+        }
 
 
         // 추천
@@ -590,8 +584,8 @@ class MainPageActivity : AppCompatActivity() {
             ObjectAnimator.ofFloat(fabMyPage, "translationY", 0f).apply { start() }
         } else {
             // FAB 액션 닫기
-            ObjectAnimator.ofFloat(fabWrite, "translationY", -150f).apply { start() }
-            ObjectAnimator.ofFloat(fabMyPage, "translationY", -300f).apply { start() }
+            ObjectAnimator.ofFloat(fabWrite, "translationY", -200f).apply { start() }
+            ObjectAnimator.ofFloat(fabMyPage, "translationY", -400f).apply { start() }
         }
 
         isFabOpen = !isFabOpen
@@ -608,7 +602,7 @@ class MainPageActivity : AppCompatActivity() {
     inner class PagerRunnable : Runnable {
         override fun run() {
             while(true){
-                Thread.sleep(2000)
+                Thread.sleep(3000)
                 handler.sendEmptyMessage(0)
             }
         }
@@ -1087,7 +1081,7 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         fun getRcmd() {
-            val intent = Intent(this@MainPageActivity, RcmdMore::class.java)
+            val intent = Intent(this@MainPageActivity, RcmdMoreActivity::class.java)
             intent.putExtra("rcmdList",rcmdList)
             startActivityForResult(intent, 0)
         }

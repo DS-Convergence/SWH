@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -18,6 +19,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.listview_form.*
+import java.text.SimpleDateFormat
 
 class UpdateMoreActivity : AppCompatActivity() {
 
@@ -160,6 +162,12 @@ class UpdateMoreActivity : AppCompatActivity() {
             viewHolder.timeTV.text = products!![position].uploadTime
             viewHolder.detailTV.text = products!![position].productDetail
 
+            // 시간 데이터 포맷
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+            var date = sdf.parse(products[position]?.uploadTime)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.timeTV.text = dateStr
 
             // 사진 불러오기
             var storageRef = storage?.reference?.child("product")?.child(products!![position].imageURI.toString())
@@ -168,6 +176,32 @@ class UpdateMoreActivity : AppCompatActivity() {
                         .load(uri)
                         .into(viewHolder.thumb)
                 //Log.v("IMAGE","Success")
+
+            }
+
+            // 거래상태 변경
+            if(products[position].status.equals("대여 종료")){
+                // 글자색 흰색으로 변경
+                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
+                // 글자 배경색 진회색
+                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.dark_grey))
+                viewHolder.statusTV.text = "대여 종료"
+                //배경색 회색으로
+                viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
+
+            }
+            else if(products[position].status.equals("대여 중")){
+                // 글자색 흰색으로 변경
+                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
+                // 글자 배경색 녹색
+                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
+                viewHolder.statusTV.text = "대여 중"
+            }
+            viewHolder.setOnClickListener {
+                Intent(this@UpdateMoreActivity, ProductDetailActivity::class.java).apply {
+                    putExtra("data", products!![position].userId + "_" + products!![position].uploadTime)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { startActivity(this) }
 
             }
 

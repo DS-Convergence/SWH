@@ -27,7 +27,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".RcmdMore"></activity>
+        <activity android:name=".CateMoreActivity"></activity>
+        <activity android:name=".RcmdMoreActivity" />
         <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
@@ -64,7 +65,7 @@
             android:name=".ChatLogMoreActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".ChatLogListActivity" />
-        <activity android:name="ChatLogPictureMoreActivity" />
+        <activity android:name=".ChatLogPictureMoreActivity" />
         <activity android:name=".ChatLogMoreQRActivity" />
         <activity android:name=".ChatLogActivity">
             <meta-data
@@ -202,7 +203,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service
             android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
             android:exported="true"
