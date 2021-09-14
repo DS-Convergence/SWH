@@ -92,7 +92,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 tv_prodCategoryHobby.text = product?.categoryHobby
                 tv_status.text = product?.status
                 tv_user.text = product?.userName
-                tv_userLocation.text = "위치 정보 없음"
+                tv_userLocation.text = "위치 정보 오류"
                 tv_prodDetail.text = product?.productDetail
 
                 tv_bar_prodName.text = product?.productName
@@ -120,7 +120,9 @@ class ProductDetailActivity : AppCompatActivity() {
                         Log.v("region",list.get(0).toString())
 
                         var str = list.get(0).toString().split(" ")
-                        tv_userLocation.text = str[1] + " " + str[2] + " " + str[3]
+                        var str2 = str[1] + " " + str[2] + " " + str[3]
+                        if(str2.length <= 20)
+                            tv_userLocation.text = str2
                     }
                 }
 
@@ -174,7 +176,7 @@ class ProductDetailActivity : AppCompatActivity() {
                     }
 
                 }?.addOnFailureListener { //이미지 로드 실패시
-                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                     Log.v("IMAGE","failed")
                 }
 
