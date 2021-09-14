@@ -72,7 +72,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var text : String? = null
 
-    private var beforeURI : Uri? = null     // 이전 사진
+    private var beforeImg : String? = null     // 이전 사진
     private var imageChange = false
 
 
@@ -176,15 +176,18 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                         etRentalFee.setText(product?.rentalFee)
                     }
 
+                    beforeImg = product?.imageURI
+
                     // 사진 불러오기
                     var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                    storageRef?.downloadUrl?.addOnSuccessListener { urii ->
                         Glide.with(applicationContext)
-                            .load(uri)
+                            .load(urii)
                             .into(img)
                         img.visibility = View.VISIBLE
-                        //beforeURI = uri
-                        //Log.v("IMAGE",uri.toString())
+                        uri = urii
+                        //beforeURI = urii
+                        //Log.v("IMAGE",urii.toString())
                     }?.addOnFailureListener { //이미지 로드 실패시
                         Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                         Log.v("IMAGE","failed")
@@ -313,8 +316,35 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             var storageRef = storage?.reference?.child("product")?.child(imgFileName)
 
 
-            // 물건이름, 카테고리, 지도 입력 안돼있으면 업로드 불가.
-            // if문 필요함.
+            // 물건이름, 사진, 카테고리, 설명글, 지도 입력 안돼있으면 업로드 불가.
+            if(pName.equals("")) {
+                Toast.makeText(applicationContext,"물건의 이름을 입력하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(pCate.equals("선택안함")) {
+                Toast.makeText(applicationContext,"물건의 카테고리를 선택하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(pCateHobby.equals("선택안함")) {
+                Toast.makeText(applicationContext,"물건의 취미 카테고리를 선택하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(pDetail.equals("")){
+                Toast.makeText(applicationContext,"물건의 설명글을 작성하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(pDetail.equals("")){
+                Toast.makeText(applicationContext,"물건의 설명글을 작성하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(uri==null){
+                Toast.makeText(applicationContext,"물건의 사진을 선택하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(geopoint==null){
+                Toast.makeText(applicationContext,"희망 거래 위치를 선택하세요.",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // 처음 올리는 경우. 즉 수정이 아닌 경우
             if(btnUpload.text.equals("업로드")) {
@@ -345,7 +375,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                                     // https://riapapa-collection.tistory.com/42
                                     // 그냥하면 권한 없어서 에러남. storage 규칙 변경해야함.
                                     storageRef?.putFile(uri!!)?.addOnSuccessListener {
-                                        Toast.makeText(applicationContext,"Uploaded",Toast.LENGTH_SHORT).show() // 잘 들어갔나 확인 하려고 적어 놓음.
+                                        Toast.makeText(applicationContext,"업로드 성공",Toast.LENGTH_SHORT).show() // 잘 들어갔나 확인 하려고 적어 놓음.
                                         // 먼저 메인화면으로 돌아 갔다가
                                         // ProductDetailActivity로 넘어가도록.
                                         // 뒤로 가는 버튼으로 글쓰기 화면이 다시 나오지 않도록
@@ -396,12 +426,11 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                                     // imageChange가 true일 때만 사진 추가
                                     // 성공적으로 추가했으면 imageChange 다시 false로
                                     Log.v("Update", "SuccessIMAGE") // 잘 들어갔나 확인 하려고 적어 놓음.
-                                    imageChange = false
-
-                                    // 물건 상세 페이지로 넘어가야함.
-
+                                    imageChange = false  // 얘를 굳이 안써줘도 될듯
                                 }
                             }
+
+                            Toast.makeText(applicationContext,"수정 완료",Toast.LENGTH_SHORT).show()
 
                         }
                     }
@@ -430,6 +459,20 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             // Make sure the request was successful
             if (resultCode == Activity.RESULT_OK) {
                 try {
+                    // 게시글 수정인 경우 beforeURI가 null값이 아니게 됨.
+                    // uri 지정해주기 전에 이전 사진 삭제하고, 새로운 사진을 uri에 넣어야할듯듯
+                    if(beforeImg!=null) {
+                        var storageRef = storage?.reference?.child("product")?.child(beforeImg!!)
+                        storageRef?.delete()?.addOnCompleteListener {
+                            task ->
+                            if(task.isSuccessful) {
+                                Log.v("DELETE","Success")
+                                //Toast.makeText(applicationContext, "삭제 완료", Toast.LENGTH_SHORT).show()
+                                //beforeImg = null
+                            }
+                        }
+                    }
+
                     // 선택한 이미지를 가져옴.
                     // 사진이 돌아가는 문제가 발생하여 Glide를 이용함.
                     uri = data!!.data
@@ -456,6 +499,8 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
                     var cateHobby = CategoryHobby(results.get(0).toString())   // 취미 카테고리 가져오기
                     spCategoryHobby.setSelection(cateHobby.category)
+
+                    Toast.makeText(applicationContext,"카테고리가 바르게 설정되었는지 확인해주세요!",Toast.LENGTH_LONG).show()
 
 
                 } catch (e: Exception) {
