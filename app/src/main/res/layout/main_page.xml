@@ -481,42 +481,55 @@
 
         <!-- elevation: 액티비티 바닥부터 버튼까지의 높이 -->
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabMyPage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="20dp"
-                android:layout_marginRight="20dp"
-                android:elevation="5dp"
-                app:fabSize="normal"
-                app:borderWidth="0dp"
-                android:backgroundTint="@color/tawny_brown"
-                android:src="@drawable/users"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:elevation="5dp"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/tawny_brown"
+            android:src="@drawable/chat"/>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabWrite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="20dp"
-                android:layout_marginRight="20dp"
-                android:elevation="5dp"
-                app:fabSize="normal"
-                app:borderWidth="0dp"
-                android:backgroundTint="@color/tawny_brown"
-                android:src="@drawable/write"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMyPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:elevation="5dp"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/tawny_brown"
+            android:src="@drawable/users"/>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="20dp"
-                app:fabSize="normal"
-                app:borderWidth="0dp"
-                android:backgroundTint="@color/peanut_brown"
-                android:src="@drawable/acorn"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabWrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:elevation="5dp"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/tawny_brown"
+            android:src="@drawable/write"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/peanut_brown"
+            android:src="@drawable/acorn"
+            app:borderWidth="0dp"
+            app:fabSize="normal" />
 
         <!--
         <Button

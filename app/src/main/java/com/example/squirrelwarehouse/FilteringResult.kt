@@ -17,6 +17,8 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.listview.view.*
 import kotlinx.android.synthetic.main.listview_form.*
+import kotlinx.android.synthetic.main.listview_form.back_btn
+import kotlinx.android.synthetic.main.product_detail.*
 
 class FilteringResult : AppCompatActivity() {
     private var firestore : FirebaseFirestore? = null
@@ -25,6 +27,10 @@ class FilteringResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.listview_form)
+
+        back_btn.setOnClickListener {
+            finish()
+        }
 
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()

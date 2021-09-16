@@ -51,8 +51,9 @@ class MainPageActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
-        var gotoChat = gotochat
-        gotoChat.setOnClickListener {
+        var chatBtn = fabChat
+        gotochat.visibility = View.INVISIBLE
+        chatBtn.setOnClickListener {
             val intent = Intent(this, LatestMessageActivity::class.java)
             startActivityForResult(intent, 0)
         }
@@ -585,12 +586,16 @@ class MainPageActivity : AppCompatActivity() {
     private fun toggleFab() {
         if(isFabOpen) {
             // FAB 액션 열기
+            ObjectAnimator.ofFloat(fabMain, View.ROTATION, -45f, 0f).apply { start() }
             ObjectAnimator.ofFloat(fabWrite, "translationY", 0f).apply { start() }
             ObjectAnimator.ofFloat(fabMyPage, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(fabChat, "translationY", 0f).apply { start() }
         } else {
             // FAB 액션 닫기
-            ObjectAnimator.ofFloat(fabWrite, "translationY", -200f).apply { start() }
-            ObjectAnimator.ofFloat(fabMyPage, "translationY", -400f).apply { start() }
+            ObjectAnimator.ofFloat(fabMain, View.ROTATION, 0f, -45f).apply { start() }
+            ObjectAnimator.ofFloat(fabWrite, "translationY", -170f).apply { start() }
+            ObjectAnimator.ofFloat(fabMyPage, "translationY", -340f).apply { start() }
+            ObjectAnimator.ofFloat(fabChat, "translationY", -510f).apply { start() }
         }
 
         isFabOpen = !isFabOpen

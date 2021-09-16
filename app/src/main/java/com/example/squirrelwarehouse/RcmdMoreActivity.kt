@@ -29,6 +29,10 @@ class RcmdMoreActivity : AppCompatActivity() {
         setContentView(R.layout.listview_form)
         page_title.text = "추천물품"
 
+        back_btn.setOnClickListener {
+            finish()
+        }
+
         var intent = intent
         arr = intent.getSerializableExtra("rcmdList") as ArrayList<String>
         Log.v("RcmdList", "추천 페이지에서 배열 크기: "+arr.size)

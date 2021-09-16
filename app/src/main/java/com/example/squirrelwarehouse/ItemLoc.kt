@@ -7,6 +7,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import kotlinx.android.synthetic.main.activity_item_loc.*
 
 class ItemLoc : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
@@ -14,6 +15,10 @@ class ItemLoc : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_loc)
+
+        back_btn.setOnClickListener {
+            finish()
+        }
 
         // https://webnautes.tistory.com/647 구글지도
         // https://andro-jinu.tistory.com/entry/studio2 네이버지도
