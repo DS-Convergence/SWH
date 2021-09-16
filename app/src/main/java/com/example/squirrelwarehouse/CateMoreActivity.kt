@@ -34,6 +34,10 @@ class CateMoreActivity : AppCompatActivity() {
         
         page_title.text = title
 
+        back_btn.setOnClickListener {
+            finish()
+        }
+
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
 

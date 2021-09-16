@@ -11,5 +11,9 @@ class SearchResult : AppCompatActivity() {
         setContentView(R.layout.listview_form)
 
         page_title.text = "검색 결과"
+
+        back_btn.setOnClickListener {
+            finish()
+        }
     }
 }
