@@ -38,6 +38,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.product_form.*
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Executor
@@ -99,22 +100,22 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.product_form)
 
         // 변수 초기화
-        etProdName = findViewById(R.id.et_prodName)
-        etCategory = findViewById(R.id.et_category)
-        etProdDetail = findViewById(R.id.et_prodDetail)
-        etRentalFee = findViewById(R.id.et_rentalFee)
-        etDeposit = findViewById(R.id.et_deposit)
+        //etProdName = findViewById(R.id.et_prodName)
+        //etCategory = findViewById(R.id.et_category)
+        //etProdDetail = findViewById(R.id.et_prodDetail)
+        //etRentalFee = findViewById(R.id.et_rentalFee)
+        //etDeposit = findViewById(R.id.et_deposit)
 
-        cbRentalFee = findViewById(R.id.cb_rentalFee)
-        cbDeposit = findViewById(R.id.cb_deposit)
+        //cbRentalFee = findViewById(R.id.cb_rentalFee)
+        //cbDeposit = findViewById(R.id.cb_deposit)
         //cbLocation = findViewById(R.id.cb_location)
 
-        map = findViewById(R.id.layout_map)
+        //map = findViewById(R.id.layout_map)
         img = findViewById(R.id.img)
 
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
-        auth = FirebaseAuth.getInstance()
+        //auth = FirebaseAuth.getInstance()
 
         val btnUpload : Button = findViewById(R.id.btn_upload)
         val btnBack : TextView = findViewById(R.id.back_btn)
@@ -123,18 +124,18 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         //val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // 스피너. 물건 카테고리
-        spCategory = findViewById(R.id.sp_category)
+        //spCategory = findViewById(R.id.sp_category)
         val category = resources.getStringArray(R.array.category)
         var adapterCate : ArrayAdapter<String>
         adapterCate = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, category)
-        spCategory.adapter = adapterCate
+        sp_category.adapter = adapterCate
 
         // 스피너2. 취미 카테고리
-        spCategoryHobby = findViewById(R.id.sp_categoryHobby)
+        //spCategoryHobby = findViewById(R.id.sp_categoryHobby)
         val categoryHobby = resources.getStringArray(R.array.cate_hobby)
         var adapterCate2 : ArrayAdapter<String>
         adapterCate2 = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, categoryHobby)
-        spCategoryHobby.adapter = adapterCate2
+        sp_categoryHobby.adapter = adapterCate2
 
 
 
@@ -143,19 +144,18 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         text = intent.getStringExtra("ModifyProduct")
 
         if(text!=null) {
-
-            btnUpload.setText("수정")
+            btn_upload.setText("수정")
 
             firestore?.collection("Product")?.document(text!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                     task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
-                    etProdName.setText(product?.productName)
+                    et_prodName.setText(product?.productName)
                     //etCategory.setText(product?.category)
-                    spCategory.setSelection(getCateNum(product?.category))
-                    spCategoryHobby.setSelection(getCateHobbyNum(product?.categoryHobby))
+                    sp_category.setSelection(getCateNum(product?.category))
+                    sp_categoryHobby.setSelection(getCateHobbyNum(product?.categoryHobby))
 
-                    etProdDetail.setText(product?.productDetail)
+                    et_prodDetail.setText(product?.productDetail)
                     // 보증금 체크박스랑 다 고려해주어야함. null이 아니면 체크박스 체크하고, 금액 표시
                     // 대여료
 
@@ -167,13 +167,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     }
 
                     if(!product?.deposit.equals("")){
-                        cbDeposit.isChecked = true;
-                        etDeposit.setText(product?.deposit)
+                        cb_deposit.isChecked = true;
+                        et_deposit.setText(product?.deposit)
                     }
 
                     if(!product?.rentalFee.equals("")){
-                        cbRentalFee.isChecked = true;
-                        etRentalFee.setText(product?.rentalFee)
+                        cb_rentalFee.isChecked = true;
+                        et_rentalFee.setText(product?.rentalFee)
                     }
 
                     beforeImg = product?.imageURI
@@ -217,15 +217,15 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // 대여료 체크박스가 체크되어야 금액 작성 가능.
-        cbRentalFee.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked) etRentalFee.isEnabled = true
-            else etRentalFee.isEnabled = false
+        cb_rentalFee.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked) et_rentalFee.isEnabled = true
+            else et_rentalFee.isEnabled = false
         }
 
         // 보증금 체크박스가 체크되어야 금액 작성 가능
-        cbDeposit.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked) etDeposit.isEnabled = true
-            else etDeposit.isEnabled = false
+        cb_deposit.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked) et_deposit.isEnabled = true
+            else et_deposit.isEnabled = false
         }
 /*
         // 위치 체크박스가 체크되어야 지도 보임.
@@ -283,12 +283,12 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         lm.removeUpdates(gpsLocationListener)
 */
         // 뒤로가기 버튼
-        btnBack.setOnClickListener() {
+        back_btn.setOnClickListener() {
             finish()
         }
 
         // 사진을 가져오는 버튼
-        btnImg.setOnClickListener {
+        btn_img.setOnClickListener {
             //이미지 불러오기기(갤러리 접근)
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = MediaStore.Images.Media.CONTENT_TYPE
@@ -296,15 +296,15 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         // 글 업로드 버튼
-        btnUpload.setOnClickListener {
+        btn_upload.setOnClickListener {
 
-            var pName = etProdName.text.toString()
+            var pName = et_prodName.text.toString()
             //var pCate = etCategory.text.toString()
-            var pCate = spCategory.selectedItem.toString()
-            var pCateHobby = spCategoryHobby.selectedItem.toString()
-            var pDetail = etProdDetail.text.toString()
-            var pDeposit = etDeposit.text.toString()
-            var pRental = etRentalFee.text.toString()
+            var pCate = sp_category.selectedItem.toString()
+            var pCateHobby = sp_categoryHobby.selectedItem.toString()
+            var pDetail = et_prodDetail.text.toString()
+            var pDeposit = et_deposit.text.toString()
+            var pRental = et_rentalFee.text.toString()
 
             /*
             if(pDeposit.equals("")) pDeposit = "0"
@@ -347,7 +347,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
             // 처음 올리는 경우. 즉 수정이 아닌 경우
-            if(btnUpload.text.equals("업로드")) {
+            if(btn_upload.text.equals("업로드")) {
 
                 // 데이터베이스에 데이터 삽입
                 // 현재 사용자 userId를 통해 Users에 있는 데이터를 가져옴.
@@ -392,15 +392,15 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
             // 수정인 경우
-            if(btnUpload.text.equals("수정")) {
+            if(btn_upload.text.equals("수정")) {
                 var map = mutableMapOf<String?,Any?>()
                 map["productName"] = pName
                 map["category"] = pCate
                 map["categoryHobby"] = pCateHobby
                 map["productDetail"] = pDetail
 
-                if(!cbDeposit.isChecked) pDeposit = ""
-                if(!cbRentalFee.isChecked) pRental = ""
+                if(!cb_deposit.isChecked) pDeposit = ""
+                if(!cb_rentalFee.isChecked) pRental = ""
 
                 map["deposit"] = pDeposit
                 map["rentalFee"] = pRental
@@ -492,13 +492,13 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     val results: List<Classifier.Recognition> = classifier!!.recognizeImage(bitmap)
                     // 밑에 이코드는 나중에 매핑하고 7개의 카테고리가 뜨게 할 것임.
                     // 나중에 바뀔 코드
-                    etCategory.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
+                    et_category.setText(results.get(0).toString())    // 가장 퍼센트가 높은 물건 하나만 가져오기
 
                     var cate = Category(results.get(0).toString())    // 물건의 카테고리 가져오기
-                    spCategory.setSelection(cate.category)      // 카테고리 설정하기
+                    sp_category.setSelection(cate.category)      // 카테고리 설정하기
 
                     var cateHobby = CategoryHobby(results.get(0).toString())   // 취미 카테고리 가져오기
-                    spCategoryHobby.setSelection(cateHobby.category)
+                    sp_categoryHobby.setSelection(cateHobby.category)
 
                     Toast.makeText(applicationContext,"카테고리가 바르게 설정되었는지 확인해주세요!",Toast.LENGTH_LONG).show()
 
