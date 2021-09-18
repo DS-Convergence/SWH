@@ -222,16 +222,18 @@ class MainPageActivity : AppCompatActivity() {
 
         // 추천 - 더보기
         var moreRcmd = moreRcmd
-        //var ubr = UserBasedRcmd("user_" + FirebaseAuth.getInstance().currentUser!!.uid.toString())  // 현재 유저 아이디 필요
+        var ubr = UserBasedRcmd("user_" + FirebaseAuth.getInstance().currentUser!!.uid.toString())  // 현재 유저 아이디 필요
+        /*
         rcmd1.visibility = View.INVISIBLE
         rcmd2.visibility = View.INVISIBLE
         rcmd3.visibility = View.INVISIBLE   // 오류 수정하고 지우기
+         */
         moreRcmd.setOnClickListener {
-            //Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
-            //var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요
+            // Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
+            // var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요 -> 주석으로 둘 것
 
             //TODO:오류 수정 필요
-            //ubr.getRcmd()
+            ubr.getRcmd()
         }
 
 
@@ -683,7 +685,6 @@ class MainPageActivity : AppCompatActivity() {
      */
 
     // TODO:오류 수정 필요
-    /*
     inner class UserBasedRcmd {
         lateinit var user : String
         // var userIndex = 0
@@ -1209,7 +1210,6 @@ class MainPageActivity : AppCompatActivity() {
             return sum12 / (Math.sqrt(sum1.toDouble()) * Math.sqrt(sum2.toDouble()))
         }
     }
-     */
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
