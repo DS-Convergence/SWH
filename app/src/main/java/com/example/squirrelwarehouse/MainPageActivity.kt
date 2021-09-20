@@ -59,7 +59,6 @@ class MainPageActivity : AppCompatActivity() {
         }
 
         var gotoMap = gotomap
-        // TODO: 지도 시작
         gotoMap.setOnClickListener {
             val intent = Intent(this, ItemLoc::class.java)
             startActivityForResult(intent, 0)
@@ -97,55 +96,23 @@ class MainPageActivity : AppCompatActivity() {
 
 
         // 파워람쥐 뷰페이저 구현
+        pwrgTV.setOnClickListener {
+            val intent = Intent(this, UserInfoActivity::class.java)  // 물건주인의 마이페이지로 이동
+            intent.putExtra("UserId","5Bf4S5mm7hRhvu3LbdPUbCI8hMh1")
+            startActivity(intent)
+        }
+
         val vpAdapter = MainViewpagerAdapter()
         VPpoweruser.adapter = vpAdapter
 
         val thread=Thread(PagerRunnable())
+        // TODO: 파워람쥐 이미지 로드 오류 수정 必 - context null
         thread.start()
 
 
-
         // 메인페이지 물품 보기
-        // TODO: 메인페이지 리사이클러뷰 내용 넣기
-        // https://hijjang2.tistory.com/313
-        // https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cosmosjs&logNo=221050368244
-
-        // 업데이트
-        // 리사이클러뷰:
-/*
-        updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var updateAdapter : ItemAdapter = ItemAdapter(this)
-        var updateList : ArrayList<HashMap<String, String>> = dataInArray()
-
-        var updateList:ArrayList<MainItem> = arrayListOf()
-        for(i in 1..5) {
-            item = MainItem("","최신"+i)
-            updateList.add(item)
-        }
-        updateView.adapter = MainViewAdapter(updateList)
-
-        // updateAdapter.items.clear()
-        // updateView.adapter = updateAdapter
-
-        // 업데이트 - 더보기
-        var moreUpdate = moreUpdate
-        moreUpdate.setOnClickListener {
-            val intent = Intent(this, UpdateMoreActivity::class.java)
-            intent.putExtra("updateList",updateList)
-            startActivityForResult(intent, 0)
-        }
- */
-        // 업데이트
-        // 리사이클러뷰: updateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        // var updateAdapter : MainViewAdapter = MainViewAdapter()
-        // var updateList : ArrayList<HashMap<String, String>> = dataInArray()
-
-        // 추천테스트: var updateList = UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd()
-
-        // updateAdapter.items.clear()
-        // updateView.adapter = updateAdapter
-
-        // 업데이트 - 더보기
+        // 최근 업데이트
+        // 최근 업데이트 - 더보기
         var moreUpdate = moreUpdate
         moreUpdate.setOnClickListener {
             val intent = Intent(this, UpdateMoreActivity::class.java)
@@ -155,48 +122,6 @@ class MainPageActivity : AppCompatActivity() {
 
 
         // 카테고리 : 지정 카테고리 항목 보여주기
-        /*var usrCategory:String = "운동"  // 추천 알고리즘 결과 상위 카테고리로 설정
-        cateTextView.text = "#"+usrCategory
-        //cateView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var cateAdapter : MainViewAdapter = MainViewAdapter()
-        cateAdapter.items.clear()
-        var cateList:ArrayList<MainItem> = arrayListOf()
-        /*for(i in 1..5) {
-            item = MainItem("","카테고리"+i)
-            // item = MainItem(지정 카테고리 상위 아이템 3개 받아서 저장)
-            cateList.add(item)
-        }*/
-        //lateinit var item : MainItem
-        var prodId = "93rEd9K64U6qLghEq0A8"
-        lateinit var prdName : String
-        firestore?.collection("Product")?.document(prodId)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if(task.isSuccessful) { // 데이터 가져오기를 성공하면
-                var product = task.result.toObject(Product::class.java)
-                item.name = product?.productName.toString()
-
-                // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                        .load(uri)
-                        .into(thumb)
-                    Log.v("IMAGE","Success")
-                }?.addOnFailureListener { //이미지 로드 실패시
-                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                    Log.v("IMAGE","failed")
-                }
-            }
-            else {
-                Toast.makeText(applicationContext,"데이터 로드 실패", Toast.LENGTH_LONG).show()
-            }
-        }
-        cateAdapter.items.add(item)
-        cateAdapter.items.add(MainItem("","카테고리2"))
-        cateAdapter.items.add(MainItem("","카테고리3"))
-        //cateView.adapter = cateAdapter
-        */
-
         // 카테고리 - 더보기
         var moreCate = moreCate
         moreCate.setOnClickListener {
@@ -207,19 +132,6 @@ class MainPageActivity : AppCompatActivity() {
 
 
         // 추천
-        /*//rcmdView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        var rcmdAdapter : MainViewAdapter = MainViewAdapter()
-        //var rcmdList:ArrayList<MainItem> = arrayListOf()
-        rcmdAdapter.items.clear()
-        for(i in 1..5) {
-            item = MainItem("","추천"+i)
-            // item = MainItem(추천 알고리즘 결과의 상위 아이템 3개 받아서 저장)
-            //rcmdList.add(item)
-            rcmdAdapter.items.add(item)
-        }
-        //rcmdView.adapter = rcmdAdapter
-        */
-
         // 추천 - 더보기
         var moreRcmd = moreRcmd
         var ubr = UserBasedRcmd("user_" + FirebaseAuth.getInstance().currentUser!!.uid.toString())  // 현재 유저 아이디 필요
@@ -235,39 +147,6 @@ class MainPageActivity : AppCompatActivity() {
             //TODO:오류 수정 필요
             ubr.getRcmd()
         }
-
-
-
-        // 예은 실험
-
-        //var updateList : ArrayList<Product> = dataLoading()
-
-        //ct_title1.text = updateList.get(0).productName.toString()
-        //ct_title2.text = products.get(1).productName
-        //ct_title3.text = products.get(2).productName
-
-        // 일단 물건 id로 하나씩 가져오는 건 성공
-        /*
-        firestore?.collection("Product")?.document("5Bf4S5mm7hRhvu3LbdPUbCI8hMh1_20210612_144047")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if(task.isSuccessful) {
-                var product = task.result.toObject(Product::class.java)
-                up_title1.text = product?.productName
-
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                            .load(uri)
-                            .into(up_thbm1)
-                    Log.v("IMAGE", "Success")
-                }?.addOnFailureListener { //이미지 로드 실패시
-                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                    Log.v("IMAGE","failed")
-                }
-            }
-
-        }
-         */
 
 
         // 성공,,,,,,
@@ -445,139 +324,6 @@ class MainPageActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
-/*
-        // 추천목록 메인에서만 일단 보여주기
-        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143229")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                var product = task.result.toObject(Product::class.java)
-                rc_title1.text = product?.productName
-                // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                            .load(uri)
-                            .into(rc_thbm1)
-                    Log.v("IMAGE", "Success")
-                }?.addOnFailureListener { //이미지 로드 실패시
-                    Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
-                    Log.v("IMAGE", "failed")
-                }
-            }
-        }
-
-        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143256")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                var product = task.result.toObject(Product::class.java)
-                rc_title2.text = product?.productName
-                // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                            .load(uri)
-                            .into(rc_thbm2)
-                    Log.v("IMAGE", "Success")
-                }
-            }
-        }
-
-        firestore?.collection("Product")?.document("YDNw0730r1aJzFZW4dvvzSNtfsV2_20210612_143229")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                var product = task.result.toObject(Product::class.java)
-                rc_title3.text = product?.productName
-                // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                            .load(uri)
-                            .into(rc_thbm3)
-                    Log.v("IMAGE", "Success")
-                }
-            }
-        }
-
-        firestore?.collection("Product")?.document("nqOPrU4ZcTfI1xoKlapXjjvFOXE2_20210612_142809")?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-            task ->
-            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
-                var product = task.result.toObject(Product::class.java)
-                rc_title1.text = product?.productName
-                // 사진 불러오기
-                var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
-                storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(applicationContext)
-                            .load(uri)
-                            .into(rc_thbm1)
-                    Log.v("IMAGE", "Success")
-                }
-            }
-        }
-*/
-        /*firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    //products.clear()
-                    if (querySnapshot == null) return@addSnapshotListener
-
-                    // 데이터 받아오기
-                    for (snapshot in querySnapshot!!.documents) {
-                        var item = snapshot.toObject(Product::class.java)
-                        if (item != null) {
-                            products.add(item)
-                            Log.v("PRODUCTS",products.size.toString())
-                            Log.v("PRODUCTS",item.productName.toString())
-                        }
-
-                    }
-
-                    // 일단 다 invisible
-                    up_title1.visibility = View.INVISIBLE
-                    up_title2.visibility = View.INVISIBLE
-                    up_title3.visibility = View.INVISIBLE
-
-                    // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                    // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
-                    if(products.size >= 1) {
-                        up_title1.visibility = View.VISIBLE
-
-                        up_title1.text = products.get(0).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(0).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm1)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(products.size >= 2) {
-                        up_title2.visibility = View.VISIBLE
-
-                        up_title2.text = products.get(1).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(1).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm2)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(products.size >= 3) {
-                        up_title3.visibility = View.VISIBLE
-
-                        up_title3.text = products.get(2).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(2).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm3)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                }
-         */
     }
 
     private fun searchItem(query: String) {
@@ -614,75 +360,11 @@ class MainPageActivity : AppCompatActivity() {
     inner class PagerRunnable : Runnable {
         override fun run() {
             while(true){
-                Thread.sleep(3000)
+                Thread.sleep(2000)
                 handler.sendEmptyMessage(0)
             }
         }
     }
-
-    fun dataInArray(): ArrayList<HashMap<String, String>> {
-
-        val data = firestore?.collection("Product")
-        val itemList = arrayListOf<HashMap<String, String>>()
-
-        itemList.clear()
-        if (data != null) {
-            data.get().addOnSuccessListener { prodId ->
-                for(document in prodId) {
-                    val item = hashMapOf<String, String>((document.id to document["productName"]) as Pair<String, String>)
-                    itemList.add(item)
-                }
-            }.addOnFailureListener { exception ->
-                Log.w("MainPageActivity", "Error getting documents")
-            }
-        }
-        return itemList
-    }
-
-    fun dataLoading() : ArrayList<Product> {
-        var products: ArrayList<Product> = arrayListOf()
-        firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    products.clear()
-                    if (querySnapshot == null) return@addSnapshotListener
-
-                    // 데이터 받아오기
-                    for (snapshot in querySnapshot!!.documents) {
-                        var item = snapshot.toObject(Product::class.java)
-                        if (item != null) {
-                            products.add(item)
-                            Log.v("PRODUCTS",products.size.toString())
-                            Log.v("PRODUCTS",item.productName.toString())
-                        }
-
-                    }
-                }
-
-        return products
-    }
-
-    /*
-    fun loadItem(dataSnapshot: DataSnapshot, adapter: MainViewAdapter) {
-        val prodIterator = dataSnapshot.children.iterator()
-        if (prodIterator.hasNext()) {
-            adapter.items.clear()
-            val product = prodIterator.next()
-            val itemsIterator = product.children.iterator()
-            while (itemsIterator.hasNext()) {
-                val currentItem = itemsIterator.next()
-                val map = currentItem.value as HashMap<String, Any>
-                //val userId = map["userId"].toString()
-                //val author = map["userName"].toString()
-                //val category = map["category"].toString()
-                val thumb = map["imageUri"].toString()
-                val name = map["productName"].toString()
-                //val time = Date(map["uploadTime"] as Long).toString()
-
-                adapter.items.add(MainItem(thumb,name))
-            }
-        }
-    }
-     */
 
     // TODO:오류 수정 필요
     inner class UserBasedRcmd {
@@ -1213,15 +895,11 @@ class MainPageActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        //finish()
         // 변경된 데이터를 불러오기 위해 자신의 액티비티를 다시 호출
         var intent = Intent(this, MainPageActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
-
-
     }
 
 }
