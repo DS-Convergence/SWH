@@ -98,13 +98,14 @@
                 android:paddingTop="5dp">
 
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:fontFamily="@font/goyang"
-                        android:text="파워람쥐"
-                        android:textSize="20sp"
-                        android:textColor="@color/mocha_brown" />
+                    android:id="@+id/pwrgTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/goyang"
+                    android:text="파워람쥐"
+                    android:textSize="20sp"
+                    android:textColor="@color/mocha_brown" />
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/VPpoweruser"

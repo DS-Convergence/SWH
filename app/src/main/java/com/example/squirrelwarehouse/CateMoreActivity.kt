@@ -49,9 +49,9 @@ class CateMoreActivity : AppCompatActivity() {
         var cateList : ArrayList<Product> = arrayListOf()
 
         init {
-            // TODO:카테고리 지정해서 필터링 할 것
-            firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)
-                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+            // TODO:카테고리 지정해서 필터링 할 것, 정보 떴다가 사라짐
+            firestore?.collection("Product")?.whereEqualTo("category", title)?.orderBy("uploadTime", Query.Direction.DESCENDING)
+                    ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     cateList.clear()
                     if (querySnapshot == null) return@addSnapshotListener
 
@@ -59,14 +59,14 @@ class CateMoreActivity : AppCompatActivity() {
                     for (snapshot in querySnapshot!!.documents) {
                         var item = snapshot.toObject(Product::class.java)
                         cateList.add(item!!)
+                        Log.v("CateList","Success, size: "+cateList.size)
                     }
                     notifyDataSetChanged()
                 }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            var view =
-                LayoutInflater.from(parent.context).inflate(R.layout.listview, parent, false)
+            var view = LayoutInflater.from(parent.context).inflate(R.layout.listview, parent, false)
             return CustomViewHolder(view)
         }
 
