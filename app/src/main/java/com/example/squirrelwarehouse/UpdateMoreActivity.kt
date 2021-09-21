@@ -2,6 +2,7 @@ package com.example.squirrelwarehouse
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -140,7 +141,10 @@ class UpdateMoreActivity : AppCompatActivity() {
                         // 데이터 받아오기
                         for (snapshot in querySnapshot!!.documents) {
                             var item = snapshot.toObject(Product::class.java)
-                            products.add(item!!)
+                            if(item!!.status.equals("대여 전")) {
+                                products.add(item!!)
+                                // Log.v("products", "Success, size: " + products.size)
+                            }
                         }
                         notifyDataSetChanged()
                     }
@@ -182,25 +186,6 @@ class UpdateMoreActivity : AppCompatActivity() {
                         .into(viewHolder.thumb)
                 //Log.v("IMAGE","Success")
 
-            }
-
-            // 거래상태 변경
-            if(products[position].status.equals("대여 종료")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 진회색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.dark_grey))
-                viewHolder.statusTV.text = "대여 종료"
-                //배경색 회색으로
-                viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
-
-            }
-            else if(products[position].status.equals("대여 중")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 녹색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
-                viewHolder.statusTV.text = "대여 중"
             }
 
             viewHolder.setOnClickListener {
