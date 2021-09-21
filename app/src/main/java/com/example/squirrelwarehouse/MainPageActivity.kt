@@ -360,7 +360,7 @@ class MainPageActivity : AppCompatActivity() {
     inner class PagerRunnable : Runnable {
         override fun run() {
             while(true){
-                Thread.sleep(2000)
+                Thread.sleep(3000)
                 handler.sendEmptyMessage(0)
             }
         }
