@@ -54,7 +54,10 @@ class RcmdMoreActivity : AppCompatActivity() {
                     firestore?.collection("Product")?.document(prodID)?.get()
                         ?.addOnSuccessListener { doc ->
                             var item = doc.toObject(Product::class.java)
-                            rcmdList.add(item!!)
+                            if(item!!.status.equals("대여 전")) {
+                                rcmdList.add(item!!)
+                                // Log.v("rcmdList", "Success, size: " + rcmdList.size)
+                            }
                             notifyDataSetChanged()
                         }
                 }
@@ -97,24 +100,6 @@ class RcmdMoreActivity : AppCompatActivity() {
 
             }
 
-            // 거래상태 변경
-            if(rcmdList[position].status.equals("대여 종료")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 진회색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.dark_grey))
-                viewHolder.statusTV.text = "대여 종료"
-                //배경색 회색으로
-                viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
-
-            }
-            else if(rcmdList[position].status.equals("대여 중")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 녹색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
-                viewHolder.statusTV.text = "대여 중"
-            }
             viewHolder.setOnClickListener {
                 Intent(this@RcmdMoreActivity, ProductDetailActivity::class.java).apply {
                     putExtra("data", rcmdList!![position].userId + "_" + rcmdList!![position].uploadTime)

@@ -52,17 +52,19 @@ class CateMoreActivity : AppCompatActivity() {
             // TODO:카테고리 지정해서 필터링 할 것, 정보 떴다가 사라짐
             firestore?.collection("Product")?.whereEqualTo("category", title)?.orderBy("uploadTime", Query.Direction.DESCENDING)
                     ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    cateList.clear()
-                    if (querySnapshot == null) return@addSnapshotListener
+                        // cateList.clear()
+                        if (querySnapshot == null) return@addSnapshotListener
 
-                    // 데이터 받아오기
-                    for (snapshot in querySnapshot!!.documents) {
-                        var item = snapshot.toObject(Product::class.java)
-                        cateList.add(item!!)
-                        Log.v("CateList","Success, size: "+cateList.size)
+                        // 데이터 받아오기
+                        for (snapshot in querySnapshot!!.documents) {
+                            var item = snapshot.toObject(Product::class.java)
+                            if(item!!.status.equals("대여 전")) {
+                                cateList.add(item!!)
+                                // Log.v("CateList", "Success, size: " + cateList.size)
+                            }
+                        }
+                        notifyDataSetChanged()
                     }
-                    notifyDataSetChanged()
-                }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -100,24 +102,6 @@ class CateMoreActivity : AppCompatActivity() {
 
             }
 
-            // 거래상태 변경
-            if(cateList[position].status.equals("대여 종료")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 진회색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.dark_grey))
-                viewHolder.statusTV.text = "대여 종료"
-                //배경색 회색으로
-                viewHolder.list_background.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.grey))
-
-            }
-            else if(cateList[position].status.equals("대여 중")){
-                // 글자색 흰색으로 변경
-                viewHolder.statusTV.setTextColor(ContextCompat.getColor(applicationContext!!,R.color.white))
-                // 글자 배경색 녹색
-                viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
-                viewHolder.statusTV.text = "대여 중"
-            }
             viewHolder.setOnClickListener {
                 Intent(this@CateMoreActivity, ProductDetailActivity::class.java).apply {
                     putExtra("data", cateList!![position].userId + "_" + cateList!![position].uploadTime)
