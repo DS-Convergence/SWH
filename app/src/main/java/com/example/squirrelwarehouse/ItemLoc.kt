@@ -74,7 +74,7 @@ class ItemLoc : AppCompatActivity(), OnMapReadyCallback {
         mMap = p0!!
         mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
         mMap.uiSettings.isZoomControlsEnabled = true
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.54662807656252, 126.96465941773634), 14.5f)) // 내 위치로 설정, 현재 서울역
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.65186, 127.01615), 15f)) // 내 위치로 설정, 현재 덕성여대
         // 내 근처의 아이템 찾아서 표시하기, 참고: https://steemit.com/kr-dev/@gbgg/firebase-5-firebase-1
 
         /* 모앱코드 참고
@@ -193,12 +193,12 @@ class ItemLoc : AppCompatActivity(), OnMapReadyCallback {
 
                         // 거래상태 배경설정
                         if(product!!.status.equals("대여 전")) {
-                            tv_info_status.setTextColor(ContextCompat.getColor(applicationContext,R.color.mocha_brown))
-                            tv_info_status.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.rice_white))
-                            layout_info.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.asparagus_green))
-                        } else if(product!!.status.equals("대여 중")) {
                             tv_info_status.setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
                             tv_info_status.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.asparagus_green))
+                            layout_info.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.asparagus_green))
+                        } else if(product!!.status.equals("대여 중")) {
+                            tv_info_status.setTextColor(ContextCompat.getColor(applicationContext,R.color.mocha_brown))
+                            tv_info_status.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.avocado_green))
                             layout_info.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.asparagus_green))
                         } else if(product!!.status.equals("대여 종료")) {
                             tv_info_status.setTextColor(ContextCompat.getColor(applicationContext,R.color.dark_grey))
