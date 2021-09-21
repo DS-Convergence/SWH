@@ -81,7 +81,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/jsdongkang_regular"
                 android:text="물건 이름"
-                android:textColor="@color/mocha_brown"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <TextView
@@ -92,7 +92,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/jsdongkang_regular"
                 android:text="올린 시간"
-                android:textColor="@color/mocha_brown"
+                android:textColor="@color/white"
                 android:textSize="10sp" />
 
             <TextView
@@ -104,6 +104,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/jsdongkang_regular"
                 android:text="대여 전"
+                android:textColor="@color/mocha_brown"
                 android:textSize="10sp" />
 
 
@@ -119,7 +120,7 @@
                 android:fontFamily="@font/jsdongkang_regular"
                 android:maxLines="1"
                 android:text="물건 설명"
-                android:textColor="@color/mocha_brown"
+                android:textColor="@color/white"
                 android:textSize="12sp" />
         </RelativeLayout>
     </LinearLayout>

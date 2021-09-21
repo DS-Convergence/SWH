@@ -202,6 +202,7 @@ class UpdateMoreActivity : AppCompatActivity() {
                 viewHolder.statusTV.setBackgroundColor(ContextCompat.getColor(applicationContext!!,R.color.asparagus_green))
                 viewHolder.statusTV.text = "대여 중"
             }
+
             viewHolder.setOnClickListener {
                 Intent(this@UpdateMoreActivity, ProductDetailActivity::class.java).apply {
                     putExtra("data", products!![position].userId + "_" + products!![position].uploadTime)
