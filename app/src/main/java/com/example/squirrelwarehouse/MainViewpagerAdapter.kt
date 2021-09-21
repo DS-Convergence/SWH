@@ -30,16 +30,14 @@ class MainViewpagerAdapter : PagerAdapter() {
     var arr : ArrayList<String> = arrayListOf()
     var pwrg : ArrayList<UserModelFS> = arrayListOf()
 
-
-
-    fun ViewPagerAdapter(context: Context){
+    fun MainViewpagerAdapter(context: Context){
         mContext = context
-        // mContext = context;
     }
 
     // position에 맞는 내용 생성
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(container.context).inflate(R.layout.main_viewpager, container, false)
+        MainViewpagerAdapter(container.context)
 
         arr.clear()
 
@@ -88,14 +86,12 @@ class MainViewpagerAdapter : PagerAdapter() {
 
         container.addView(view)
 
-        /*
         view.setOnClickListener {
-            // TODO: intent context 오류 고치기
-            val intent = Intent(this@MainViewpagerAdapter, UserInfoActivity::class.java)  // 오류남
+            Log.v("pwrg","들어왔나요?")
+            val intent = Intent(mContext, UserInfoActivity::class.java)  // 오류남
             intent.putExtra("UserId",pwrg!![position].uid.toString())
-            startActivity(intent)
+            mContext!!.startActivity(intent)
         }
-         */
 
         return view
         //return super.instantiateItem(container, position)
@@ -104,7 +100,7 @@ class MainViewpagerAdapter : PagerAdapter() {
     // position에 위치한 페이지 제거
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         container.removeView(`object` as View?)
-        // super.destroyItem(container, position, `object`)
+        // super.destroyItem(container, position, `object` as View)
     }
 
     // 사용 가능한 뷰 개수 리턴 - user 수
