@@ -52,6 +52,10 @@ class FilteringResult : AppCompatActivity() {
          */
 
         valarr = intent.getSerializableExtra("valList") as Array<String>
+        for(i in 0..2) {
+            Log.v("valList", i.toString()+" - "+ valarr!![i])
+        }
+
         if(valarr!!.size!=0) {
             page_title.text = "검색결과"
             // Log.v("filtering result", "arr size: "+valarr.size) 로그 출력이 안 됨

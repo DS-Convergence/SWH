@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.main_more.*
 
 class MainMore : AppCompatActivity() {
+    private var valList = Array<String>(3) {i->""}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_more)
@@ -21,7 +23,7 @@ class MainMore : AppCompatActivity() {
         var sLocDet:Spinner = spnLocDetail
         sLocDet.visibility = View.INVISIBLE
 
-        var valList = Array<String>(3) {i->""}
+        // var valList = Array<String>(3) {i->""}
 
         // 메인으로 돌아가기 버튼
         var gotomain = moreBtn
@@ -149,7 +151,7 @@ class MainMore : AppCompatActivity() {
                     // Toast.makeText(applicationContext, strLoc, Toast.LENGTH_LONG).show()
                     // 이 안에서 바꾸는 strarr 은 반영이 안됨
                     var locdetre = setAdapter(strLoc)
-                    valList[2] = locdetre
+                    // valList[2] = locdetre
                 }
             }
         }
@@ -197,6 +199,7 @@ class MainMore : AppCompatActivity() {
                 id: Long
             ) {
                 Toast.makeText(applicationContext, sLocDet.selectedItem.toString(), Toast.LENGTH_LONG).show()
+                valList[2] = sLocDet.selectedItem.toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
