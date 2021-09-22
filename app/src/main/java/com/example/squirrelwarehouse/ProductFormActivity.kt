@@ -528,6 +528,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 15f))
+        mMap!!.uiSettings.isZoomControlsEnabled = true
 
 
         mMap!!.setOnMapClickListener { latLng ->
