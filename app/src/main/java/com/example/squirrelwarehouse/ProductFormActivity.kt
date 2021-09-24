@@ -551,7 +551,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
             ActivityCompat.requestPermissions(this@ProductFormActivity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 0)
         } else {
             when { //프로바이더 제공자 활성화 여부 체크
-                isNetworkEnabled -> {
+                /*isNetworkEnabled -> {
                     val location =
                             lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) //인터넷기반으로 위치를 찾음
                     getLongitude = location?.longitude!!
@@ -559,7 +559,7 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
                     //Toast.makeText(applicationContext, getLongitude.toString()+","+getLatitude.toString(), Toast.LENGTH_SHORT).show()
                     mMap!!.isMyLocationEnabled = true
 
-                }
+                }*/
                 isGPSEnabled -> {
                     val location =
                             lm.getLastKnownLocation(LocationManager.GPS_PROVIDER) //GPS 기반으로 위치를 찾음
