@@ -422,6 +422,7 @@ class MainPageActivity : AppCompatActivity() {
                             //fav.add(item!!.products as java.util.ArrayList<String>)
                             // 새로 가입한경우 null일 수 있음. 그 경우 고려해야함.
                             st.add(item!!.transform as Map<String, Int>)
+                            Log.v("stayTimeSize", item!!.transform!!.size.toString())
 
                             // ArrayList<Map<String,Int>> 형식으로 받고
                             // 리스트에서 맵 하나씩 꺼내서 product에 있는 물건이랑 하나하나 비교.
@@ -439,10 +440,10 @@ class MainPageActivity : AppCompatActivity() {
                                 else {
                                     starr.add(0)
                                 }
-                                //Log.v("RcmdList", "starr: " + product.get(i) + " "+ starr.get(i))
+                                Log.v("RcmdListStarr", "starr: " + product.get(i) + " "+ starr.get(i))
                             }
                             dataArr.add(starr)
-                            //Log.v("RcmdList", "starr: 끝")
+                            Log.v("RcmdListStarr", "starr: 끝")
                         }
 
 
@@ -458,11 +459,11 @@ class MainPageActivity : AppCompatActivity() {
                                 fav.add(item!!.products as java.util.ArrayList<String>)
                             }
 
-                            Log.v("RcmdList", "유저개수: " + users.size)
-                            Log.v("RcmdList", "물건개수: " + product.size)
-                            Log.v("RcmdList", "좋아요개수: " + fav.size)
+                            //Log.v("RcmdList", "유저개수: " + users.size)
+                            //Log.v("RcmdList", "물건개수: " + product.size)
+                            //Log.v("RcmdList", "좋아요개수: " + fav.size)
 
-/*
+
                             // 물건 있는지 없는지 0 1 행렬
                             for(i in 0..fav.size-1) {
                                 var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
@@ -471,25 +472,32 @@ class MainPageActivity : AppCompatActivity() {
                                     if(fav.get(i).contains(product.get(j)))
                                         arr[j] = 10
 
-                                    //Log.v("RcmdList", " fav 포함: " +product.get(j) + " " + arr.get(j))
+                                    Log.v("RcmdListFav", " fav 포함: " +product.get(j) + " " + arr.get(j))
                                 }
                                 dataArr.set(i, arr)
 
-                                Log.v("RcmdList", "dataArr개수: " + dataArr.size)
-                                Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
+                                //Log.v("RcmdList", "dataArr개수: " + dataArr.size)
+                                //Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
                             }
-*/
+
 
 
                             // 유사도 행렬
                             for (i in 0..users.size-1) {
                                 var simArr = ArrayList<Double>()
                                 for(j in 0..users.size-1) {
-                                    if(i==j)
+                                    if(i==j)  // 나 자신과의 유사도 계산이면 1이나오기 때문에 0으로 넣어줌.
                                         simArr.add(0.0)
-                                    else
-                                        simArr.add(cosineSimilarity(dataArr.get(i),dataArr.get(j)))
-                                        //simArr.add(pearsonSimilarity(dataArr.get(i),dataArr.get(j)))
+                                    else {
+                                        var result = cosineSimilarity(dataArr.get(i),dataArr.get(j))
+                                        //var result = pearsonSimilarity(dataArr.get(i),dataArr.get(j))
+                                        if(!result.isNaN())  // 한명의 유저가 아무 물건도 보지 않았을 경우, NaN이 나옴.
+                                            simArr.add(result)
+                                        else
+                                            simArr.add(0.0)
+
+                                    }
+
 
                                     Log.v("RcmdList", "sim : " + simArr.get(j).toString())
                                 }
@@ -515,7 +523,7 @@ class MainPageActivity : AppCompatActivity() {
                                 Log.v("sim", sim.get(index1).get(i).toString())
                             }
 
-
+/*
                             // 유사도 제일 높은 사람의 정보 출력하기
                             var max = sim.get(index1).get(0)
                             var index2 = 0
@@ -527,6 +535,29 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             Log.v("RcmdList", "user: " + users.get(index2))
 
+ */
+
+                            // 유사도 0.35이상인 유저
+                            // 내가 보지 않았지만, 상대는 관심있는 물건 출력
+                            for(i in 0..users.size-1) {
+                                if(sim.get(index1).get(i) >= 0.35) {
+                                    // 0.35가 넘는 유저 한명씩 비교하면서 결과list에 추가
+                                    for (j in 0..dataArr.get(index1).size-1) {
+                                        // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
+                                        if (dataArr.get(index1).get(j) != 10 && dataArr.get(i).get(j) > 5) {
+                                            if(!product.get(j).contains(user.substring(5))) {
+                                                // 현재 유저의 물건일 경우 제외
+                                                if(!rcmdList.contains(product.get(j)))
+                                                    // 물건이 이미 들어있을 경우 제외
+                                                    rcmdList.add(product.get(j))
+                                                    Log.v("RcmdList", "추천물품 : "+product.get(j))
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+/*
                             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
                             for (j in 0..dataArr.get(index1).size-1) {
                                 if (dataArr.get(index1).get(j) != 10 && dataArr.get(index2).get(j) >= 2) {
@@ -556,6 +587,7 @@ class MainPageActivity : AppCompatActivity() {
                                     }
                                 }
                             }
+*/
 
                             // 일단 다 invisible
                             rc_title1.visibility = View.INVISIBLE
