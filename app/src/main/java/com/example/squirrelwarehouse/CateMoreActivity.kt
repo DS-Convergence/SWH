@@ -50,7 +50,7 @@ class CateMoreActivity : AppCompatActivity() {
 
         init {
             // TODO:카테고리 지정해서 필터링 할 것, 정보 떴다가 사라짐
-            firestore?.collection("Product")?.whereEqualTo("category", title)?.orderBy("uploadTime", Query.Direction.DESCENDING)
+            firestore?.collection("Product")?.whereEqualTo("categoryHobby", title)?.orderBy("uploadTime", Query.Direction.DESCENDING)
                     ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         // cateList.clear()
                         if (querySnapshot == null) return@addSnapshotListener
