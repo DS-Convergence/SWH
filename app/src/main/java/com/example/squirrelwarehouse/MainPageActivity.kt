@@ -376,6 +376,9 @@ class MainPageActivity : AppCompatActivity() {
 
         var st = ArrayList<Map<String, Int>>() // staytime 넣을
 
+        var category = ArrayList<String>()  // 물건의 취미카테고리
+        var cateCount : MutableMap<String, Int> = mutableMapOf()
+
 
         constructor(userId : String) {
 
@@ -404,6 +407,7 @@ class MainPageActivity : AppCompatActivity() {
                     for (snapshot in querySnapshot!!.documents) {
                         var item = snapshot.toObject(Product::class.java)
                         product.add(item!!.userId.toString() + "_" + item!!.uploadTime.toString())
+                        category.add(item!!.categoryHobby.toString())
                         //Log.v("RcmdList", item!!.productName.toString())
                     }
 
@@ -536,18 +540,41 @@ class MainPageActivity : AppCompatActivity() {
                                     // 0.35가 넘는 유저 한명씩 비교하면서 결과list에 추가
                                     for (j in 0..dataArr.get(uIndx).size-1) {
                                         // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
-                                        if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(i).get(j) > 5) {
-                                            if(!product.get(j).contains(user.substring(5))) {
-                                                // 현재 유저의 물건일 경우 제외
-                                                if(!rcmdList.contains(product.get(j)))
-                                                    // 물건이 이미 들어있을 경우 제외
+                                        if(!product.get(j).contains(user.substring(5))) {
+                                            // 현재 유저의 물건일 경우 제외
+                                            if(!rcmdList.contains(product.get(j))) {
+                                                // 물건이 이미 들어있을 경우 제외
+                                                if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(i).get(j) > 3) {
                                                     rcmdList.add(product.get(j))
-                                                    Log.v("RcmdList", "추천물품 : "+product.get(j))
+                                                    Log.v("RcmdList", "추천물품 : " + product.get(j))
+                                                }
+                                            }
+
+                                            // 카테고리 개수 카운트
+                                            if(dataArr.get(i).get(j)!=0) {
+                                                if(cateCount!!.contains(category[j])){
+                                                    cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
+                                                }
+                                                else{
+                                                    cateCount!![category.get(j)] = 1
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+
+                            // 가장많이 나온 카테고리 추출
+                            Log.v("RcmdList", "추천물품카테고리 : "+cateCount)
+                            var sortedByValue = cateCount.toList().sortedWith(compareByDescending({it.second})).toMap()
+                            Log.v("RcmdList", "추천물품카테고리 : "+sortedByValue)
+                            for(key in sortedByValue.keys) {
+                                if(!key.equals("기타") && !key.equals("null")) {
+                                    Log.v("RcmdList", "추천물품카테고리 : "+key + " " +sortedByValue.get(key))
+                                    break
+                                }
+                            }
+
 
                             /*
                             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
