@@ -135,11 +135,6 @@ class MainPageActivity : AppCompatActivity() {
         // 추천 - 더보기
         var moreRcmd = moreRcmd
         var ubr = UserBasedRcmd("user_" + FirebaseAuth.getInstance().currentUser!!.uid.toString())  // 현재 유저 아이디 필요
-        /*
-        rcmd1.visibility = View.INVISIBLE
-        rcmd2.visibility = View.INVISIBLE
-        rcmd3.visibility = View.INVISIBLE   // 오류 수정하고 지우기
-         */
         moreRcmd.setOnClickListener {
             // Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
             // var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요 -> 주석으로 둘 것
@@ -495,9 +490,7 @@ class MainPageActivity : AppCompatActivity() {
                                             simArr.add(result)
                                         else
                                             simArr.add(0.0)
-
                                     }
-
 
                                     Log.v("RcmdList", "sim : " + simArr.get(j).toString())
                                 }
@@ -509,42 +502,41 @@ class MainPageActivity : AppCompatActivity() {
 
 
                             // 현재 유저와 다른 유저와의 유사도만 뽑아내기
-                            var index1 = 0  // 현재 유저의 순서?인덱스? 뽑아내기
-                            while (index1 < users.size) {
-                                if (users.get(index1).equals(user.substring(5))) //userIndex = i;
+                            var uIndx = 0  // 현재 유저의 순서?인덱스? 뽑아내기
+                            while (uIndx < users.size) {
+                                if (users.get(uIndx).equals(user.substring(5))) //userIndex = i;
                                     break
-                                index1++
+                                uIndx++
                             }
-                            Log.v("RcmdList", "user: " + users.get(index1))
+                            Log.v("RcmdList", "user: " + users.get(uIndx))
 
 
                             // 현재 유저와의 유사도 확인
                             for(i in 0..users.size-1) {
-                                Log.v("sim", sim.get(index1).get(i).toString())
+                                Log.v("sim", sim.get(uIndx).get(i).toString())
                             }
 
-/*
+                            /*
                             // 유사도 제일 높은 사람의 정보 출력하기
-                            var max = sim.get(index1).get(0)
+                            var max = sim.get(uIndx).get(0)
                             var index2 = 0
                             for (j in 0..users.size-1) {
-                                if (max < sim.get(index1).get(j)) {
-                                    max = sim.get(index1).get(j)
+                                if (max < sim.get(uIndx).get(j)) {
+                                    max = sim.get(uIndx).get(j)
                                     index2 = j
                                 }
                             }
                             Log.v("RcmdList", "user: " + users.get(index2))
-
- */
+                             */
 
                             // 유사도 0.35이상인 유저
                             // 내가 보지 않았지만, 상대는 관심있는 물건 출력
                             for(i in 0..users.size-1) {
-                                if(sim.get(index1).get(i) >= 0.35) {
+                                if(sim.get(uIndx).get(i) >= 0.35) {
                                     // 0.35가 넘는 유저 한명씩 비교하면서 결과list에 추가
-                                    for (j in 0..dataArr.get(index1).size-1) {
+                                    for (j in 0..dataArr.get(uIndx).size-1) {
                                         // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
-                                        if (dataArr.get(index1).get(j) != 10 && dataArr.get(i).get(j) > 5) {
+                                        if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(i).get(j) > 5) {
                                             if(!product.get(j).contains(user.substring(5))) {
                                                 // 현재 유저의 물건일 경우 제외
                                                 if(!rcmdList.contains(product.get(j)))
@@ -557,10 +549,10 @@ class MainPageActivity : AppCompatActivity() {
                                 }
                             }
 
-/*
+                            /*
                             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
-                            for (j in 0..dataArr.get(index1).size-1) {
-                                if (dataArr.get(index1).get(j) != 10 && dataArr.get(index2).get(j) >= 2) {
+                            for (j in 0..dataArr.get(uIndx).size-1) {
+                                if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(index2).get(j) >= 2) {
                                     if(!product.get(j).contains(user.substring(5))) {
                                         rcmdList.add(product.get(j))
                                         Log.v("RcmdList", "추천물품 : "+product.get(j))
@@ -587,8 +579,9 @@ class MainPageActivity : AppCompatActivity() {
                                     }
                                 }
                             }
-*/
+                             */
 
+                            /*
                             // 일단 다 invisible
                             rc_title1.visibility = View.INVISIBLE
                             rc_title2.visibility = View.INVISIBLE
@@ -596,8 +589,7 @@ class MainPageActivity : AppCompatActivity() {
 
                             Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
 
-                            // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                            // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                            // 데이터가 3개보다 적을 수 있기 때문에 if문 작성
                             if(rcmdList.size >= 1) {
                                 firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                                     task ->
@@ -662,6 +654,7 @@ class MainPageActivity : AppCompatActivity() {
                                 }
                                 Log.v("RcmdList", "배열 크기: "+rcmdList.size)
                             }
+                             */
 
                             // 일단 다 invisible
                             rc_title1.visibility = View.INVISIBLE
@@ -670,8 +663,6 @@ class MainPageActivity : AppCompatActivity() {
 
                             Log.v("RcmdList", "추천물품 개수 : "+rcmdList.size)
 
-                            // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                            // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
                             if(rcmdList.size >= 1) {
                                 firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
                                     task ->
@@ -756,16 +747,16 @@ class MainPageActivity : AppCompatActivity() {
                                     }
                                 }
                             }
+
+
+                            // 추천물품 중 가장 많은 카테고리 뽑아내기
+
                         }
-
-
-
                     }
-
                 }
             }
 
-/*
+            /*
             // 유사도 행렬
             for (i in 0..users.size-1) {
                 var simArr = ArrayList<Double>()
@@ -781,30 +772,32 @@ class MainPageActivity : AppCompatActivity() {
             }
 
             // 현재 유저와 다른 유저와의 유사도만 뽑아내기
-            var index1 = 0
-            while (index1 < users.size) {
-                if (users.get(index1) == user) //userIndex = i;
+            var uIndx = 0
+            while (uIndx < users.size) {
+                if (users.get(uIndx) == user) //userIndex = i;
                     break
-                index1++
+                uIndx++
             }
 
             // 유사도 제일 높은 사람의 정보 출력하기
-            var max = sim.get(index1).get(0)
+            var max = sim.get(uIndx).get(0)
             var index2 = 0
             for (j in 0..users.size-1) {
-                if (max < sim.get(index1).get(j)) {
-                    max = sim.get(index1).get(j)
+                if (max < sim.get(uIndx).get(j)) {
+                    max = sim.get(uIndx).get(j)
                     index2 = j
                 }
             }
 
             // 내가 보지 않았지만, 상대는 관심있는 물건, 인덱스 출력
-            for (j in 0..data.get(index1).size-1) {
-                if (data.get(index1).get(j) == 0 && data.get(index2).get(j) != 0) {
+            for (j in 0..data.get(uIndx).size-1) {
+                if (data.get(uIndx).get(j) == 0 && data.get(index2).get(j) != 0) {
                     rcmdList.add(product.get(j))
                     Log.v("RcmdList", "추천물품 : "+product.get(j))
                 }
-            }*/
+            }
+             */
+
         }
 
         fun getRcmd() {
@@ -813,6 +806,7 @@ class MainPageActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
+        /*
         private fun getData() : ArrayList<ArrayList<Int>> {
             // 파이어베이스에서 데이터 불러와야 함
             // 지금은 일단 더미 데이터로 해보기
@@ -880,6 +874,7 @@ class MainPageActivity : AppCompatActivity() {
 
             return data1
         }
+         */
 
         private fun cosineSimilarity(user1: ArrayList<Int>, user2: ArrayList<Int>): Double {
             // 코사인 유사도 계산
@@ -900,15 +895,12 @@ class MainPageActivity : AppCompatActivity() {
             var avg2 = 0.0
 
             // 평균 구하기
-
             for (i in 0 until user1.size) {
                 avg1 += user1.get(i)
                 avg2 += user2.get(i)
             }
-
             avg1 = avg1 / user1.size
             avg2 = avg2 / user2.size
-
 
             // xy 분산
             var sum1 = 0.0
