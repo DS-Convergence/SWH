@@ -15,8 +15,10 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
+import kotlinx.android.synthetic.main.chat_to_row.view.*
 import kotlinx.android.synthetic.main.user_row_new_message.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
+import java.text.SimpleDateFormat
 
 class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){ //최근 받은 메세지 창들
     var chatPartnerUser: User? =null
@@ -28,7 +30,12 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){ //최�
         Log.d("CHECK_LATES","chatMessage.text : " + chatMessage.text)
 
         viewHolder.itemView.LastMessage_textview_new_message.text = chatMessage.text
-
+        var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
+        var date = sdf.parse(chatMessage!!.time)
+        sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+        var dateStr = sdf.format(date)
+        viewHolder.itemView.time_textview_new_message.text = dateStr
+       // viewHolder.itemView.time_textview_new_message.text = chatMessage.time.toString()
         val chatPartnerId: String
         if(chatMessage.fromId == FirebaseAuth.getInstance().uid){
             chatPartnerId = chatMessage.toId
@@ -58,6 +65,7 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){ //최�
                     if (task.isSuccessful) { // 데이터 가져오기를 성공하면
                         var product = task.result.toObject(Product::class.java)
                         viewHolder.itemView.chat_log_textview_productname.text = product?.productName
+
                     }
                 }
             }
