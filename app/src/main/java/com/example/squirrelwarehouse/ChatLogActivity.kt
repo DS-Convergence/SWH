@@ -2,42 +2,34 @@ package com.example.squirrelwarehouse
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.example.squirrelwarehouse.models.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
-import kotlinx.android.synthetic.main.activity_chat_log_more.*
-import kotlinx.android.synthetic.main.activity_latest_message.*
-import kotlinx.android.synthetic.main.activity_my_page.*
-import kotlinx.android.synthetic.main.activity_new_message.*
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_from_row.view.chat_from_row_time
 import kotlinx.android.synthetic.main.chat_from_row.view.imageview_chat_from_row
 import kotlinx.android.synthetic.main.chat_image_from_row.view.*
 import kotlinx.android.synthetic.main.chat_image_to_row.view.*
-import kotlinx.android.synthetic.main.chat_to_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.chat_to_row_time
 import kotlinx.android.synthetic.main.chat_to_row.view.imageview_chat_to_row
 import kotlinx.android.synthetic.main.chat_to_row.view.textView_to_row
-import kotlinx.android.synthetic.main.main_page.*
-import kotlinx.android.synthetic.main.product_form.*
-import kotlinx.android.synthetic.main.user_row_new_message.view.*
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -59,7 +51,7 @@ class ChatLogActivity : AppCompatActivity() {
     private lateinit var toimgUri : String //프로필 이미지
     private var uri : Uri? = null
     private lateinit var prodUserId : String  // 물건 주인 id
-
+    private var touseralarm: User? = null
     //val fromId = FirebaseAuth.getInstance().uid
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -105,15 +97,15 @@ class ChatLogActivity : AppCompatActivity() {
 
             }
             try{
-                    if ((item as ChatLogActivity.ChatImageToItem).chatImage != null) {
-                        val row = item as ChatLogActivity.ChatImageToItem
-                        Log.d("newcheck", "ChatImageToItem chatImage는 null이 아닌것 확인 성공")
-                        Log.d("newcheck", "ChatImageToItem row.chatImage.toString() : " + row.chatImage.toString())
-                        intent.putExtra("chatimage", row.chatImage!!.imageuri)
-                        Log.d("newcheck", "ChatImageToItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
-                        startActivityForResult(intent, 0)
-                        Log.d("newcheck", "ChatImageToItem 넘김")
-                    }
+                if ((item as ChatLogActivity.ChatImageToItem).chatImage != null) {
+                    val row = item as ChatLogActivity.ChatImageToItem
+                    Log.d("newcheck", "ChatImageToItem chatImage는 null이 아닌것 확인 성공")
+                    Log.d("newcheck", "ChatImageToItem row.chatImage.toString() : " + row.chatImage.toString())
+                    intent.putExtra("chatimage", row.chatImage!!.imageuri)
+                    Log.d("newcheck", "ChatImageToItem row.chatImage!!.imageuri : " +row.chatImage!!.imageuri)
+                    startActivityForResult(intent, 0)
+                    Log.d("newcheck", "ChatImageToItem 넘김")
+                }
 
             }catch (e:Exception){
             }
@@ -122,7 +114,7 @@ class ChatLogActivity : AppCompatActivity() {
 
         if (prod != null) {
             firestore?.collection("Product")?.document(prod!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                    task ->
+                task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
 
@@ -228,17 +220,18 @@ class ChatLogActivity : AppCompatActivity() {
                     //val reference = FirebaseDatabase.getInstance().getReference("/user-message/$fromId/$idprod").push()
                     //val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromId").push()
                     if (fromId == null) return //보내는 ID없으면 그냥 return
+                    var timeStampimage = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
 
 
-                    val chatImage = ChatImage(prod!!, imgFileName, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+                    val chatImage = ChatImage(prod!!, imgFileName, fromId, toId, timeStampimage) //class변수 만들기
 
                     reference.setValue(chatImage)
-                        .addOnSuccessListener {
-                            Log.d("CHECK", "chatImage올림 referece는 "+ reference)
-                            Log.d(ChatLogListActivity.TAG, "Saved our chat message: ${reference.key}")
-                            //editText_chat_log.text.clear() //보내면 내용 지우기
-                            recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-                        }
+                            .addOnSuccessListener {
+                                Log.d("CHECK", "chatImage올림 referece는 "+ reference)
+                                Log.d(ChatLogListActivity.TAG, "Saved our chat message: ${reference.key}")
+                                //editText_chat_log.text.clear() //보내면 내용 지우기
+                                recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+                            }
                     toReference.setValue(chatImage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
                     Log.d("CHECK", "chatImage올림 toreferece는 "+ toReference)
                     //새로보낸메세지를 위해서
@@ -285,7 +278,7 @@ class ChatLogActivity : AppCompatActivity() {
 
 
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnCompleteListener {// 넘겨온 물건 id를 넣어주면 됨.
-                task ->
+            task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                 var myuser = task.result.toObject(UserModelFS::class.java)
                 myUser = myuser
@@ -325,7 +318,7 @@ class ChatLogActivity : AppCompatActivity() {
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
-                                            task ->
+                                        task ->
                                         if(task.isSuccessful){
                                             toUser = task.result.toObject(UserModelFS::class.java)
                                             //var userName = user?.nickname.toString()
@@ -357,7 +350,7 @@ class ChatLogActivity : AppCompatActivity() {
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
-                                            task ->
+                                        task ->
                                         if(task.isSuccessful){
                                             toUser = task.result.toObject(UserModelFS::class.java)
                                             //var userName = user?.nickname.toString()
@@ -411,18 +404,18 @@ class ChatLogActivity : AppCompatActivity() {
         val toReference = FirebaseDatabase.getInstance().getReference("/user-message/$toId/$fromidprod").push()
         if (fromId == null) return //보내는 ID없으면 그냥 return
 
-
+        var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         //물건이 기준이 되도록 바꿈.
-        val chatMessage = ChatMessage(prod!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
+        val chatMessage = ChatMessage(prod!!, text, fromId, toId, timeStamp) //class변수 만들기
         //val chatMessage = ChatMessage(reference.key!!, text, fromId, toId, Calendar.getInstance().time) //class변수 만들기
 
 
         reference.setValue(chatMessage)
-            .addOnSuccessListener {
-                Log.d(TAG, "Saved our chat message: ${reference.key}")
-                editText_chat_logg.text.clear() //보내면 내용 지우기
-                recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-            }
+                .addOnSuccessListener {
+                    Log.d(TAG, "Saved our chat message: ${reference.key}")
+                    editText_chat_logg.text.clear() //보내면 내용 지우기
+                    recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+                }
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
@@ -431,9 +424,61 @@ class ChatLogActivity : AppCompatActivity() {
 
         val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromidprod")
         latestMessageToRef.setValue(chatMessage)
+
+        //푸시 메세지
+        //2021_09_10_마지막 고친부분
+
+        Log.d("alarmchecking_eunbae","token : " + toUser)
+        val notiModel = NotiModel(fromId,text) //보낸사람의 n.tokenickname, 보낸 메세지
+        //val pushModel = PushNotification(notiModel,toUser.token) //받는 사람의 토큰 값 넣어주기
+        //testPush(pushModel)
+
+        firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
+            // 넘겨온 물건 id를 넣어주면 됨.
+            task ->
+            if(task.isSuccessful){
+                touseralarm = task.result.toObject(User::class.java)
+                /*
+                Log.d("alarmchecking_eunbae","notiModel " +notiModel)
+                Log.d("alarmchecking_eunbae","notiMode 내용 " +notiModel.content)
+                Log.d("alarmchecking_eunbae","notiMode .title " +notiModel.title)
+                val pushModel = PushNotification(notiModel,touseralarm!!.token) //받는 사람의 토큰 값 넣어주기
+                Log.d("alarmchecking_eunbae"," touseralarm!!.token"+touseralarm!!.token)
+                Log.d("alarmchecking_eunbae"," touseralarm!!.uid"+touseralarm!!.uid)
+                Log.d("alarmchecking_eunbae"," touseralarm!!.username"+touseralarm!!.username)
+                testPush(pushModel)
+                Log.d("alarmchecking_eunbae","testPush실행")*/
+
+                val PushNotification = PushNotification(
+                        NotiModel(fromId, text),
+                        touseralarm!!.token
+                )
+                sendNotification(PushNotification)
+            }
+        }
     }
+    //푸시 메세지
+    //2021_09_09
+    /*
+    private fun testPush(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch{
+        Log.d("alarmchecking_eunbae","testPush함수로 들어옴")
+        Log.d("alarmchecking_eunbae","notification content : " + notification.data.content)
+        RetrofitInstnace.api.postNotification(notification)
+        Log.d("alarmchecking_eunbae"," RetrofitInstnace.api.postNotification(notification) 실행")
+    }*/
 
-
+    private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
+        try {
+            val response = RetrofitInstnace.api.postNotification(notification)
+            if(response.isSuccessful) {
+                Log.d(ChatLogListActivity.TAG, "Response: ${Gson().toJson(response)}")
+            } else {
+                Log.e(ChatLogListActivity.TAG, response.errorBody().toString())
+            }
+        } catch(e: Exception) {
+            Log.e(ChatLogListActivity.TAG, e.toString())
+        }
+    }
 
     class ChatFromItem(val chatmessage: ChatMessage?, val user: UserModelFS?) : Item<ViewHolder>() {
         private var firestore : FirebaseFirestore? = null
@@ -485,9 +530,15 @@ class ChatLogActivity : AppCompatActivity() {
 
         }
         private fun setTimeText(viewHolder: ViewHolder){
-            val dateFormat = SimpleDateFormat
+            /*val dateFormat = SimpleDateFormat
                 .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
-            viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatmessage!!.time)
+            viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatmessage!!.time)*/
+
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
+            var date = sdf.parse(chatmessage!!.time)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.itemView.chat_from_row_time.text = dateStr
         }
 
         override fun getLayout(): Int {
@@ -523,9 +574,15 @@ class ChatLogActivity : AppCompatActivity() {
         }
 
         private fun setTimeText(viewHolder: ViewHolder){
-            val dateFormat = SimpleDateFormat
-                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
-            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatmessage!!.time)
+            /*val dateFormat = SimpleDateFormat
+                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatmessage!!.time)*/
+
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
+            var date = sdf.parse(chatmessage!!.time)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.itemView.chat_to_row_time.text = dateStr
         }
 
         override fun getLayout(): Int {
@@ -588,9 +645,15 @@ class ChatLogActivity : AppCompatActivity() {
             })
         }
         private fun setTimeText(viewHolder: ViewHolder){
-            val dateFormat = SimpleDateFormat
-                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
-            viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatImage!!.time)
+            /*val dateFormat = SimpleDateFormat
+                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+            viewHolder.itemView.chat_from_row_time.text = dateFormat.format(chatImage!!.time)*/
+
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
+            var date = sdf.parse(chatImage!!.time)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.itemView.chat_from_row_time.text = dateStr
         }
 
         override fun getLayout(): Int {
@@ -644,9 +707,15 @@ class ChatLogActivity : AppCompatActivity() {
         }
 
         private fun setTimeText(viewHolder: ViewHolder){
-            val dateFormat = SimpleDateFormat
-                .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
-            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatImage!!.time)
+           /* val dateFormat = SimpleDateFormat
+                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatImage!!.time)*/
+
+            var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
+            var date = sdf.parse(chatImage!!.time)
+            sdf = SimpleDateFormat("yyyy.MM.dd HH:mm")
+            var dateStr = sdf.format(date)
+            viewHolder.itemView.chat_to_row_time.text = dateStr
         }
 
         override fun getLayout(): Int {
