@@ -85,6 +85,7 @@ class MainPageActivity : AppCompatActivity() {
         searchBar.queryHint = "검색어를 입력하세요"
         searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                // Log.v("Srch", "MPA_onC_query: "+query)
                 searchItem(query!!)
                 return false
             }
@@ -233,96 +234,12 @@ class MainPageActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
-
-
-        /*
-        // 특정 카테고리 물품만
-        var cateProds = ArrayList<Product>()
-        var catehob = cateName
-        Log.v("cateName", "OnCreate_cateHob_"+catehob)
-        cateTextView.text = catehob
-        firestore?.collection("Product")?.whereEqualTo("categoryHobby", catehob)?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    //cateProds.clear()
-                    if (querySnapshot == null) return@addSnapshotListener
-
-                    // 데이터 받아오기
-                    for (snapshot in querySnapshot!!.documents) {
-                        var item = snapshot.toObject(Product::class.java)
-                        if (item != null) {
-                            cateProds.add(item)
-                            Log.v("PRODUCTS", cateProds.size.toString())
-                            Log.v("PRODUCTS", item.productName.toString())
-                        }
-                    }
-
-                    if(cateProds.size >= 1) {
-                        ct_title1.visibility = View.VISIBLE
-
-                        ct_title1.text = cateProds.get(0).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(0).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(ct_thbm1)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(cateProds.size >= 2) {
-                        ct_title2.visibility = View.VISIBLE
-
-                        ct_title2.text = cateProds.get(1).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(1).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(ct_thbm2)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(cateProds.size >= 3) {
-                        ct_title3.visibility = View.VISIBLE
-
-                        ct_title3.text = cateProds.get(2).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(2).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(ct_thbm3)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                }
-         */
-
-        /*
-        // 여기서 오류남. ArrayList가 또 0이라고함. 위에꺼는 안그런데,,
-        // https://stackoverflow.com/questions/50123649/does-tasks-whenallsuccess-guarantee-the-order-in-which-i-pass-tasks-to-it 이거 해보기
-        // 아무래도 생명주기와 관련이 있지 않을가,,,,, 아닌듯,,,
-        cate1.setOnClickListener {
-            var intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
-            startActivityForResult(intent, 0)
-        }
-        cate2.setOnClickListener {
-            var intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("data",cateProds!![1].userId+"_"+cateProds!![1].uploadTime)
-            startActivityForResult(intent, 0)
-        }
-        cate3.setOnClickListener {
-            var intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("data", cateProds!![2].userId + "_" + cateProds!![2].uploadTime)
-            startActivityForResult(intent, 0)
-        }
-         */
-
     }
 
     private fun searchItem(query: String) {
         var intent = Intent(this, SearchResult::class.java)
+        // Log.v("Srch", "MPA_srchItem: "+query)
+        intent.putExtra("query", query)
         startActivityForResult(intent, 0)
     }
 
@@ -438,7 +355,7 @@ class MainPageActivity : AppCompatActivity() {
                                 else {
                                     starr.add(0)
                                 }
-                                Log.v("RcmdListStarr", "starr: " + product.get(i) + " "+ starr.get(i))
+                                // Log.v("RcmdListStarr", "starr: " + product.get(i) + " "+ starr.get(i))
                             }
                             dataArr.add(starr)
                             Log.v("RcmdListStarr", "starr: 끝")
