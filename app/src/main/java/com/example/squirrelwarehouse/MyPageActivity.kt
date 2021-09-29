@@ -10,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_my_page.*
 import android.util.Log
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -20,12 +21,14 @@ class MyPageActivity : AppCompatActivity() {
     var nickname : String?= null
     var introduce : String? = null
     var storage : FirebaseStorage?=null
+    var user : FirebaseUser? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
         firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         storage = FirebaseStorage.getInstance()
+        user = auth.currentUser
 
         var storageReference : StorageReference? = null
         var pathReference : StorageReference? = null
@@ -110,10 +113,57 @@ class MyPageActivity : AppCompatActivity() {
 
     // 회원탈퇴 함수
     fun deleteId() {
-        auth?.currentUser?.delete()
+        //TODO 조건 걸기 파워람쥐, 대여 상태 확인 test
+        //파워람쥐
+        firestore?.collection("PowerRamgi")?.whereEqualTo("uid",uid)?.get()?.addOnSuccessListener { documents->
+            Log.d("DELETE", "여기로 오는 지(succ)${documents.isEmpty}")
+            if(documents.isEmpty){
+                Log.d("DELETE", "여기로 오는 지(null)")
+                deleteDates()
+                Toast.makeText(this, "Successful membership withdrawal", Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this, "파워람쥐에 등록되어 있는 사용자는 탈퇴할 수 없습니다. 문제가 있다면 관리자에게 문의해주세요", Toast.LENGTH_LONG).show()
+            }
+        }
+                ?.addOnFailureListener {
+                    Log.d("DELETE", "여기로 오는 지(fail)")
+                }
+
+    }
+    //실제 데이터들 삭제하는 함수
+    private fun deleteDates(){
+        firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener {  // Users에서 현재 물건 imageURI 가져옴
+            doc ->
+            var image = doc.data?.get("userProPic").toString()
+            Log.d("DELETE", "$image")
+
+            // Users 데이터 삭제
+            firestore?.collection("Users")?.document("user_${uid}")?.delete()?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
+                    // Storage에 있는 사진 데이터 삭제
+                    var storageRef = storage?.reference?.child("images")?.child(image)
+                    storageRef?.delete()?.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Log.d("DELETE", "Success")
+                            //Toast.makeText(applicationContext, "삭제 완료", Toast.LENGTH_SHORT).show()
+
+                        }
+                    }
+                }
+
+            }
+        }
+
+        firestore?.collection("StayTime")?.document("$uid")?.delete()
+
+        firestore?.collection("Favorite")?.document("$uid")?.delete()
+
+        user?.delete()
                 ?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Successful membership withdrawal", Toast.LENGTH_LONG).show()
+                        Log.d("DELETE", "여기로 오는 지(delete데이터 함수)")
                     }
                 }
     }
