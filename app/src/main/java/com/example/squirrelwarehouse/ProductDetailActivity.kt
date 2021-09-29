@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.product_detail.*
 import kotlinx.coroutines.internal.AddLastDesc
+import java.io.IOException
 import java.text.SimpleDateFormat
 import kotlin.math.ln
 
@@ -90,8 +91,14 @@ class ProductDetailActivity : AppCompatActivity() {
                 // 위도, 경도 데이터 > 한글 주소
                 var geocoder = Geocoder(this)
                 var list : List<Address>? = null
-                if(product?.region != null)
-                    list = geocoder.getFromLocation(product!!.region!!.latitude, product!!.region!!.longitude, 10)
+                if(product?.region != null) {
+                    try {
+                        list = geocoder.getFromLocation(product!!.region!!.latitude, product!!.region!!.longitude, 10)
+                    }
+                    catch (e: IOException) {
+                        list = null
+                    }
+                }
 
                 if(list != null) {
                     if(list.size!=0) {

@@ -105,8 +105,8 @@ class FilteringResult : AppCompatActivity() {
                             // 필터링
                             if(cat1.equals("") || cat1.equals(item!!.category)) {  // 일반카테고리
                                 if(cat2.equals("") || cat2.equals(item!!.categoryHobby)) {  // 취미카테고리
-                                    if(loc.equals("") || strloc!!.get(1).equals(loc) || strloc!!.get(2).equals(loc)) {  // 위치
-                                        if(item!!.region !=null && item!!.status.equals("대여 전")) {  // 위치 null값과 대여 전인 물건
+                                    if(loc.equals("") || ((strloc!!.get(1).equals(loc) || strloc!!.get(2).equals(loc)) && item!!.region !=null)) {  // 위치
+                                        if(item!!.status.equals("대여 전")) {  // 위치 null값과 대여 전인 물건
                                             products.add(item!!)
                                             // Log.v("products", "Success, size: " + products.size)
                                         }
