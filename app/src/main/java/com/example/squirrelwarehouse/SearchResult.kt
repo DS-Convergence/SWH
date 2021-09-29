@@ -34,6 +34,7 @@ class SearchResult : AppCompatActivity() {
         page_title.text = "검색 결과"
 
         querystr = intent.getStringExtra("query").toString()
+        querystr = querystr.replace(" ","")
         Log.v("Srch","query: "+querystr)
 
         firestore = FirebaseFirestore.getInstance()
