@@ -22,6 +22,8 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.main_page.*
 import kotlinx.android.synthetic.main.product_detail.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -295,6 +297,8 @@ class MainPageActivity : AppCompatActivity() {
         var cateCount : MutableMap<String, Int> = mutableMapOf()
         var cateName = ""
 
+        var viewCount : MutableMap<String, Int> = mutableMapOf()
+
 
         constructor(userId : String) {
 
@@ -313,6 +317,15 @@ class MainPageActivity : AppCompatActivity() {
                     Log.v("RcmdList", "user: " + item!!.uid.toString())
                 }
 
+                // 현재 유저와 다른 유저와의 유사도만 뽑아내기
+                var uIndx = 0  // 현재 유저의 순서?인덱스? 뽑아내기
+                while (uIndx < users.size) {
+                    if (users.get(uIndx).equals(user.substring(5))) //userIndex = i;
+                        break
+                    uIndx++
+                }
+                Log.v("RcmdList", "user: " + users.get(uIndx))
+
 
                 // product
                 firestore?.collection("Product")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -323,7 +336,9 @@ class MainPageActivity : AppCompatActivity() {
                     for (snapshot in querySnapshot!!.documents) {
                         var item = snapshot.toObject(Product::class.java)
                         product.add(item!!.userId.toString() + "_" + item!!.uploadTime.toString())
-                        category.add(item!!.categoryHobby.toString())
+                        viewCount[item!!.userId.toString() + "_" + item!!.uploadTime.toString()] = item!!.view!!.toInt()
+                        //if(item!!.categoryHobby !=null)
+                            category.add(item!!.categoryHobby.toString())
                         //Log.v("RcmdList", item!!.productName.toString())
                     }
 
@@ -345,6 +360,8 @@ class MainPageActivity : AppCompatActivity() {
                             //item!!.transform!!.containsKey("물건id")
                         }
 
+                        // 내가 본 물건이 5개 이하일 때, 추천 물품은 조회수가 가장 높은 물건들
+                        Log.v("sortedByView", st.size.toString())
 
                         for(map in st) {
                             var starr = ArrayList<Int>()
@@ -379,107 +396,119 @@ class MainPageActivity : AppCompatActivity() {
                             //Log.v("RcmdList", "좋아요개수: " + fav.size)
 
 
-                            // 물건 있는지 없는지 0 1 행렬
-                            for(i in 0..fav.size-1) {
-                                var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
-                                for(j in 0..product.size-1) {
-                                    // Log.v("RcmdList", "물건개수: " + j)
-                                    if(fav.get(i).contains(product.get(j)))
-                                        arr[j] = 10
-
-                                    Log.v("RcmdListFav", " fav 포함: " +product.get(j) + " " + arr.get(j))
+                            // 물건을 5개 이하로 봤으면 임의 추천
+                            // 그 외에는 알고리즘 추천
+                            if(st.get(uIndx).size <= 5) {
+                                var sortedByView = viewCount.toList().sortedWith(compareByDescending({it.second})).toMap()
+                                var keys = sortedByView.keys.toList()
+                                for(i in 0..10){
+                                    rcmdList.add(keys[i])
                                 }
-                                dataArr.set(i, arr)
+                                Log.v("sortedByView", sortedByView.toString())
+                                Log.v("sortedByView", sortedByView.keys.toString())
+                                Log.v("sortedByView", rcmdList.toString())
 
-                                //Log.v("RcmdList", "dataArr개수: " + dataArr.size)
-                                //Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
+                                // 카테고리 설정
+                                var cateList = category.toSet().toList()
+                                cateName = cateList.get(Random().nextInt(cateList.size))
+                                Log.v("cateList", cateList.toString())
+
                             }
+                            else {
+                                // 물건 있는지 없는지 0 1 행렬
+                                for(i in 0..fav.size-1) {
+                                    var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
+                                    //Log.v("RcmdList", "dataArr개수: " + arr.size)
+                                    for(j in 0..product.size-1) {
+                                        // Log.v("RcmdList", "물건개수: " + j)
+                                        if(fav.get(i).contains(product.get(j)))
+                                            arr[j] = 10
 
-
-
-                            // 유사도 행렬
-                            for (i in 0..users.size-1) {
-                                var simArr = ArrayList<Double>()
-                                for(j in 0..users.size-1) {
-                                    if(i==j)  // 나 자신과의 유사도 계산이면 1이나오기 때문에 0으로 넣어줌.
-                                        simArr.add(0.0)
-                                    else {
-                                        var result = cosineSimilarity(dataArr.get(i),dataArr.get(j))
-                                        //var result = pearsonSimilarity(dataArr.get(i),dataArr.get(j))
-                                        if(!result.isNaN())  // 한명의 유저가 아무 물건도 보지 않았을 경우, NaN이 나옴.
-                                            simArr.add(result)
-                                        else
-                                            simArr.add(0.0)
+                                        //Log.v("RcmdListFav", " fav 포함: " +product.get(j) + " " + arr.get(j))
                                     }
+                                    Log.v("RcmdList", "dataArr개수: " + dataArr.size)
+                                    dataArr.set(i, arr)
 
-                                    Log.v("RcmdList", "sim : " + simArr.get(j).toString())
+
+                                    //Log.v("RcmdList", "dataArr개수: " + dataArr.get(i).size)
                                 }
-                                sim.add(simArr)
-
-                                Log.v("RcmdList", "sim개수: " + sim.size)
-                            }
 
 
 
-                            // 현재 유저와 다른 유저와의 유사도만 뽑아내기
-                            var uIndx = 0  // 현재 유저의 순서?인덱스? 뽑아내기
-                            while (uIndx < users.size) {
-                                if (users.get(uIndx).equals(user.substring(5))) //userIndex = i;
-                                    break
-                                uIndx++
-                            }
-                            Log.v("RcmdList", "user: " + users.get(uIndx))
+                                // 유사도 행렬
+                                for (i in 0..users.size-1) {
+                                    var simArr = ArrayList<Double>()
+                                    for(j in 0..users.size-1) {
+                                        if(i==j)  // 나 자신과의 유사도 계산이면 1이나오기 때문에 0으로 넣어줌.
+                                            simArr.add(0.0)
+                                        else {
+                                            var result = cosineSimilarity(dataArr.get(i),dataArr.get(j))
+                                            //var result = pearsonSimilarity(dataArr.get(i),dataArr.get(j))
+                                            if(!result.isNaN())  // 한명의 유저가 아무 물건도 보지 않았을 경우, NaN이 나옴.
+                                                simArr.add(result)
+                                            else
+                                                simArr.add(0.0)
+                                        }
+
+                                        //Log.v("RcmdList", "sim : " + simArr.get(j).toString())
+                                    }
+                                    sim.add(simArr)
+
+                                    //Log.v("RcmdList", "sim개수: " + sim.size)
+                                }
 
 
-                            // 현재 유저와의 유사도 확인
-                            for(i in 0..users.size-1) {
-                                Log.v("sim", sim.get(uIndx).get(i).toString())
-                            }
+                                // 현재 유저와의 유사도 확인
+                                for(i in 0..users.size-1) {
+                                    Log.v("sim", sim.get(uIndx).get(i).toString())
+                                }
 
 
-                            // 유사도 0.35이상인 유저
-                            // 내가 보지 않았지만, 상대는 관심있는 물건 출력
-                            for(i in 0..users.size-1) {
-                                if(sim.get(uIndx).get(i) >= 0.35) {
-                                    // 0.35가 넘는 유저 한명씩 비교하면서 결과list에 추가
-                                    for (j in 0..dataArr.get(uIndx).size-1) {
-                                        if(!product.get(j).contains(user.substring(5))) {
-                                            // 현재 유저의 물건일 경우 제외
-                                            if(!rcmdList.contains(product.get(j))) {
-                                                // 물건이 이미 들어있을 경우 제외
-                                                if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(i).get(j) > 3) {
-                                                    // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
-                                                    rcmdList.add(product.get(j))
-                                                    Log.v("RcmdList", "추천물품 : " + product.get(j))
+                                // 유사도 0.35이상인 유저
+                                // 내가 보지 않았지만, 상대는 관심있는 물건 출력
+                                for(i in 0..users.size-1) {
+                                    if(sim.get(uIndx).get(i) >= 0.35) {
+                                        // 0.35가 넘는 유저 한명씩 비교하면서 결과list에 추가
+                                        for (j in 0..dataArr.get(uIndx).size-1) {
+                                            if(!product.get(j).contains(user.substring(5))) {
+                                                // 현재 유저의 물건일 경우 제외
+                                                if(!rcmdList.contains(product.get(j))) {
+                                                    // 물건이 이미 들어있을 경우 제외
+                                                    if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(i).get(j) > 3) {
+                                                        // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
+                                                        rcmdList.add(product.get(j))
+                                                        Log.v("RcmdList", "추천물품 : " + product.get(j))
+                                                    }
                                                 }
-                                            }
 
-                                            // 카테고리 개수 카운트
-                                            if(dataArr.get(i).get(j)!=0) {
-                                                if(cateCount!!.contains(category[j])){
-                                                    cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
-                                                }
-                                                else{
-                                                    cateCount!![category.get(j)] = 1
+                                                // 카테고리 개수 카운트
+                                                if(dataArr.get(i).get(j)!=0) {
+                                                    if(cateCount!!.contains(category[j])){
+                                                        cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
+                                                    }
+                                                    else{
+                                                        cateCount!![category.get(j)] = 1
+                                                    }
                                                 }
                                             }
                                         }
                                     }
                                 }
-                            }
 
-                            // 가장많이 나온 카테고리 추출
-                            // Log.v("RcmdList", "추천물품카테고리 : "+cateCount)
-                            var sortedByValue = cateCount.toList().sortedWith(compareByDescending({it.second})).toMap()
-                            // Log.v("RcmdList", "추천물품카테고리 : "+sortedByValue)
-                            for(key in sortedByValue.keys) {
-                                if(!key.equals("기타") && !key.equals("null")) {
-                                    Log.v("RcmdList", "추천물품카테고리 : "+key + " " +sortedByValue.get(key))
-                                    cateName = key
-                                    break
+                                // 가장많이 나온 카테고리 추출
+                                Log.v("RcmdList", "추천물품카테고리 : "+cateCount)
+                                var sortedByValue = cateCount.toList().sortedWith(compareByDescending({it.second})).toMap()
+                                // Log.v("RcmdList", "추천물품카테고리 : "+sortedByValue)
+                                for(key in sortedByValue.keys) {
+                                    if(!key.equals("기타") && !key.equals("null")) {
+                                        Log.v("RcmdList", "추천물품카테고리 : "+key + " " +sortedByValue.get(key))
+                                        cateName = key
+                                        break
+                                    }
                                 }
                             }
-                            
+
+
 
                             // 추천 - 일단 다 invisible
                             rc_title1.visibility = View.INVISIBLE
