@@ -27,7 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.SquirrelWarehouse"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".RcmdMore"></activity>
+        <activity android:name=".RcmdMoreActivity"></activity>
         <activity android:name=".TransactionListActivity" />
         <activity android:name=".MyFavoriteListActivity" />
         <activity android:name=".MyListActivity" />
