@@ -1,5 +1,6 @@
 package com.example.squirrelwarehouse
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
@@ -40,14 +41,18 @@ class UserEvaluationActivity : AppCompatActivity() {
             else if(auth?.currentUser?.uid.equals(user2)){
                 otherUser = user1
             }
+            Log.d("점수","$otherUser")
             firestore?.collection("Users")?.document("user_${otherUser}")
                     ?.get()?.addOnSuccessListener { doc ->
                         rating = doc?.data?.get("rating").toString().toFloat()
-                        ratingCnt = doc?.data?.get("ratingCnt").toString().toInt()+1
-                        ratingScore = (ratingScore+rating)/ratingCnt
+                        ratingCnt = doc?.data?.get("ratingCnt").toString().toInt()
+                        ratingScore = (ratingScore+(rating*ratingCnt))/(ratingCnt+1)
+                        ratingCnt += 1
                         firestore.collection("Users").document("user_${otherUser}")
                                 .update("rating",ratingScore,"ratingCnt",ratingCnt)
                     }
+            val intent = Intent(this,ChatLogActivity::class.java)
+            startActivity(intent)
             finish()
             //TODO 실행시켜보기
         }
