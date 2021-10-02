@@ -346,6 +346,8 @@ class MainPageActivity : AppCompatActivity() {
                     firestore?.collection("StayTime")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         if (querySnapshot == null) return@addSnapshotListener
 
+                        st.clear()
+
                         // 데이터 받아오기
                         for (snapshot in querySnapshot!!.documents) {
                             var item = snapshot.toObject(StayTime::class.java)
@@ -362,6 +364,8 @@ class MainPageActivity : AppCompatActivity() {
 
                         // 내가 본 물건이 5개 이하일 때, 추천 물품은 조회수가 가장 높은 물건들
                         Log.v("sortedByView", st.size.toString())
+
+                        dataArr.clear()
 
                         for(map in st) {
                             var starr = ArrayList<Int>()
@@ -416,7 +420,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             else {
                                 // 물건 있는지 없는지 0 1 행렬
-                                for(i in 0..fav.size-1) {
+                                for(i in 0..users.size-1) {
                                     var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
                                     //Log.v("RcmdList", "dataArr개수: " + arr.size)
                                     for(j in 0..product.size-1) {
