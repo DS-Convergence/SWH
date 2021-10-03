@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.lang.Math.round
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
@@ -39,7 +40,9 @@ class MyPageActivity : AppCompatActivity() {
             nickname = doc?.data?.get("nickname").toString()
             introduce = doc?.data?.get("introduce").toString()
             id_sign_up_txt.text = nickname
-            rating_txt.text = doc?.data?.get("rating").toString()
+            var rating = doc?.data?.get("rating").toString().toDouble()
+            rating = round(rating*100)/100.toDouble()
+            rating_txt.text = rating.toString()
             introduce_txt.text = introduce
             var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
