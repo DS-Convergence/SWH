@@ -94,7 +94,7 @@
             android:theme="@style/Transparent" />
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".DeleteAccountActivity" />
-        <activity android:name=".SetLocationInformationActivity" />
+        <activity android:name=".PowerRamgiApplicationActivity" />
         <activity android:name=".ProductFormActivity">
 
             <!--
