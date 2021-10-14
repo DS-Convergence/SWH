@@ -44,8 +44,8 @@ class MyFirebaseMessagingService: FirebaseMessagingService()
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        //알림 팝업 누를 시 MainActivity로 이동
-        val intent = Intent(this, MainActivity::class.java)
+        //알림 팝업 누를 시 ChatLogListActivity 이동
+        val intent = Intent(this, LatestMessageActivity::class.java)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationID = Random.nextInt()
 
@@ -56,12 +56,12 @@ class MyFirebaseMessagingService: FirebaseMessagingService()
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_ONE_SHOT)
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle(message.data["title"])
-                .setContentText(message.data["message"])
-                .setSmallIcon(R.drawable.logo)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
-                .build()
+            .setContentTitle(message.data["title"])
+            .setContentText(message.data["content"])
+            .setSmallIcon(R.drawable.logo)
+            .setAutoCancel(true)
+            .setContentIntent(pendingIntent)
+            .build()
 
         notificationManager.notify(notificationID, notification)
     }
