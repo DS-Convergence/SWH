@@ -40,6 +40,9 @@ class ChatLogListActivity : AppCompatActivity() {
         //var currentUser: User? = null
         val TAG = "chatLog"
     }
+
+
+    private var usernamealarm: String? = null
     private var touser: UserModelFS? = null
     val adapter = GroupAdapter<ViewHolder>()//새로운 어뎁터
     var toUser: User? = null
@@ -396,6 +399,7 @@ class ChatLogListActivity : AppCompatActivity() {
 
         val fromId = FirebaseAuth.getInstance().uid //나는 보내는 사람이니까 from
 
+
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         val toId = user!!.uid
         var prod = intent.getStringExtra("prod").toString()
@@ -434,47 +438,35 @@ class ChatLogListActivity : AppCompatActivity() {
 
         //푸시 메세지
         //2021_09_09
-        /*
-        Log.d("alarmchecking_eunbae","token : " + user.token)
-        val notiModel = NotiModel(fromId,text) //보낸사람의 nickname, 보낸 메세지
-        val pushModel = PushNotification(notiModel,user.token) //받는 사람의 토큰 값 넣어주기
-        testPush(pushModel)
-        Log.d("alarmchecking_eunbae"," RetrofitInstnace.api.postNotification(notification) 실행")
-        //mAlertDialog.dismiss()*/
-
-        val PushNotification = PushNotification(
-                NotiModel(fromId, text),
-                user.token
-        )
-        sendNotification(PushNotification)
-    }
-
-
-    //알람 뛰우는 함수
-    //2021_09_10
-    /*
-    private fun testPush(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
-        Log.d("alarmchecking_eunbae","testPush함수로 들어옴")
-        Log.d("alarmchecking_eunbae","notification content : " + notification.data.content)
-        try{
-            val response = RetrofitInstnace.api.postNotification(notification)
-            if(response.isSuccessful){
-                Log.d("alarmchecking_eunbae","Response: ${Gson().toJson(response)}")
-            }else{
-                Log.e("alarmchecking_eunbae","error")
+        /*val ref = FirebaseDatabase.getInstance().getReference("/users/$fromId")
+        ref.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.d("alarmtest","snapshot.getValue(User::class.java)!! : ${snapshot.getValue(User::class.java)!!}")
+                usernamealarm = snapshot.getValue(User::class.java)!!.username
+                Log.d("alarmtest","usernamealarm : ${usernamealarm}")
             }
-        }catch (e:java.lang.Exception){
-            Log.e("alarmchecking_eunbae",e.toString())
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })*/
+
+        firestore?.collection("Users")?.document("user_${fromId}")?.get()?.addOnCompleteListener {// 넘겨온 물건 id를 넣어주면 됨.
+                task ->
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var myuser = task.result.toObject(UserModelFS::class.java)
+                var PushNotificationlist = PushNotification(
+                    NotiModel(myuser?.nickname!!, text),
+                    user.token
+                )
+                sendNotification(PushNotificationlist)
+            }
         }
+
+
     }
-    */
-    /*
-    private fun testPush(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch{
-        Log.d("alarmchecking_eunbae","testPush함수로 들어옴")
-        Log.d("alarmchecking_eunbae","notification content : " + notification.data.content)
-        RetrofitInstnace.api.postNotification(notification)
-        Log.d("alarmchecking_eunbae"," RetrofitInstnace.api.postNotification(notification) 실행")
-    }*/
+
 
     private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
         try {

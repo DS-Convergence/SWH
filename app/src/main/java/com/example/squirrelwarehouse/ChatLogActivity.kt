@@ -114,7 +114,7 @@ class ChatLogActivity : AppCompatActivity() {
 
         if (prod != null) {
             firestore?.collection("Product")?.document(prod!!)?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                task ->
+                    task ->
                 if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                     var product = task.result.toObject(Product::class.java)
 
@@ -226,12 +226,12 @@ class ChatLogActivity : AppCompatActivity() {
                     val chatImage = ChatImage(prod!!, imgFileName, fromId, toId, timeStampimage) //class변수 만들기
 
                     reference.setValue(chatImage)
-                            .addOnSuccessListener {
-                                Log.d("CHECK", "chatImage올림 referece는 "+ reference)
-                                Log.d(ChatLogListActivity.TAG, "Saved our chat message: ${reference.key}")
-                                //editText_chat_log.text.clear() //보내면 내용 지우기
-                                recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-                            }
+                        .addOnSuccessListener {
+                            Log.d("CHECK", "chatImage올림 referece는 "+ reference)
+                            Log.d(ChatLogListActivity.TAG, "Saved our chat message: ${reference.key}")
+                            //editText_chat_log.text.clear() //보내면 내용 지우기
+                            recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+                        }
                     toReference.setValue(chatImage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
                     Log.d("CHECK", "chatImage올림 toreferece는 "+ toReference)
                     //새로보낸메세지를 위해서
@@ -278,7 +278,7 @@ class ChatLogActivity : AppCompatActivity() {
 
 
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnCompleteListener {// 넘겨온 물건 id를 넣어주면 됨.
-            task ->
+                task ->
             if(task.isSuccessful) { // 데이터 가져오기를 성공하면
                 var myuser = task.result.toObject(UserModelFS::class.java)
                 myUser = myuser
@@ -318,7 +318,7 @@ class ChatLogActivity : AppCompatActivity() {
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
-                                        task ->
+                                            task ->
                                         if(task.isSuccessful){
                                             toUser = task.result.toObject(UserModelFS::class.java)
                                             //var userName = user?.nickname.toString()
@@ -350,7 +350,7 @@ class ChatLogActivity : AppCompatActivity() {
                                     // 내가 채팅 보내는 상대(즉 글 오린 사람) 유저 데이터 가져오기
                                     firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
                                         // 넘겨온 물건 id를 넣어주면 됨.
-                                        task ->
+                                            task ->
                                         if(task.isSuccessful){
                                             toUser = task.result.toObject(UserModelFS::class.java)
                                             //var userName = user?.nickname.toString()
@@ -386,6 +386,8 @@ class ChatLogActivity : AppCompatActivity() {
         val text = editText_chat_logg.text.toString() //우리가 쓴 메세지를 text로 얻어와
 
         val fromId = FirebaseAuth.getInstance().uid //나는 보내는 사람이니까 from
+
+
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         //val toId = user!!.uid
         val toId = touserid
@@ -411,11 +413,11 @@ class ChatLogActivity : AppCompatActivity() {
 
 
         reference.setValue(chatMessage)
-                .addOnSuccessListener {
-                    Log.d(TAG, "Saved our chat message: ${reference.key}")
-                    editText_chat_logg.text.clear() //보내면 내용 지우기
-                    recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
-                }
+            .addOnSuccessListener {
+                Log.d(TAG, "Saved our chat message: ${reference.key}")
+                editText_chat_logg.text.clear() //보내면 내용 지우기
+                recyclerView_chat_log_activity.scrollToPosition(adapter.itemCount - 1) //보내면 가장 최근 보낸 메세지 쪽으로 스크롤 위치
+            }
         toReference.setValue(chatMessage) //이메일로 로그인 했을 때도 여전히 뜰수 있게
 
         //새로보낸메세지를 위해서
@@ -429,43 +431,41 @@ class ChatLogActivity : AppCompatActivity() {
         //2021_09_10_마지막 고친부분
 
         Log.d("alarmchecking_eunbae","token : " + toUser)
-        val notiModel = NotiModel(fromId,text) //보낸사람의 n.tokenickname, 보낸 메세지
         //val pushModel = PushNotification(notiModel,toUser.token) //받는 사람의 토큰 값 넣어주기
         //testPush(pushModel)
-
-        firestore?.collection("Users")?.document("user_${touserid}")?.get()?.addOnCompleteListener {
-            // 넘겨온 물건 id를 넣어주면 됨.
+        Log.d("alarmchecking_eunbae","PushNotificationlist 들어가기전 fromID 확인 : " + fromId)
+        /*
+        firestore?.collection("Users")?.document("user_${fromId}")?.get()?.addOnCompleteListener {// 넘겨온 물건 id를 넣어주면 됨.
             task ->
-            if(task.isSuccessful){
-                touseralarm = task.result.toObject(User::class.java)
-                /*
-                Log.d("alarmchecking_eunbae","notiModel " +notiModel)
-                Log.d("alarmchecking_eunbae","notiMode 내용 " +notiModel.content)
-                Log.d("alarmchecking_eunbae","notiMode .title " +notiModel.title)
-                val pushModel = PushNotification(notiModel,touseralarm!!.token) //받는 사람의 토큰 값 넣어주기
-                Log.d("alarmchecking_eunbae"," touseralarm!!.token"+touseralarm!!.token)
-                Log.d("alarmchecking_eunbae"," touseralarm!!.uid"+touseralarm!!.uid)
-                Log.d("alarmchecking_eunbae"," touseralarm!!.username"+touseralarm!!.username)
-                testPush(pushModel)
-                Log.d("alarmchecking_eunbae","testPush실행")*/
-
-                val PushNotification = PushNotification(
-                        NotiModel(fromId, text),
-                        touseralarm!!.token
+            if (task.isSuccessful) { // 데이터 가져오기를 성공하면
+                var myuser = task.result.toObject(UserModelFS::class.java)
+                var PushNotificationlist = PushNotification(
+                        NotiModel(myuser?.nickname!!, text),
+                        user!!.token
                 )
-                sendNotification(PushNotification)
+                sendNotification(PushNotificationlist)
             }
         }
+*/
+        //2021_10_05 여기가 계속 오류나...................!!
+        firestore?.collection("Users")?.document("user_${fromId}")?.get()?.addOnCompleteListener {
+            // 넘겨온 물건 id를 넣어주면 됨.
+                task ->
+            if(task.isSuccessful){
+                var touseralarm = task.result.toObject(User::class.java)
+                var PushNotificationlog = PushNotification(
+                    NotiModel(touseralarm!!.username, text),
+                    touseralarm!!.token
+                )
+                sendNotification(PushNotificationlog)
+                Log.d("alarmchecking_eunbae","PushNotificationlist 성공성공성공 : " + PushNotificationlog.data.title)
+                Log.d("alarmchecking_eunbae","PushNotificationlist 성공성공성공 : " + PushNotificationlog.to.toString())
+            }
+        }
+
+
     }
-    //푸시 메세지
-    //2021_09_09
-    /*
-    private fun testPush(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch{
-        Log.d("alarmchecking_eunbae","testPush함수로 들어옴")
-        Log.d("alarmchecking_eunbae","notification content : " + notification.data.content)
-        RetrofitInstnace.api.postNotification(notification)
-        Log.d("alarmchecking_eunbae"," RetrofitInstnace.api.postNotification(notification) 실행")
-    }*/
+
 
     private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
         try {
@@ -707,9 +707,9 @@ class ChatLogActivity : AppCompatActivity() {
         }
 
         private fun setTimeText(viewHolder: ViewHolder){
-           /* val dateFormat = SimpleDateFormat
-                    .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
-            viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatImage!!.time)*/
+            /* val dateFormat = SimpleDateFormat
+                     .getDateTimeInstance(SimpleDateFormat.SHORT,SimpleDateFormat.SHORT)
+             viewHolder.itemView.chat_to_row_time.text = dateFormat.format(chatImage!!.time)*/
 
             var sdf = SimpleDateFormat("yyyyMMdd_HHmm")
             var date = sdf.parse(chatImage!!.time)
