@@ -78,9 +78,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     // tensorflow Lite
-    private val MODEL_PATH = "model.tflite"
+    private val MODEL_PATH = "model_211027.tflite"
     private val QUANT = true
-    private val LABEL_PATH = "labels2.txt"
+    private val LABEL_PATH = "labels.txt"
     private val INPUT_SIZE = 224
 
     private var classifier: Classifier? = null
@@ -634,16 +634,18 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
     fun getCateHobbyNum(cate: String?) : Int {
 
         when(cate) {
-            "문화/예술" -> return 1
-            "공예" -> return 2
-            "요리" -> return 3
-            "미술" -> return 4
-            "운동/스포츠" -> return 5
-            "원예" -> return 6
-            "공부" -> return 7
-            "게임" -> return 8
-            "기타" -> return 9
-            else -> return 9
+            "공부" -> return 1
+            "게임" -> return 2
+            "독서" -> return 3
+            "문화/예술" -> return 4
+            "미술/공예" -> return 5
+            "요리" -> return 6
+            "원예" -> return 7
+            "운동/스포츠" -> return 8
+            "음악" -> return 9
+            "펫" -> return 10
+            "기타" -> return 11
+            else -> return 11
         }
     }
 
