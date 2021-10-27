@@ -46,7 +46,7 @@ public class CategoryHobby {
         map.put("opera glass",3);
         map.put("fabric poster",3);
         map.put("photo printer",3);
-        map.put("printer",3);
+        map.put("camera",3);
         map.put("tripod",3);
         map.put("camera lens",3);
         map.put("camera bag",3);
