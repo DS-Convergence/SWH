@@ -18,16 +18,19 @@
         <item>음악</item>
         <item>기타</item>
     </string-array>
+
     <string-array name="cate_hobby">
         <item>선택안함</item>
-        <item>문화/예술</item>
-        <item>공예</item>
-        <item>요리</item>
-        <item>미술</item>
-        <item>운동/스포츠</item>
-        <item>원예</item>
         <item>공부</item>
         <item>게임</item>
+        <item>독서</item>
+        <item>문화/예술</item>
+        <item>미술/공예</item>
+        <item>요리</item>
+        <item>원예</item>
+        <item>운동/스포츠</item>
+        <item>음악</item>
+        <item>펫</item>
         <item>기타</item>
     </string-array>
 

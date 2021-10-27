@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -29,6 +30,8 @@ class MainViewpagerAdapter : PagerAdapter() {
 
     var arr : ArrayList<String> = arrayListOf()
     var pwrg : ArrayList<UserModelFS> = arrayListOf()
+
+    lateinit var mGlideRequestManager : RequestManager
 
     fun MainViewpagerAdapter(context: Context){
         mContext = context
@@ -74,9 +77,8 @@ class MainViewpagerAdapter : PagerAdapter() {
                 Log.v("pwrg", "mContext: not null")
                 var imgRef = storage?.reference?.child("images")?.child(pwrg!![position].userProPic.toString())
                 imgRef?.downloadUrl?.addOnSuccessListener { uri ->
-                    Glide.with(mContext)
-                            .load(uri)
-                            .into(view.thumb)
+                    mGlideRequestManager = Glide.with(mContext)
+                    mGlideRequestManager.load(uri).into(view.thumb)
                     // Log.v("pwrg", "img Success")
                 }
             } else {
