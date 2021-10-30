@@ -324,7 +324,7 @@ class MainPageActivity : AppCompatActivity() {
                         break
                     uIndx++
                 }
-                Log.v("RcmdList", "user: " + users.get(uIndx))
+                //Log.v("RcmdList", "user: " + users.get(uIndx))
 
 
                 // product
@@ -338,7 +338,7 @@ class MainPageActivity : AppCompatActivity() {
                         product.add(item!!.userId.toString() + "_" + item!!.uploadTime.toString())
                         viewCount[item!!.userId.toString() + "_" + item!!.uploadTime.toString()] = item!!.view!!.toInt()
                         //if(item!!.categoryHobby !=null)
-                            category.add(item!!.categoryHobby.toString())
+                        category.add(item!!.categoryHobby.toString())
                         //Log.v("RcmdList", item!!.productName.toString())
                     }
 
@@ -346,15 +346,18 @@ class MainPageActivity : AppCompatActivity() {
                     firestore?.collection("StayTime")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         if (querySnapshot == null) return@addSnapshotListener
 
-                        st.clear()
-
                         // 데이터 받아오기
                         for (snapshot in querySnapshot!!.documents) {
                             var item = snapshot.toObject(StayTime::class.java)
                             //fav.add(item!!.products as java.util.ArrayList<String>)
                             // 새로 가입한경우 null일 수 있음. 그 경우 고려해야함.
-                            st.add(item!!.transform as Map<String, Int>)
-                            Log.v("stayTimeSize", item!!.transform!!.size.toString())
+                            if(item!!.products!=null && item!!.transform!=null) {
+                                st.add(item!!.transform as Map<String, Int>)
+                                Log.v("stayTimeSize", item!!.transform!!.size.toString())
+                            }
+                            else {
+                                st.add(mutableMapOf<String, Int>("" to 0))
+                            }
 
                             // ArrayList<Map<String,Int>> 형식으로 받고
                             // 리스트에서 맵 하나씩 꺼내서 product에 있는 물건이랑 하나하나 비교.
@@ -364,8 +367,6 @@ class MainPageActivity : AppCompatActivity() {
 
                         // 내가 본 물건이 5개 이하일 때, 추천 물품은 조회수가 가장 높은 물건들
                         Log.v("sortedByView", st.size.toString())
-
-                        dataArr.clear()
 
                         for(map in st) {
                             var starr = ArrayList<Int>()
@@ -392,7 +393,12 @@ class MainPageActivity : AppCompatActivity() {
                             for (snapshot in querySnapshot!!.documents) {
                                 var item = snapshot.toObject(Favorite::class.java)
                                 // 새로 가입한경우 null일 수 있음. 그 경우 고려해야함.
-                                fav.add(item!!.products as java.util.ArrayList<String>)
+                                if(item!!.products!=null) {
+                                    fav.add(item!!.products as java.util.ArrayList<String>)
+                                }
+                                else {
+                                    fav.add(ArrayList())
+                                }
                             }
 
                             //Log.v("RcmdList", "유저개수: " + users.size)
@@ -405,8 +411,15 @@ class MainPageActivity : AppCompatActivity() {
                             if(st.get(uIndx).size <= 5) {
                                 var sortedByView = viewCount.toList().sortedWith(compareByDescending({it.second})).toMap()
                                 var keys = sortedByView.keys.toList()
-                                for(i in 0..10){
-                                    rcmdList.add(keys[i])
+                                if(keys.size < 9) {
+                                    for (i in 0..keys.size-1) {
+                                        rcmdList.add(keys[i])
+                                    }
+                                }
+                                else {
+                                    for(i in 0..10){
+                                        rcmdList.add(keys[i])
+                                    }
                                 }
                                 Log.v("sortedByView", sortedByView.toString())
                                 Log.v("sortedByView", sortedByView.keys.toString())
@@ -420,7 +433,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             else {
                                 // 물건 있는지 없는지 0 1 행렬
-                                for(i in 0..users.size-1) {
+                                for(i in 0..fav.size-1) {
                                     var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
                                     //Log.v("RcmdList", "dataArr개수: " + arr.size)
                                     for(j in 0..product.size-1) {
@@ -543,7 +556,7 @@ class MainPageActivity : AppCompatActivity() {
                                                     .into(rc_thbm1)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
-                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                                             Log.v("IMAGE", "failed")
                                         }
                                     }
@@ -571,7 +584,7 @@ class MainPageActivity : AppCompatActivity() {
                                                     .into(rc_thbm2)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
-                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                                             Log.v("IMAGE", "failed")
                                         }
                                     }
@@ -599,7 +612,7 @@ class MainPageActivity : AppCompatActivity() {
                                                     .into(rc_thbm3)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
-                                            Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
+                                            // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
                                             Log.v("IMAGE", "failed")
                                         }
                                     }
