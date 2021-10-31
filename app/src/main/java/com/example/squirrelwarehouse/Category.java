@@ -32,6 +32,7 @@ public class Category {
         map.put("tablet",0);
         map.put("blender",0);
         map.put("hand mixer",0);
+        map.put("filming light",0);
 
 
         // 생활/인테리어 > 1
@@ -56,6 +57,16 @@ public class Category {
         map.put("silicone mold",1);
         map.put("coffee kettle",1);
         map.put("kettle",1);
+        map.put("water fountain",1);
+        map.put("pet wheel",1);
+        map.put("bird cage",1);
+        map.put("automatic feeder",1);
+        map.put("thimble",1);
+        map.put("camera bag",1);
+        map.put("watering can",1);
+        map.put("shovel",1);
+        map.put("homie",1);
+        map.put("sickle",1);
 
 
         // 스포츠/레저 > 2
@@ -112,21 +123,7 @@ public class Category {
 
 
         // 기타 > 7
-        map.put("water fountain",7);
-        map.put("pet wheel",7);
-        map.put("bird cage",7);
-        map.put("automatic feeder",7);
-        map.put("thimble",7);
-        map.put("camera bag",7);
-        map.put("filming light",7);
-        map.put("watering can",7);
-        map.put("shovel",7);
-        map.put("homie",7);
-        map.put("sickle",7);
-
-
-
-
+        
 
     }
 
