@@ -109,6 +109,7 @@ class MainPageActivity : AppCompatActivity() {
         VPpoweruser.adapter = vpAdapter
 
         val thread=Thread(PagerRunnable())
+        // TODO: 파워람쥐 이미지 로드 오류 수정 必 - context null
         thread.start()
 
 
@@ -130,6 +131,7 @@ class MainPageActivity : AppCompatActivity() {
             // Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
             // var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요 -> 주석으로 둘 것
 
+            //TODO:오류 수정 필요
             ubr.getRcmd()
         }
 
@@ -322,7 +324,7 @@ class MainPageActivity : AppCompatActivity() {
                         break
                     uIndx++
                 }
-                // Log.v("RcmdList", "user: " + users.get(uIndx))
+                //Log.v("RcmdList", "user: " + users.get(uIndx))
 
 
                 // product
@@ -473,12 +475,50 @@ class MainPageActivity : AppCompatActivity() {
                                 }
 
 
+                                // 현재유저의 유사도 리스트를 맵으로 변경
+                                var simMap : MutableMap<Int, Double> = mutableMapOf()
+
+
                                 // 현재 유저와의 유사도 확인
                                 for(i in 0..users.size-1) {
                                     Log.v("sim", sim.get(uIndx).get(i).toString())
+                                    simMap[i] = sim.get(uIndx).get(i)
+                                }
+
+                                var sortedBySim = simMap.toList().sortedWith(compareByDescending({it.second})).toMap()
+
+
+                                // 상위 3명
+                                for(i in 0..2) {
+                                    var loc = sortedBySim.keys.toList().get(i)
+
+                                    for (j in 0..dataArr.get(uIndx).size-1) {
+                                        if(!product.get(j).contains(user.substring(5))) {
+                                            // 현재 유저의 물건일 경우 제외
+                                            if(!rcmdList.contains(product.get(j))) {
+                                                // 물건이 이미 들어있을 경우 제외
+                                                if (dataArr.get(uIndx).get(j) != 10 && dataArr.get(loc).get(j) > 2) {
+                                                    // 물건에 대해 현재 유저가 좋아요를 누르지 않았으며, 상대유저의 선호도가 어느정도 높은 경우
+                                                    rcmdList.add(product.get(j))
+                                                    Log.v("RcmdList", "추천물품 : " + product.get(j))
+                                                }
+                                            }
+
+                                            // 카테고리 개수 카운트
+                                            if(dataArr.get(loc).get(j)!=0) {
+                                                if(cateCount!!.contains(category[j])){
+                                                    cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
+                                                }
+                                                else{
+                                                    cateCount!![category.get(j)] = 1
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
 
 
+/*
                                 // 유사도 0.35이상인 유저
                                 // 내가 보지 않았지만, 상대는 관심있는 물건 출력
                                 for(i in 0..users.size-1) {
@@ -509,6 +549,7 @@ class MainPageActivity : AppCompatActivity() {
                                         }
                                     }
                                 }
+*/
 
                                 // 가장많이 나온 카테고리 추출
                                 Log.v("RcmdList", "추천물품카테고리 : "+cateCount)
