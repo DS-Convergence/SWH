@@ -126,7 +126,7 @@ public class CategoryHobby {
         map.put("ukulele",8);
 
 
-        // 펫 > 9
+        // 반려동물 > 9
         map.put("water fountain",9);
         map.put("pet wheel",9);
         map.put("bird cage",9);
