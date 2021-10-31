@@ -109,7 +109,6 @@ class MainPageActivity : AppCompatActivity() {
         VPpoweruser.adapter = vpAdapter
 
         val thread=Thread(PagerRunnable())
-        // TODO: 파워람쥐 이미지 로드 오류 수정 必 - context null
         thread.start()
 
 
@@ -131,7 +130,6 @@ class MainPageActivity : AppCompatActivity() {
             // Log.v("RcmdList", UserBasedRcmd("user_ifbnimzN2RM61ZfbfeJ48ZBdu9j2").getRcmd().toString())
             // var ubr = UserBasedRcmd("user_l0kyyYR3SNfT1zJsdrAvHYy6M3J2")  // 현재 유저 아이디 필요 -> 주석으로 둘 것
 
-            //TODO:오류 수정 필요
             ubr.getRcmd()
         }
 
@@ -324,7 +322,7 @@ class MainPageActivity : AppCompatActivity() {
                         break
                     uIndx++
                 }
-                //Log.v("RcmdList", "user: " + users.get(uIndx))
+                // Log.v("RcmdList", "user: " + users.get(uIndx))
 
 
                 // product
