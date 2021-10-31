@@ -19,6 +19,8 @@ import kotlinx.android.synthetic.main.main_viewpager.view.*
 import kotlinx.android.synthetic.main.main_viewpager.view.detailTV
 import kotlinx.android.synthetic.main.main_viewpager.view.thumb
 import kotlinx.android.synthetic.main.product_detail.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainViewpagerAdapter : PagerAdapter() {
@@ -49,12 +51,39 @@ class MainViewpagerAdapter : PagerAdapter() {
         arr.add("ifbnimzN2RM61ZfbfeJ48ZBdu9j2")
         // Log.v("pwrg", "arr: " + arr.get(2) + ", arr.size: " + arr.size)
          */
+        arr.add("285Ex5Php6UwXupj45bQSKezF6G3")     //choco
+        arr.add("4LJA89mheCebnpW760yL4E01uZ12")     //dmsqo
+        arr.add("4uhJwwJVQ5c3Lj7tflHcpn4KQu23")     //dms6024
+        arr.add("HWRQxKcbWFWs2AC82MkndTM39dx1")     //apple
+        arr.add("jnKtozaufmR1eIWFhvgQVHNUSAr2")     //sol
+        Log.v("pwrg", "arrsize: "+arr.size)
 
         firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
             pwrg.clear()
 
             if (querySnapshot == null) return@addSnapshotListener
 
+            var pwrgList = arrayListOf<String>()
+            while(pwrgList.size < 3) {
+                var pwrgUser = arr.get(Random().nextInt(arr.size))
+                if(!pwrgList.contains(pwrgUser)) {
+                    pwrgList.add(pwrgUser)
+                    Log.v("pwrg", "pwrgUser: "+pwrgList)
+                }
+            }
+
+            for(i in 0..2) {
+                var uid = pwrgList.get(i)
+                for(snapshot in querySnapshot!!.documents) {
+                    var user = snapshot.toObject(UserModelFS::class.java)
+                    if (uid.equals(user?.uid)) {
+                        pwrg.add(user!!)
+                        // Log.v("pwrg", "current:" + user.nickname + ", position " + position)
+                    }
+                }
+            }
+
+            /*
             for(uid in arr) {
                 // var uid = arr.get(position)
                 for(snapshot in querySnapshot!!.documents) {
@@ -65,6 +94,7 @@ class MainViewpagerAdapter : PagerAdapter() {
                     }
                 }
             }
+             */
 
             notifyDataSetChanged()
 
