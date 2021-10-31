@@ -411,13 +411,13 @@ class MainPageActivity : AppCompatActivity() {
                             if(st.get(uIndx).size <= 5) {
                                 var sortedByView = viewCount.toList().sortedWith(compareByDescending({it.second})).toMap()
                                 var keys = sortedByView.keys.toList()
-                                if(keys.size < 9) {
+                                if(keys.size < 10) {
                                     for (i in 0..keys.size-1) {
                                         rcmdList.add(keys[i])
                                     }
                                 }
                                 else {
-                                    for(i in 0..10){
+                                    for(i in 0..9){
                                         rcmdList.add(keys[i])
                                     }
                                 }
