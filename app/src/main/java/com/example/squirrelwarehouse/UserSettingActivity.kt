@@ -19,7 +19,7 @@ class UserSettingActivity : AppCompatActivity() {
     var storage : FirebaseStorage?=null
     var uid : String? = null
     var nickname : String? = null
-    var introduce : String? = null
+    //var introduce : String? = null
     var email : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +33,15 @@ class UserSettingActivity : AppCompatActivity() {
         firestore?.collection("Users")?.document("user_${uid}")?.get()?.addOnSuccessListener { doc ->
             nickname = doc?.data?.get("nickname").toString()
             email = doc?.data?.get("email").toString()
-            introduce = doc?.data?.get("introduce").toString()
+            var introduce = doc?.data?.get("introduce").toString()
             nick_edit_tv.setText(nickname)
             email_edit_tv.text = email
-            introduce_edit_tv.setText(introduce)
+            if(introduce != "null"){
+                introduce_edit_tv.setText(introduce)
+            }
+            else{
+                introduce_edit_tv.setText("소개를 작성해주세요")
+            }
             var storageRef = storage?.reference?.child("images")?.child(doc?.data?.get("userProPic").toString())
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)
@@ -84,7 +89,7 @@ class UserSettingActivity : AppCompatActivity() {
             firestore?.collection("Users")?.document("user_${uid}")
                     ?.update("introduce",introduce_edit_tv.text.toString())
                     ?.addOnSuccessListener {
-                        Log.d("로그-1-success-record받기-","introduce ${introduce}")
+                        //Log.d("로그-1-success-record받기-","introduce ${introduce}")
                     }
 
             var intent = Intent(this, MyPageActivity::class.java)
