@@ -391,6 +391,8 @@ class MainPageActivity : AppCompatActivity() {
                             //favArr.clear()
                             if (querySnapshot == null) return@addSnapshotListener
 
+                            fav.clear()
+
                             // 데이터 받아오기
                             for (snapshot in querySnapshot!!.documents) {
                                 var item = snapshot.toObject(Favorite::class.java)
