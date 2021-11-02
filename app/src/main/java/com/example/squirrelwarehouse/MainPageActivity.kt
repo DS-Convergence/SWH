@@ -382,7 +382,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             dataArr.add(starr)
                             //Log.v("RcmdListStarr", "starr: 끝")
-                            Log.v("RcmdList", "starr.size: "+starr.size)
+                            //Log.v("RcmdList", "starr.size: "+starr.size)
                         }
 
 
@@ -439,8 +439,8 @@ class MainPageActivity : AppCompatActivity() {
                                 // 물건 있는지 없는지 0 1 행렬
                                 for(i in 0..fav.size-1) {
                                     var arr = dataArr.get(i)   // 한 사람의 선호도 데이터
-                                    Log.v("RcmdList", "arr.size: " + arr.size)
-                                    Log.v("RcmdList", "product.size: " + product.size)
+                                    //Log.v("RcmdList", "arr.size: " + arr.size)
+                                    //Log.v("RcmdList", "product.size: " + product.size)
                                     for(j in 0..product.size-1) {
                                         // Log.v("RcmdList", "물건개수: " + j)
                                         if(fav.get(i).contains(product.get(j)))

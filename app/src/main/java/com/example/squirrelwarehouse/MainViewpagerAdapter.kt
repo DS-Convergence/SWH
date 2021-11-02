@@ -51,11 +51,11 @@ class MainViewpagerAdapter : PagerAdapter() {
         arr.add("ifbnimzN2RM61ZfbfeJ48ZBdu9j2")
         // Log.v("pwrg", "arr: " + arr.get(2) + ", arr.size: " + arr.size)
          */
-        arr.add("285Ex5Php6UwXupj45bQSKezF6G3")     //choco
+        //arr.add("285Ex5Php6UwXupj45bQSKezF6G3")     //choco
+        arr.add("HWRQxKcbWFWs2AC82MkndTM39dx1")     //apple
         arr.add("4LJA89mheCebnpW760yL4E01uZ12")     //dmsqo
         arr.add("4uhJwwJVQ5c3Lj7tflHcpn4KQu23")     //dms6024
-        arr.add("HWRQxKcbWFWs2AC82MkndTM39dx1")     //apple
-        arr.add("jnKtozaufmR1eIWFhvgQVHNUSAr2")     //sol
+        //arr.add("jnKtozaufmR1eIWFhvgQVHNUSAr2")     //sol
         Log.v("pwrg", "arrsize: "+arr.size)
 
         firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -64,6 +64,11 @@ class MainViewpagerAdapter : PagerAdapter() {
             if (querySnapshot == null) return@addSnapshotListener
 
             var pwrgList = arrayListOf<String>()
+            for(i in 0..2) {
+                pwrgList.add(arr.get(i))
+            }
+            Log.v("pwrg", "pwrgListAdd: "+pwrgList)
+            /*
             while(pwrgList.size < 3) {
                 var pwrgUser = arr.get(Random().nextInt(arr.size))
                 if(!pwrgList.contains(pwrgUser)) {
@@ -71,6 +76,7 @@ class MainViewpagerAdapter : PagerAdapter() {
                     Log.v("pwrg", "pwrgUser: "+pwrgList)
                 }
             }
+             */
 
             for(i in 0..2) {
                 var uid = pwrgList.get(i)
