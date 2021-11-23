@@ -37,6 +37,8 @@ class MainPageActivity : AppCompatActivity() {
 
     private var isFabOpen = false
 
+    lateinit var mGlideRequestManager : RequestManager
+
     val handler = Handler(Looper.getMainLooper()) {
         setpager()
         true
@@ -46,6 +48,7 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
 
+        mGlideRequestManager = Glide.with(this)
 
         // 버튼 기능 구현
         var gotoMore = gotomore
@@ -106,7 +109,7 @@ class MainPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val vpAdapter = MainViewpagerAdapter()
+        val vpAdapter = MainViewpagerAdapter(this, mGlideRequestManager)
         VPpoweruser.adapter = vpAdapter
 
         val thread=Thread(PagerRunnable())

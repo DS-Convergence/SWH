@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.squirrelwarehouse.models.UserModelFS
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -23,8 +24,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class MainViewpagerAdapter : PagerAdapter() {
-    private var mContext: Context?=null
+class MainViewpagerAdapter(context: Context, requestManager : RequestManager) : PagerAdapter() {
+    private var mContext = context
+    private var mRequestManager = requestManager
 
     private var firestore = FirebaseFirestore.getInstance()
     private var storage = FirebaseStorage.getInstance()
@@ -32,14 +34,15 @@ class MainViewpagerAdapter : PagerAdapter() {
     var arr : ArrayList<String> = arrayListOf()
     var pwrg : ArrayList<UserModelFS> = arrayListOf()
 
+    /*
     fun MainViewpagerAdapter(context: Context){
         mContext = context
-    }
+    }*/
 
     // position에 맞는 내용 생성
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(container.context).inflate(R.layout.main_viewpager, container, false)
-        MainViewpagerAdapter(container.context)
+        //MainViewpagerAdapter(container.context)
 
         arr.clear()
 
@@ -113,8 +116,7 @@ class MainViewpagerAdapter : PagerAdapter() {
                     Log.v("pwrg", "mContext: not null")
                     var imgRef = storage?.reference?.child("images")?.child(pwrg!![position].userProPic.toString())
                     imgRef?.downloadUrl?.addOnSuccessListener { uri ->
-                        Glide.with(mContext)
-                                .load(uri)
+                        mRequestManager.load(uri)
                                 .into(view.thumb)
                         // Log.v("pwrg", "img Success")
                     }
