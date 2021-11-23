@@ -11,6 +11,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.squirrelwarehouse.models.Favorite
 import com.example.squirrelwarehouse.models.Product
 import com.example.squirrelwarehouse.models.StayTime
@@ -154,68 +155,68 @@ class MainPageActivity : AppCompatActivity() {
         // 최신 업데이트
         var products = ArrayList<Product>()
         firestore?.collection("Product")?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    //products.clear()
-                    if (querySnapshot == null) return@addSnapshotListener
+            ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                //products.clear()
+                if (querySnapshot == null) return@addSnapshotListener
 
-                    // 데이터 받아오기
-                    for (snapshot in querySnapshot!!.documents) {
-                        var item = snapshot.toObject(Product::class.java)
-                        if (item != null) {
-                            products.add(item)
-                            Log.v("PRODUCTS",products.size.toString())
-                            Log.v("PRODUCTS",item.productName.toString())
-                        }
-
+                // 데이터 받아오기
+                for (snapshot in querySnapshot!!.documents) {
+                    var item = snapshot.toObject(Product::class.java)
+                    if (item != null) {
+                        products.add(item)
+                        Log.v("PRODUCTS",products.size.toString())
+                        Log.v("PRODUCTS",item.productName.toString())
                     }
 
-                    // 일단 다 invisible
-                    up_title1.visibility = View.INVISIBLE
-                    up_title2.visibility = View.INVISIBLE
-                    up_title3.visibility = View.INVISIBLE
+                }
 
-                    // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
-                    // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
-                    if(products.size >= 1) {
-                        up_title1.visibility = View.VISIBLE
+                // 일단 다 invisible
+                up_title1.visibility = View.INVISIBLE
+                up_title2.visibility = View.INVISIBLE
+                up_title3.visibility = View.INVISIBLE
 
-                        up_title1.text = products.get(0).productName.toString()
+                // 데이터가 3개보다 적을 수 있기 때문에 if문을 이렇게 작성함
+                // 이것보다 더 좋은 방법이 있다면 그거 사용해도 무방.
+                if(products.size >= 1) {
+                    up_title1.visibility = View.VISIBLE
 
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(0).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm1)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(products.size >= 2) {
-                        up_title2.visibility = View.VISIBLE
+                    up_title1.text = products.get(0).productName.toString()
 
-                        up_title2.text = products.get(1).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(1).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm2)
-                            Log.v("IMAGE","Success")
-                        }
-                    }
-                    if(products.size >= 3) {
-                        up_title3.visibility = View.VISIBLE
-
-                        up_title3.text = products.get(2).productName.toString()
-
-                        var storageRef = storage?.reference?.child("product")?.child(products.get(2).imageURI.toString())
-                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                            Glide.with(applicationContext)
-                                    .load(uri)
-                                    .into(up_thbm3)
-                            Log.v("IMAGE","Success")
-                        }
+                    var storageRef = storage?.reference?.child("product")?.child(products.get(0).imageURI.toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(applicationContext)
+                            .load(uri)
+                            .into(up_thbm1)
+                        Log.v("IMAGE","Success")
                     }
                 }
+                if(products.size >= 2) {
+                    up_title2.visibility = View.VISIBLE
+
+                    up_title2.text = products.get(1).productName.toString()
+
+                    var storageRef = storage?.reference?.child("product")?.child(products.get(1).imageURI.toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(applicationContext)
+                            .load(uri)
+                            .into(up_thbm2)
+                        Log.v("IMAGE","Success")
+                    }
+                }
+                if(products.size >= 3) {
+                    up_title3.visibility = View.VISIBLE
+
+                    up_title3.text = products.get(2).productName.toString()
+
+                    var storageRef = storage?.reference?.child("product")?.child(products.get(2).imageURI.toString())
+                    storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                        Glide.with(applicationContext)
+                            .load(uri)
+                            .into(up_thbm3)
+                        Log.v("IMAGE","Success")
+                    }
+                }
+            }
 
 
         update1.setOnClickListener {
@@ -306,6 +307,7 @@ class MainPageActivity : AppCompatActivity() {
             //var data : ArrayList<ArrayList<Int>> = getData()    // product와 favorite 비교해서 선호데이터 받기
 
             // user
+            users.clear()
             firestore?.collection("Users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                 //userArr.clear()
                 if (querySnapshot == null) return@addSnapshotListener
@@ -369,6 +371,7 @@ class MainPageActivity : AppCompatActivity() {
                         // 내가 본 물건이 5개 이하일 때, 추천 물품은 조회수가 가장 높은 물건들
                         Log.v("sortedByView", st.size.toString())
 
+                        dataArr.clear()
                         for(map in st) {
                             var starr = ArrayList<Int>()
                             for(i in 0..product.size-1) {
@@ -457,6 +460,7 @@ class MainPageActivity : AppCompatActivity() {
 
 
                                 // 유사도 행렬
+                                sim.clear()
                                 for (i in 0..users.size-1) {
                                     var simArr = ArrayList<Double>()
                                     for(j in 0..users.size-1) {
@@ -579,7 +583,7 @@ class MainPageActivity : AppCompatActivity() {
 
                             if(rcmdList.size >= 1) {
                                 firestore?.collection("Product")?.document(rcmdList.get(0))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                    task ->
+                                        task ->
                                     if (task.isSuccessful) { // 데이터 가져오기를 성공하면
                                         var product = task.result.toObject(Product::class.java)
                                         rc_title1.text = product?.productName
@@ -595,8 +599,8 @@ class MainPageActivity : AppCompatActivity() {
                                         var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
-                                                    .load(uri)
-                                                    .into(rc_thbm1)
+                                                .load(uri)
+                                                .into(rc_thbm1)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
                                             // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
@@ -607,7 +611,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             if(rcmdList.size >= 2) {
                                 firestore?.collection("Product")?.document(rcmdList.get(1))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                    task ->
+                                        task ->
                                     if (task.isSuccessful) { // 데이터 가져오기를 성공하면
                                         var product = task.result.toObject(Product::class.java)
                                         rc_title2.text = product?.productName
@@ -623,8 +627,8 @@ class MainPageActivity : AppCompatActivity() {
                                         var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
-                                                    .load(uri)
-                                                    .into(rc_thbm2)
+                                                .load(uri)
+                                                .into(rc_thbm2)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
                                             // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
@@ -635,7 +639,7 @@ class MainPageActivity : AppCompatActivity() {
                             }
                             if(rcmdList.size >= 3) {
                                 firestore?.collection("Product")?.document(rcmdList.get(2))?.get()?.addOnCompleteListener { // 넘겨온 물건 id를 넣어주면 됨.
-                                    task ->
+                                        task ->
                                     if (task.isSuccessful) { // 데이터 가져오기를 성공하면
                                         var product = task.result.toObject(Product::class.java)
                                         rc_title3.text = product?.productName
@@ -651,8 +655,8 @@ class MainPageActivity : AppCompatActivity() {
                                         var storageRef = storage?.reference?.child("product")?.child(product?.imageURI.toString())
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
-                                                    .load(uri)
-                                                    .into(rc_thbm3)
+                                                .load(uri)
+                                                .into(rc_thbm3)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
                                             // Toast.makeText(applicationContext, "실패", Toast.LENGTH_SHORT).show()
@@ -681,78 +685,78 @@ class MainPageActivity : AppCompatActivity() {
                             var catehob = cateName
                             cateTextView.text = catehob
                             firestore?.collection("Product")?.whereEqualTo("categoryHobby", catehob)?.orderBy("uploadTime", Query.Direction.DESCENDING)?.limit(3)
-                                    ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                                        //cateProds.clear()
-                                        if (querySnapshot == null) return@addSnapshotListener
+                                ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                                    //cateProds.clear()
+                                    if (querySnapshot == null) return@addSnapshotListener
 
-                                        // 데이터 받아오기
-                                        for (snapshot in querySnapshot!!.documents) {
-                                            var item = snapshot.toObject(Product::class.java)
-                                            if (item != null) {
-                                                cateProds.add(item)
-                                                Log.v("PRODUCTS", cateProds.size.toString())
-                                                Log.v("PRODUCTS", item.productName.toString())
-                                            }
-                                        }
-
-                                        if(cateProds.size >= 1) {
-                                            cate1.visibility = View.VISIBLE
-
-                                            ct_title1.text = cateProds.get(0).productName.toString()
-
-                                            cate1.setOnClickListener {
-                                                var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                                intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
-                                                startActivityForResult(intent, 0)
-                                            }
-
-                                            var storageRef = storage?.reference?.child("product")?.child(cateProds.get(0).imageURI.toString())
-                                            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                                Glide.with(applicationContext)
-                                                        .load(uri)
-                                                        .into(ct_thbm1)
-                                                Log.v("IMAGE","Success")
-                                            }
-                                        }
-                                        if(cateProds.size >= 2) {
-                                            cate2.visibility = View.VISIBLE
-
-                                            ct_title2.text = cateProds.get(1).productName.toString()
-
-                                            cate2.setOnClickListener {
-                                                var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                                intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
-                                                startActivityForResult(intent, 0)
-                                            }
-
-                                            var storageRef = storage?.reference?.child("product")?.child(cateProds.get(1).imageURI.toString())
-                                            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                                Glide.with(applicationContext)
-                                                        .load(uri)
-                                                        .into(ct_thbm2)
-                                                Log.v("IMAGE","Success")
-                                            }
-                                        }
-                                        if(cateProds.size >= 3) {
-                                            cate3.visibility = View.VISIBLE
-
-                                            ct_title3.text = cateProds.get(2).productName.toString()
-
-                                            cate3.setOnClickListener {
-                                                var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
-                                                intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
-                                                startActivityForResult(intent, 0)
-                                            }
-
-                                            var storageRef = storage?.reference?.child("product")?.child(cateProds.get(2).imageURI.toString())
-                                            storageRef?.downloadUrl?.addOnSuccessListener { uri ->
-                                                Glide.with(applicationContext)
-                                                        .load(uri)
-                                                        .into(ct_thbm3)
-                                                Log.v("IMAGE","Success")
-                                            }
+                                    // 데이터 받아오기
+                                    for (snapshot in querySnapshot!!.documents) {
+                                        var item = snapshot.toObject(Product::class.java)
+                                        if (item != null) {
+                                            cateProds.add(item)
+                                            Log.v("PRODUCTS", cateProds.size.toString())
+                                            Log.v("PRODUCTS", item.productName.toString())
                                         }
                                     }
+
+                                    if(cateProds.size >= 1) {
+                                        cate1.visibility = View.VISIBLE
+
+                                        ct_title1.text = cateProds.get(0).productName.toString()
+
+                                        cate1.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(0).imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                .load(uri)
+                                                .into(ct_thbm1)
+                                            Log.v("IMAGE","Success")
+                                        }
+                                    }
+                                    if(cateProds.size >= 2) {
+                                        cate2.visibility = View.VISIBLE
+
+                                        ct_title2.text = cateProds.get(1).productName.toString()
+
+                                        cate2.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(1).imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                .load(uri)
+                                                .into(ct_thbm2)
+                                            Log.v("IMAGE","Success")
+                                        }
+                                    }
+                                    if(cateProds.size >= 3) {
+                                        cate3.visibility = View.VISIBLE
+
+                                        ct_title3.text = cateProds.get(2).productName.toString()
+
+                                        cate3.setOnClickListener {
+                                            var intent = Intent(this@MainPageActivity, ProductDetailActivity::class.java)
+                                            intent.putExtra("data",cateProds!![0].userId+"_"+cateProds!![0].uploadTime)
+                                            startActivityForResult(intent, 0)
+                                        }
+
+                                        var storageRef = storage?.reference?.child("product")?.child(cateProds.get(2).imageURI.toString())
+                                        storageRef?.downloadUrl?.addOnSuccessListener { uri ->
+                                            Glide.with(applicationContext)
+                                                .load(uri)
+                                                .into(ct_thbm3)
+                                            Log.v("IMAGE","Success")
+                                        }
+                                    }
+                                }
 
                         }
                     }
