@@ -78,9 +78,9 @@ class ProductFormActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     // tensorflow Lite
-    private val MODEL_PATH = "model_211027.tflite"
+    private val MODEL_PATH = "model_211123.tflite"
     private val QUANT = true
-    private val LABEL_PATH = "labels.txt"
+    private val LABEL_PATH = "labels_211123.txt"
     private val INPUT_SIZE = 224
 
     private var classifier: Classifier? = null
