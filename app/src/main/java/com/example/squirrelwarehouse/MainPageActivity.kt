@@ -189,6 +189,7 @@ class MainPageActivity : AppCompatActivity() {
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                         Glide.with(applicationContext)
                             .load(uri)
+                            .override(250,250)
                             .into(up_thbm1)
                         Log.v("IMAGE","Success")
                     }
@@ -202,6 +203,7 @@ class MainPageActivity : AppCompatActivity() {
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                         Glide.with(applicationContext)
                             .load(uri)
+                            .override(250,250)
                             .into(up_thbm2)
                         Log.v("IMAGE","Success")
                     }
@@ -215,6 +217,7 @@ class MainPageActivity : AppCompatActivity() {
                     storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                         Glide.with(applicationContext)
                             .load(uri)
+                            .override(250,250)
                             .into(up_thbm3)
                         Log.v("IMAGE","Success")
                     }
@@ -603,6 +606,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(rc_thbm1)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
@@ -631,6 +635,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(rc_thbm2)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
@@ -659,6 +664,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(rc_thbm3)
                                             Log.v("IMAGE", "Success")
                                         }?.addOnFailureListener { //이미지 로드 실패시
@@ -717,6 +723,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(ct_thbm1)
                                             Log.v("IMAGE","Success")
                                         }
@@ -736,6 +743,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(ct_thbm2)
                                             Log.v("IMAGE","Success")
                                         }
@@ -755,6 +763,7 @@ class MainPageActivity : AppCompatActivity() {
                                         storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                                             Glide.with(applicationContext)
                                                 .load(uri)
+                                                .override(250,250)
                                                 .into(ct_thbm3)
                                             Log.v("IMAGE","Success")
                                         }

@@ -95,6 +95,7 @@ class RcmdMoreActivity : AppCompatActivity() {
             storageRef?.downloadUrl?.addOnSuccessListener { uri ->
                 Glide.with(applicationContext)
                     .load(uri)
+                    .override(150,150)
                     .into(viewHolder.thumb)
                 //Log.v("IMAGE","Success")
 
