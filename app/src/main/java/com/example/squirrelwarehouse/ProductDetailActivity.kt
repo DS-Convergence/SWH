@@ -109,7 +109,12 @@ class ProductDetailActivity : AppCompatActivity() {
                         Log.v("region",list.get(0).toString())
 
                         var str = list.get(0).toString().split(" ")
-                        var str2 = str[1] + " " + str[2] + " " + str[3]
+                        //var str2 = str[1] + " " + str[2] + " " + str[3]
+                        var str2 = ""
+                        if(str.size >= 2) str2 += str[1]
+                        if(str.size >= 3) str2 += " " + str[2]
+                        if(str.size >= 4) str2 += " " + str[3]
+                        Log.v("location", str2)
 
                         if(str2.length <= 40)  // 가끔가다 list.get(0) 전부가 뜨는 경우가 있음. 그것을 방지하기 위함
                             tv_userLocation.text = str2
