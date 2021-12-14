@@ -352,6 +352,7 @@ class MainPageActivity : AppCompatActivity() {
                     }
 
                     // stayTime
+                    st.clear()
                     firestore?.collection("StayTime")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         if (querySnapshot == null) return@addSnapshotListener
 
@@ -502,7 +503,9 @@ class MainPageActivity : AppCompatActivity() {
                                 var sortedBySim = simMap.toList().sortedWith(compareByDescending({it.second})).toMap()
 
 
+
                                 // 상위 3명
+                                cateCount.clear()
                                 for(i in 0..2) {
                                     var loc = sortedBySim.keys.toList().get(i)
 
