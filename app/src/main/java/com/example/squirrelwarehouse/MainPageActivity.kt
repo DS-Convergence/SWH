@@ -505,7 +505,6 @@ class MainPageActivity : AppCompatActivity() {
 
 
                                 // 상위 3명
-                                cateCount.clear()
                                 for(i in 0..2) {
                                     var loc = sortedBySim.keys.toList().get(i)
 
@@ -522,6 +521,7 @@ class MainPageActivity : AppCompatActivity() {
                                             }
 
                                             // 카테고리 개수 카운트
+                                            /*
                                             if(dataArr.get(loc).get(j)!=0) {
                                                 if(cateCount!!.contains(category[j])){
                                                     cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
@@ -529,6 +529,22 @@ class MainPageActivity : AppCompatActivity() {
                                                 else{
                                                     cateCount!![category.get(j)] = 1
                                                 }
+                                            }
+                                             */
+                                        }
+                                    }
+                                }
+
+                                // 추천물품 속 카테고리 개수 카운트
+                                cateCount.clear()
+                                for(prod in rcmdList) { // 추천 목록에 있는 물건를 가져옴.
+                                    for(j in 0..product.size-1){
+                                        if(prod.equals(product[j])) { // 물건의 인덱스를 알아냄.
+                                            if(cateCount!!.contains(category[j])){
+                                                cateCount!![category.get(j)] = cateCount!![category.get(j)]!!.plus(1)!!.toInt()
+                                            }
+                                            else{
+                                                cateCount!![category.get(j)] = 1
                                             }
                                         }
                                     }
