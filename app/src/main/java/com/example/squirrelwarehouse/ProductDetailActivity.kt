@@ -359,7 +359,11 @@ class ProductDetailActivity : AppCompatActivity() {
 
                 // 원데이터를 로그변환하는 코드
                 if(stmap.containsKey(prod)) { // 원데이터가 있는 경우에만, 데이터는 1이상인 데이터만 존재하기 때문에 음수값 나오지 않음.
-                    trmap[prod] = ln(stmap.get(prod)!!.toDouble()).toInt()
+                    var transValue = ln(stmap.get(prod)!!.toDouble()).toInt()
+                    if(transValue > 10)  // 변환된 데이터가 10이 넘어가면 그냥 10을 준다.
+                        trmap[prod] = 10
+                    else
+                        trmap[prod] = transValue
                     map["transform"] = trmap
                 }
 
